@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../theme/app_theme.dart';
 
@@ -119,17 +120,17 @@ class _SplashScreenState extends State<SplashScreen> {
               Text(
                 'IvoireQuiz',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   color: AppColors.white,
                   fontSize: 42,
                   fontWeight: FontWeight.w900,
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
+              Text(
                 'Connais-tu vraiment \nla Côte d\'Ivoire ?',
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   color: AppColors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
