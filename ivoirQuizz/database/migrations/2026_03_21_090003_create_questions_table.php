@@ -1,18 +1,25 @@
--- Table des questions de quiz.
--- Référence une catégorie et stocke le type, la difficulté et l'explication.
-CREATE TABLE IF NOT EXISTS questions (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    category_id BIGINT UNSIGNED NOT NULL,
-    type ENUM('qcm','vrai_faux') NOT NULL,
-    question_text TEXT NOT NULL,
-    explanation TEXT NULL,
-    difficulty TINYINT UNSIGNED NOT NULL DEFAULT 1,
-    is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    KEY idx_questions_category_id (category_id),
-    KEY idx_questions_is_active (is_active),
-    KEY idx_questions_category_active (category_id, is_active),
-    CONSTRAINT fk_questions_category_id
-        FOREIGN KEY (category_id) REFERENCES categories(id)
-        ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void {
+        Schema::create('questions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('category_id')
+                  ->constrained()
+                  ->onDelete('cascade');
+            $table->enum('type', ['qcm', 'vrai_faux']);
+            $table->text('question_text');
+            $table->text('explanation');
+            $table->tinyInteger('difficulty')->default(1);
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void {
+        Schema::dropIfExists('questions');
+    }
+};

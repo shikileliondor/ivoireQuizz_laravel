@@ -1,13 +1,22 @@
--- Table des options de réponse.
--- Chaque option appartient à une question et indique si elle est correcte.
-CREATE TABLE IF NOT EXISTS options (
-    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    question_id BIGINT UNSIGNED NOT NULL,
-    option_text VARCHAR(255) NOT NULL,
-    is_correct BOOLEAN NOT NULL DEFAULT FALSE,
-    KEY idx_options_question_id (question_id),
-    KEY idx_options_question_correct (question_id, is_correct),
-    CONSTRAINT fk_options_question_id
-        FOREIGN KEY (question_id) REFERENCES questions(id)
-        ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void {
+        Schema::create('options', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('question_id')
+                  ->constrained()
+                  ->onDelete('cascade');
+            $table->string('option_text', 255);
+            $table->boolean('is_correct')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void {
+        Schema::dropIfExists('options');
+    }
+};
