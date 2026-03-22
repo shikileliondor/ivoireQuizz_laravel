@@ -88,17 +88,20 @@ class AuthController extends Controller
      * Return authenticated user profile with counts.
      */
     public function me(Request $request): JsonResponse
-    {
-        /** @var User $user */
-        $user = $request->user();
-        $user->loadCount('gameSessions');
+{
+    /** @var User $user */
+    $user = $request->user();
+    $user->loadCount('gameSessions');
 
-        return $this->successResponse([
-            'user' => $user,
-            'friends_count' => $user->friends->count(),
-        ], 'Profil utilisateur récupéré.');
-    }
+    $userData = $user->toArray();
+    $userData['friends_count'] = $user->friends->count();
+    $userData['game_sessions_count'] = $user->game_sessions_count;
 
+    return $this->successResponse(
+        $userData,
+        'Profil utilisateur récupéré.'
+    );
+}
     /**
      * Authenticate or register a user with Google OAuth token.
      */

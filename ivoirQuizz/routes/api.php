@@ -9,6 +9,30 @@ use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\QuizController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/test-quiz-auth', function (Illuminate\Http\Request $request) {
+    $categoryId = $request->query('category_id', 1);
+    $mode = $request->query('mode', 'category');
+    
+    $query = \App\Models\Question::where('is_active', true)
+        ->with(['options' => function($q) {
+            $q->select('id', 'question_id', 'option_text');
+        }]);
+    
+    if ($mode === 'category' && $categoryId) {
+        $query->where('category_id', $categoryId);
+    }
+    
+    $questions = $query->inRandomOrder()->limit(10)->get();
+    
+    return response()->json([
+        'success' => true,
+        'count' => $questions->count(),
+        'category_id' => $categoryId,
+        'mode' => $mode,
+        'data' => $questions,
+    ]);
+});
+
 Route::prefix('auth')->group(function (): void {
     Route::post('/register', [AuthController::class, 'register'])
         ->middleware('throttle:auth')
@@ -23,6 +47,9 @@ Route::prefix('auth')->group(function (): void {
 });
 
 Route::middleware('auth:sanctum')->group(function (): void {
+
+
+
     Route::prefix('auth')->group(function (): void {
         Route::post('/logout', [AuthController::class, 'logout'])
             ->name('api.auth.logout');
@@ -80,4 +107,8 @@ Route::fallback(function () {
         'success' => false,
         'message' => 'Route non trouvée',
     ], 404);
+
+   
 });
+
+

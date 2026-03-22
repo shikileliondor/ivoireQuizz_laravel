@@ -97,13 +97,11 @@ class GameSessionController extends Controller
                 ] : null);
             });
 
-            return response()->json([
-                'success' => true,
-                'data' => [
-                    'session' => $session,
-                ],
-                'message' => 'Session enregistrée avec succès.',
-            ], 201);
+           return response()->json([
+    'success' => true,
+    'data' => $session,
+    'message' => 'Session enregistrée avec succès.',
+], 201);
         } catch (Throwable $exception) {
             return response()->json([
                 'success' => false,
@@ -127,13 +125,11 @@ class GameSessionController extends Controller
             ->limit(20)
             ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => [
-                'sessions' => $sessions,
-            ],
-            'message' => 'Historique des sessions récupéré.',
-        ]);
+       return response()->json([
+    'success' => true,
+    'data' => $sessions,
+    'message' => 'Historique des sessions récupéré.',
+]);
     }
 
     /**
@@ -154,11 +150,9 @@ class GameSessionController extends Controller
         }
 
         return response()->json([
-            'success' => true,
-            'data' => [
-                'session' => $session,
-            ],
-            'message' => 'Détails de la session récupérés.',
-        ]);
+    'success' => true,
+    'data' => $session,
+    'message' => 'Détails de la session récupérés.',
+]);
     }
 }

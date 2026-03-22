@@ -34,12 +34,10 @@ class QuizController extends Controller
             return $question;
         });
 
-        return response()->json([
-            'success' => true,
-            'data' => [
-                'questions' => $questions,
-            ],
-            'message' => 'Questions récupérées avec succès.',
-        ]);
+       return response()->json([
+    'success' => true,
+    'data' => $questions,
+    'message' => 'Questions récupérées avec succès.',
+]);
     }
 }

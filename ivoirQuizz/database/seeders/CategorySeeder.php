@@ -31,6 +31,18 @@ class CategorySeeder extends Seeder
                 'icon' => 'restaurant',
                 'is_active' => true,
             ],
+            [
+                'name' => 'morel',
+                'description' => "test morel",
+                'icon' => 'restaurant',
+                'is_active' => true,
+            ],
+            [
+                'name' => 'azerty',
+                'description' => "popo",
+                'icon' => 'restaeent',
+                'is_active' => true,
+            ],
         ];
 
         foreach ($categories as $category) {
