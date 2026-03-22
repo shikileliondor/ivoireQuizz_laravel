@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\FriendshipController;
 use App\Http\Controllers\Api\GameSessionController;
+use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\LeaderboardController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\QuizController;
@@ -48,7 +49,8 @@ Route::prefix('auth')->group(function (): void {
 
 Route::middleware('auth:sanctum')->group(function (): void {
 
-
+    Route::get('/home', [HomeController::class, 'index'])
+        ->name('api.home');
 
     Route::prefix('auth')->group(function (): void {
         Route::post('/logout', [AuthController::class, 'logout'])
