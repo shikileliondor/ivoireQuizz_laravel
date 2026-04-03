@@ -9,7 +9,6 @@ use App\Http\Controllers\Api\LeaderboardController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\QuizController;
 use Illuminate\Support\Facades\Route;
-
 Route::get('/test-quiz-auth', function (Illuminate\Http\Request $request) {
     $categoryId = $request->query('category_id', 1);
     $mode = $request->query('mode', 'category');
