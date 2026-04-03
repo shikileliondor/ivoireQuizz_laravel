@@ -30,8 +30,13 @@ class GameSession extends Model
         'mode',
         'score',
         'bonus_score',
+        'base_score',
+        'time_bonus_score',
+        'streak_bonus_score',
+        'perfect_bonus_score',
         'total_score',
         'correct_answers',
+        'max_streak',
         'duration_seconds',
         'completed_at',
     ];
@@ -44,8 +49,13 @@ class GameSession extends Model
     protected $casts = [
         'score' => 'integer',
         'bonus_score' => 'integer',
+        'base_score' => 'integer',
+        'time_bonus_score' => 'integer',
+        'streak_bonus_score' => 'integer',
+        'perfect_bonus_score' => 'integer',
         'total_score' => 'integer',
         'correct_answers' => 'integer',
+        'max_streak' => 'integer',
         'duration_seconds' => 'integer',
         'completed_at' => 'datetime',
     ];
@@ -87,7 +97,7 @@ class GameSession extends Model
      */
     public function calculateTotalScore(): int
     {
-        $this->total_score = (int) $this->score + (int) $this->bonus_score;
+        $this->total_score = max(0, (int) $this->score + (int) $this->bonus_score);
         $this->save();
 
         return $this->total_score;
