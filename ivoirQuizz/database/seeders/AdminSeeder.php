@@ -16,12 +16,12 @@ class AdminSeeder extends Seeder
         User::updateOrCreate(
             ['email' => 'admin@ivoirequiz.com'],
             [
-                'name' => 'Administrateur IvoireQuiz',
+                'name' => 'Yann-Morel Effobi ',
                 'password' => Hash::make('Admin@2025!'),
                 'friend_code' => 'ADMIN1',
                 'avatar_id' => 1,
-                'total_score' => 0,
-                'games_played' => 0,
+                'total_score' => 50000,
+                'games_played' => 100,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
