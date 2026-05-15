@@ -92,11 +92,11 @@ class CategorySeeder extends Seeder
                 'is_active' => true,
             ],
             [
-                'name' => 'Islam en Côte d’Ivoire',
-                'description' => "Découvrez l’histoire de l’islam en Côte d’Ivoire, les grandes fêtes musulmanes, les pratiques religieuses, les mosquées importantes et son rôle dans la société ivoirienne.",
-                'icon' => 'mosque',
-                'is_active' => true,
-            ],
+    'name' => 'Foursquare en Côte d’Ivoire',
+    'description' => "Découvrez l’Église Foursquare en Côte d’Ivoire, son histoire, ses missions, ses pratiques de culte, ses grandes assemblées et son rôle dans le développement du christianisme évangélique dans le pays.",
+    'icon' => 'church',
+    'is_active' => true,
+],
         ];
 
         foreach ($categories as $category) {
