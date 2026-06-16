@@ -7,6 +7,7 @@ use App\Http\Requests\Api\StoreGameSessionRequest;
 use App\Models\GameSession;
 use App\Models\Question;
 use App\Models\SessionAnswer;
+use App\Services\QuizScoreCalculator;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,12 +18,12 @@ class GameSessionController extends Controller
     /**
      * Store a completed game session and related answers.
      */
-    public function store(StoreGameSessionRequest $request): JsonResponse
+    public function store(StoreGameSessionRequest $request, QuizScoreCalculator $quizScoreCalculator): JsonResponse
     {
         $validated = $request->validated();
 
         try {
-            $session = DB::transaction(function () use ($request, $validated) {
+            $session = DB::transaction(function () use ($request, $validated, $quizScoreCalculator) {
                 $session = GameSession::create([
                     'user_id' => $request->user()->id,
                     'category_id' => $validated['category_id'] ?? null,
@@ -30,12 +31,17 @@ class GameSessionController extends Controller
                     'duration_seconds' => $validated['duration_seconds'],
                     'score' => 0,
                     'bonus_score' => 0,
+                    'base_score' => 0,
+                    'time_bonus_score' => 0,
+                    'streak_bonus_score' => 0,
+                    'perfect_bonus_score' => 0,
                     'total_score' => 0,
                     'correct_answers' => 0,
+                    'max_streak' => 0,
                 ]);
 
-                $correctAnswers = 0;
-                $bonusScore = 0;
+                $answersForScoring = [];
+                $resolvedAnswers = [];
 
                 foreach ($validated['answers'] as $answerData) {
                     $question = Question::query()->with('options')->findOrFail($answerData['question_id']);
@@ -49,35 +55,48 @@ class GameSessionController extends Controller
                         $isCorrect = (bool) optional($selectedOption)->is_correct;
                     }
 
-                    $pointsEarned = SessionAnswer::calculatePoints($isCorrect, $responseTime);
+                    $answersForScoring[] = [
+                        'is_correct' => $isCorrect,
+                        'response_time_seconds' => $responseTime,
+                    ];
 
-                    SessionAnswer::create([
-                        'session_id' => $session->id,
+                    $resolvedAnswers[] = [
                         'question_id' => $question->id,
                         'selected_option_id' => $selectedOptionId,
                         'is_correct' => $isCorrect,
                         'response_time_seconds' => $responseTime,
-                        'points_earned' => $pointsEarned,
-                    ]);
-
-                    if ($isCorrect) {
-                        $correctAnswers++;
-                        $bonusScore += max(0, $pointsEarned - 100);
-                    }
+                    ];
                 }
 
-                $score = $correctAnswers * 100;
-                $totalScore = $score + $bonusScore;
+                $scoreDetails = $quizScoreCalculator->calculate($answersForScoring);
+
+                foreach ($resolvedAnswers as $index => $resolvedAnswer) {
+                    $answerBreakdown = $scoreDetails['per_answer'][$index];
+
+                    SessionAnswer::create([
+                        'session_id' => $session->id,
+                        'question_id' => $resolvedAnswer['question_id'],
+                        'selected_option_id' => $resolvedAnswer['selected_option_id'],
+                        'is_correct' => $resolvedAnswer['is_correct'],
+                        'response_time_seconds' => $resolvedAnswer['response_time_seconds'],
+                        'points_earned' => $answerBreakdown['points_earned'],
+                    ]);
+                }
 
                 $session->update([
-                    'score' => $score,
-                    'bonus_score' => $bonusScore,
-                    'total_score' => $totalScore,
-                    'correct_answers' => $correctAnswers,
+                    'score' => $scoreDetails['score'],
+                    'bonus_score' => $scoreDetails['bonus_score'],
+                    'base_score' => $scoreDetails['base_score'],
+                    'time_bonus_score' => $scoreDetails['time_bonus_score'],
+                    'streak_bonus_score' => $scoreDetails['streak_bonus_score'],
+                    'perfect_bonus_score' => $scoreDetails['perfect_bonus_score'],
+                    'total_score' => $scoreDetails['total_score'],
+                    'correct_answers' => $scoreDetails['correct_answers'],
+                    'max_streak' => $scoreDetails['max_streak'],
                     'completed_at' => now(),
                 ]);
 
-                $request->user()->increment('total_score', $totalScore);
+                $request->user()->increment('total_score', $scoreDetails['total_score']);
                 $request->user()->increment('games_played');
 
                 return $session;
@@ -97,11 +116,20 @@ class GameSessionController extends Controller
                 ] : null);
             });
 
-           return response()->json([
-    'success' => true,
-    'data' => $session,
-    'message' => 'Session enregistrée avec succès.',
-], 201);
+            $session->setAttribute('score_breakdown', [
+                'base_score' => $session->base_score,
+                'time_bonus_score' => $session->time_bonus_score,
+                'streak_bonus_score' => $session->streak_bonus_score,
+                'perfect_bonus_score' => $session->perfect_bonus_score,
+                'bonus_score' => $session->bonus_score,
+                'total_score' => $session->total_score,
+            ]);
+
+            return response()->json([
+                'success' => true,
+                'data' => $session,
+                'message' => 'Session enregistrée avec succès.',
+            ], 201);
         } catch (Throwable $exception) {
             return response()->json([
                 'success' => false,
@@ -125,11 +153,11 @@ class GameSessionController extends Controller
             ->limit(20)
             ->get();
 
-       return response()->json([
-    'success' => true,
-    'data' => $sessions,
-    'message' => 'Historique des sessions récupéré.',
-]);
+        return response()->json([
+            'success' => true,
+            'data' => $sessions,
+            'message' => 'Historique des sessions récupéré.',
+        ]);
     }
 
     /**
@@ -149,10 +177,19 @@ class GameSessionController extends Controller
             ], 403);
         }
 
+        $session->setAttribute('score_breakdown', [
+            'base_score' => $session->base_score,
+            'time_bonus_score' => $session->time_bonus_score,
+            'streak_bonus_score' => $session->streak_bonus_score,
+            'perfect_bonus_score' => $session->perfect_bonus_score,
+            'bonus_score' => $session->bonus_score,
+            'total_score' => $session->total_score,
+        ]);
+
         return response()->json([
-    'success' => true,
-    'data' => $session,
-    'message' => 'Détails de la session récupérés.',
-]);
+            'success' => true,
+            'data' => $session,
+            'message' => 'Détails de la session récupérés.',
+        ]);
     }
 }
