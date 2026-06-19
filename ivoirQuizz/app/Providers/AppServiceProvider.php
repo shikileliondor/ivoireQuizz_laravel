@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $limitKey = static fn (Request $request): string => (string) ($request->user()?->id ?: $request->ip());
-        $jsonTooManyAttempts = static fn () => response()->json(['message' => 'Too Many Attempts.'], 429);
+        $jsonTooManyAttempts = static fn () => response()->json(['success' => false, 'message' => 'Trop de tentatives.', 'errors' => (object) []], 429);
 
         RateLimiter::for('api', function (Request $request) use ($limitKey, $jsonTooManyAttempts): Limit {
             return Limit::perMinute(120)->by($limitKey($request))->response($jsonTooManyAttempts);
@@ -41,12 +41,18 @@ class AppServiceProvider extends ServiceProvider
             return Limit::perMinute(10)->by($limitKey($request))->response($jsonTooManyAttempts);
         });
 
+        RateLimiter::for('report-question', function (Request $request) use ($limitKey, $jsonTooManyAttempts): Limit {
+            return Limit::perMinute(5)->by($limitKey($request))->response($jsonTooManyAttempts);
+        });
+
         RateLimiter::for('auth', function (Request $request) use ($limitKey): Limit {
             return Limit::perMinute(5)
                 ->by($limitKey($request))
                 ->response(function () {
                     return response()->json([
+                        'success' => false,
                         'message' => 'Trop de tentatives, réessayez dans 1 minute',
+                        'errors' => (object) [],
                     ], 429);
                 });
         });

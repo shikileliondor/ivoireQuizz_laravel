@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\V1\LeagueController;
 use App\Http\Controllers\Api\V1\LifeController;
 use App\Http\Controllers\Api\V1\PassportController;
 use App\Http\Controllers\Api\V1\ProfileController;
+use App\Http\Controllers\Api\V1\QuestionReportController;
 use App\Http\Controllers\Api\V1\StreakController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +24,13 @@ Route::prefix('v1')->group(function (): void {
         Route::get('/me', [ProfileController::class, 'me'])->name('api.v1.me');
 
         Route::get('/game/map', [GameMapController::class, 'map'])->name('api.v1.game.map');
+        Route::get('/regions', [GameMapController::class, 'regions'])->name('api.v1.regions.index');
         Route::get('/regions/{region}', [GameMapController::class, 'showRegion'])->name('api.v1.regions.show');
         Route::get('/cities/{city}', [GameMapController::class, 'showCity'])->name('api.v1.cities.show');
         Route::get('/levels/{level}', [GameMapController::class, 'showLevel'])->name('api.v1.levels.show');
 
         Route::post('/levels/{level}/start', [GameSessionController::class, 'start'])->middleware('throttle:start-game')->name('api.v1.levels.start');
+        Route::get('/game-sessions/history', [GameSessionController::class, 'history'])->name('api.v1.game-sessions.history');
         Route::get('/game-sessions/{session}', [GameSessionController::class, 'show'])->name('api.v1.game-sessions.show');
         Route::post('/game-sessions/{session}/answer', [GameSessionController::class, 'answer'])->middleware('throttle:quiz-answer')->name('api.v1.game-sessions.answer');
         Route::post('/game-sessions/{session}/finish', [GameSessionController::class, 'finish'])->name('api.v1.game-sessions.finish');
@@ -47,6 +50,8 @@ Route::prefix('v1')->group(function (): void {
         Route::get('/collection/monuments', [CollectionController::class, 'monuments'])->name('api.v1.collection.monuments');
 
         Route::get('/passport', [PassportController::class, 'index'])->name('api.v1.passport');
+
+        Route::post('/questions/{question}/report', [QuestionReportController::class, 'store'])->middleware('throttle:report-question')->name('api.v1.questions.report');
     });
 });
 

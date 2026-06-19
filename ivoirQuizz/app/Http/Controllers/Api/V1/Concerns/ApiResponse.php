@@ -8,11 +8,17 @@ use Throwable;
 
 trait ApiResponse
 {
+    protected function successResponse(mixed $data = null, string $message = 'Succès', int $code = 200): JsonResponse
+    { return response()->json(['success' => true, 'message' => $message, 'data' => $data ?? (object) []], $code); }
+
     protected function success(string $message, mixed $data = null, int $status = 200): JsonResponse
-    { return response()->json(['success' => true, 'message' => $message, 'data' => $data ?? (object) []], $status); }
+    { return $this->successResponse($data, $message, $status); }
+
+    protected function errorResponse(string $message = 'Erreur', array $errors = [], int $code = 400): JsonResponse
+    { return response()->json(['success' => false, 'message' => $message, 'errors' => (object) $errors], $code); }
 
     protected function error(string $message, array $errors = [], int $status = 400): JsonResponse
-    { return response()->json(['success' => false, 'message' => $message, 'errors' => (object) $errors], $status); }
+    { return $this->errorResponse($message, $errors, $status); }
 
     protected function businessError(Throwable $e, string $context = 'api'): JsonResponse
     { Log::warning($context, ['message' => $e->getMessage()]); return $this->error($e->getMessage() ?: 'Erreur métier.', [], 422); }
