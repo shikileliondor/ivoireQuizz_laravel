@@ -1,0 +1,45 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('chests', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->enum('type', ['bronze', 'silver', 'gold']);
+            $table->string('image')->nullable();
+            $table->integer('min_xp')->default(0);
+            $table->integer('max_xp')->default(0);
+            $table->integer('min_coins')->default(0);
+            $table->integer('max_coins')->default(0);
+            $table->integer('min_gems')->default(0);
+            $table->integer('max_gems')->default(0);
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+        });
+
+        Schema::create('user_chests', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('chest_id')->constrained()->cascadeOnDelete();
+            $table->string('source_type')->nullable();
+            $table->unsignedBigInteger('source_id')->nullable();
+            $table->enum('status', ['locked', 'available', 'opened'])->default('locked');
+            $table->timestamp('opened_at')->nullable();
+            $table->timestamps();
+
+            $table->index(['source_type', 'source_id']);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('user_chests');
+        Schema::dropIfExists('chests');
+    }
+};

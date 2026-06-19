@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -24,9 +24,19 @@ class User extends Authenticatable
         'password',
         'google_id',
         'friend_code',
+        'avatar',
         'avatar_id',
+        'current_level',
+        'xp_total',
         'total_score',
+        'coins',
+        'gems',
         'games_played',
+        'games_won',
+        'current_region_id',
+        'current_city_id',
+        'current_game_level_id',
+        'last_login_at',
     ];
 
     /**
@@ -47,8 +57,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'avatar_id' => 'integer',
+        'current_level' => 'integer',
+        'xp_total' => 'integer',
         'total_score' => 'integer',
+        'coins' => 'integer',
+        'gems' => 'integer',
         'games_played' => 'integer',
+        'games_won' => 'integer',
+        'last_login_at' => 'datetime',
     ];
 
     /**
@@ -59,12 +75,35 @@ class User extends Authenticatable
         return $this->hasMany(GameSession::class);
     }
 
-    /**
-     * Get all session answers through the user's game sessions.
-     */
-    public function sessionAnswers(): HasManyThrough
+
+    public function userLives(): HasOne
     {
-        return $this->hasManyThrough(SessionAnswer::class, GameSession::class, 'user_id', 'session_id');
+        return $this->hasOne(UserLife::class);
+    }
+
+    public function userStreaks(): HasOne
+    {
+        return $this->hasOne(UserStreak::class);
+    }
+
+    public function rewardTransactions(): HasMany
+    {
+        return $this->hasMany(RewardTransaction::class);
+    }
+
+    public function userCollectibles(): HasMany
+    {
+        return $this->hasMany(UserCollectible::class);
+    }
+
+    public function userChests(): HasMany
+    {
+        return $this->hasMany(UserChest::class);
+    }
+
+    public function userPassports(): HasMany
+    {
+        return $this->hasMany(UserPassport::class);
     }
 
     /**
