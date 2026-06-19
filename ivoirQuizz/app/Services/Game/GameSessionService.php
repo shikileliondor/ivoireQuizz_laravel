@@ -21,7 +21,7 @@ class GameSessionService
     public function start(User $user, Level $level, string $mode = GameConstants::MODE_LEVEL): GameSession
     {
         if (! in_array($mode, GameConstants::MODES, true)) { throw new InvalidArgumentException('Unsupported game mode.'); }
-        if (! $this->lifeService->canPlay($user)) { throw new NotEnoughLivesException('Not enough lives to start a game.'); }
+        if (! $this->lifeService->canPlay($user)) { Log::warning('Not enough lives start attempt', ['user_id' => $user->id, 'level_id' => $level->id]); throw new NotEnoughLivesException('Not enough lives to start a game.'); }
         if (! $this->progressionService->isLevelUnlocked($user, $level)) { Log::warning('Locked level start attempt', ['user_id' => $user->id, 'level_id' => $level->id]); throw new LevelLockedException('This level is locked.'); }
 
         return DB::transaction(function () use ($user, $level, $mode): GameSession {
@@ -38,6 +38,14 @@ class GameSessionService
                 'started_at' => now(),
             ]);
         });
+    }
+
+    public function assertSessionOwner(User $user, GameSession $session): void
+    {
+        if ($session->user_id !== $user->id) {
+            Log::warning('Invalid game session owner access', ['user_id' => $user->id, 'owner_id' => $session->user_id, 'session_id' => $session->id]);
+            throw new InvalidGameSessionException('The game session does not belong to this user.');
+        }
     }
 
     public function getQuestionsForSession(GameSession $session): Collection
