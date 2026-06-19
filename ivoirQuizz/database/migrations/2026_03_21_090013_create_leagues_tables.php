@@ -22,8 +22,8 @@ return new class extends Migration
         Schema::create('league_seasons', function (Blueprint $table) {
             $table->id();
             $table->foreignId('league_id')->constrained()->cascadeOnDelete();
-            $table->timestamp('starts_at');
-            $table->timestamp('ends_at');
+            $table->dateTime('starts_at');
+            $table->dateTime('ends_at');
             $table->enum('status', ['scheduled', 'active', 'completed'])->default('scheduled');
             $table->timestamps();
         });
