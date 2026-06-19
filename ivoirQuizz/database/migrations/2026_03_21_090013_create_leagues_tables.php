@@ -1,0 +1,51 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('leagues', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->integer('rank_order');
+            $table->string('icon')->nullable();
+            $table->string('color')->nullable();
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+        });
+
+        Schema::create('league_seasons', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('league_id')->constrained()->cascadeOnDelete();
+            $table->timestamp('starts_at');
+            $table->timestamp('ends_at');
+            $table->enum('status', ['scheduled', 'active', 'completed'])->default('scheduled');
+            $table->timestamps();
+        });
+
+        Schema::create('league_members', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('league_season_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->integer('xp_earned')->default(0);
+            $table->integer('rank')->nullable();
+            $table->boolean('promoted')->default(false);
+            $table->boolean('demoted')->default(false);
+            $table->timestamps();
+
+            $table->unique(['league_season_id', 'user_id']);
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('league_members');
+        Schema::dropIfExists('league_seasons');
+        Schema::dropIfExists('leagues');
+    }
+};

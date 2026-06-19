@@ -6,18 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class League extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
 
     protected $casts = [
+        'rank_order' => 'integer',
         'is_active' => 'boolean',
     ];
 
-    public function questions(): HasMany
+    public function seasons(): HasMany
     {
-        return $this->hasMany(Question::class);
+        return $this->hasMany(LeagueSeason::class);
     }
 }
