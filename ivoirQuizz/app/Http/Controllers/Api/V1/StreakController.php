@@ -1,0 +1,2 @@
+<?php
+namespace App\Http\Controllers\Api\V1; use App\Http\Controllers\Controller; use App\Http\Controllers\Api\V1\Concerns\ApiResponse; use App\Http\Resources\Api\V1\UserStreakResource; use App\Models\UserStreak; use Illuminate\Http\Request; class StreakController extends Controller{use ApiResponse; public function show(Request $r){$s=UserStreak::firstOrCreate(['user_id'=>$r->user()->id],['current_streak'=>0,'longest_streak'=>0,'streak_freezes'=>0]); return $this->success('Série utilisateur.', new UserStreakResource($s));}}

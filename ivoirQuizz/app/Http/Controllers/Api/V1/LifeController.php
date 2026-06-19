@@ -1,0 +1,2 @@
+<?php
+namespace App\Http\Controllers\Api\V1; use App\Http\Controllers\Controller; use App\Http\Controllers\Api\V1\Concerns\ApiResponse; use App\Http\Resources\Api\V1\UserLifeResource; use App\Services\Game\LifeService; use Illuminate\Http\Request; class LifeController extends Controller{use ApiResponse; public function index(Request $r, LifeService $s){return $this->success('Vies utilisateur.', new UserLifeResource($s->regenerate($r->user())));}}
