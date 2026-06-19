@@ -1,0 +1,2 @@
+<?php
+namespace App\Http\Controllers\Api\V1; use App\Http\Controllers\Controller; use App\Http\Controllers\Api\V1\Concerns\ApiResponse; use App\Http\Resources\Api\V1\UserPassportResource; use Illuminate\Http\Request; class PassportController extends Controller{use ApiResponse; public function index(Request $r){return $this->success('Passeport utilisateur.', UserPassportResource::collection($r->user()->userPassports()->with('region')->get()));}}
