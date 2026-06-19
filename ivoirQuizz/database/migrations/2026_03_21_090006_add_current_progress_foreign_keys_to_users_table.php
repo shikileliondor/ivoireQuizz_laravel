@@ -1,3 +1,26 @@
 <?php
-use Illuminate\Database\Migrations\Migration; use Illuminate\Database\Schema\Blueprint; use Illuminate\Support\Facades\Schema;
-return new class extends Migration { public function up(): void { Schema::table('users', function (Blueprint $table) { $table->foreign('current_region_id')->references('id')->on('regions')->nullOnDelete(); $table->foreign('current_city_id')->references('id')->on('cities')->nullOnDelete(); $table->foreign('current_game_level_id')->references('id')->on('levels')->nullOnDelete(); }); } public function down(): void { Schema::table('users', function (Blueprint $table) { $table->dropForeign(['current_region_id']); $table->dropForeign(['current_city_id']); $table->dropForeign(['current_game_level_id']); }); } };
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('current_region_id')->references('id')->on('regions')->nullOnDelete();
+            $table->foreign('current_city_id')->references('id')->on('cities')->nullOnDelete();
+            $table->foreign('current_game_level_id')->references('id')->on('levels')->nullOnDelete();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['current_region_id']);
+            $table->dropForeign(['current_city_id']);
+            $table->dropForeign(['current_game_level_id']);
+        });
+    }
+};
