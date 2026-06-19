@@ -10,21 +10,32 @@ use App\Models\Answer;
 use App\Models\GameSession;
 use App\Models\GameSessionAnswer;
 use App\Models\Question;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class AnswerQuestionService
 {
+    public function submitAnswerForUser(User $user, GameSession $session, Question $question, ?Answer $answer, int $responseTime): GameSessionAnswer
+    {
+        if ($session->user_id !== $user->id) {
+            Log::warning('Invalid game session owner answer attempt', ['user_id' => $user->id, 'owner_id' => $session->user_id, 'session_id' => $session->id]);
+            throw new InvalidGameSessionException('Cannot answer in this session.');
+        }
+
+        return $this->submitAnswer($session, $question, $answer, $responseTime);
+    }
+
     public function submitAnswer(GameSession $session, Question $question, ?Answer $answer, int $responseTime): GameSessionAnswer
     {
         return DB::transaction(function () use ($session, $question, $answer, $responseTime): GameSessionAnswer {
             $session = GameSession::query()->lockForUpdate()->findOrFail($session->id);
-            if ($session->status !== GameConstants::STATUS_STARTED || $session->started_at?->lt(now()->subHours(GameConstants::MAX_SESSION_HOURS))) { throw new InvalidGameSessionException('Cannot answer in this session.'); }
+            if ($session->status !== GameConstants::STATUS_STARTED || $session->started_at?->lt(now()->subHours(GameConstants::MAX_SESSION_HOURS))) { Log::warning('Invalid game session answer attempt', ['session_id' => $session->id, 'status' => $session->status]); throw new InvalidGameSessionException('Cannot answer in this session.'); }
             if ($question->level_id !== $session->level_id) { Log::warning('Question outside session level', ['session_id' => $session->id, 'question_id' => $question->id]); throw new InvalidAnswerException('Question does not belong to this session.'); }
-            if ($responseTime < 0 || $responseTime > $question->time_limit) { throw new InvalidAnswerException('Invalid response time.'); }
-            if ($answer && $answer->question_id !== $question->id) { throw new InvalidAnswerException('Answer does not belong to this question.'); }
+            if ($responseTime < 0 || $responseTime > $question->time_limit) { Log::warning('Suspicious answer response time', ['session_id' => $session->id, 'question_id' => $question->id, 'response_time' => $responseTime, 'time_limit' => $question->time_limit]); throw new InvalidAnswerException('Invalid response time.'); }
+            if ($answer && $answer->question_id !== $question->id) { Log::warning('Answer outside question attempt', ['session_id' => $session->id, 'question_id' => $question->id, 'answer_id' => $answer->id]); throw new InvalidAnswerException('Answer does not belong to this question.'); }
             if (GameSessionAnswer::query()->where('game_session_id', $session->id)->where('question_id', $question->id)->exists()) { Log::warning('Duplicate question answer attempt', ['session_id' => $session->id, 'question_id' => $question->id]); throw new QuestionAlreadyAnsweredException('Question already answered.'); }
-            if ($session->gameSessionAnswers()->count() >= $session->total_questions) { throw new InvalidGameSessionException('Too many answers for this session.'); }
+            if ($session->gameSessionAnswers()->count() >= $session->total_questions) { Log::warning('Suspicious extra answer attempt', ['session_id' => $session->id, 'question_id' => $question->id, 'total_questions' => $session->total_questions]); throw new InvalidGameSessionException('Too many answers for this session.'); }
 
             $isCorrect = (bool) ($answer?->is_correct ?? false);
             $points = $isCorrect ? $this->points($question, $responseTime) : 0;

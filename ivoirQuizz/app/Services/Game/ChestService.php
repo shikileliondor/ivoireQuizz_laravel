@@ -24,7 +24,8 @@ class ChestService
     {
         return DB::transaction(function () use ($user, $userChest): array {
             $userChest = UserChest::query()->with('chest')->lockForUpdate()->findOrFail($userChest->id);
-            if ($userChest->user_id !== $user->id || $userChest->status === GameConstants::CHEST_OPENED) { Log::warning('Invalid chest open attempt', ['user_id' => $user->id, 'user_chest_id' => $userChest->id]); throw new ChestAlreadyOpenedException('This chest cannot be opened.'); }
+            if ($userChest->user_id !== $user->id) { Log::warning('Invalid chest owner open attempt', ['user_id' => $user->id, 'owner_id' => $userChest->user_id, 'user_chest_id' => $userChest->id]); throw new ChestAlreadyOpenedException('This chest cannot be opened.'); }
+            if ($userChest->status === GameConstants::CHEST_OPENED) { Log::warning('Already opened chest attempt', ['user_id' => $user->id, 'user_chest_id' => $userChest->id]); throw new ChestAlreadyOpenedException('This chest cannot be opened.'); }
             $chest = $userChest->chest;
             $xp = random_int($chest->min_xp, max($chest->min_xp, $chest->max_xp));
             $coins = random_int($chest->min_coins, max($chest->min_coins, $chest->max_coins));
