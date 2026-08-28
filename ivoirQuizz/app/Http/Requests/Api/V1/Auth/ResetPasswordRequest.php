@@ -3,24 +3,21 @@
 namespace App\Http\Requests\Api\V1\Auth;
 
 use App\Http\Requests\Api\V1\ApiRequest;
+use Illuminate\Validation\Rules\Password;
 
-class LoginRequest extends ApiRequest
+class ResetPasswordRequest extends ApiRequest
 {
     public function authorize(): bool
     {
         return true;
     }
 
-    protected function prepareForValidation(): void
-    {
-        $this->merge(['email' => mb_strtolower(trim((string) $this->input('email')))]);
-    }
-
     public function rules(): array
     {
         return [
             'email' => ['required', 'string', 'email:rfc', 'max:191'],
-            'password' => ['required', 'string'],
+            'token' => ['required', 'string'],
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->numbers()],
         ];
     }
 }

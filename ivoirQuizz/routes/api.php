@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AccountController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\ChestController;
 use App\Http\Controllers\Api\V1\CollectionController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\Api\V1\GameSessionController;
 use App\Http\Controllers\Api\V1\LeagueController;
 use App\Http\Controllers\Api\V1\LifeController;
 use App\Http\Controllers\Api\V1\PassportController;
+use App\Http\Controllers\Api\V1\PasswordController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\V1\QuestionReportController;
 use App\Http\Controllers\Api\V1\StreakController;
@@ -19,9 +21,18 @@ Route::prefix('v1')->group(function (): void {
         Route::post('/auth/login', [AuthController::class, 'login'])->name('api.v1.auth.login');
     });
 
-    Route::middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
+    Route::middleware('throttle:password-reset')->group(function (): void {
+        Route::post('/auth/forgot-password', [PasswordController::class, 'forgot'])->name('api.v1.auth.password.forgot');
+        Route::post('/auth/reset-password', [PasswordController::class, 'reset'])->name('api.v1.auth.password.reset');
+    });
+
+    Route::middleware(['auth:sanctum', 'user.active', 'throttle:api'])->group(function (): void {
         Route::post('/auth/logout', [AuthController::class, 'logout'])->name('api.v1.auth.logout');
+        Route::post('/auth/logout-all', [AuthController::class, 'logoutAll'])->name('api.v1.auth.logout-all');
         Route::get('/me', [ProfileController::class, 'me'])->name('api.v1.me');
+        Route::put('/profile', [ProfileController::class, 'update'])->name('api.v1.profile.update');
+        Route::put('/password', [PasswordController::class, 'update'])->middleware('throttle:auth')->name('api.v1.password.update');
+        Route::delete('/account', [AccountController::class, 'destroy'])->middleware('throttle:auth')->name('api.v1.account.destroy');
 
         Route::get('/game/map', [GameMapController::class, 'map'])->name('api.v1.game.map');
         Route::get('/regions', [GameMapController::class, 'regions'])->name('api.v1.regions.index');

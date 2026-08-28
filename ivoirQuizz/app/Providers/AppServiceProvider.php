@@ -57,6 +57,15 @@ class AppServiceProvider extends ServiceProvider
                 });
         });
 
+        RateLimiter::for('password-reset', function (Request $request) use ($jsonTooManyAttempts): array {
+            $email = mb_strtolower((string) $request->input('email'));
+
+            return [
+                Limit::perMinute(3)->by($email.'|'.$request->ip())->response($jsonTooManyAttempts),
+                Limit::perHour(20)->by($request->ip())->response($jsonTooManyAttempts),
+            ];
+        });
+
         RateLimiter::for('add-friend', function (Request $request) use ($limitKey, $jsonTooManyAttempts): Limit {
             return Limit::perMinute(10)->by($limitKey($request))->response($jsonTooManyAttempts);
         });

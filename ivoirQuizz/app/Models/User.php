@@ -2,16 +2,19 @@
 
 namespace App\Models;
 
+use App\Enums\UserStatus;
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,11 +23,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
+        'phone',
         'password',
         'google_id',
         'friend_code',
         'avatar',
+        'city',
+        'bio',
         'avatar_id',
         'current_level',
         'xp_total',
@@ -37,6 +44,8 @@ class User extends Authenticatable
         'current_city_id',
         'current_game_level_id',
         'last_login_at',
+        'last_activity_date',
+        'status',
     ];
 
     /**
@@ -65,6 +74,9 @@ class User extends Authenticatable
         'games_played' => 'integer',
         'games_won' => 'integer',
         'last_login_at' => 'datetime',
+        'email_verified_at' => 'datetime',
+        'last_activity_date' => 'date',
+        'status' => UserStatus::class,
     ];
 
     /**
@@ -74,7 +86,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(GameSession::class);
     }
-
 
     public function userLives(): HasOne
     {
@@ -156,5 +167,10 @@ class User extends Authenticatable
         } while (self::where('friend_code', $code)->exists());
 
         return $code;
+    }
+
+    public function sendPasswordResetNotification($token): void
+    {
+        $this->notify(new ResetPasswordNotification($token));
     }
 }

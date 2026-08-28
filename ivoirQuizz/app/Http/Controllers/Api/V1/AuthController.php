@@ -1,4 +1,56 @@
 <?php
+
 namespace App\Http\Controllers\Api\V1;
-use App\Http\Controllers\Controller; use App\Http\Controllers\Api\V1\Concerns\ApiResponse; use App\Http\Requests\Api\V1\Auth\{LoginRequest,RegisterRequest}; use App\Http\Resources\Api\V1\UserResource; use App\Models\{User,UserLife,UserStreak}; use App\Services\Game\ProgressionService; use Illuminate\Http\Request; use Illuminate\Support\Facades\{Hash,Log};
-class AuthController extends Controller { use ApiResponse; public function register(RegisterRequest $request, ProgressionService $progression){ $data=$request->validated(); $user=User::create(['name'=>$data['name'],'email'=>$data['email'],'phone'=>$data['phone']??null,'password'=>Hash::make($data['password']),'friend_code'=>User::generateFriendCode()]); $progression->initializeForUser($user); UserLife::firstOrCreate(['user_id'=>$user->id],['lives'=>5,'max_lives'=>5]); UserStreak::firstOrCreate(['user_id'=>$user->id],['current_streak'=>0,'longest_streak'=>0,'streak_freezes'=>0]); return $this->success('Inscription réussie.',['user'=>new UserResource($user->refresh()),'token'=>$user->createToken('mobile')->plainTextToken],201);} public function login(LoginRequest $request){ $data=$request->validated(); $user=User::where('email',$data['email'])->first(); if(! $user || ! Hash::check($data['password'],$user->password)){ Log::warning('Invalid login attempt',['email'=>$data['email']]); return $this->error('Identifiants invalides.',[],422);} $user->forceFill(['last_login_at'=>now()])->save(); return $this->success('Connexion réussie.',['user'=>new UserResource($user),'token'=>$user->createToken('mobile')->plainTextToken]);} public function logout(Request $request){ $request->user()->currentAccessToken()?->delete(); return $this->success('Déconnexion réussie.'); }}
+
+use App\Http\Controllers\Api\V1\Concerns\ApiResponse;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\V1\Auth\LoginRequest;
+use App\Http\Requests\Api\V1\Auth\RegisterRequest;
+use App\Http\Resources\Api\V1\UserResource;
+use App\Services\Auth\AuthService;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+class AuthController extends Controller
+{
+    use ApiResponse;
+
+    public function register(RegisterRequest $request, AuthService $service): JsonResponse
+    {
+        $result = $service->register($request->validated());
+
+        return $this->success('Inscription réussie.', [
+            'user' => new UserResource($result['user']),
+            'token' => $result['token'],
+            'token_type' => 'Bearer',
+        ], 201);
+    }
+
+    public function login(LoginRequest $request, AuthService $service): JsonResponse
+    {
+        $result = $service->login(
+            $request->validated('email'),
+            $request->validated('password'),
+        );
+
+        return $this->success('Connexion réussie.', [
+            'user' => new UserResource($result['user']),
+            'token' => $result['token'],
+            'token_type' => 'Bearer',
+        ]);
+    }
+
+    public function logout(Request $request): JsonResponse
+    {
+        $request->user()->currentAccessToken()?->delete();
+
+        return $this->success('Déconnexion réussie.');
+    }
+
+    public function logoutAll(Request $request): JsonResponse
+    {
+        $request->user()->tokens()->delete();
+
+        return $this->success('Déconnexion effectuée sur tous les appareils.');
+    }
+}
