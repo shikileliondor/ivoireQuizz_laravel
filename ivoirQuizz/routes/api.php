@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController as LegacyAuthController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\FriendChallengeController;
+use App\Http\Controllers\Api\FriendshipController;
+use App\Http\Controllers\Api\GameSessionController as LegacyGameSessionController;
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\LeaderboardController;
+use App\Http\Controllers\Api\ProfileController as LegacyProfileController;
+use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\V1\AccountController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\ChestController;
@@ -14,6 +23,34 @@ use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\V1\QuestionReportController;
 use App\Http\Controllers\Api\V1\StreakController;
 use Illuminate\Support\Facades\Route;
+
+// Compatibility API used by the Flutter application.
+Route::middleware('throttle:auth')->group(function (): void {
+    Route::post('/auth/register', [LegacyAuthController::class, 'register']);
+    Route::post('/auth/login', [LegacyAuthController::class, 'login']);
+});
+
+Route::middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
+    Route::get('/auth/me', [LegacyAuthController::class, 'me']);
+    Route::post('/auth/logout', [LegacyAuthController::class, 'logout']);
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/quiz/questions', [QuizController::class, 'getQuestions']);
+    Route::post('/sessions', [LegacyGameSessionController::class, 'store']);
+    Route::get('/sessions', [LegacyGameSessionController::class, 'index']);
+    Route::get('/profile/stats', [LegacyProfileController::class, 'stats']);
+    Route::get('/leaderboard/global', [LeaderboardController::class, 'global']);
+    Route::get('/leaderboard/friends', [LeaderboardController::class, 'friends']);
+    Route::get('/friends', [FriendshipController::class, 'index']);
+    Route::get('/friends/requests', [FriendshipController::class, 'requests']);
+    Route::post('/friends/add', [FriendshipController::class, 'add']);
+    Route::put('/friends/{id}/accept', [FriendshipController::class, 'accept']);
+    Route::delete('/friends/{id}', [FriendshipController::class, 'destroy']);
+    Route::get('/challenges', [FriendChallengeController::class, 'index']);
+    Route::post('/challenges', [FriendChallengeController::class, 'store'])->middleware('throttle:start-game');
+    Route::get('/challenges/{code}', [FriendChallengeController::class, 'show']);
+    Route::post('/challenges/{code}/submit', [FriendChallengeController::class, 'submit'])->middleware('throttle:quiz-answer');
+});
 
 Route::prefix('v1')->group(function (): void {
     Route::middleware('throttle:auth')->group(function (): void {

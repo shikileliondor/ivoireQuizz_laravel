@@ -39,44 +39,24 @@ class ProfileController extends Controller
 
         $sessions = GameSession::query()
             ->where('user_id', $user->id)
-            ->with('category:id,name')
-            ->get();
-
-        $categoryStats = $sessions
-            ->groupBy('category_id')
-            ->map(function ($categorySessions, $categoryId) {
-                $count = $categorySessions->count();
-                $totalCorrect = $categorySessions->sum('correct_answers');
-                $category = $categorySessions->first()?->category;
-
-                return [
-                    'category_id' => (int) $categoryId,
-                    'category_name' => $category?->name,
-                    'sessions_played' => $count,
-                    'average_score' => round((float) $categorySessions->avg('total_score'), 2),
-                    'best_score' => (int) $categorySessions->max('total_score'),
-                    'success_rate' => $count > 0
-                        ? round(($totalCorrect / ($count * 10)) * 100, 2)
-                        : 0,
-                ];
-            })
-            ->values();
+            ->where('status', 'completed')
+            ->get(['score', 'correct_answers', 'total_questions']);
 
         $totalGames = $sessions->count();
         $globalCorrectAnswers = $sessions->sum('correct_answers');
+        $totalQuestions = $sessions->sum('total_questions');
+        $successRate = $totalQuestions > 0 ? round(($globalCorrectAnswers / $totalQuestions) * 100, 2) : 0;
+        $bestScore = (int) $sessions->max('score');
+        $cumulativeScore = (int) $sessions->sum('score');
 
         return response()->json([
             'success' => true,
             'data' => [
-                'global' => [
-                    'total_games_played' => $totalGames,
-                    'best_session_score' => (int) $sessions->max('total_score'),
-                    'global_success_rate' => $totalGames > 0
-                        ? round(($globalCorrectAnswers / ($totalGames * 10)) * 100, 2)
-                        : 0,
-                    'total_cumulative_score' => (int) $sessions->sum('total_score'),
-                ],
-                'by_category' => $categoryStats,
+                'total_games_played' => $totalGames,
+                'best_score' => $bestScore,
+                'success_rate' => $successRate,
+                'total_score' => $cumulativeScore,
+                'by_category' => [],
             ],
             'message' => 'Statistiques du profil récupérées.',
         ]);

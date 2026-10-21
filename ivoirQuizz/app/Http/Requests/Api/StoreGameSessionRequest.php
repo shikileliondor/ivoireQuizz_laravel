@@ -28,7 +28,7 @@ class StoreGameSessionRequest extends FormRequest
             'answers' => ['required', 'array', 'size:10'],
             'answers.*.question_id' => ['required', 'exists:questions,id'],
             'answers.*.selected_option_id' => ['nullable', 'exists:options,id'],
-            'answers.*.response_time_seconds' => ['required', 'integer', 'min:0', 'max:20'],
+            'answers.*.response_time_seconds' => ['required', 'integer', 'min:0', 'max:30'],
         ];
     }
 
