@@ -4,8 +4,16 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Api\V1\Concerns\ApiResponse;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Api\V1\{CityResource, LevelResource, RegionResource};
-use App\Models\{City, Level, Region, UserCityProgress, UserLevelProgress, UserRegionProgress};
+use App\Http\Resources\Api\V1\CityResource;
+use App\Http\Resources\Api\V1\LevelResource;
+use App\Http\Resources\Api\V1\RegionResource;
+use App\Models\City;
+use App\Models\Level;
+use App\Models\Region;
+use App\Models\UserCityProgress;
+use App\Models\UserLevelProgress;
+use App\Models\UserRegionProgress;
+use App\Services\Game\ProgressionService;
 use Illuminate\Http\Request;
 
 class GameMapController extends Controller
@@ -14,15 +22,18 @@ class GameMapController extends Controller
 
     private function attach($items, string $type, $user): void
     {
-        if ($items->isEmpty()) { return; }
+        if ($items->isEmpty()) {
+            return;
+        }
         $cls = ['region' => UserRegionProgress::class, 'city' => UserCityProgress::class, 'level' => UserLevelProgress::class][$type];
         $key = $type.'_id';
         $progress = $cls::where('user_id', $user->id)->whereIn($key, $items->pluck('id'))->get()->keyBy($key);
         $items->each(fn ($item) => $item->setRelation('progress', $progress->get($item->id)));
     }
 
-    public function map(Request $request)
+    public function map(Request $request, ProgressionService $progression)
     {
+        $progression->initializeForUser($request->user());
         $regions = Region::with(['cities' => fn ($q) => $q->where('is_active', true)->orderBy('order'), 'cities.levels' => fn ($q) => $q->where('is_active', true)->orderBy('order')])->where('is_active', true)->orderBy('order')->get();
         $this->attach($regions, 'region', $request->user());
         $cities = $regions->pluck('cities')->flatten();
@@ -37,6 +48,7 @@ class GameMapController extends Controller
     {
         $regions = Region::where('is_active', true)->orderBy('order')->get();
         $this->attach($regions, 'region', $request->user());
+
         return $this->successResponse(RegionResource::collection($regions), 'Régions.');
     }
 
@@ -46,6 +58,7 @@ class GameMapController extends Controller
         $this->attach(collect([$region]), 'region', $request->user());
         $this->attach($region->cities, 'city', $request->user());
         $this->attach($region->cities->pluck('levels')->flatten(), 'level', $request->user());
+
         return $this->successResponse(new RegionResource($region), 'Région.');
     }
 
@@ -54,12 +67,14 @@ class GameMapController extends Controller
         $city->load(['levels' => fn ($q) => $q->where('is_active', true)->orderBy('order')]);
         $this->attach(collect([$city]), 'city', $request->user());
         $this->attach($city->levels, 'level', $request->user());
+
         return $this->successResponse(new CityResource($city), 'Ville.');
     }
 
     public function showLevel(Request $request, Level $level)
     {
         $this->attach(collect([$level]), 'level', $request->user());
+
         return $this->successResponse(new LevelResource($level), 'Niveau.');
     }
 }

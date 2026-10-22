@@ -22,6 +22,12 @@ class CampaignSeeder extends Seeder
                 'city_slug' => 'aboisso',
                 'file' => database_path('seeders/Campaigns/data/aboisso_questions.json'),
             ],
+            [
+                'key' => 'yopougon',
+                'region_slug' => 'abidjan',
+                'city_slug' => 'yopougon',
+                'file' => database_path('seeders/Campaigns/data/yopougon_questions.json'),
+            ],
         ];
 
         foreach ($campaigns as $campaign) {

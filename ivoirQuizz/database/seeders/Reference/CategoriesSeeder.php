@@ -22,6 +22,7 @@ class CategoriesSeeder extends Seeder
         'education' => ['name' => "\u{00C9}ducation"],
         'musique' => ['name' => 'Musique'],
         'patrimoine' => ['name' => 'Patrimoine'],
+        'infrastructures' => ['name' => 'Infrastructures'],
     ];
 
     public function run(): void

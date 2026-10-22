@@ -10,6 +10,8 @@ class RegionsSeeder extends Seeder
 {
     public function run(): void
     {
+        $visibleSlugs = ['abidjan', 'poro', 'sud-comoe'];
+
         foreach (['Abidjan', 'Yamoussoukro', 'Bouaké', 'Poro', 'Man', 'San Pedro', 'Sud-Comoé'] as $index => $name) {
             $slug = Str::slug($name);
             $region = Region::withTrashed()->where('slug', $slug)->first();
@@ -28,7 +30,7 @@ class RegionsSeeder extends Seeder
                     'name' => $name,
                     'slug' => $slug,
                     'order' => $index + 1,
-                    'is_active' => true,
+                    'is_active' => in_array($slug, $visibleSlugs, true),
                 ])->save();
 
                 continue;
@@ -38,8 +40,10 @@ class RegionsSeeder extends Seeder
                 'name' => $name,
                 'slug' => $slug,
                 'order' => $index + 1,
-                'is_active' => true,
+                'is_active' => in_array($slug, $visibleSlugs, true),
             ]);
         }
+
+        Region::query()->whereNotIn('slug', $visibleSlugs)->update(['is_active' => false]);
     }
 }

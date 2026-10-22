@@ -15,13 +15,13 @@ class CampaignImporterTest extends TestCase
 
     public function test_both_campaign_banks_have_fifty_questions_with_expected_points_and_one_correct_answer(): void
     {
-        foreach (['korhogo', 'aboisso'] as $city) {
+        foreach (['korhogo', 'aboisso', 'yopougon'] as $city) {
             $bank = $this->bank($city);
             $this->assertCount(50, $bank);
             (new CampaignImporter)->validateBank($bank, $city, [
                 'histoire', 'geographie', 'gastronomie', 'sport', 'culture', 'monuments',
                 'personnalites', 'agriculture', 'economie', 'energie', 'artisanat', 'education',
-                'musique', 'patrimoine',
+                'musique', 'patrimoine', 'infrastructures',
             ]);
 
             foreach ($bank as $index => $question) {
@@ -37,13 +37,13 @@ class CampaignImporterTest extends TestCase
         $bank[1]['source_key'] = $bank[0]['source_key'];
 
         $this->expectException(InvalidArgumentException::class);
-        (new CampaignImporter)->validateBank($bank, 'korhogo', ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie']);
+        (new CampaignImporter)->validateBank($bank, 'korhogo', ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie', 'infrastructures']);
     }
 
     public function test_duplicate_numbers_questions_option_ids_and_multiple_correct_answers_are_rejected(): void
     {
         $importer = new CampaignImporter;
-        $categories = ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie'];
+        $categories = ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie', 'infrastructures'];
 
         foreach ([
             function (array &$bank): void {
@@ -78,7 +78,7 @@ class CampaignImporterTest extends TestCase
     public function test_invalid_categories_points_and_answer_count_are_rejected(): void
     {
         $importer = new CampaignImporter;
-        $categories = ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie'];
+        $categories = ['geographie', 'histoire', 'artisanat', 'culture', 'patrimoine', 'musique', 'agriculture', 'education', 'economie', 'gastronomie', 'sport', 'monuments', 'personnalites', 'energie', 'infrastructures'];
 
         $bank = $this->bank('korhogo');
         $bank[0]['category'] = 'missing-category';

@@ -1,0 +1,1502 @@
+[
+    {
+        "number": 1,
+        "source_key": "yopougon.q.09dd9ce29f6a497e974b8247951eb903",
+        "category": "geographie",
+        "question": "Dans quelle partie de l’agglomération d’Abidjan se trouve Yopougon ?",
+        "explanation": "Yopougon se situe à l’ouest de l’agglomération d’Abidjan.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_2b062f148a28",
+                "text": "À l’ouest",
+                "correct": true
+            },
+            {
+                "source_key": "opt_326993f6613f",
+                "text": "À l’est, au-delà de Bingerville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_77f17949609c",
+                "text": "Au nord de Bouaké",
+                "correct": false
+            },
+            {
+                "source_key": "opt_899be73f1f80",
+                "text": "Dans le District des Savanes",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 2,
+        "source_key": "yopougon.q.01618f85af2f401a9635e70ef519b754",
+        "category": "geographie",
+        "question": "Quelle commune est citée à l’est de Yopougon dans les présentations géographiques du District d’Abidjan ?",
+        "explanation": "Attécoubé figure parmi les limites orientales de Yopougon.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_e156f169141e",
+                "text": "Attécoubé",
+                "correct": true
+            },
+            {
+                "source_key": "opt_bef625f932ee",
+                "text": "Cocody",
+                "correct": false
+            },
+            {
+                "source_key": "opt_e9895f19cfca",
+                "text": "Bingerville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_344eadf3df11",
+                "text": "Port-Bouët",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 3,
+        "source_key": "yopougon.q.fdc30d0aabd943fe8d2b4274f7904539",
+        "category": "geographie",
+        "question": "Quelle ville se trouve à l’ouest de Yopougon ?",
+        "explanation": "Songon est située à l’ouest de Yopougon.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_bf9fe7687851",
+                "text": "Songon",
+                "correct": true
+            },
+            {
+                "source_key": "opt_d8d6ab746c9b",
+                "text": "Grand-Bassam",
+                "correct": false
+            },
+            {
+                "source_key": "opt_40d013e403bf",
+                "text": "Dabou-centre uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_bfc7ada4feef",
+                "text": "Adzopé",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 4,
+        "source_key": "yopougon.q.5170bc8966e048449af8383febda8695",
+        "category": "geographie",
+        "question": "Quelles localités sont citées au nord de Yopougon dans la présentation du District autonome d’Abidjan ?",
+        "explanation": "La présentation géographique du District cite Anyama et Abobo au nord.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_1e359ed64e49",
+                "text": "Anyama et Abobo",
+                "correct": true
+            },
+            {
+                "source_key": "opt_1070ae42640b",
+                "text": "Cocody et Bingerville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_800ce2643849",
+                "text": "Marcory et Treichville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_0514b51a8b0f",
+                "text": "Grand-Bassam et Bonoua",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 5,
+        "source_key": "yopougon.q.ac5623c634e04b4eab7dc6fc2f50e2a4",
+        "category": "geographie",
+        "question": "Quel plan d’eau est associé au paysage de Yopougon ?",
+        "explanation": "La lagune Ébrié fait partie des éléments géographiques associés à Yopougon.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_7e92cd0b418c",
+                "text": "La lagune Ébrié",
+                "correct": true
+            },
+            {
+                "source_key": "opt_dc13749541c2",
+                "text": "Le lac Kossou",
+                "correct": false
+            },
+            {
+                "source_key": "opt_be7e5ef433eb",
+                "text": "Le lac de Buyo",
+                "correct": false
+            },
+            {
+                "source_key": "opt_15a27e1a2ca5",
+                "text": "Le fleuve Comoé uniquement",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 6,
+        "source_key": "yopougon.q.c8cfa53dd2454487a166386fc450c309",
+        "category": "geographie",
+        "question": "Quel surnom populaire est utilisé pour Yopougon ?",
+        "explanation": "Yop City est un surnom populaire de Yopougon.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_14d5d83c63b6",
+                "text": "Yop City",
+                "correct": true
+            },
+            {
+                "source_key": "opt_579611c91aed",
+                "text": "Babi Nord",
+                "correct": false
+            },
+            {
+                "source_key": "opt_4591ae9d2784",
+                "text": "La Ville aux mille collines",
+                "correct": false
+            },
+            {
+                "source_key": "opt_7bdf7b63f550",
+                "text": "Petit Paris",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 7,
+        "source_key": "yopougon.q.7a5ea1b4482948218f2a4da910735ffa",
+        "category": "geographie",
+        "question": "Yopougon est une commune de quel ensemble administratif ?",
+        "explanation": "Yopougon fait partie du District autonome d’Abidjan.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_4f2b4db1215e",
+                "text": "District autonome d’Abidjan",
+                "correct": true
+            },
+            {
+                "source_key": "opt_4d46c77eebdf",
+                "text": "District des Savanes",
+                "correct": false
+            },
+            {
+                "source_key": "opt_ffcc681ed1bc",
+                "text": "Région du Gôh",
+                "correct": false
+            },
+            {
+                "source_key": "opt_16ec4afcf54d",
+                "text": "District de Yamoussoukro",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 8,
+        "source_key": "yopougon.q.02ed638f901240aa8ac5b79f1e885f36",
+        "category": "geographie",
+        "question": "Quelle description correspond à Yopougon ?",
+        "explanation": "Yopougon est l’une des communes de l’agglomération d’Abidjan.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_10781633dff4",
+                "text": "Une commune d’Abidjan",
+                "correct": true
+            },
+            {
+                "source_key": "opt_80991acbb11b",
+                "text": "Une commune de San Pedro",
+                "correct": false
+            },
+            {
+                "source_key": "opt_6ce44a2d4e45",
+                "text": "Une ville de la région du Poro",
+                "correct": false
+            },
+            {
+                "source_key": "opt_d80763ef9ccc",
+                "text": "Une île du lac Kossou",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 9,
+        "source_key": "yopougon.q.c1f0aef4509042cb9d44b1a20f88a524",
+        "category": "geographie",
+        "question": "Quel territoire est cité à l’ouest de Yopougon dans les descriptions du District ?",
+        "explanation": "Les descriptions géographiques situent Songon à l’ouest de Yopougon.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_9122804ac19b",
+                "text": "Songon",
+                "correct": true
+            },
+            {
+                "source_key": "opt_69ef5dddb5db",
+                "text": "Cocody",
+                "correct": false
+            },
+            {
+                "source_key": "opt_22eec0ea1b7b",
+                "text": "Treichville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b83a54b89c45",
+                "text": "Bingerville",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 10,
+        "source_key": "yopougon.q.a8afda9a272a4abaa5d1f37a99904937",
+        "category": "geographie",
+        "question": "Quel repère géographique est associé au sud de Yopougon dans certaines présentations du District ?",
+        "explanation": "Les limites et paysages du sud de la commune sont décrits en lien avec le littoral et les plans d’eau d’Abidjan.",
+        "points": 10,
+        "options": [
+            {
+                "source_key": "opt_88200f784fd1",
+                "text": "Le littoral et la lagune dans l’environnement d’Abidjan",
+                "correct": true
+            },
+            {
+                "source_key": "opt_3a231c9c551e",
+                "text": "Le lac de Kossou",
+                "correct": false
+            },
+            {
+                "source_key": "opt_d39b11400739",
+                "text": "Le mont Nimba",
+                "correct": false
+            },
+            {
+                "source_key": "opt_d7bd46be7112",
+                "text": "Le fleuve Sénégal",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 11,
+        "source_key": "yopougon.q.a0a3ca2fcfaf438ba4d460c6abb149c1",
+        "category": "patrimoine",
+        "question": "Quel village historique est associé à Yopougon ?",
+        "explanation": "Yopougon Kouté fait partie des villages associés à la commune.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_be85d8c558e2",
+                "text": "Yopougon Kouté",
+                "correct": true
+            },
+            {
+                "source_key": "opt_310b9d7de0e7",
+                "text": "Assinie Mafia",
+                "correct": false
+            },
+            {
+                "source_key": "opt_a18e18577619",
+                "text": "Moossou",
+                "correct": false
+            },
+            {
+                "source_key": "opt_afb0e392a927",
+                "text": "Grand-Lahou",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 12,
+        "source_key": "yopougon.q.5334d2fa4a5f4d97a22c6e5620c94c12",
+        "category": "patrimoine",
+        "question": "Lequel de ces villages est associé à Yopougon ?",
+        "explanation": "Andokoi est cité parmi les villages de Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_68d0c5ccf06a",
+                "text": "Andokoi",
+                "correct": true
+            },
+            {
+                "source_key": "opt_faa86b650677",
+                "text": "Bonoua",
+                "correct": false
+            },
+            {
+                "source_key": "opt_06f4293a6d0c",
+                "text": "Azaguié",
+                "correct": false
+            },
+            {
+                "source_key": "opt_cf054ad75473",
+                "text": "Tiassalé",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 13,
+        "source_key": "yopougon.q.631ea21b78fd4340803e49ecad2297d3",
+        "category": "patrimoine",
+        "question": "Quel village de Yopougon porte le nom Azito ?",
+        "explanation": "Azito est une localité associée à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_0d5147fbf74f",
+                "text": "Azito",
+                "correct": true
+            },
+            {
+                "source_key": "opt_b14ee68cec3a",
+                "text": "Azito de Korhogo",
+                "correct": false
+            },
+            {
+                "source_key": "opt_aefac00c729b",
+                "text": "Azito de Man",
+                "correct": false
+            },
+            {
+                "source_key": "opt_8080b9dd3e53",
+                "text": "Azito de Bondoukou",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 14,
+        "source_key": "yopougon.q.e28013b89a914e58b5b91cfcd8d53d44",
+        "category": "patrimoine",
+        "question": "Quel village lié à Yopougon porte le nom Niangon Attié ?",
+        "explanation": "Niangon Attié est cité parmi les villages associés à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_0f910284ef33",
+                "text": "Niangon Attié",
+                "correct": true
+            },
+            {
+                "source_key": "opt_3ce66f248fab",
+                "text": "Niangon de Bouaké",
+                "correct": false
+            },
+            {
+                "source_key": "opt_7bb1d54d07c8",
+                "text": "Niangon de Daloa",
+                "correct": false
+            },
+            {
+                "source_key": "opt_81d8e9ba9fa2",
+                "text": "Niangon de San Pedro",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 15,
+        "source_key": "yopougon.q.3a0b78286ba144b08cb062862267ac6f",
+        "category": "patrimoine",
+        "question": "Quel nom de village associé à Yopougon contient le mot « Lokoa » ?",
+        "explanation": "Niangon Lokoa figure parmi les localités liées à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_6706829aba17",
+                "text": "Niangon Lokoa",
+                "correct": true
+            },
+            {
+                "source_key": "opt_fb69a0a70639",
+                "text": "Bingerville Lokoa",
+                "correct": false
+            },
+            {
+                "source_key": "opt_f512af220662",
+                "text": "Cocody Lokoa",
+                "correct": false
+            },
+            {
+                "source_key": "opt_baca23dbaaa3",
+                "text": "Dabou Lokoa",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 16,
+        "source_key": "yopougon.q.450aa76165f641f697b34cda1d17f327",
+        "category": "patrimoine",
+        "question": "Quelle localité associée à Yopougon porte le nom Béago ?",
+        "explanation": "Béago est cité dans les listes de villages de Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_8c75d816ee11",
+                "text": "Béago",
+                "correct": true
+            },
+            {
+                "source_key": "opt_40bff21ab0d2",
+                "text": "Béago de Bondoukou",
+                "correct": false
+            },
+            {
+                "source_key": "opt_e1112c1b6502",
+                "text": "Béago de Korhogo",
+                "correct": false
+            },
+            {
+                "source_key": "opt_2672b3229642",
+                "text": "Béago de Man",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 17,
+        "source_key": "yopougon.q.b4bef2fee6c942c4899d07ae73370d25",
+        "category": "patrimoine",
+        "question": "Quel nom correspond à une localité historique de Yopougon ?",
+        "explanation": "Adiopodoumé est cité parmi les villages associés à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_3559bc18e7a7",
+                "text": "Adiopodoumé",
+                "correct": true
+            },
+            {
+                "source_key": "opt_cec56978c0ea",
+                "text": "Assinie",
+                "correct": false
+            },
+            {
+                "source_key": "opt_af0a8a3d9d9e",
+                "text": "Aboisso",
+                "correct": false
+            },
+            {
+                "source_key": "opt_a72b24ed6eec",
+                "text": "Agboville",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 18,
+        "source_key": "yopougon.q.d9c71574733a48d091a32d2cd4f7bfea",
+        "category": "patrimoine",
+        "question": "Quelle île est associée au territoire de Yopougon ?",
+        "explanation": "L’Île Boulay est citée dans les localités liées à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_3efc378a56b0",
+                "text": "Île Boulay",
+                "correct": true
+            },
+            {
+                "source_key": "opt_b14679f272ab",
+                "text": "Île de Gorée",
+                "correct": false
+            },
+            {
+                "source_key": "opt_32121da1c165",
+                "text": "Île de Pâques",
+                "correct": false
+            },
+            {
+                "source_key": "opt_83c655e9d0be",
+                "text": "Île de Zanzibar",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 19,
+        "source_key": "yopougon.q.6d07fc7d3efe4f649c1cee272582fd52",
+        "category": "patrimoine",
+        "question": "Quel nom fait partie des villages associés à Yopougon ?",
+        "explanation": "Yopougon Santé est cité parmi les villages de la commune.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_6919a25db4b2",
+                "text": "Yopougon Santé",
+                "correct": true
+            },
+            {
+                "source_key": "opt_c108e319f70b",
+                "text": "Santé de Korhogo",
+                "correct": false
+            },
+            {
+                "source_key": "opt_c8427b7afc92",
+                "text": "Santé de Man",
+                "correct": false
+            },
+            {
+                "source_key": "opt_e082a809aa98",
+                "text": "Santé de Bondoukou",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 20,
+        "source_key": "yopougon.q.4c487278156c4c49a98b56e2323edf5d",
+        "category": "patrimoine",
+        "question": "Quel village associé à Yopougon contient le nom « Niangon Adjamé » ?",
+        "explanation": "Niangon Adjamé figure dans les listes de villages liés à Yopougon.",
+        "points": 15,
+        "options": [
+            {
+                "source_key": "opt_6e0b1b316384",
+                "text": "Niangon Adjamé",
+                "correct": true
+            },
+            {
+                "source_key": "opt_39da77359d24",
+                "text": "Adjamé de Grand-Bassam",
+                "correct": false
+            },
+            {
+                "source_key": "opt_59ca41e08f55",
+                "text": "Adjamé de Dabou",
+                "correct": false
+            },
+            {
+                "source_key": "opt_088ddebd387b",
+                "text": "Adjamé de San Pedro",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 21,
+        "source_key": "yopougon.q.40eb027ccbfa40c0890e83adc77c3485",
+        "category": "histoire",
+        "question": "À quel peuple autochtone les présentations historiques rattachent-elles notamment le territoire de Yopougon ?",
+        "explanation": "Les sources sur Yopougon évoquent le territoire Atchan/Ébrié.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_fb6b85426d9d",
+                "text": "Atchan, aussi appelés Ébrié",
+                "correct": true
+            },
+            {
+                "source_key": "opt_2db4d3dcaf3a",
+                "text": "Touareg",
+                "correct": false
+            },
+            {
+                "source_key": "opt_09fee3960747",
+                "text": "Mossi uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_bfac057eaf28",
+                "text": "Peul du Sahel uniquement",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 22,
+        "source_key": "yopougon.q.87645751b5554c0391e7c370ff42e3dc",
+        "category": "histoire",
+        "question": "Selon une tradition rapportée, à quoi le nom Yopougon est-il lié ?",
+        "explanation": "Une tradition locale relie le nom au champ de Yopou.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_26e78d82ed36",
+                "text": "Au « champ de Yopou »",
+                "correct": true
+            },
+            {
+                "source_key": "opt_114413044ddc",
+                "text": "À un ancien port portugais",
+                "correct": false
+            },
+            {
+                "source_key": "opt_968e350700f7",
+                "text": "À un roi du Ghana",
+                "correct": false
+            },
+            {
+                "source_key": "opt_7463da1beb17",
+                "text": "À une montagne du nord",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 23,
+        "source_key": "yopougon.q.8ca1863385a449cc89bdbab26881c73f",
+        "category": "histoire",
+        "question": "Dans le récit traditionnel de l’origine du nom, qui était Yopou ?",
+        "explanation": "Le récit rapporté présente Yopou comme un chef de famille qui vivait sur ces terres.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_c1f7211474ad",
+                "text": "Un chef de famille associé à ces terres",
+                "correct": true
+            },
+            {
+                "source_key": "opt_5694765f63c9",
+                "text": "Un explorateur portugais",
+                "correct": false
+            },
+            {
+                "source_key": "opt_9a3e99b2bf90",
+                "text": "Un gouverneur français de Bouaké",
+                "correct": false
+            },
+            {
+                "source_key": "opt_16fb00c8d49b",
+                "text": "Un roi du royaume de Kong",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 24,
+        "source_key": "yopougon.q.916edb99635143819e14535f60e790ea",
+        "category": "histoire",
+        "question": "Quelle expression est rapportée dans certaines explications traditionnelles du nom Yopougon ?",
+        "explanation": "Une explication traditionnelle rattache « Yopou gonnin » aux habitants des champs.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_2e0128c15ba6",
+                "text": "« Yopou gonnin », lié aux habitants des champs",
+                "correct": true
+            },
+            {
+                "source_key": "opt_c1ea33819e6e",
+                "text": "« Ville des montagnes »",
+                "correct": false
+            },
+            {
+                "source_key": "opt_da40d211eefd",
+                "text": "« Port des pêcheurs du nord »",
+                "correct": false
+            },
+            {
+                "source_key": "opt_f5b0a1df3576",
+                "text": "« Terre des éléphants blancs »",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 25,
+        "source_key": "yopougon.q.eee4a36f20b94c4c9b80e81852f49ecc",
+        "category": "histoire",
+        "question": "À partir de quelle décennie la modernisation urbaine de Yopougon s’accélère-t-elle selon la présentation du District ?",
+        "explanation": "La présentation du District situe l’essor de la modernisation urbaine à partir des années 1970.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_6cd68ecfabe4",
+                "text": "Les années 1970",
+                "correct": true
+            },
+            {
+                "source_key": "opt_9ed13e96a9d3",
+                "text": "Les années 1920",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b245d8ba4265",
+                "text": "Les années 1840",
+                "correct": false
+            },
+            {
+                "source_key": "opt_1811bab46bfe",
+                "text": "Les années 2010 seulement",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 26,
+        "source_key": "yopougon.q.54426fd1961641e29ddeefd864fe0718",
+        "category": "histoire",
+        "question": "Quels noms de cités sont liés à la phase de développement urbain de Yopougon ?",
+        "explanation": "SICOGI, SOGEFIHA et Selmer sont cités dans le développement des nouveaux quartiers.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_ea5dd262b9e0",
+                "text": "SICOGI, SOGEFIHA et Selmer",
+                "correct": true
+            },
+            {
+                "source_key": "opt_d4479457d65d",
+                "text": "Riviera Golf, Faya et M’Badon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b70a1fec6702",
+                "text": "Zone 4, Biétry et Marcory Résidentiel",
+                "correct": false
+            },
+            {
+                "source_key": "opt_06ded7f3b2ef",
+                "text": "Angré, Danga et Blockhauss",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 27,
+        "source_key": "yopougon.q.1d7a14aa38ce47719625be9b6f8622b7",
+        "category": "histoire",
+        "question": "Quel facteur a contribué à transformer Yopougon à partir des années 1970 ?",
+        "explanation": "Le développement de nouveaux quartiers a participé à la modernisation de la commune.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_30dba376d2a0",
+                "text": "La création de nouveaux quartiers d’habitation",
+                "correct": true
+            },
+            {
+                "source_key": "opt_7f492dd2bf7c",
+                "text": "Le déplacement de la commune à l’intérieur du pays",
+                "correct": false
+            },
+            {
+                "source_key": "opt_6d6ff0713c39",
+                "text": "La fermeture définitive de toutes les routes",
+                "correct": false
+            },
+            {
+                "source_key": "opt_c18a46f035ed",
+                "text": "La disparition des activités urbaines",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 28,
+        "source_key": "yopougon.q.c445a89eb80c498fb3dc4c9f902bbdf6",
+        "category": "histoire",
+        "question": "Pourquoi l’histoire des villages de Yopougon est-elle importante pour comprendre la commune ?",
+        "explanation": "Les villages historiques témoignent de l’occupation et des traditions antérieures à l’expansion urbaine.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_e22985b3531d",
+                "text": "Elle rappelle le peuplement antérieur à l’urbanisation moderne",
+                "correct": true
+            },
+            {
+                "source_key": "opt_9590e40fddd4",
+                "text": "Elle prouve que Yopougon est hors d’Abidjan",
+                "correct": false
+            },
+            {
+                "source_key": "opt_5386d2ba20a6",
+                "text": "Elle remplace l’histoire de toute la Côte d’Ivoire",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b2f6ab60a7e9",
+                "text": "Elle concerne uniquement le commerce extérieur",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 29,
+        "source_key": "yopougon.q.dc1bcf6d3abb455eab723367f1895352",
+        "category": "histoire",
+        "question": "Quel type de sources aide à vérifier l’histoire de Yopougon ?",
+        "explanation": "Le croisement de sources documentaires et de témoignages aide à vérifier les faits historiques.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_52ba383af5fb",
+                "text": "Archives, études et témoignages recoupés",
+                "correct": true
+            },
+            {
+                "source_key": "opt_a8e0f38d0f1b",
+                "text": "Rumeurs anonymes seulement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_4ec4f128a081",
+                "text": "Publicités sans date",
+                "correct": false
+            },
+            {
+                "source_key": "opt_c476e3250d33",
+                "text": "Commentaires non sourcés uniquement",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 30,
+        "source_key": "yopougon.q.3d0d8aa074ef4bf1839e7cd0245b416e",
+        "category": "histoire",
+        "question": "Quel thème fait partie de l’histoire urbaine de Yopougon ?",
+        "explanation": "L’extension des quartiers et des logements est un aspect central de l’évolution urbaine de Yopougon.",
+        "points": 20,
+        "options": [
+            {
+                "source_key": "opt_a71d6545a593",
+                "text": "L’extension des quartiers et des zones de logement",
+                "correct": true
+            },
+            {
+                "source_key": "opt_27517c314c95",
+                "text": "La fondation de Rome",
+                "correct": false
+            },
+            {
+                "source_key": "opt_03aefc331817",
+                "text": "L’histoire des pharaons",
+                "correct": false
+            },
+            {
+                "source_key": "opt_6877bf3f7c24",
+                "text": "La construction de la Grande Muraille de Chine",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 31,
+        "source_key": "yopougon.q.aea36c556b3545b7924b8f61f15f8950",
+        "category": "economie",
+        "question": "Quelle grande zone d’activité est présente dans la commune de Yopougon ?",
+        "explanation": "Yopougon possède une importante zone industrielle.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_c3f7fdf6a4f7",
+                "text": "La zone industrielle de Yopougon",
+                "correct": true
+            },
+            {
+                "source_key": "opt_f9c13029404e",
+                "text": "La zone industrielle de Korhogo située à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_0f4613b8cee5",
+                "text": "La zone portuaire de San Pedro située à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_5e837ad7806b",
+                "text": "La zone minière de Séguéla située à Yopougon",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 32,
+        "source_key": "yopougon.q.78331089ecf3476caad3d0f12a0ee345",
+        "category": "economie",
+        "question": "Quel secteur contribue fortement à l’économie de Yopougon en plus du commerce ?",
+        "explanation": "La zone industrielle fait de l’industrie un secteur important de la commune.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_f33eef8a0de0",
+                "text": "L’industrie",
+                "correct": true
+            },
+            {
+                "source_key": "opt_5fa027283c22",
+                "text": "Le tourisme polaire",
+                "correct": false
+            },
+            {
+                "source_key": "opt_75f17d9df8fa",
+                "text": "La pêche dans l’océan Arctique",
+                "correct": false
+            },
+            {
+                "source_key": "opt_9c2d5d45ce77",
+                "text": "L’extraction de diamants sous-marins",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 33,
+        "source_key": "yopougon.q.66b28874a37541d6a60e2368b20fce11",
+        "category": "economie",
+        "question": "Quelle entreprise du secteur textile est cit?e parmi celles pr?sentes dans la zone industrielle de Yopougon ?",
+        "explanation": "Uniwax est cit?e parmi les entreprises pr?sentes dans la zone industrielle de Yopougon.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_c9656efb918a",
+                "text": "Uniwax",
+                "correct": true
+            },
+            {
+                "source_key": "opt_b10ef0456c84",
+                "text": "Airbus",
+                "correct": false
+            },
+            {
+                "source_key": "opt_60503d45bd82",
+                "text": "Ferrari",
+                "correct": false
+            },
+            {
+                "source_key": "opt_55fe5acc8e34",
+                "text": "Air France",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 34,
+        "source_key": "yopougon.q.b0590447f9f64e2f91224213df5b0781",
+        "category": "economie",
+        "question": "Quel nom d’entreprise est cité parmi les entreprises présentes dans la zone industrielle de Yopougon dans des rapports publics ?",
+        "explanation": "Uniwax est citée parmi les entreprises présentes dans la zone industrielle de Yopougon.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_6b3691c3e36d",
+                "text": "Unilever/Univowax?",
+                "correct": false
+            },
+            {
+                "source_key": "opt_5651ce7ff0a1",
+                "text": "Uniwax",
+                "correct": true
+            },
+            {
+                "source_key": "opt_ac0ded7b3b5a",
+                "text": "Air France uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b65036c5ccd5",
+                "text": "Toyota de Yamoussoukro uniquement",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 35,
+        "source_key": "yopougon.q.37637d9baa894261b034d69094820b63",
+        "category": "economie",
+        "question": "Quel produit est associé à l’entreprise Uniwax citée dans les sources sur la zone industrielle de Yopougon ?",
+        "explanation": "Uniwax est connue pour ses activités textiles.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_b8baef44b409",
+                "text": "Les textiles imprimés",
+                "correct": true
+            },
+            {
+                "source_key": "opt_0b3e41de61de",
+                "text": "Les avions de ligne",
+                "correct": false
+            },
+            {
+                "source_key": "opt_ce62db9f7e64",
+                "text": "Le ciment uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_8b5bac4ed129",
+                "text": "Les bateaux de croisière",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 36,
+        "source_key": "yopougon.q.4bd492b939da421cb0575f29bb07814c",
+        "category": "economie",
+        "question": "Quel site énergétique important se trouve à Azito, dans la commune de Yopougon ?",
+        "explanation": "La centrale thermique d’Azito est située dans la commune de Yopougon.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_607347c0eb53",
+                "text": "Une centrale thermique",
+                "correct": true
+            },
+            {
+                "source_key": "opt_0d00040ed4ac",
+                "text": "Une centrale nucléaire",
+                "correct": false
+            },
+            {
+                "source_key": "opt_204e35081a11",
+                "text": "Un barrage hydroélectrique sur le Bandama",
+                "correct": false
+            },
+            {
+                "source_key": "opt_40fcfceb1ce4",
+                "text": "Une centrale marémotrice de l’Atlantique",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 37,
+        "source_key": "yopougon.q.67092cda6123479fb9073ba8ff42bf9c",
+        "category": "economie",
+        "question": "Quel rôle la centrale thermique d’Azito joue-t-elle principalement ?",
+        "explanation": "La centrale d’Azito est une installation de production d’électricité.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_e972e144b6e0",
+                "text": "Produire de l’électricité",
+                "correct": true
+            },
+            {
+                "source_key": "opt_ff50580d7bcb",
+                "text": "Fabriquer des vêtements",
+                "correct": false
+            },
+            {
+                "source_key": "opt_656dd909b4d1",
+                "text": "Traiter les passeports",
+                "correct": false
+            },
+            {
+                "source_key": "opt_6d15fbd5a5ec",
+                "text": "Gérer les vols internationaux",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 38,
+        "source_key": "yopougon.q.bb11e5f386364802a45730f9a2e989f3",
+        "category": "economie",
+        "question": "Quel secteur d’activité est très visible dans la vie quotidienne de Yopougon ?",
+        "explanation": "Le commerce de proximité fait partie des activités économiques de la commune.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_dde6735565cb",
+                "text": "Le commerce de proximité",
+                "correct": true
+            },
+            {
+                "source_key": "opt_a02cf01484ff",
+                "text": "L’exploitation de glaciers",
+                "correct": false
+            },
+            {
+                "source_key": "opt_b45be8d9863c",
+                "text": "La construction de stations de ski",
+                "correct": false
+            },
+            {
+                "source_key": "opt_1661d05f488b",
+                "text": "La pêche sous la banquise",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 39,
+        "source_key": "yopougon.q.c83d9cb01e874782a77fa824d674f88c",
+        "category": "economie",
+        "question": "Pourquoi la zone industrielle de Yopougon est-elle importante pour l’emploi ?",
+        "explanation": "Les entreprises industrielles contribuent à l’activité économique et à l’emploi.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_242e8754cccd",
+                "text": "Elle accueille des entreprises qui recrutent dans plusieurs secteurs",
+                "correct": true
+            },
+            {
+                "source_key": "opt_66cdc1f8e6d7",
+                "text": "Elle ne contient que des logements",
+                "correct": false
+            },
+            {
+                "source_key": "opt_a7bbc3baf21e",
+                "text": "Elle interdit toute activité productive",
+                "correct": false
+            },
+            {
+                "source_key": "opt_5d52c6be1c9c",
+                "text": "Elle ne fonctionne qu’un jour par an",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 40,
+        "source_key": "yopougon.q.22167f2d71ac43149481c28784985d1d",
+        "category": "economie",
+        "question": "Quel axe routier important est associé à la sortie ouest d’Abidjan au niveau de Gesco ?",
+        "explanation": "Gesco est associé au point où l’autoroute du Nord quitte l’agglomération d’Abidjan.",
+        "points": 25,
+        "options": [
+            {
+                "source_key": "opt_848e286eab20",
+                "text": "L’autoroute du Nord",
+                "correct": true
+            },
+            {
+                "source_key": "opt_e8fb34f15458",
+                "text": "L’autoroute Abidjan–Grand-Bassam uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_c73233d6cfef",
+                "text": "La route de Boundiali uniquement",
+                "correct": false
+            },
+            {
+                "source_key": "opt_a8609a61b601",
+                "text": "La route de l’aéroport de Yamoussoukro",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 41,
+        "source_key": "yopougon.q.61cd5802b68346f69faa5826ee93dba6",
+        "category": "infrastructures",
+        "question": "Quel établissement hospitalier important porte le nom de Yopougon ?",
+        "explanation": "Le CHU de Yopougon est un établissement hospitalier situé dans la commune.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_9dfc0238050d",
+                "text": "Le CHU de Yopougon",
+                "correct": true
+            },
+            {
+                "source_key": "opt_ec838a59d549",
+                "text": "Le CHU de Bouaké situé à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_81445c630807",
+                "text": "Le CHU de Korhogo situé à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_a02680c45dc0",
+                "text": "Le CHU de Man situé à Yopougon",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 42,
+        "source_key": "yopougon.q.5697f46001bb4a08b4e6b755d28daec4",
+        "category": "infrastructures",
+        "question": "Quel repère de transport est connu à Yopougon ?",
+        "explanation": "Siporex est cité comme un repère de transport de Yopougon.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_58da54b06f9e",
+                "text": "Siporex",
+                "correct": true
+            },
+            {
+                "source_key": "opt_091628ce85bc",
+                "text": "Gare de Grand-Bassam située à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_36b4ea5f26ca",
+                "text": "Aéroport de Korhogo situé à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_c374c8fddaed",
+                "text": "Gare maritime de San Pedro située à Yopougon",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 43,
+        "source_key": "yopougon.q.5a5bb6244a8c4976b5c8e63e89837e95",
+        "category": "infrastructures",
+        "question": "Quel quartier est associé à l’entrée de l’autoroute du Nord depuis Abidjan ?",
+        "explanation": "Les sources associent Gesco au point où l’autoroute du Nord quitte Abidjan.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_f3cca4b6e888",
+                "text": "Gesco",
+                "correct": true
+            },
+            {
+                "source_key": "opt_f6dae8046232",
+                "text": "Riviera Golf",
+                "correct": false
+            },
+            {
+                "source_key": "opt_12b572bfdbbf",
+                "text": "Bingerville centre",
+                "correct": false
+            },
+            {
+                "source_key": "opt_3bc894d2e22f",
+                "text": "Assinie Mafia",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 44,
+        "source_key": "yopougon.q.fc227088f9514a69aa348bc196a8442a",
+        "category": "infrastructures",
+        "question": "Quel équipement municipal contribue à la vie sportive et culturelle de Yopougon ?",
+        "explanation": "Le stade municipal fait partie des équipements sportifs et culturels de la commune.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_a7616e316ea5",
+                "text": "Le stade municipal",
+                "correct": true
+            },
+            {
+                "source_key": "opt_e480ac5bdb7a",
+                "text": "Le port autonome de San Pedro",
+                "correct": false
+            },
+            {
+                "source_key": "opt_dafd474c18b9",
+                "text": "Le stade de Bouaké situé à Yopougon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_6e68dfb8e091",
+                "text": "L’aéroport international de Yamoussoukro",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 45,
+        "source_key": "yopougon.q.1332bcf1e13f4e4aa4f9b552d81b3c34",
+        "category": "infrastructures",
+        "question": "Quel type de problème est particulièrement surveillé sur certains sites de Yopougon pendant les fortes pluies ?",
+        "explanation": "Les autorités ont identifié certains sites de Yopougon exposés aux risques liés aux pluies et au drainage.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_d512a80021d2",
+                "text": "Les inondations et le drainage",
+                "correct": true
+            },
+            {
+                "source_key": "opt_a0ddf7099ad3",
+                "text": "Les avalanches",
+                "correct": false
+            },
+            {
+                "source_key": "opt_f5f488f0af9f",
+                "text": "Les tempêtes de neige",
+                "correct": false
+            },
+            {
+                "source_key": "opt_3a97bd20d276",
+                "text": "Les éruptions volcaniques",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 46,
+        "source_key": "yopougon.q.48d718755cec418ea1805cb0eb6e2c0f",
+        "category": "infrastructures",
+        "question": "Quels secteurs ont été cités par l’ONPC en 2023 parmi les sites à risque examinés à Yopougon ?",
+        "explanation": "L’ONPC a cité Koweït, Banco 2 et Bougounisso lors d’une visite en mai 2023.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_f5249cadae19",
+                "text": "Koweït, Banco 2 et Bougounisso",
+                "correct": true
+            },
+            {
+                "source_key": "opt_f44bfb20a3fc",
+                "text": "Riviera 3, Faya et M’Badon",
+                "correct": false
+            },
+            {
+                "source_key": "opt_d0761a6f0657",
+                "text": "Port-Bouët, Vridi et Gonzagueville",
+                "correct": false
+            },
+            {
+                "source_key": "opt_2910a9ea88c2",
+                "text": "Cocody Danga, Anono et Blockhauss",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 47,
+        "source_key": "yopougon.q.d61cbc4e4edb4b20a0245130e1a9094a",
+        "category": "infrastructures",
+        "question": "Quelle action est proposée pour réduire les risques liés aux pluies dans certains secteurs de Yopougon ?",
+        "explanation": "L’amélioration du drainage a été proposée sur certains sites à risque.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_b6e2fe694a55",
+                "text": "Améliorer le drainage des eaux",
+                "correct": true
+            },
+            {
+                "source_key": "opt_9a23a9dbb7c0",
+                "text": "Construire des pistes de ski",
+                "correct": false
+            },
+            {
+                "source_key": "opt_bb0b9cfb0346",
+                "text": "Supprimer toutes les canalisations",
+                "correct": false
+            },
+            {
+                "source_key": "opt_06863ffc7a23",
+                "text": "Déplacer la commune au nord du pays",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 48,
+        "source_key": "yopougon.q.813a99297cb148fdbc29b1f992af9bc6",
+        "category": "infrastructures",
+        "question": "Quel lieu de sortie historique est associé à la vie nocturne de Yopougon ?",
+        "explanation": "La rue Princesse est historiquement associée aux maquis et aux sorties à Yopougon.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_c82e7d4fe6ef",
+                "text": "La rue Princesse",
+                "correct": true
+            },
+            {
+                "source_key": "opt_d6e5f8529586",
+                "text": "La rue des Jardins de Cocody",
+                "correct": false
+            },
+            {
+                "source_key": "opt_50f37ae8b167",
+                "text": "Le boulevard de la République à Yamoussoukro",
+                "correct": false
+            },
+            {
+                "source_key": "opt_5df31b28aea5",
+                "text": "La plage de Grand-Bassam située à Yopougon",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 49,
+        "source_key": "yopougon.q.88f4fc31ff1f4f7b8f2d33c586bdf25d",
+        "category": "infrastructures",
+        "question": "Qu’est-il arrivé à la rue Princesse en août 2011 selon les récits historiques publiés ?",
+        "explanation": "Des sources historiques indiquent la démolition de la rue Princesse en août 2011.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_9d817cc39778",
+                "text": "Elle a été démolie",
+                "correct": true
+            },
+            {
+                "source_key": "opt_d4a6b2c0456f",
+                "text": "Elle est devenue un aéroport",
+                "correct": false
+            },
+            {
+                "source_key": "opt_090c1210b162",
+                "text": "Elle a été déplacée à Bouaké",
+                "correct": false
+            },
+            {
+                "source_key": "opt_cb55f00d7e7b",
+                "text": "Elle a été transformée en port maritime",
+                "correct": false
+            }
+        ]
+    },
+    {
+        "number": 50,
+        "source_key": "yopougon.q.cb59c0baf73d408cb50810ce1a127725",
+        "category": "infrastructures",
+        "question": "Quel type de lieu était particulièrement associé à la rue Princesse ?",
+        "explanation": "La rue Princesse était connue pour ses maquis et ses lieux de divertissement.",
+        "points": 30,
+        "options": [
+            {
+                "source_key": "opt_e9b1b08eaaf0",
+                "text": "Des maquis et des lieux de divertissement",
+                "correct": true
+            },
+            {
+                "source_key": "opt_352e9c6dda57",
+                "text": "Des pistes de ski",
+                "correct": false
+            },
+            {
+                "source_key": "opt_d4d6ebd966af",
+                "text": "Des mines d’or souterraines",
+                "correct": false
+            },
+            {
+                "source_key": "opt_2dfcb4b78bdb",
+                "text": "Des ambassades uniquement",
+                "correct": false
+            }
+        ]
+    }
+]

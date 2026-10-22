@@ -42,6 +42,7 @@ Route::middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
     Route::get('/sessions', [LegacyGameSessionController::class, 'index']);
     Route::get('/profile/stats', [LegacyProfileController::class, 'stats']);
     Route::get('/leaderboard/global', [LeaderboardController::class, 'global']);
+    Route::get('/leaderboard/weekly', [LeaderboardController::class, 'weekly']);
     Route::get('/leaderboard/cities/{city}', [LeaderboardController::class, 'city']);
     Route::get('/leaderboard/friends', [LeaderboardController::class, 'friends']);
     Route::get('/friends', [FriendshipController::class, 'index']);

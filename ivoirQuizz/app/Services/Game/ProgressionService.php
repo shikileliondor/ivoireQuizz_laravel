@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\UserCityProgress;
 use App\Models\UserLevelProgress;
 use App\Models\UserRegionProgress;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class ProgressionService
@@ -22,14 +23,23 @@ class ProgressionService
             }
             $city = $region->cities()->where('is_active', true)->orderBy('order')->first();
             $level = $city?->levels()->where('is_active', true)->orderBy('order')->first();
-            UserRegionProgress::query()->firstOrCreate(['user_id' => $user->id, 'region_id' => $region->id], ['is_unlocked' => true]);
+            $this->ensureProgressUnlocked(UserRegionProgress::class, ['user_id' => $user->id, 'region_id' => $region->id]);
             if ($city) {
-                UserCityProgress::query()->firstOrCreate(['user_id' => $user->id, 'city_id' => $city->id], ['is_unlocked' => true]);
+                $this->ensureProgressUnlocked(UserCityProgress::class, ['user_id' => $user->id, 'city_id' => $city->id]);
             }
             if ($level) {
-                UserLevelProgress::query()->firstOrCreate(['user_id' => $user->id, 'level_id' => $level->id], ['is_unlocked' => true]);
+                $this->ensureProgressUnlocked(UserLevelProgress::class, ['user_id' => $user->id, 'level_id' => $level->id]);
             }
         });
+    }
+
+    /** @param class-string<Model> $modelClass */
+    private function ensureProgressUnlocked(string $modelClass, array $identity): void
+    {
+        $progress = $modelClass::query()->firstOrCreate($identity, ['is_unlocked' => true]);
+        if (! $progress->is_unlocked) {
+            $progress->forceFill(['is_unlocked' => true])->save();
+        }
     }
 
     public function isLevelUnlocked(User $user, Level $level): bool

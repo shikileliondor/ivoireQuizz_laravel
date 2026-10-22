@@ -33,12 +33,12 @@ class CampaignSeedersTest extends TestCase
         return ['key' => 'korhogo', 'region_slug' => 'poro', 'city_slug' => 'korhogo', 'file' => $file];
     }
 
-    public function test_database_seeder_is_repeatable_and_imports_both_campaigns(): void
+    public function test_database_seeder_is_repeatable_and_imports_campaigns(): void
     {
         $this->artisan('db:seed', ['--class' => DatabaseSeeder::class, '--force' => true])->assertExitCode(0);
         $questionIds = Question::query()->orderBy('id')->pluck('id')->all();
-        $this->assertCount(100, $questionIds);
-        $this->assertDatabaseCount('levels', 10);
+        $this->assertCount(150, $questionIds);
+        $this->assertDatabaseCount('levels', 15);
         $user = User::factory()->create();
         $level = Level::query()->firstOrFail();
         UserLevelProgress::query()->create([
@@ -53,10 +53,10 @@ class CampaignSeedersTest extends TestCase
         ]);
 
         $this->artisan('db:seed', ['--class' => DatabaseSeeder::class, '--force' => true])->assertExitCode(0);
-        $this->assertDatabaseCount('questions', 100);
+        $this->assertDatabaseCount('questions', 150);
         $this->assertSame($questionIds, Question::query()->orderBy('id')->pluck('id')->all());
         $expectedAnswers = 0;
-        foreach (['korhogo', 'aboisso'] as $city) {
+        foreach (['korhogo', 'aboisso', 'yopougon'] as $city) {
             foreach (json_decode(file_get_contents(database_path("seeders/Campaigns/data/{$city}_questions.json")), true, 512, JSON_THROW_ON_ERROR) as $question) {
                 $expectedAnswers += count($question['options']);
             }
