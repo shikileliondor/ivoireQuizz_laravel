@@ -38,17 +38,20 @@ class ProfileController extends Controller
     {
         $user = $request->user();
 
-        $sessions = GameSession::query()
+        $stats = GameSession::query()
             ->where('user_id', $user->id)
             ->where('status', 'completed')
-            ->get(['score', 'total_score', 'correct_answers', 'total_questions']);
+            ->selectRaw('COUNT(*) as total_games_played')
+            ->selectRaw('COALESCE(SUM(correct_answers), 0) as correct_answers')
+            ->selectRaw('COALESCE(SUM(total_questions), 0) as total_questions')
+            ->selectRaw('COALESCE(MAX(score), 0) as best_score')
+            ->selectRaw('COALESCE(SUM(total_score), 0) as total_score')
+            ->first();
 
-        $totalGames = $sessions->count();
-        $globalCorrectAnswers = $sessions->sum('correct_answers');
-        $totalQuestions = $sessions->sum('total_questions');
-        $successRate = $totalQuestions > 0 ? round(($globalCorrectAnswers / $totalQuestions) * 100, 2) : 0;
-        $bestScore = (int) $sessions->max('score');
-        $cumulativeScore = (int) $sessions->sum('total_score');
+        $totalQuestions = (int) $stats->total_questions;
+        $successRate = $totalQuestions > 0
+            ? round(((int) $stats->correct_answers / $totalQuestions) * 100, 2)
+            : 0;
         $byCategory = DB::table('game_sessions')
             ->join('categories', 'categories.id', '=', 'game_sessions.category_id')
             ->where('game_sessions.user_id', $user->id)
@@ -68,10 +71,10 @@ class ProfileController extends Controller
         return response()->json([
             'success' => true,
             'data' => [
-                'total_games_played' => $totalGames,
-                'best_score' => $bestScore,
+                'total_games_played' => (int) $stats->total_games_played,
+                'best_score' => (int) $stats->best_score,
                 'success_rate' => $successRate,
-                'total_score' => $cumulativeScore,
+                'total_score' => (int) $stats->total_score,
                 'by_category' => $byCategory,
             ],
             'message' => 'Statistiques du profil récupérées.',
