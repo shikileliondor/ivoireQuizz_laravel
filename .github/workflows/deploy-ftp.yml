@@ -80,10 +80,10 @@ jobs:
               exit 1
             fi
           done
-          case "$FTP_SERVER_DIR" in
-            /*) ;;
-            *) echo 'FTP_SERVER_DIR must be an absolute path from the FTP account root.'; exit 1 ;;
-          esac
+          if [[ "$FTP_SERVER_DIR" != */ ]]; then
+            FTP_SERVER_DIR="${FTP_SERVER_DIR}/"
+          fi
+          echo "FTP_SERVER_DIR=${FTP_SERVER_DIR}" >> "$GITHUB_ENV"
 
       - name: Deploy over explicit FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -93,7 +93,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           port: 21
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: ${{ env.FTP_SERVER_DIR }}
           local-dir: ./release/
           state-name: ../.ftp-deploy-sync-state.json
           dangerous-clean-slate: false

@@ -27,7 +27,7 @@ Dans **Settings → Secrets and variables → Actions**, ajoutez ces *repository
 | `FTP_USERNAME` | Nom du compte FTP |
 | `FTP_PASSWORD` | Mot de passe FTP |
 
-Ajoutez `FTP_SERVER_DIR` comme *repository secret* avec le chemin **absolu depuis la racine du compte FTP**. Exemple : `/ivoirquizz/`. Le workflow vérifie que ce chemin commence par `/` avant d’envoyer des fichiers.
+Ajoutez `FTP_SERVER_DIR` comme *repository secret* avec le dossier cible relatif à la racine de votre compte FTP, par exemple `public_html/` ou `ivoirquizz/`. L’action FTP utilise les chemins relatifs depuis le dossier d’accueil FTP; le workflow ajoute automatiquement le `/` final si besoin.
 
 Créez un compte FTP restreint au dossier privé du site et à sa racine publique, avec les seules permissions d’écriture nécessaires. Si l’hébergeur ne prend en charge que le FTPS implicite ou le FTP simple, cette configuration ne sera pas compatible.
 
