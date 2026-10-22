@@ -25,11 +25,13 @@ class GameSession extends Model
         'accuracy' => 'decimal:2',
         'started_at' => 'datetime',
         'finished_at' => 'datetime',
+        'completed_at' => 'datetime',
     ];
 
     public function user(): BelongsTo { return $this->belongsTo(User::class); }
     public function region(): BelongsTo { return $this->belongsTo(Region::class); }
     public function city(): BelongsTo { return $this->belongsTo(City::class); }
     public function level(): BelongsTo { return $this->belongsTo(Level::class); }
+    public function category(): BelongsTo { return $this->belongsTo(Category::class); }
     public function gameSessionAnswers(): HasMany { return $this->hasMany(GameSessionAnswer::class); }
 }

@@ -35,11 +35,14 @@ Route::middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
     Route::post('/auth/logout', [LegacyAuthController::class, 'logout']);
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/categories', [CategoryController::class, 'index']);
+    Route::get('/achievements', [App\Http\Controllers\Api\ProgressController::class, 'achievements']);
+    Route::get('/friends/invite', [App\Http\Controllers\Api\ProgressController::class, 'invite']);
     Route::get('/quiz/questions', [QuizController::class, 'getQuestions']);
     Route::post('/sessions', [LegacyGameSessionController::class, 'store']);
     Route::get('/sessions', [LegacyGameSessionController::class, 'index']);
     Route::get('/profile/stats', [LegacyProfileController::class, 'stats']);
     Route::get('/leaderboard/global', [LeaderboardController::class, 'global']);
+    Route::get('/leaderboard/cities/{city}', [LeaderboardController::class, 'city']);
     Route::get('/leaderboard/friends', [LeaderboardController::class, 'friends']);
     Route::get('/friends', [FriendshipController::class, 'index']);
     Route::get('/friends/requests', [FriendshipController::class, 'requests']);

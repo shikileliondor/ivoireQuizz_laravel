@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Local;
 
 use App\Models\Answer;
 use App\Models\Category;
@@ -17,6 +17,15 @@ class LocalChallengeDemoSeeder extends Seeder
 {
     public function run(): void
     {
+        if (! app()->environment(['local', 'testing'])) {
+            throw new \RuntimeException('LocalChallengeDemoSeeder est réservé aux environnements local et testing.');
+        }
+
+        $password = config('seeding.local_demo_password');
+        if (! is_string($password) || $password === '') {
+            throw new \RuntimeException('Définir LOCAL_DEMO_PASSWORD avant de lancer LocalChallengeDemoSeeder.');
+        }
+
         $region = Region::updateOrCreate(['slug' => 'demo-local'], ['name' => 'D?mo locale', 'is_active' => true]);
         $city = City::updateOrCreate(['region_id' => $region->id, 'slug' => 'duel-local'], ['name' => 'Duel local', 'is_active' => true]);
         $level = Level::updateOrCreate(['city_id' => $city->id, 'slug' => 'questions-demo'], ['title' => 'Questions de d?monstration', 'difficulty' => 'easy', 'is_active' => true]);
@@ -26,7 +35,7 @@ class LocalChallengeDemoSeeder extends Seeder
         foreach ([['D?mo Awa', 'awa@demo.local', 'DEMO1A'], ['D?mo Koffi', 'koffi@demo.local', 'DEMO2K']] as [$name, $email, $friendCode]) {
             $users[] = User::updateOrCreate(['email' => $email], [
                 'name' => $name,
-                'password' => Hash::make('DemoTest2026!'),
+                'password' => Hash::make($password),
                 'friend_code' => $friendCode,
                 'avatar_id' => 1,
             ]);

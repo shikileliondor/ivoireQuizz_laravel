@@ -26,11 +26,18 @@ class FinishGameSessionService
     {
         return DB::transaction(function () use ($session): GameSession {
             $session = GameSession::query()->with(['user', 'level.city.region', 'gameSessionAnswers'])->lockForUpdate()->findOrFail($session->id);
-            if ($session->status !== GameConstants::STATUS_STARTED || $session->started_at?->lt(now()->subHours(GameConstants::MAX_SESSION_HOURS))) { Log::warning('Invalid finish attempt', ['session_id' => $session->id, 'status' => $session->status]); throw new InvalidGameSessionException('This session cannot be finished.'); }
+            if ($session->status !== GameConstants::STATUS_STARTED || $session->started_at?->lt(now()->subHours(GameConstants::MAX_SESSION_HOURS))) {
+                Log::warning('Invalid finish attempt', ['session_id' => $session->id, 'status' => $session->status]);
+                throw new InvalidGameSessionException('This session cannot be finished.');
+            }
             $answers = $session->gameSessionAnswers;
-            if ($answers->count() !== (int) $session->total_questions || $answers->count() > (int) $session->total_questions) { Log::warning('Suspicious finish answer count', ['session_id' => $session->id, 'answers' => $answers->count(), 'expected' => $session->total_questions]); throw new InvalidGameSessionException('All expected questions must be answered before finishing.'); }
+            if ($answers->count() !== (int) $session->total_questions || $answers->count() > (int) $session->total_questions) {
+                Log::warning('Suspicious finish answer count', ['session_id' => $session->id, 'answers' => $answers->count(), 'expected' => $session->total_questions]);
+                throw new InvalidGameSessionException('All expected questions must be answered before finishing.');
+            }
 
-            $correct = $answers->where('is_correct', true)->count(); $wrong = $answers->count() - $correct;
+            $correct = $answers->where('is_correct', true)->count();
+            $wrong = $answers->count() - $correct;
             $accuracy = $session->total_questions > 0 ? round($correct / $session->total_questions * 100, 2) : 0;
             $passed = $accuracy >= $session->level->passing_score;
             $xp = $passed ? (int) $session->level->xp_reward + (int) $answers->sum('xp_earned') : 0;
@@ -39,21 +46,43 @@ class FinishGameSessionService
             $status = $passed ? GameConstants::STATUS_COMPLETED : GameConstants::STATUS_FAILED;
 
             $session->update(['status' => $status, 'correct_answers' => $correct, 'wrong_answers' => $wrong, 'accuracy' => $accuracy, 'xp_earned' => $xp, 'coins_earned' => $coins, 'gems_earned' => $gems, 'finished_at' => now()]);
-            $user = $session->user; $source = 'game_session';
+            $this->progression->unlockAboissoIfEligible($session->user);
+            $user = $session->user;
+            $source = 'game_session';
             $this->rewards->addPoints($user, (int) $session->score, $source, $session->id, 'Game score');
             if ($passed) {
-                if ($xp) { $this->rewards->addXp($user, $xp, $source, $session->id, 'Game XP'); }
-                if ($coins) { $this->rewards->addCoins($user, $coins, $source, $session->id, 'Game coins'); }
-                if ($gems) { $this->rewards->addGems($user, $gems, $source, $session->id, 'Game gems'); }
+                if ($xp) {
+                    $this->rewards->addXp($user, $xp, $source, $session->id, 'Game XP');
+                }
+                if ($coins) {
+                    $this->rewards->addCoins($user, $coins, $source, $session->id, 'Game coins');
+                }
+                if ($gems) {
+                    $this->rewards->addGems($user, $gems, $source, $session->id, 'Game gems');
+                }
                 $this->progression->completeLevel($user, $session->level, (int) $session->score, $accuracy);
                 $this->progression->unlockNextAfterLevel($user, $session->level);
-                if ($session->level->is_boss) { $this->progression->completeRegionIfBoss($user, $session->level); $this->passports->stampRegion($user, $session->level->city->region); }
+                if ($session->level->is_boss) {
+                    $this->progression->completeRegionIfBoss($user, $session->level);
+                    $this->passports->stampRegion($user, $session->level->city->region);
+                }
                 $this->collections->unlockRandom($user, $session->region_id, $session->city_id, $source, $session->id);
-                if ($session->level->is_boss || $accuracy >= 90) { $this->chests->grantChest($user, $session->level->is_boss ? 'gold' : 'bronze', $source, $session->id); }
-                if (! RewardTransaction::query()->where('user_id', $user->id)->where('type', 'xp')->where('source_type', 'league_game_session')->where('source_id', $session->id)->exists()) { $this->leagues->addXp($user, $xp); RewardTransaction::query()->create(['user_id' => $user->id, 'type' => 'xp', 'amount' => $xp, 'source_type' => 'league_game_session', 'source_id' => $session->id, 'description' => 'League XP marker']); }
-            } else { $this->lives->loseLife($user); }
+                if ($session->level->is_boss || $accuracy >= 90) {
+                    $this->chests->grantChest($user, $session->level->is_boss ? 'gold' : 'bronze', $source, $session->id);
+                }
+                if (! RewardTransaction::query()->where('user_id', $user->id)->where('type', 'xp')->where('source_type', 'league_game_session')->where('source_id', $session->id)->exists()) {
+                    $this->leagues->addXp($user, $xp);
+                    RewardTransaction::query()->create(['user_id' => $user->id, 'type' => 'xp', 'amount' => $xp, 'source_type' => 'league_game_session', 'source_id' => $session->id, 'description' => 'League XP marker']);
+                }
+            } else {
+                $this->lives->loseLife($user);
+            }
             $this->streaks->updateAfterGame($user);
-            $user->increment('games_played'); if ($passed) { $user->increment('games_won'); }
+            $user->increment('games_played');
+            if ($passed) {
+                $user->increment('games_won');
+            }
+
             return $session->refresh();
         });
     }

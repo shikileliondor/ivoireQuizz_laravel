@@ -9,6 +9,10 @@ class CityResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
-        return ['id'=>$this->id,'region_id'=>$this->region_id,'name'=>$this->name,'slug'=>$this->slug,'description'=>$this->description,'order'=>(int)$this->order,'required_xp'=>(int)$this->required_xp,'is_unlocked'=>(bool)($this->progress?->is_unlocked ?? false),'is_completed'=>(bool)($this->progress?->is_completed ?? false),'stars'=>(int)($this->progress?->stars ?? 0),'progress_percent'=>(float)($this->progress?->progress_percent ?? 0),'levels'=>LevelResource::collection($this->whenLoaded('levels'))];
+        $campaignScore = $this->relationLoaded('levels')
+            ? $this->levels->sum(fn ($level): int => (int) ($level->progress?->best_score ?? 0))
+            : 0;
+
+        return ['id'=>$this->id,'region_id'=>$this->region_id,'name'=>$this->name,'slug'=>$this->slug,'description'=>$this->description,'order'=>(int)$this->order,'required_xp'=>(int)$this->required_xp,'campaign_score'=>(int)$campaignScore,'is_unlocked'=>(bool)($this->progress?->is_unlocked ?? false),'is_completed'=>(bool)($this->progress?->is_completed ?? false),'stars'=>(int)($this->progress?->stars ?? 0),'progress_percent'=>(float)($this->progress?->progress_percent ?? 0),'levels'=>LevelResource::collection($this->whenLoaded('levels'))];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Reference;
 
 use App\Models\Collectible;
 use Illuminate\Database\Seeder;

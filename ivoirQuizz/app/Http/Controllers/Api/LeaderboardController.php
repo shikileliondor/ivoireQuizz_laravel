@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Friendship;
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LeaderboardController extends Controller
 {
@@ -79,6 +81,45 @@ class LeaderboardController extends Controller
                 'leaderboard' => $rankedUsers,
             ],
             'message' => 'Classement des amis récupéré.',
+        ]);
+    }
+
+    /**
+     * Return the campaign leaderboard for one city using each player's best score per level.
+     */
+    public function city(Request $request, City $city): JsonResponse
+    {
+        $campaignScores = DB::table('user_level_progress as progress')
+            ->join('levels', 'levels.id', '=', 'progress.level_id')
+            ->where('levels.city_id', $city->id)
+            ->where('progress.is_completed', true)
+            ->select('progress.user_id', DB::raw('SUM(progress.best_score) as campaign_score'))
+            ->groupBy('progress.user_id');
+
+        $leaderboard = User::query()
+            ->joinSub(clone $campaignScores, 'campaign_scores', 'campaign_scores.user_id', '=', 'users.id')
+            ->select(['users.id', 'users.name', 'users.avatar_id', 'users.games_played', 'campaign_scores.campaign_score'])
+            ->orderByDesc('campaign_scores.campaign_score')
+            ->paginate(20);
+
+        $currentScore = (clone $campaignScores)
+            ->where('progress.user_id', $request->user()->id)
+            ->value('campaign_score') ?? 0;
+
+        $currentUserRank = DB::query()
+            ->fromSub(clone $campaignScores, 'campaign_scores')
+            ->where('campaign_score', '>', $currentScore)
+            ->count() + 1;
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'city' => ['id' => $city->id, 'name' => $city->name],
+                'leaderboard' => $leaderboard,
+                'campaign_score' => (int) $currentScore,
+                'current_user_rank' => $currentUserRank,
+            ],
+            'message' => 'Classement de la campagne récupéré.',
         ]);
     }
 }

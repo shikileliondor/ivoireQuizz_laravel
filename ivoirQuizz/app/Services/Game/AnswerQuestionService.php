@@ -38,7 +38,7 @@ class AnswerQuestionService
             if ($session->gameSessionAnswers()->count() >= $session->total_questions) { Log::warning('Suspicious extra answer attempt', ['session_id' => $session->id, 'question_id' => $question->id, 'total_questions' => $session->total_questions]); throw new InvalidGameSessionException('Too many answers for this session.'); }
 
             $isCorrect = (bool) ($answer?->is_correct ?? false);
-            $points = $isCorrect ? $this->points($question, $responseTime) : 0;
+            $points = $isCorrect ? (int) $question->points : 0;
             $xp = $isCorrect ? (int) $question->xp_reward : 0;
             $row = GameSessionAnswer::query()->create(['game_session_id' => $session->id, 'question_id' => $question->id, 'answer_id' => $answer?->id, 'is_correct' => $isCorrect, 'response_time' => $responseTime, 'points_earned' => $points, 'xp_earned' => $xp]);
             $session->increment('score', $points);
@@ -48,10 +48,4 @@ class AnswerQuestionService
         });
     }
 
-    private function points(Question $question, int $responseTime): int
-    {
-        $difficulty = ['easy' => 1.0, 'medium' => 1.2, 'hard' => 1.5, 'expert' => 2.0][$question->difficulty] ?? 1.0;
-        $timeRatio = max(0, ($question->time_limit - $responseTime) / max(1, $question->time_limit));
-        return (int) round($question->points * $difficulty * (1 + $timeRatio));
-    }
 }

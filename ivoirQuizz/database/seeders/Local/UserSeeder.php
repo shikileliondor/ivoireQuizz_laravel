@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders\Local;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -13,11 +13,17 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->ensureLocalEnvironment();
+        $password = config('seeding.local_demo_password');
+        if (! is_string($password) || $password === '') {
+            throw new \RuntimeException('Définir LOCAL_DEMO_PASSWORD avant de lancer UserSeeder.');
+        }
+
         $users = [
             [
                 'name' => 'Kouassi Amon',
                 'email' => 'kouassi@test.com',
-                'password' => Hash::make('Test@2025!'),
+                'password' => Hash::make($password),
                 'friend_code' => 'KOU001',
                 'avatar_id' => 2,
                 'total_score' => 3250,
@@ -26,7 +32,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Adjoua Bamba',
                 'email' => 'adjoua@test.com',
-                'password' => Hash::make('Test@2025!'),
+                'password' => Hash::make($password),
                 'friend_code' => 'ADJ002',
                 'avatar_id' => 5,
                 'total_score' => 2800,
@@ -35,7 +41,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Koné Mamadou',
                 'email' => 'kone@test.com',
-                'password' => Hash::make('Test@2025!'),
+                'password' => Hash::make($password),
                 'friend_code' => 'KON003',
                 'avatar_id' => 3,
                 'total_score' => 4100,
@@ -44,7 +50,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Yao Serge',
                 'email' => 'yao@test.com',
-                'password' => Hash::make('Test@2025!'),
+                'password' => Hash::make($password),
                 'friend_code' => 'YAO004',
                 'avatar_id' => 7,
                 'total_score' => 1500,
@@ -53,7 +59,7 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Ahou Cécile',
                 'email' => 'ahou@test.com',
-                'password' => Hash::make('Test@2025!'),
+                'password' => Hash::make($password),
                 'friend_code' => 'AHO005',
                 'avatar_id' => 4,
                 'total_score' => 5200,
@@ -75,6 +81,13 @@ class UserSeeder extends Seeder
                     'updated_at' => now(),
                 ]
             );
+        }
+    }
+
+    private function ensureLocalEnvironment(): void
+    {
+        if (! app()->environment(['local', 'testing'])) {
+            throw new \RuntimeException('UserSeeder est réservé aux environnements local et testing.');
         }
     }
 }

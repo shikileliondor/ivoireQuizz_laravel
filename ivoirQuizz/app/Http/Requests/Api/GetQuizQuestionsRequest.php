@@ -23,7 +23,9 @@ class GetQuizQuestionsRequest extends FormRequest
     {
         return [
             'category_id' => ['nullable', 'exists:categories,id'],
-            'mode' => ['required', 'in:category,mixed'],
+            'mode' => ['required', 'in:category,mixed,daily'],
+            'search' => ['nullable', 'string', 'max:80'],
+            'difficulty' => ['nullable', 'in:easy,medium,hard,expert'],
         ];
     }
 

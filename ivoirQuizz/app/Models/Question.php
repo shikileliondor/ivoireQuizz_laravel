@@ -16,6 +16,7 @@ class Question extends Model
 
     protected $casts = [
         'points' => 'integer',
+        'source_version' => 'integer',
         'xp_reward' => 'integer',
         'time_limit' => 'integer',
         'is_active' => 'boolean',

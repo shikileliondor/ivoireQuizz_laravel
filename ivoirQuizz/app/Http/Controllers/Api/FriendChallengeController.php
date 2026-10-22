@@ -105,11 +105,12 @@ class FriendChallengeController extends Controller
             }
             $correct = 0;
             $score = 0;
+            $questionPoints = Question::query()->whereIn('id', $questionIds)->pluck('points', 'id');
             foreach ($data['answers'] as $answer) {
                 $option = ! empty($answer['answer_id']) ? DB::table('answers')->where('id', $answer['answer_id'])->where('question_id', $answer['question_id'])->first() : null;
                 if ($option && $option->is_correct) {
                     $correct++;
-                    $score += 100 + max(0, 30 - (int) $answer['response_time']) * 3;
+                    $score += (int) ($questionPoints[$answer['question_id']] ?? 0);
                 }
             }
             $updates = [$scoreColumn => $score, $isChallenger ? 'challenger_correct' : 'opponent_correct' => $correct, $isChallenger ? 'challenger_answers' : 'opponent_answers' => json_encode($data['answers']), 'updated_at' => now()];
@@ -135,6 +136,7 @@ class FriendChallengeController extends Controller
     {
         return $questions->map(fn ($q) => [
             'id' => $q->id, 'question_text' => $q->question_text ?? $q->text ?? $q->title ?? '',
+            'points' => (int) $q->points,
             'explanation' => $q->explanation, 'difficulty' => $q->difficulty ?? 1,
             'options' => $q->answers->shuffle()->values()->map(fn ($a) => ['id' => $a->id, 'option_text' => $a->answer_text, 'is_correct' => (bool) $a->is_correct])->all(),
         ])->all();
