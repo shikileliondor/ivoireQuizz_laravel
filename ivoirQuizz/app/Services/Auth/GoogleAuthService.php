@@ -92,7 +92,7 @@ class GoogleAuthService
             throw new InvalidArgumentException('Malformed Google ID token.');
         }
 
-        $jwks = Cache::remember('google:oidc:jwks', now()->addHour(), function (): array {
+        $jwks = Cache::store('file')->remember('google:oidc:jwks', now()->addHour(), function (): array {
             $response = Http::timeout(5)->get('https://www.googleapis.com/oauth2/v3/certs');
             if (! $response->successful()) {
                 throw new RuntimeException('Google signing certificates could not be fetched.');
