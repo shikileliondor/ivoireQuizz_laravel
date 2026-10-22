@@ -65,6 +65,9 @@ jobs:
           test -f release/vendor/autoload.php
           test -f release/public/build/manifest.json
           test ! -e release/.env
+          (cd release && zip -q -r vendor.zip vendor && rm -r vendor)
+          test -s release/vendor.zip
+          test ! -e release/vendor
 
       - name: Check FTP configuration
         shell: bash

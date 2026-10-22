@@ -15,7 +15,9 @@ La racine web doit pointer vers le dossier `public/` de Laravel. La structure co
 
 Si l’hébergeur impose `public_html`, transférez **le contenu de `release/public/`** dans `public_html`, et le reste de `release/` dans un dossier Laravel privé adjacent. Dans `public_html/index.php`, ajustez les chemins vers `vendor/autoload.php` et `bootstrap/app.php` si le dossier privé n’est pas le parent direct. Ne placez jamais `.env`, `vendor`, `storage` ou le code applicatif privé dans une racine web accessible.
 
-Une installation ou migration initiale nécessite un accès SSH/terminal chez l’hébergeur pour créer la configuration, générer la clé et exécuter les migrations. FTP seul ne peut pas accomplir ces opérations.
+Le workflow regroupe les dépendances Composer de production dans `vendor.zip` pour éviter l’envoi de milliers de petits fichiers. Il téléverse l’archive à la racine de l’application et n’envoie pas le dossier `vendor/` individuellement.
+
+Une installation ou migration initiale nécessite le gestionnaire de fichiers LWS pour extraire cette archive, ainsi que pour créer la configuration `.env`, générer la clé et exécuter les migrations. FTP seul ne peut pas exécuter les commandes Artisan.
 
 ## 2. Créer les secrets GitHub
 
@@ -62,22 +64,11 @@ Utilisez les valeurs d’hôte, base, utilisateur et mot de passe données par l
 
 ## 4. Initialiser et terminer le déploiement
 
-Depuis un terminal SSH dans le dossier privé de l’application, lors de la première installation :
+Dans le gestionnaire de fichiers LWS, ouvrez le dossier privé où se trouvent `artisan` et `bootstrap/`, puis extrayez `vendor.zip` **dans ce dossier**. L’archive contient déjà le dossier `vendor/`; après extraction, vérifiez que `vendor/autoload.php` existe à côté de `artisan`. Vous pouvez ensuite supprimer l’archive distante `vendor.zip` pour libérer de l’espace. Répétez l’extraction et remplacez le dossier `vendor/` lorsque les dépendances changent (notamment après une mise à jour de `composer.lock`).
 
-```sh
-cp .env.example .env
-php artisan key:generate
-```
+Créez `.env` dans ce même dossier, en partant de `.env.example` si le gestionnaire LWS permet de copier/renommer le fichier, puis remplacez les valeurs par celles de production ci-dessus. Générez une clé avec le générateur de clé de l’hébergement s’il en propose un; sinon, créez une clé Laravel localement avec `php artisan key:generate --show` et copiez sa valeur dans `APP_KEY`. Conservez cette clé après l’installation.
 
-Éditez ensuite `.env` avec les valeurs de production ci-dessus. À chaque déploiement, si SSH est disponible, exécutez :
-
-```sh
-php artisan migrate --force
-php artisan optimize
-php artisan storage:link
-```
-
-Donnez à l’utilisateur PHP du site les droits d’écriture sur `storage/` et `bootstrap/cache/`. Si SSH n’est pas inclus dans l’offre, faites effectuer l’initialisation/migration par le terminal de l’hébergeur ou son support. N’ouvrez pas une route HTTP publique pour exécuter arbitrairement les migrations.
+Les migrations et les commandes Artisan de cache/lien storage ne sont pas exécutables par FTP seul. Utilisez un terminal dans le panneau LWS s’il est disponible, ou demandez à leur support de lancer `php artisan migrate --force`, `php artisan optimize` et `php artisan storage:link` dans le dossier privé. N’ouvrez pas une route HTTP publique pour lancer les migrations. Donnez à l’utilisateur PHP du site les droits d’écriture sur `storage/` et `bootstrap/cache/`.
 
 ## Limites du déploiement FTP
 
