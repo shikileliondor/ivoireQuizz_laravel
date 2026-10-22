@@ -33,12 +33,13 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+          cache-dependency-path: ivoirQuizz/package-lock.json
 
       - name: Install production PHP dependencies
-        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+        run: composer install --working-dir=ivoirQuizz --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
 
       - name: Install frontend dependencies and build assets
-        run: npm ci && npm run build
+        run: npm ci --prefix ivoirQuizz && npm run build --prefix ivoirQuizz
 
       - name: Assemble release package
         shell: bash
@@ -60,7 +61,7 @@ jobs:
             --exclude='database/*.sqlite' \
             --exclude='database/*.sqlite-*' \
             --exclude='.phpunit.result.cache' \
-            ./ release/
+            ivoirQuizz/ release/
           test -f release/vendor/autoload.php
           test -f release/public/build/manifest.json
           test ! -e release/.env
