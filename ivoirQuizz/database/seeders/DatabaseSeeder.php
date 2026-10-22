@@ -6,6 +6,7 @@ use Database\Seeders\Campaigns\CampaignSeeder;
 use Database\Seeders\Reference\CategoriesSeeder;
 use Database\Seeders\Reference\ChestsSeeder;
 use Database\Seeders\Reference\CitiesSeeder;
+use Database\Seeders\Reference\CityImagesSeeder;
 use Database\Seeders\Reference\CollectiblesSeeder;
 use Database\Seeders\Reference\LeaguesSeeder;
 use Database\Seeders\Reference\RegionsSeeder;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CategoriesSeeder::class,
             RegionsSeeder::class,
             CitiesSeeder::class,
+            CityImagesSeeder::class,
             CampaignSeeder::class,
             ChestsSeeder::class,
             CollectiblesSeeder::class,
