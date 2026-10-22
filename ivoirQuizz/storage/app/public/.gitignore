@@ -1,2 +1,4 @@
 *
 !.gitignore
+!cities/
+!cities/*.jpg

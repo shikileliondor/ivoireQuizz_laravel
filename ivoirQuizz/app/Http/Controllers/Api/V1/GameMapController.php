@@ -73,6 +73,7 @@ class GameMapController extends Controller
 
     public function showLevel(Request $request, Level $level)
     {
+        $level->loadMissing('city');
         $this->attach(collect([$level]), 'level', $request->user());
 
         return $this->successResponse(new LevelResource($level), 'Niveau.');

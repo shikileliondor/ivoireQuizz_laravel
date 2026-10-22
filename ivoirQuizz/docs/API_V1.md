@@ -41,6 +41,28 @@ Retourne le profil joueur.
 ### GET /game/map
 Retourne régions, villes, niveaux actifs, progression utilisateur et position courante. Les bonnes réponses ne sont jamais retournées.
 
+Chaque ville inclut `image_url`, une URL absolue HTTPS vers son image ou `null` si aucun fichier n'est disponible. Les images sont servies depuis le disque Laravel `public`.
+
+Extrait de réponse :
+```json
+{
+  "success": true,
+  "message": "Carte du jeu.",
+  "data": {
+    "regions": [{
+      "cities": [{
+        "id": 3,
+        "name": "Yopougon",
+        "image_url": "https://laravelquizz.studiobeyam.net/storage/cities/yopougon.jpg"
+      }]
+    }],
+    "current_position": {"region_id": 1, "city_id": 3, "level_id": 12}
+  }
+}
+```
+
+Une ville sans image retourne `"image_url": null` et reste incluse dans la carte. Pour ajouter une illustration, placer le fichier dans `storage/app/public/cities/{slug}.jpg` (par exemple `cities/korhogo.jpg`). La colonne existante `cities.image`, lorsqu'elle est renseignée, permet d'utiliser un autre chemin sur le disque public. En production, le lien `public/storage` doit exister (`php artisan storage:link`). Voir `docs/CITY_IMAGE_CREDITS.md` pour les sources et licences des images fournies.
+
 ### GET /regions
 Liste des régions.
 
@@ -51,7 +73,7 @@ Détail région avec villes, niveaux et progression.
 Détail ville avec niveaux et progression.
 
 ### GET /levels/{level}
-Détail niveau sans réponses correctes.
+Détail niveau sans réponses correctes. La réponse inclut aussi `city`, la ressource de la ville du niveau avec son `image_url`.
 
 ## Sessions de jeu
 

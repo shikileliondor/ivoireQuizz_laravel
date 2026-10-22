@@ -11,6 +11,7 @@ use App\Models\UserLevelProgress;
 use App\Models\UserRegionProgress;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
@@ -47,5 +48,46 @@ class GameMapTest extends TestCase
         $this->assertSame(['aboisso'], array_column($payload['regions'][2]['cities'], 'slug'));
         $this->assertFalse($payload['regions'][1]['cities'][0]['is_unlocked']);
         $this->assertFalse($payload['regions'][2]['cities'][0]['is_unlocked']);
+    }
+
+    public function test_city_without_an_available_image_returns_null_without_breaking_the_map(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+        $user = User::factory()->create(['friend_code' => 'MAP003']);
+        $city = City::query()->where('slug', 'yopougon')->firstOrFail();
+        $city->update(['image' => 'cities/missing-yopougon.jpg']);
+        Storage::fake('public');
+        Sanctum::actingAs($user);
+
+        $payload = $this->getJson('/api/v1/game/map')
+            ->assertOk()
+            ->json('data');
+
+        $this->assertSame('yopougon', $payload['regions'][0]['cities'][0]['slug']);
+        $this->assertNull($payload['regions'][0]['cities'][0]['image_url']);
+    }
+
+    public function test_city_image_urls_are_absolute_https_and_included_in_level_details(): void
+    {
+        $this->seed(DatabaseSeeder::class);
+        $user = User::factory()->create(['friend_code' => 'MAP004']);
+        $city = City::query()->where('slug', 'yopougon')->firstOrFail();
+        $city->update(['image' => null]);
+        Storage::fake('public');
+        Storage::disk('public')->put('cities/yopougon.jpg', 'image-content');
+        config(['filesystems.disks.public.url' => 'http://example.test/storage']);
+        Storage::forgetDisk('public');
+        $level = Level::query()->where('city_id', $city->id)->orderBy('order')->firstOrFail();
+        Sanctum::actingAs($user);
+
+        $mapPayload = $this->getJson('/api/v1/game/map')
+            ->assertOk()
+            ->json('data');
+        $levelPayload = $this->getJson('/api/v1/levels/'.$level->id)
+            ->assertOk()
+            ->json('data');
+
+        $this->assertSame('https://example.test/storage/cities/yopougon.jpg', $mapPayload['regions'][0]['cities'][0]['image_url']);
+        $this->assertSame('https://example.test/storage/cities/yopougon.jpg', $levelPayload['city']['image_url']);
     }
 }
