@@ -65,9 +65,37 @@ jobs:
           test -f release/vendor/autoload.php
           test -f release/public/build/manifest.json
           test ! -e release/.env
-          (cd release && zip -q -r vendor.zip vendor && rm -r vendor)
-          test -s release/vendor.zip
-          test ! -e release/vendor
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZIP_DEFLATED, ZipFile
+
+          release = Path("release")
+          archive = Path("application.zip")
+          with ZipFile(archive, "w", compression=ZIP_DEFLATED, compresslevel=6) as bundle:
+              for file in release.rglob("*"):
+                  if file.is_file():
+                      name = file.relative_to(release).as_posix()
+                      if name == ".env" or name.startswith(".env."):
+                          raise SystemExit(f"Refusing to package environment file: {name}")
+                      bundle.write(file, name)
+
+          with ZipFile(archive) as bundle:
+              names = set(bundle.namelist())
+              required = {
+                  "artisan",
+                  "vendor/autoload.php",
+                  "public/index.php",
+                  "public/build/manifest.json",
+              }
+              missing = required - names
+              if missing:
+                  raise SystemExit(f"Application archive is missing: {', '.join(sorted(missing))}")
+          PY
+          rm -r release
+          mkdir release
+          mv application.zip release/application.zip
+          test -s release/application.zip
+          test "$(find release -maxdepth 1 -type f | wc -l)" -eq 1
 
       - name: Check FTP configuration
         shell: bash

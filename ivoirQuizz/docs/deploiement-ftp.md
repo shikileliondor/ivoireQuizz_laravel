@@ -13,11 +13,11 @@ La racine web doit pointer vers le dossier `public/` de Laravel. La structure co
 /home/COMPTE/public_html/      # racine web, contenu du dossier Laravel public/
 ```
 
-Si l’hébergeur impose `public_html`, transférez **le contenu de `release/public/`** dans `public_html`, et le reste de `release/` dans un dossier Laravel privé adjacent. Dans `public_html/index.php`, ajustez les chemins vers `vendor/autoload.php` et `bootstrap/app.php` si le dossier privé n’est pas le parent direct. Ne placez jamais `.env`, `vendor`, `storage` ou le code applicatif privé dans une racine web accessible.
+Extrayez `application.zip` dans le dossier privé de l’application, jamais directement dans une racine web publique. Si LWS permet de pointer le domaine vers le sous-dossier `public/`, utilisez ce réglage. Si le domaine doit obligatoirement utiliser `public_html`, copiez-y le contenu du sous-dossier `public/` après chaque extraction et ajustez `public_html/index.php` pour qu’il charge `vendor/autoload.php` et `bootstrap/app.php` depuis le dossier privé adjacent. Ne placez jamais `.env`, `vendor`, `storage` ou le code applicatif privé dans une racine web accessible.
 
-Le workflow regroupe les dépendances Composer de production dans `vendor.zip` pour éviter l’envoi de milliers de petits fichiers. Il téléverse l’archive à la racine de l’application et n’envoie pas le dossier `vendor/` individuellement.
+Le workflow regroupe le code Laravel, `vendor/` et les assets compilés dans une archive `application.zip`. Il téléverse uniquement cette archive au lieu d’envoyer des centaines ou milliers de fichiers séparément. Le fichier `.env` et les données d’exécution présentes dans `storage/` ne sont pas inclus.
 
-Une installation ou migration initiale nécessite le gestionnaire de fichiers LWS pour extraire cette archive, ainsi que pour créer la configuration `.env`, générer la clé et exécuter les migrations. FTP seul ne peut pas exécuter les commandes Artisan.
+Chaque déploiement nécessite d’extraire cette archive depuis le gestionnaire de fichiers LWS. Une installation initiale nécessite aussi de créer la configuration `.env`, générer la clé et exécuter les migrations. FTP seul ne peut pas exécuter les commandes Artisan.
 
 ## 2. Créer les secrets GitHub
 
@@ -64,7 +64,7 @@ Utilisez les valeurs d’hôte, base, utilisateur et mot de passe données par l
 
 ## 4. Initialiser et terminer le déploiement
 
-Dans le gestionnaire de fichiers LWS, ouvrez le dossier privé où se trouvent `artisan` et `bootstrap/`, puis extrayez `vendor.zip` **dans ce dossier**. L’archive contient déjà le dossier `vendor/`; après extraction, vérifiez que `vendor/autoload.php` existe à côté de `artisan`. Vous pouvez ensuite supprimer l’archive distante `vendor.zip` pour libérer de l’espace. Répétez l’extraction et remplacez le dossier `vendor/` lorsque les dépendances changent (notamment après une mise à jour de `composer.lock`).
+Dans le gestionnaire de fichiers LWS, ouvrez le dossier privé où se trouvent `artisan` et `bootstrap/`, puis extrayez `application.zip` **dans ce dossier**. L’archive contient directement `artisan`, `app/`, `bootstrap/`, `public/`, `vendor/` et les autres fichiers du projet; elle ne crée pas de sous-dossier `release/`. Extrayez en remplaçant les fichiers existants, puis vérifiez que `vendor/autoload.php` et `public/build/manifest.json` existent. Gardez `.env` et les données de `storage/` en place. Vous pouvez supprimer `application.zip` après extraction pour libérer de l’espace. Répétez l’extraction après chaque déploiement.
 
 Créez `.env` dans ce même dossier, en partant de `.env.example` si le gestionnaire LWS permet de copier/renommer le fichier, puis remplacez les valeurs par celles de production ci-dessus. Générez une clé avec le générateur de clé de l’hébergement s’il en propose un; sinon, créez une clé Laravel localement avec `php artisan key:generate --show` et copiez sa valeur dans `APP_KEY`. Conservez cette clé après l’installation.
 
