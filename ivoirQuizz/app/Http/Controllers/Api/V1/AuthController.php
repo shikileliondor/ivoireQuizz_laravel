@@ -8,8 +8,12 @@ use App\Http\Requests\Api\V1\Auth\LoginRequest;
 use App\Http\Requests\Api\V1\Auth\RegisterRequest;
 use App\Http\Resources\Api\V1\UserResource;
 use App\Services\Auth\AuthService;
+use App\Services\Auth\GoogleAuthService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use InvalidArgumentException;
+use Throwable;
 
 class AuthController extends Controller
 {
@@ -38,6 +42,30 @@ class AuthController extends Controller
             'token' => $result['token'],
             'token_type' => 'Bearer',
         ]);
+    }
+
+    public function google(Request $request, GoogleAuthService $service): JsonResponse
+    {
+        $validated = $request->validate([
+            'id_token' => ['required', 'string', 'max:8192'],
+        ]);
+
+        try {
+            $result = $service->authenticate($validated['id_token']);
+
+            return $this->success('Connexion Google réussie.', [
+                'user' => new UserResource($result['user']),
+                'token' => $result['token'],
+                'token_type' => 'Bearer',
+                'created' => $result['created'],
+            ]);
+        } catch (InvalidArgumentException $exception) {
+            return $this->error('Jeton Google invalide ou compte inactif.', [], 401);
+        } catch (Throwable $exception) {
+            Log::warning('Échec de vérification Google.', ['exception' => $exception::class]);
+
+            return $this->error('La connexion Google est temporairement indisponible.', [], 503);
+        }
     }
 
     public function logout(Request $request): JsonResponse

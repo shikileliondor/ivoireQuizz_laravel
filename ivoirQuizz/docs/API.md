@@ -2,6 +2,30 @@
 
 Base URL : `/api/v1`
 
+## Connexion Google (Flutter)
+
+`POST /auth/google` est public et soumis à la limite `5/minute` par adresse IP. Flutter envoie le **ID token** Google obtenu après la connexion, jamais le simple identifiant de compte ni un access token.
+
+```json
+{ "id_token": "<Google ID token>" }
+```
+
+Le serveur vérifie la signature, l'expiration et l'audience du jeton. Il retrouve ou crée le compte et retourne `data.user`, `data.token`, `data.token_type` (`Bearer`) et `data.created`. Le client conserve le token Sanctum et l'envoie ensuite avec `Authorization: Bearer <token>`.
+
+Configurer `GOOGLE_CLIENT_ID` sur le serveur avec le Client ID OAuth **Web** utilisé comme audience serveur par l'application Flutter (`serverClientId`). Ce Client ID est public; aucun secret OAuth ne doit être embarqué dans l'application mobile. Les ID tokens d'une autre audience sont refusés.
+
+```dart
+final response = await http.post(
+  Uri.parse('$baseUrl/api/v1/auth/google'),
+  headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+  body: jsonEncode({'id_token': idToken}),
+);
+final body = jsonDecode(response.body) as Map<String, dynamic>;
+final apiToken = body['data']['token'] as String;
+```
+
+Le projet Flutter doit aussi déclarer les identifiants OAuth Android/iOS correspondant aux package/bundle IDs et empreintes de ses builds. Il n'est pas présent dans ce dépôt.
+
 Les routes protégées utilisent l’en-tête `Authorization: Bearer <token>` et acceptent du JSON.
 
 ## Format des réponses
