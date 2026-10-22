@@ -7,12 +7,16 @@ use App\Models\User;
 use App\Models\UserLife;
 use App\Models\UserStreak;
 use App\Services\Game\ProgressionService;
-use Google\Auth\AccessToken;
+use Firebase\JWT\JWK;
+use Firebase\JWT\JWT;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use RuntimeException;
+use Throwable;
 
 class GoogleAuthService
 {
@@ -26,10 +30,7 @@ class GoogleAuthService
             throw new RuntimeException('Google client ID is not configured.');
         }
 
-        $claims = (new AccessToken())->verify($idToken, [
-            'audience' => $clientId,
-            'issuer' => 'https://accounts.google.com',
-        ]);
+        $claims = (array) $this->verifyIdToken($idToken, $clientId);
 
         if (! is_array($claims)
             || empty($claims['sub'])
@@ -83,5 +84,36 @@ class GoogleAuthService
                 'created' => $created,
             ];
         });
+    }
+
+    private function verifyIdToken(string $idToken, string $clientId): object
+    {
+        if (count(explode('.', $idToken)) !== 3) {
+            throw new InvalidArgumentException('Malformed Google ID token.');
+        }
+
+        $jwks = Cache::remember('google:oidc:jwks', now()->addHour(), function (): array {
+            $response = Http::timeout(5)->get('https://www.googleapis.com/oauth2/v3/certs');
+            if (! $response->successful()) {
+                throw new RuntimeException('Google signing certificates could not be fetched.');
+            }
+
+            return $response->json();
+        });
+
+        try {
+            $claims = JWT::decode($idToken, JWK::parseKeySet($jwks));
+        } catch (Throwable $exception) {
+            throw new InvalidArgumentException('Invalid Google ID token.', previous: $exception);
+        }
+
+        $audiences = is_array($claims->aud ?? null) ? $claims->aud : [$claims->aud ?? null];
+        if (! in_array($clientId, $audiences, true)
+            || ! in_array($claims->iss ?? null, ['accounts.google.com', 'https://accounts.google.com'], true)
+            || (count($audiences) > 1 && ($claims->azp ?? null) !== $clientId)) {
+            throw new InvalidArgumentException('Google ID token claims do not match this application.');
+        }
+
+        return $claims;
     }
 }

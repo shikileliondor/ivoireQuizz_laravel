@@ -62,7 +62,10 @@ class AuthController extends Controller
         } catch (InvalidArgumentException $exception) {
             return $this->error('Jeton Google invalide ou compte inactif.', [], 401);
         } catch (Throwable $exception) {
-            Log::warning('Échec de vérification Google.', ['exception' => $exception::class]);
+            Log::warning('Échec de vérification Google.', [
+                'exception' => $exception::class,
+                'message' => $exception->getMessage(),
+            ]);
 
             return $this->error('La connexion Google est temporairement indisponible.', [], 503);
         }
