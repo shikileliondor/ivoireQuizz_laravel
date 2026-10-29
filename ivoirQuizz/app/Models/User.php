@@ -87,6 +87,14 @@ class User extends Authenticatable
         return $this->hasMany(GameSession::class);
     }
 
+    /**
+     * Appareils qui reçoivent les notifications push du joueur.
+     */
+    public function deviceTokens(): HasMany
+    {
+        return $this->hasMany(DeviceToken::class);
+    }
+
     public function userLives(): HasOne
     {
         return $this->hasOne(UserLife::class);

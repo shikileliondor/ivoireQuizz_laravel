@@ -32,6 +32,12 @@ return [
         'client_id' => env('GOOGLE_CLIENT_ID'),
     ],
 
+    // Clé du compte de service Firebase (projet « notifquizz »), hors de public/
+    // et hors de Git. Chemin absolu ou relatif à la racine du projet.
+    'fcm' => [
+        'credentials' => env('FIREBASE_CREDENTIALS', 'storage/app/firebase/notifquizz-adminsdk.json'),
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),

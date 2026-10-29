@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Friendship;
 use App\Models\Question;
+use App\Models\User;
+use App\Services\Notifications\FcmService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,6 +58,16 @@ class FriendChallengeController extends Controller
             'question_ids' => json_encode($questions->modelKeys()), 'status' => 'pending',
             'created_at' => now(), 'updated_at' => now(),
         ]);
+
+        $opponent = User::query()->find($opponentId);
+        if ($opponent) {
+            app(FcmService::class)->sendToUser(
+                $opponent,
+                'Nouveau défi !',
+                "{$challenger->name} te défie sur IvoireQuizz. Code : {$code}",
+                ['type' => 'challenge', 'code' => $code],
+            );
+        }
 
         return response()->json(['success' => true, 'data' => ['code' => $code, 'questions' => $this->formatQuestions($questions), 'status' => 'pending']], 201);
     }

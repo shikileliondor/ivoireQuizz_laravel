@@ -26,7 +26,9 @@ class StoreGameSessionRequest extends FormRequest
             'category_id' => ['nullable', 'exists:categories,id'],
             'mode' => ['required', 'in:category,mixed,daily'],
             'duration_seconds' => ['required', 'integer', 'min:0'],
-            'answers' => ['required', 'array', 'size:10'],
+            // Une catégorie peut avoir moins de 10 questions actives : /quiz/questions
+            // en sert alors moins, la partie doit quand même être acceptée.
+            'answers' => ['required', 'array', 'min:1', 'max:10'],
             'answers.*.question_id' => ['required', 'distinct', 'exists:questions,id'],
             'answers.*.selected_option_id' => ['nullable', 'exists:answers,id'],
             'answers.*.response_time_seconds' => ['required', 'integer', 'min:0', 'max:30'],

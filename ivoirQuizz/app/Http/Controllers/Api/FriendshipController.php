@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\AddFriendRequest;
 use App\Models\Friendship;
 use App\Models\User;
+use App\Services\Notifications\FcmService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Throwable;
@@ -120,6 +121,13 @@ class FriendshipController extends Controller
                 'status' => 'pending',
             ]);
 
+            app(FcmService::class)->sendToUser(
+                $friend,
+                'Nouvelle demande d\'ami',
+                "{$user->name} veut devenir ton ami sur IvoireQuizz.",
+                ['type' => 'friend_request'],
+            );
+
             return response()->json([
                 'success' => true,
                 'data' => [
@@ -163,6 +171,16 @@ class FriendshipController extends Controller
             }
 
             $friendship->update(['status' => 'accepted']);
+
+            $requester = User::query()->find($friendship->requester_id);
+            if ($requester) {
+                app(FcmService::class)->sendToUser(
+                    $requester,
+                    'Demande acceptée',
+                    "{$request->user()->name} a accepté ta demande d'ami.",
+                    ['type' => 'friend_accepted'],
+                );
+            }
 
             return response()->json([
                 'success' => true,
