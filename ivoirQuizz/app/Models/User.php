@@ -77,6 +77,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'last_activity_date' => 'date',
         'status' => UserStatus::class,
+        'is_admin' => 'boolean',
     ];
 
     /**
@@ -123,6 +124,11 @@ class User extends Authenticatable
     public function userPassports(): HasMany
     {
         return $this->hasMany(UserPassport::class);
+    }
+
+    public function questionReports(): HasMany
+    {
+        return $this->hasMany(QuestionReport::class);
     }
 
     /**

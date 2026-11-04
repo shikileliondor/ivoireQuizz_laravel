@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\QuestionReport;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -72,6 +74,10 @@ class AppServiceProvider extends ServiceProvider
 
         RateLimiter::for('quiz', function (Request $request) use ($limitKey, $jsonTooManyAttempts): Limit {
             return Limit::perMinute(30)->by($limitKey($request))->response($jsonTooManyAttempts);
+        });
+
+        View::composer('admin.layouts.app', function ($view): void {
+            $view->with('pendingReportsCount', QuestionReport::query()->where('status', 'pending')->count());
         });
     }
 }

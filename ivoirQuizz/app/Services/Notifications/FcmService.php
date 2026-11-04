@@ -4,6 +4,8 @@ namespace App\Services\Notifications;
 
 use App\Models\DeviceToken;
 use App\Models\User;
+use Illuminate\Http\Client\Pool;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -19,6 +21,9 @@ use Throwable;
  */
 class FcmService
 {
+    /** Requêtes envoyées en parallèle par lot, pour tenir dans le temps d'une requête HTTP. */
+    private const BATCH_SIZE = 100;
+
     private ?array $credentials = null;
 
     /**
@@ -34,10 +39,7 @@ class FcmService
                 return;
             }
 
-            $accessToken = $this->accessToken();
-            foreach ($tokens as $token) {
-                $this->sendToToken($accessToken, $token, $title, $body, $data);
-            }
+            $this->sendToTokens($tokens, $title, $body, $data);
         } catch (Throwable $exception) {
             Log::warning('FCM : notification non envoyée', [
                 'user_id' => $user->id,
@@ -46,7 +48,43 @@ class FcmService
         }
     }
 
-    private function sendToToken(string $accessToken, string $token, string $title, string $body, array $data): void
+    /**
+     * Envoie la même notification à plusieurs appareils, par lots parallèles.
+     * Lève une exception si la configuration FCM est invalide ; les échecs par appareil sont comptés.
+     *
+     * @param  iterable<string>  $tokens
+     * @return array{sent: int, failed: int, removed: int}
+     */
+    public function sendToTokens(iterable $tokens, string $title, string $body, array $data = []): array
+    {
+        $result = ['sent' => 0, 'failed' => 0, 'removed' => 0];
+        $tokens = collect($tokens)->filter()->unique()->values();
+        if ($tokens->isEmpty()) {
+            return $result;
+        }
+
+        $accessToken = $this->accessToken();
+        $url = 'https://fcm.googleapis.com/v1/projects/'.$this->credentials()['project_id'].'/messages:send';
+
+        foreach ($tokens->chunk(self::BATCH_SIZE) as $batch) {
+            $batch = $batch->values();
+            $responses = Http::pool(fn (Pool $pool) => $batch
+                ->map(fn (string $token, int $index) => $pool->as((string) $index)
+                    ->withToken($accessToken)
+                    ->timeout(10)
+                    ->post($url, ['message' => $this->message($token, $title, $body, $data)]))
+                ->all());
+
+            foreach ($batch as $index => $token) {
+                $outcome = $this->handleResponse($token, $responses[(string) $index] ?? null);
+                $result[$outcome]++;
+            }
+        }
+
+        return $result;
+    }
+
+    private function message(string $token, string $title, string $body, array $data): array
     {
         $message = [
             'token' => $token,
@@ -57,17 +95,34 @@ class FcmService
             $message['data'] = array_map('strval', $data);
         }
 
-        $response = Http::withToken($accessToken)->timeout(5)->post(
-            'https://fcm.googleapis.com/v1/projects/'.$this->credentials()['project_id'].'/messages:send',
-            ['message' => $message],
-        );
+        return $message;
+    }
+
+    /**
+     * @return 'sent'|'failed'|'removed'
+     */
+    private function handleResponse(string $token, mixed $response): string
+    {
+        if (! $response instanceof Response) {
+            Log::warning('FCM : appareil injoignable', ['error' => $response instanceof Throwable ? $response->getMessage() : 'aucune réponse']);
+
+            return 'failed';
+        }
 
         // Application désinstallée ou jeton périmé : on oublie cet appareil.
         if ($response->status() === 404 || $response->json('error.details.0.errorCode') === 'UNREGISTERED') {
             DeviceToken::query()->where('token', $token)->delete();
-        } elseif ($response->failed()) {
-            Log::warning('FCM : envoi refusé', ['status' => $response->status(), 'body' => $response->body()]);
+
+            return 'removed';
         }
+
+        if ($response->failed()) {
+            Log::warning('FCM : envoi refusé', ['status' => $response->status(), 'body' => $response->body()]);
+
+            return 'failed';
+        }
+
+        return 'sent';
     }
 
     /** Jeton d'accès Google (valable 1 h), gardé en cache 55 minutes. */

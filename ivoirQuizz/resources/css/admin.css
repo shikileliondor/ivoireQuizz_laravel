@@ -1,0 +1,102 @@
+/* source(none) : seules les vues de l'admin sont scannées, pour garder un CSS léger. */
+@import 'tailwindcss' source(none);
+
+@source '../views/admin/**/*.blade.php';
+@source '../views/components/admin/**/*.blade.php';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+
+    /* Orange et vert du drapeau ivoirien, repris de l'application mobile. */
+    --color-brand-50: #fff4e6;
+    --color-brand-100: #ffe3c2;
+    --color-brand-200: #ffc98a;
+    --color-brand-300: #ffad52;
+    --color-brand-400: #fb9526;
+    --color-brand-500: #f77f00;
+    --color-brand-600: #d96e00;
+    --color-brand-700: #b35a00;
+    --color-brand-800: #8c4700;
+    --color-brand-900: #663300;
+
+    --color-ci-50: #e6f6ef;
+    --color-ci-500: #009e60;
+    --color-ci-600: #00804e;
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    /* Variantes à combiner avec .btn (class="btn btn-primary"). */
+    .btn-primary {
+        @apply bg-brand-500 text-white shadow-sm hover:bg-brand-600 focus-visible:outline-brand-500;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-slate-700 ring-1 ring-slate-300 ring-inset hover:bg-slate-50 focus-visible:outline-slate-400;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white shadow-sm hover:bg-red-700 focus-visible:outline-red-600;
+    }
+
+    .btn-ghost {
+        @apply px-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900;
+    }
+
+    .btn-sm {
+        @apply px-2.5 py-1.5 text-xs;
+    }
+
+    .form-label {
+        @apply mb-1.5 block text-sm font-medium text-slate-700;
+    }
+
+    .form-input {
+        @apply block w-full rounded-lg border-0 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm ring-1 ring-slate-300 ring-inset placeholder:text-slate-400 focus:ring-2 focus:ring-brand-500 focus:outline-hidden focus:ring-inset;
+    }
+
+    .form-input-error {
+        @apply ring-red-400 focus:ring-red-500;
+    }
+
+    .card {
+        @apply rounded-xl bg-white shadow-sm ring-1 ring-slate-200;
+    }
+
+    .table-base {
+        @apply min-w-full divide-y divide-slate-200 text-sm;
+    }
+
+    .table-base thead th {
+        @apply bg-slate-50 px-4 py-3 text-left text-xs font-semibold tracking-wide text-slate-500 uppercase;
+    }
+
+    .table-base tbody td {
+        @apply px-4 py-3 align-middle text-slate-700;
+    }
+
+    .table-base tbody tr {
+        @apply hover:bg-slate-50/70;
+    }
+
+    .nav-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white;
+    }
+
+    .nav-link-active {
+        @apply bg-brand-500/15 text-brand-300 hover:bg-brand-500/20 hover:text-brand-200;
+    }
+}
+
+/* Menu latéral mobile ouvert par admin.js (classe posée sur <html>). */
+html.sidebar-open #admin-sidebar {
+    translate: 0 0;
+}
+
+html.sidebar-open #admin-backdrop {
+    display: block;
+}
