@@ -92,7 +92,8 @@ class ReminderService
 
         return [
             'last_run' => $lastRun,
-            'healthy' => $lastRun !== null && $lastRun->gt(now()->subMinutes(3)),
+            // Cron toutes les 5 minutes : au-delà de 10 minutes sans passage, il est arrêté.
+            'healthy' => $lastRun !== null && $lastRun->gt(now()->subMinutes(10)),
             'queue' => $queue,
             'pending_jobs' => $queue === 'database' ? DB::table(config('queue.connections.database.table', 'jobs'))->count() : null,
             'failed_jobs' => DB::table('failed_jobs')->count(),

@@ -62,7 +62,7 @@ class PushNotificationController extends Controller
             'scheduled' => $redirect->with('success', 'Notification programmée pour le '.$notification->scheduled_at->format('d/m/Y à H:i').'.'),
             'sent' => $redirect->with('success', $this->summary($notification)),
             'failed' => $redirect->with('error', 'Envoi échoué : '.$notification->error),
-            default => $redirect->with('success', 'Envoi lancé : la progression s’affiche dans l’historique.'),
+            default => $redirect->with('success', 'Envoi lancé : il part au prochain passage du planificateur (5 min max). La progression s’affiche dans l’historique.'),
         };
     }
 

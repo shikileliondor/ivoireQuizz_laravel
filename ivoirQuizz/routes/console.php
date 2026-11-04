@@ -96,17 +96,18 @@ Artisan::command('notifications:tick', function (ReminderService $reminders): in
     return Command::SUCCESS;
 })->purpose('Send due scheduled push campaigns and automatic reminders (run every minute by the scheduler).');
 
-// Planificateur : une seule tâche Cron chaque minute lance `php artisan schedule:run` (voir docs/ADMIN.md).
-// Les tâches dues s'exécutent dans l'ordre : les notifications sont mises en file, puis le worker les envoie.
+// Planificateur : une tâche Cron toutes les 5 minutes (ou chaque minute) lance `php artisan schedule:run`
+// (voir docs/ADMIN.md). Les tâches « everyMinute » tournent à chaque passage, dans l'ordre :
+// les notifications sont mises en file, puis le worker les envoie.
 Schedule::command('notifications:tick')->everyMinute()->withoutOverlapping(10);
 
 Schedule::call(fn () => PushLog::query()->where('created_at', '<', now()->subDays(90))->delete())
     ->name('push-logs:prune')
     ->dailyAt('03:00');
 
-// Hébergement mutualisé : pas de worker permanent, la file est vidée à chaque passage (50 s max).
+// Hébergement mutualisé : pas de worker permanent, la file est vidée à chaque passage (4 min max).
 if (config('queue.default') !== 'sync') {
-    Schedule::command('queue:work', ['--stop-when-empty', '--max-time=50', '--tries=3'])
+    Schedule::command('queue:work', ['--stop-when-empty', '--max-time=240', '--tries=3'])
         ->everyMinute()
-        ->withoutOverlapping(2);
+        ->withoutOverlapping(5);
 }

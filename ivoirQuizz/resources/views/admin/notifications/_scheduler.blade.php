@@ -26,7 +26,7 @@
             @endif
 
             <details class="mt-3 text-xs" @if (! $scheduler['healthy']) open @endif>
-                <summary class="cursor-pointer font-medium text-slate-700">Tâche Cron à créer (cPanel → Tâches Cron, « Une fois par minute »)</summary>
+                <summary class="cursor-pointer font-medium text-slate-700">Tâche Cron à créer (cPanel → Tâches Cron, « Une fois toutes les cinq minutes »)</summary>
                 <code class="mt-2 block rounded-lg bg-slate-900 px-3 py-2 font-mono break-all text-slate-100 select-all">{{ $scheduler['command'] }}</code>
             </details>
         </div>

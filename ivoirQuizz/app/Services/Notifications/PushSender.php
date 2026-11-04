@@ -21,10 +21,14 @@ class PushSender
     /** Joueurs par job : un lot reste court, même sur un hébergement mutualisé. */
     public const CHUNK = 500;
 
+    /** Notifications d'action à envoyer une fois la réponse HTTP partie. */
+    private array $afterResponse = [];
+
     public function __construct(private readonly FcmService $fcm) {}
 
     /**
      * Notification déclenchée par une action (ami, défi, admin…), si ce type est activé.
+     * Elle part juste après la réponse HTTP, sans attendre le passage du Cron : le joueur est prévenu tout de suite.
      * Ne lève jamais d'exception : l'action du joueur ne doit pas échouer à cause d'un envoi.
      */
     public function notify(User $user, string $type, array $vars = [], array $data = [], string $segment = 'default'): void
@@ -35,9 +39,35 @@ class PushSender
                 return;
             }
 
-            $this->queue($automation, [$this->message($automation, $user, $segment, $vars, $data)]);
+            $message = $this->message($automation, $user, $segment, $vars, $data);
+            $this->log($automation, [$message]);
         } catch (Throwable $exception) {
             Log::warning('Notification push non envoyée', ['type' => $type, 'user_id' => $user->id, 'error' => $exception->getMessage()]);
+
+            return;
+        }
+
+        if ($this->afterResponse === []) {
+            app()->terminating(fn () => $this->flushAfterResponse());
+        }
+        $this->afterResponse[] = Arr::except($message, 'ref');
+    }
+
+    /**
+     * Laravel ne vide jamais ses callbacks de fin de requête : la liste est vidée ici,
+     * pour qu'un second appel (requête suivante d'un test, Octane) n'envoie rien en double.
+     */
+    private function flushAfterResponse(): void
+    {
+        $messages = $this->afterResponse;
+        $this->afterResponse = [];
+
+        foreach ($messages as $message) {
+            try {
+                SendPushBatchJob::dispatchSync([$message]);
+            } catch (Throwable $exception) {
+                Log::warning('Notification push non envoyée', ['user_id' => $message['user_id'], 'error' => $exception->getMessage()]);
+            }
         }
     }
 
@@ -62,20 +92,24 @@ class PushSender
      */
     public function queue(PushAutomation $automation, array $messages): int
     {
-        $now = now();
         foreach (array_chunk($messages, self::CHUNK) as $chunk) {
-            PushLog::query()->insert(array_map(fn (array $message) => [
-                'user_id' => $message['user_id'],
-                'type' => $automation->key,
-                'ref' => $message['ref'],
-                'is_reminder' => $automation->isReminder(),
-                'created_at' => $now,
-            ], $chunk));
-
+            $this->log($automation, $chunk);
             SendPushBatchJob::dispatch(array_map(fn (array $message) => Arr::except($message, 'ref'), $chunk));
         }
 
         return count($messages);
+    }
+
+    private function log(PushAutomation $automation, array $messages): void
+    {
+        $now = now();
+        PushLog::query()->insert(array_map(fn (array $message) => [
+            'user_id' => $message['user_id'],
+            'type' => $automation->key,
+            'ref' => $message['ref'],
+            'is_reminder' => $automation->isReminder(),
+            'created_at' => $now,
+        ], $messages));
     }
 
     /**

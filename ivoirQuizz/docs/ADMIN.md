@@ -47,7 +47,7 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 
 Deux familles, définies dans `App\Services\Notifications\PushCatalog`. L'admin modifie les réglages et les textes, qui sont enregistrés dans `push_automations`.
 
-- **Actions**, envoyées sur le moment et sans plafond : demande d'ami, ami accepté, défi reçu, résultat de défi, signalement corrigé, cadeau de l'équipe (case « Prévenir le joueur » de la fiche joueur).
+- **Actions**, envoyées juste après la réponse HTTP, sans attendre le Cron et sans plafond : demande d'ami, ami accepté, défi reçu, résultat de défi, signalement corrigé, cadeau de l'équipe (case « Prévenir le joueur » de la fiche joueur).
 - **Relances**, envoyées par le planificateur :
 
   | Relance | Quand | Règle |
@@ -65,13 +65,20 @@ Côté app, `data.type` indique l'écran à ouvrir : `daily_reminder`, `streak`,
 
 ## Planificateur et file d'attente (LWS)
 
-Les envois programmés et les relances ne partent que si le planificateur tourne. Dans cPanel, ouvrir **Tâches Cron**, choisir « Une fois par minute » et saisir la commande affichée dans l'admin (page Notifications auto, encart « Planificateur ») :
+Les envois programmés, les envois groupés et les relances ne partent que si le planificateur tourne. Dans cPanel, ouvrir **Tâches Cron**, choisir « Une fois toutes les cinq minutes » et saisir la commande affichée dans l'admin (page Notifications auto, encart « Planificateur ») :
 
 ```
-/usr/local/bin/php /home/COMPTE/CHEMIN_APP/artisan schedule:run >> /dev/null 2>&1
+/usr/local/bin/php /home/c2860566c/public_html/ivoireQuizz_laravel/ivoirQuizz/artisan schedule:run >> /dev/null 2>&1
 ```
 
-- À chaque passage, `notifications:tick` lance les envois dus. Si `QUEUE_CONNECTION=database`, un `queue:work --stop-when-empty` de 50 s au maximum envoie ensuite les lots.
+- À chaque passage, `notifications:tick` lance les envois dus. Si `QUEUE_CONNECTION=database`, un `queue:work --stop-when-empty` de 4 minutes au maximum envoie ensuite les lots.
+- Avec un Cron toutes les 5 minutes :
+  - les notifications d'action et l'envoi test partent tout de suite ;
+  - les relances à heure fixe partent à l'heure pile ;
+  - un envoi groupé ou programmé part dans les 5 minutes ;
+  - « Vies rechargées » arrive 5 à 15 minutes après la recharge.
+
+  Un Cron chaque minute fonctionne aussi.
 - **Recommandé en production** : mettre `QUEUE_CONNECTION=database` dans le `.env`, puis lancer `php artisan config:cache` si la configuration est en cache. Avec `sync`, tout fonctionne aussi, mais les envois partent pendant la requête ou le passage du Cron, ce qui est plus lent pour les grosses audiences.
 - L'encart « Planificateur » passe au vert au premier passage. S'il reste rouge, vérifier la commande Cron et la version de `/usr/local/bin/php -v`, qui doit être 8.2 ou plus. Si cPanel utilise un autre binaire PHP, le renseigner dans `CRON_PHP_BINARY` du `.env`.
 
