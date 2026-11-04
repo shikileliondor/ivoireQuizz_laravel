@@ -2,12 +2,15 @@
 
 use App\Enums\UserStatus;
 use App\Jobs\RefreshLeagueRanksJob;
+use App\Models\PushLog;
 use App\Models\User;
 use App\Services\Game\GameCacheService;
 use App\Services\Game\LeagueService;
+use App\Services\Notifications\ReminderService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command;
 
@@ -84,3 +87,26 @@ Artisan::command('leagues:refresh-ranks {--sync : Run synchronously instead of d
 
     return Command::SUCCESS;
 })->purpose('Refresh league ranks from MySQL and rebuild Redis sorted sets.');
+
+Artisan::command('notifications:tick', function (ReminderService $reminders): int {
+    foreach ($reminders->tick() as $type => $count) {
+        $this->info("{$type} : {$count} notification(s) mise(s) en file.");
+    }
+
+    return Command::SUCCESS;
+})->purpose('Send due scheduled push campaigns and automatic reminders (run every minute by the scheduler).');
+
+// Planificateur : une seule tâche Cron chaque minute lance `php artisan schedule:run` (voir docs/ADMIN.md).
+// Les tâches dues s'exécutent dans l'ordre : les notifications sont mises en file, puis le worker les envoie.
+Schedule::command('notifications:tick')->everyMinute()->withoutOverlapping(10);
+
+Schedule::call(fn () => PushLog::query()->where('created_at', '<', now()->subDays(90))->delete())
+    ->name('push-logs:prune')
+    ->dailyAt('03:00');
+
+// Hébergement mutualisé : pas de worker permanent, la file est vidée à chaque passage (50 s max).
+if (config('queue.default') !== 'sync') {
+    Schedule::command('queue:work', ['--stop-when-empty', '--max-time=50', '--tries=3'])
+        ->everyMinute()
+        ->withoutOverlapping(2);
+}

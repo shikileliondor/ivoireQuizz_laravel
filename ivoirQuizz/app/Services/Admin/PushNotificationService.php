@@ -3,10 +3,12 @@
 namespace App\Services\Admin;
 
 use App\Enums\UserStatus;
+use App\Jobs\SendPushBatchJob;
 use App\Models\DeviceToken;
 use App\Models\PushNotification;
 use App\Models\User;
 use App\Services\Notifications\FcmService;
+use App\Services\Notifications\PushSender;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 
@@ -44,11 +46,13 @@ class PushNotificationService
     }
 
     /**
-     * Envoie et enregistre la notification ; retourne null si aucun appareil ne correspond (rien n'est envoyé).
+     * Enregistre la notification puis la met en file d'attente, ou la programme si scheduled_at est donné.
+     * Retourne null si aucun appareil ne correspond (rien n'est enregistré).
+     * L'envoi test (« me ») part tout de suite, pour un retour immédiat.
      *
-     * @param  array{audience: string, days?: int|null, user_id?: int|null, platform?: string|null, title: string, body: string}  $data
+     * @param  array{audience: string, days?: int|null, user_id?: int|null, platform?: string|null, title: string, body: string, scheduled_at?: \DateTimeInterface|null}  $data
      */
-    public function send(array $data, User $admin): ?PushNotification
+    public function create(array $data, User $admin): ?PushNotification
     {
         $filters = array_filter([
             'days' => in_array($data['audience'], ['active', 'inactive'], true) ? (int) ($data['days'] ?? 7) : null,
@@ -56,23 +60,58 @@ class PushNotificationService
             'platform' => $data['platform'] ?? null,
         ], fn ($value) => $value !== null && $value !== '');
 
-        $tokens = $this->devices(['audience' => $data['audience'], ...$filters], $admin)->pluck('token');
-        if ($tokens->isEmpty()) {
+        if (! $this->devices(['audience' => $data['audience'], ...$filters], $admin)->exists()) {
             return null;
         }
+        $this->fcm->ensureConfigured();
 
-        $result = $this->fcm->sendToTokens($tokens, $data['title'], $data['body'], ['type' => 'admin_broadcast']);
-
-        return PushNotification::query()->create([
+        $scheduledAt = $data['scheduled_at'] ?? null;
+        $notification = PushNotification::query()->create([
             'admin_id' => $admin->id,
             'title' => $data['title'],
             'body' => $data['body'],
             'audience' => $data['audience'],
             'filters' => $filters ?: null,
-            'devices_count' => $tokens->count(),
-            'sent_count' => $result['sent'],
-            'failed_count' => $result['failed'],
-            'removed_count' => $result['removed'],
+            'status' => $scheduledAt ? 'scheduled' : 'queued',
+            'scheduled_at' => $scheduledAt,
         ]);
+
+        if (! $scheduledAt) {
+            $this->dispatch($notification, sync: $data['audience'] === 'me');
+        }
+
+        return $notification->refresh();
+    }
+
+    /** Découpe les destinataires en lots de joueurs et les met en file d'attente. */
+    public function dispatch(PushNotification $notification, bool $sync = false): void
+    {
+        $userIds = $this->devices(
+            ['audience' => $notification->audience, ...($notification->filters ?? [])],
+            $notification->admin ?? new User,
+        )->distinct()->pluck('user_id');
+        $chunks = $userIds->chunk(PushSender::CHUNK);
+
+        // Le nombre de lots est connu avant le premier envoi : le dernier lot terminé clôt l'envoi.
+        $notification->update([
+            'status' => $chunks->isEmpty() ? 'sent' : 'sending',
+            'started_at' => now(),
+            'finished_at' => $chunks->isEmpty() ? now() : null,
+            'batches_total' => $chunks->count(),
+        ]);
+
+        foreach ($chunks as $chunk) {
+            $job = new SendPushBatchJob(
+                $chunk->map(fn ($userId) => [
+                    'user_id' => (int) $userId,
+                    'title' => $notification->title,
+                    'body' => $notification->body,
+                    'data' => ['type' => 'admin_broadcast'],
+                ])->values()->all(),
+                $notification->id,
+                $notification->filters['platform'] ?? null,
+            );
+            $sync ? dispatch_sync($job) : dispatch($job);
+        }
     }
 }

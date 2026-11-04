@@ -20,6 +20,7 @@ final class AdminLabels
         'rarity' => ['common' => ['Commun', 'slate'], 'rare' => ['Rare', 'blue'], 'epic' => ['Épique', 'purple'], 'legendary' => ['Légendaire', 'amber']],
         'collectible_type' => ['personality' => ['Personnalité', 'blue'], 'monument' => ['Monument', 'green']],
         'season_status' => ['scheduled' => ['Planifiée', 'blue'], 'active' => ['En cours', 'green'], 'completed' => ['Terminée', 'slate']],
+        'push_status' => ['scheduled' => ['Programmée', 'purple'], 'queued' => ['En file', 'blue'], 'sending' => ['En cours', 'amber'], 'sent' => ['Envoyée', 'green'], 'failed' => ['Échec', 'red'], 'canceled' => ['Annulée', 'slate']],
         'reward_type' => ['xp' => ['XP', 'blue'], 'point' => ['Points', 'slate'], 'coin' => ['Pièces', 'amber'], 'gem' => ['Gemmes', 'purple'], 'life' => ['Vies', 'red']],
     ];
 

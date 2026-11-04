@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GameSessionController;
 use App\Http\Controllers\Admin\LeagueController;
 use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\PushAutomationController;
 use App\Http\Controllers\Admin\PushNotificationController;
 use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\QuestionReportController;
@@ -51,6 +52,13 @@ Route::middleware(['auth', 'admin'])->group(function (): void {
 
     Route::get('/notifications', [PushNotificationController::class, 'index'])->name('notifications.index');
     Route::post('/notifications', [PushNotificationController::class, 'store'])->middleware('throttle:10,1')->name('notifications.store');
+    Route::patch('/notifications/{notification}/cancel', [PushNotificationController::class, 'cancel'])->name('notifications.cancel');
+
+    Route::get('/automations', [PushAutomationController::class, 'index'])->name('automations.index');
+    Route::put('/automations/settings', [PushAutomationController::class, 'updateSettings'])->name('automations.settings');
+    Route::get('/automations/{automation}/edit', [PushAutomationController::class, 'edit'])->name('automations.edit');
+    Route::put('/automations/{automation}', [PushAutomationController::class, 'update'])->name('automations.update');
+    Route::post('/automations/{automation}/test', [PushAutomationController::class, 'test'])->middleware('throttle:10,1')->name('automations.test');
 
     Route::get('/sessions', [GameSessionController::class, 'index'])->name('sessions.index');
     Route::get('/sessions/{session}', [GameSessionController::class, 'show'])->name('sessions.show');

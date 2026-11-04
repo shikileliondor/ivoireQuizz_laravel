@@ -27,7 +27,7 @@
 
     <div class="mt-6 grid gap-6 lg:grid-cols-5">
         <form method="POST" action="{{ route('admin.notifications.store') }}" class="card space-y-5 p-6 lg:col-span-3"
-              data-confirm="Envoyer cette notification maintenant ? Elle ne pourra pas être annulée.">
+              data-confirm="Confirmer cet envoi ?">
             @csrf
             <h2 class="text-sm font-semibold text-slate-900">Nouveau message</h2>
 
@@ -58,20 +58,40 @@
             <x-admin.input name="title" label="Titre" maxlength="100" placeholder="Nouveau défi à Korhogo !" required />
             <x-admin.textarea name="body" label="Message" rows="3" maxlength="500" placeholder="5 nouvelles questions t’attendent. Viens défendre ta place au classement." required hint="Restez court : le téléphone affiche environ 2 lignes." />
 
+            <div class="grid items-start gap-5 sm:grid-cols-2">
+                <fieldset>
+                    <legend class="form-label">Quand ?</legend>
+                    <div class="flex gap-2">
+                        @foreach (['now' => 'Maintenant', 'later' => 'Programmer'] as $value => $label)
+                            <label class="flex flex-1 cursor-pointer items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-800 ring-1 ring-slate-200 has-[:checked]:bg-brand-50 has-[:checked]:ring-brand-400">
+                                <input type="radio" name="when" value="{{ $value }}" @checked(old('when', 'now') === $value) class="accent-brand-500"> {{ $label }}
+                            </label>
+                        @endforeach
+                    </div>
+                </fieldset>
+                <x-admin.input name="send_at" label="Date et heure d’envoi" type="datetime-local" :min="now()->addMinutes(5)->format('Y-m-d\TH:i')" hint="Heure d’Abidjan. Pour « Programmer »." />
+            </div>
+
             <div class="flex justify-end border-t border-slate-100 pt-5">
-                <button type="submit" class="btn btn-primary"><x-admin.icon name="bolt" class="size-4" /> Envoyer maintenant</button>
+                <button type="submit" class="btn btn-primary"><x-admin.icon name="bolt" class="size-4" /> Valider l’envoi</button>
             </div>
         </form>
 
         <aside class="space-y-4 lg:col-span-2">
+            @include('admin.notifications._scheduler')
+
             <section class="card p-5 text-sm text-slate-600">
                 <h2 class="text-sm font-semibold text-slate-900">Bon à savoir</h2>
                 <ul class="mt-2 list-inside list-disc space-y-1.5">
-                    <li>Testez d’abord sur <strong>vos appareils</strong> avant un envoi à tous.</li>
+                    <li>Testez d’abord sur <strong>vos appareils</strong> : l’envoi test part tout de suite.</li>
+                    <li>Les envois groupés partent par lots de 500 joueurs ; suivez la progression dans l’historique.</li>
+                    <li>Un envoi programmé ou en cours peut être annulé tant qu’il n’est pas terminé.</li>
                     <li>Les comptes suspendus ou désactivés ne reçoivent pas les envois groupés.</li>
                     <li>Les appareils dont l’app a été désinstallée sont détectés et retirés automatiquement.</li>
-                    <li>L’envoi est immédiat et ne peut pas être annulé.</li>
                 </ul>
+                <a href="{{ route('admin.automations.index') }}" class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand-600 hover:text-brand-700">
+                    <x-admin.icon name="clock" class="size-4" /> Rappel du matin et autres notifications automatiques
+                </a>
             </section>
         </aside>
     </div>
@@ -82,14 +102,30 @@
         </header>
         <div class="overflow-x-auto">
             <table class="table-base">
-                <thead><tr><th>Date</th><th class="w-[40%]">Message</th><th>Destinataires</th><th class="text-right">Appareils</th><th class="text-right">Reçues</th><th class="text-right">Échecs</th><th>Par</th></tr></thead>
+                <thead><tr><th>Date</th><th class="w-[36%]">Message</th><th>Statut</th><th>Destinataires</th><th class="text-right">Appareils</th><th class="text-right">Reçues</th><th class="text-right">Échecs</th><th>Par</th></tr></thead>
                 <tbody class="divide-y divide-slate-100">
                     @forelse ($history as $notification)
                         <tr>
-                            <td class="whitespace-nowrap">{{ $notification->created_at->format('d/m/Y H:i') }}</td>
+                            <td class="whitespace-nowrap">{{ ($notification->scheduled_at ?? $notification->created_at)->format('d/m/Y H:i') }}</td>
                             <td>
                                 <p class="font-medium text-slate-900">{{ $notification->title }}</p>
                                 <p class="line-clamp-2 text-xs text-slate-500">{{ $notification->body }}</p>
+                                @if ($notification->error)
+                                    <p class="mt-1 line-clamp-2 text-xs text-red-600">{{ $notification->error }}</p>
+                                @endif
+                            </td>
+                            <td class="whitespace-nowrap">
+                                <x-admin.enum group="push_status" :value="$notification->status" />
+                                @if ($notification->status === 'sending' && $notification->batches_total > 1)
+                                    <span class="block text-xs text-slate-500 tabular-nums">lot {{ $notification->batches_done }}/{{ $notification->batches_total }}</span>
+                                @endif
+                                @if ($notification->isCancelable())
+                                    <form method="POST" action="{{ route('admin.notifications.cancel', $notification) }}" data-confirm="Annuler cet envoi ?" class="mt-1">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="text-xs font-medium text-red-600 hover:text-red-700">Annuler</button>
+                                    </form>
+                                @endif
                             </td>
                             <td class="text-sm">
                                 {{ $labels[$notification->audience] ?? $notification->audience }}
@@ -111,7 +147,7 @@
                             <td class="text-sm text-slate-500">{{ $notification->admin?->name ?? '—' }}</td>
                         </tr>
                     @empty
-                        <tr><td colspan="7"><x-admin.empty message="Aucune notification envoyée pour le moment." /></td></tr>
+                        <tr><td colspan="8"><x-admin.empty message="Aucune notification envoyée pour le moment." /></td></tr>
                     @endforelse
                 </tbody>
             </table>

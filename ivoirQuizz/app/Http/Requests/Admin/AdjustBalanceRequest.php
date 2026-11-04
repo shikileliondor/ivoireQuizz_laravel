@@ -17,6 +17,7 @@ class AdjustBalanceRequest extends FormRequest
             'currency' => ['required', 'in:coin,gem'],
             'amount' => ['required', 'integer', 'between:-100000,100000', 'not_in:0'],
             'reason' => ['required', 'string', 'max:191'],
+            'notify' => ['boolean'],
         ];
     }
 

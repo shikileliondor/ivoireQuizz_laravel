@@ -3,7 +3,6 @@
 namespace App\Services\Notifications;
 
 use App\Models\DeviceToken;
-use App\Models\User;
 use Illuminate\Http\Client\Pool;
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Cache;
@@ -26,57 +25,41 @@ class FcmService
 
     private ?array $credentials = null;
 
-    /**
-     * Envoie une notification à tous les appareils de l'utilisateur.
-     * Ne lève jamais d'exception : un échec d'envoi ne doit pas faire échouer
-     * l'action du joueur, il est seulement journalisé.
-     */
-    public function sendToUser(User $user, string $title, string $body, array $data = []): void
+    /** Lève une exception si la clé du compte de service est absente ou illisible. */
+    public function ensureConfigured(): void
     {
-        try {
-            $tokens = $user->deviceTokens()->pluck('token');
-            if ($tokens->isEmpty()) {
-                return;
-            }
-
-            $this->sendToTokens($tokens, $title, $body, $data);
-        } catch (Throwable $exception) {
-            Log::warning('FCM : notification non envoyée', [
-                'user_id' => $user->id,
-                'error' => $exception->getMessage(),
-            ]);
-        }
+        $this->credentials();
     }
 
     /**
-     * Envoie la même notification à plusieurs appareils, par lots parallèles.
+     * Envoie une notification par appareil (chacune peut avoir son propre texte), par lots parallèles.
      * Lève une exception si la configuration FCM est invalide ; les échecs par appareil sont comptés.
      *
-     * @param  iterable<string>  $tokens
+     * @param  iterable<array{token: string, title: string, body: string, data?: array}>  $messages
      * @return array{sent: int, failed: int, removed: int}
      */
-    public function sendToTokens(iterable $tokens, string $title, string $body, array $data = []): array
+    public function sendMessages(iterable $messages): array
     {
         $result = ['sent' => 0, 'failed' => 0, 'removed' => 0];
-        $tokens = collect($tokens)->filter()->unique()->values();
-        if ($tokens->isEmpty()) {
+        $messages = collect($messages)->filter(fn (array $message) => ! empty($message['token']))->unique('token')->values();
+        if ($messages->isEmpty()) {
             return $result;
         }
 
         $accessToken = $this->accessToken();
         $url = 'https://fcm.googleapis.com/v1/projects/'.$this->credentials()['project_id'].'/messages:send';
 
-        foreach ($tokens->chunk(self::BATCH_SIZE) as $batch) {
+        foreach ($messages->chunk(self::BATCH_SIZE) as $batch) {
             $batch = $batch->values();
             $responses = Http::pool(fn (Pool $pool) => $batch
-                ->map(fn (string $token, int $index) => $pool->as((string) $index)
+                ->map(fn (array $message, int $index) => $pool->as((string) $index)
                     ->withToken($accessToken)
                     ->timeout(10)
-                    ->post($url, ['message' => $this->message($token, $title, $body, $data)]))
+                    ->post($url, ['message' => $this->payload($message)]))
                 ->all());
 
-            foreach ($batch as $index => $token) {
-                $outcome = $this->handleResponse($token, $responses[(string) $index] ?? null);
+            foreach ($batch as $index => $message) {
+                $outcome = $this->handleResponse($message['token'], $responses[(string) $index] ?? null);
                 $result[$outcome]++;
             }
         }
@@ -84,18 +67,19 @@ class FcmService
         return $result;
     }
 
-    private function message(string $token, string $title, string $body, array $data): array
+    /** @param  array{token: string, title: string, body: string, data?: array}  $message */
+    private function payload(array $message): array
     {
-        $message = [
-            'token' => $token,
-            'notification' => ['title' => $title, 'body' => $body],
+        $payload = [
+            'token' => $message['token'],
+            'notification' => ['title' => $message['title'], 'body' => $message['body']],
         ];
-        if ($data !== []) {
+        if (! empty($message['data'])) {
             // FCM n'accepte que des valeurs texte dans « data ».
-            $message['data'] = array_map('strval', $data);
+            $payload['data'] = array_map('strval', $message['data']);
         }
 
-        return $message;
+        return $payload;
     }
 
     /**

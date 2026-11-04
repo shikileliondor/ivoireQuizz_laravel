@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Friendship;
 use App\Models\Question;
 use App\Models\User;
-use App\Services\Notifications\FcmService;
+use App\Services\Notifications\PushSender;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -61,12 +61,7 @@ class FriendChallengeController extends Controller
 
         $opponent = User::query()->find($opponentId);
         if ($opponent) {
-            app(FcmService::class)->sendToUser(
-                $opponent,
-                'Nouveau défi !',
-                "{$challenger->name} te défie sur IvoireQuizz. Code : {$code}",
-                ['type' => 'challenge', 'code' => $code],
-            );
+            app(PushSender::class)->notify($opponent, 'challenge_received', ['ami' => $challenger->name, 'code' => $code], ['code' => $code]);
         }
 
         return response()->json(['success' => true, 'data' => ['code' => $code, 'questions' => $this->formatQuestions($questions), 'status' => 'pending']], 201);
@@ -134,9 +129,37 @@ class FriendChallengeController extends Controller
             }
             DB::table('friend_challenges')->where('id', $challenge->id)->update($updates);
             $updated = DB::table('friend_challenges')->where('id', $challenge->id)->first();
+            if ($updated->status === 'completed') {
+                DB::afterCommit(fn () => $this->notifyResult($updated, $request->user()));
+            }
 
             return response()->json(['success' => true, 'data' => ['code' => $updated->code, 'status' => $updated->status, 'your_score' => $score, 'your_correct' => $correct, 'challenger_score' => $updated->challenger_score, 'opponent_score' => $updated->opponent_score, 'winner_id' => $updated->status === 'completed' ? ((int) $updated->challenger_score === (int) $updated->opponent_score ? null : ((int) $updated->challenger_score > (int) $updated->opponent_score ? (int) $updated->challenger_id : (int) $updated->opponent_id)) : null]]);
         });
+    }
+
+    /** Le défi est terminé : l'autre joueur apprend le résultat, vu de son côté. */
+    private function notifyResult(object $challenge, User $finisher): void
+    {
+        $finisherIsChallenger = (int) $finisher->id === (int) $challenge->challenger_id;
+        $other = User::query()->find($finisherIsChallenger ? $challenge->opponent_id : $challenge->challenger_id);
+        if (! $other) {
+            return;
+        }
+
+        $theirScore = (int) ($finisherIsChallenger ? $challenge->opponent_score : $challenge->challenger_score);
+        $finisherScore = (int) ($finisherIsChallenger ? $challenge->challenger_score : $challenge->opponent_score);
+
+        app(PushSender::class)->notify(
+            $other,
+            'challenge_result',
+            ['ami' => $finisher->name, 'score_toi' => $theirScore, 'score_ami' => $finisherScore],
+            ['code' => $challenge->code],
+            match ($theirScore <=> $finisherScore) {
+                1 => 'win',
+                -1 => 'lose',
+                default => 'draw',
+            },
+        );
     }
 
     private function areFriends(int $a, int $b): bool

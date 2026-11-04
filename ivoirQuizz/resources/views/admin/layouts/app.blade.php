@@ -7,6 +7,7 @@
             ['label' => 'Joueurs', 'route' => 'admin.users.index', 'match' => 'admin.users.*', 'icon' => 'users'],
             ['label' => 'Parties', 'route' => 'admin.sessions.index', 'match' => 'admin.sessions.*', 'icon' => 'play'],
             ['label' => 'Notifications', 'route' => 'admin.notifications.index', 'match' => 'admin.notifications.*', 'icon' => 'bell'],
+            ['label' => 'Notifications auto', 'route' => 'admin.automations.index', 'match' => 'admin.automations.*', 'icon' => 'clock'],
         ],
         'Contenu' => [
             ['label' => 'Régions', 'route' => 'admin.regions.index', 'match' => 'admin.regions.*', 'icon' => 'map'],

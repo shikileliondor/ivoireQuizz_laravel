@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\AdjustBalanceRequest;
 use App\Http\Requests\Admin\UserRequest;
 use App\Models\RewardTransaction;
 use App\Models\User;
+use App\Services\Notifications\PushSender;
 use App\Services\User\AccountService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -94,7 +95,7 @@ class UserController extends Controller
         return back()->with('success', 'Statut mis à jour : '.$status->label().'.');
     }
 
-    public function adjustBalance(AdjustBalanceRequest $request, User $user): RedirectResponse
+    public function adjustBalance(AdjustBalanceRequest $request, User $user, PushSender $push): RedirectResponse
     {
         $data = $request->validated();
         $column = $data['currency'] === 'coin' ? 'coins' : 'gems';
@@ -118,6 +119,13 @@ class UserController extends Controller
                 'description' => $data['reason'],
             ]);
         });
+
+        if ($request->boolean('notify') && $data['amount'] > 0) {
+            $push->notify($user, 'admin_gift', [
+                'montant' => number_format((int) $data['amount'], 0, ',', ' '),
+                'monnaie' => $data['currency'] === 'coin' ? 'pièces' : 'gemmes',
+            ]);
+        }
 
         return back()->with('success', 'Solde ajusté.');
     }

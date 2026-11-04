@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\AddFriendRequest;
 use App\Models\Friendship;
 use App\Models\User;
-use App\Services\Notifications\FcmService;
+use App\Services\Notifications\PushSender;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Throwable;
@@ -121,12 +121,7 @@ class FriendshipController extends Controller
                 'status' => 'pending',
             ]);
 
-            app(FcmService::class)->sendToUser(
-                $friend,
-                'Nouvelle demande d\'ami',
-                "{$user->name} veut devenir ton ami sur IvoireQuizz.",
-                ['type' => 'friend_request'],
-            );
+            app(PushSender::class)->notify($friend, 'friend_request', ['ami' => $user->name]);
 
             return response()->json([
                 'success' => true,
@@ -174,12 +169,7 @@ class FriendshipController extends Controller
 
             $requester = User::query()->find($friendship->requester_id);
             if ($requester) {
-                app(FcmService::class)->sendToUser(
-                    $requester,
-                    'Demande acceptée',
-                    "{$request->user()->name} a accepté ta demande d'ami.",
-                    ['type' => 'friend_accepted'],
-                );
+                app(PushSender::class)->notify($requester, 'friend_accepted', ['ami' => $request->user()->name]);
             }
 
             return response()->json([

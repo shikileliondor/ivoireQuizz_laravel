@@ -38,6 +38,11 @@ return [
         'credentials' => env('FIREBASE_CREDENTIALS', 'storage/app/firebase/notifquizz-adminsdk.json'),
     ],
 
+    // PHP en ligne de commande utilisé par la tâche Cron (affiché dans l'admin, chemin cPanel LWS par défaut).
+    'cron' => [
+        'php' => env('CRON_PHP_BINARY', '/usr/local/bin/php'),
+    ],
+
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),

@@ -115,6 +115,7 @@
                         <x-admin.input name="amount" label="Montant" type="number" placeholder="ex. 100 ou -50" required />
                     </div>
                     <x-admin.input name="reason" label="Motif" placeholder="Compensation bug du 12/10" required />
+                    <x-admin.checkbox name="notify" label="Prévenir le joueur" hint="Notification « Cadeau reçu », seulement pour un ajout." />
                     <button type="submit" class="btn btn-primary w-full">Appliquer</button>
                 </form>
             </section>

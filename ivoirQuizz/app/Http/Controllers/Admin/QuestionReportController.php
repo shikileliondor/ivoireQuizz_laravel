@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\QuestionReport;
+use App\Models\User;
+use App\Services\Notifications\PushSender;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -49,7 +51,7 @@ class QuestionReportController extends Controller
         ]);
     }
 
-    public function update(Request $request, QuestionReport $report): RedirectResponse
+    public function update(Request $request, QuestionReport $report, PushSender $push): RedirectResponse
     {
         $validated = $request->validate([
             'status' => ['required', Rule::in(self::STATUSES)],
@@ -61,6 +63,20 @@ class QuestionReportController extends Controller
             'reviewed_at' => $validated['status'] === 'pending' ? null : now(),
         ];
 
+        // Joueurs à remercier : ceux dont le signalement passe à « Corrigé ».
+        $reporterIds = collect();
+        if ($validated['status'] === 'fixed') {
+            $reporterIds = QuestionReport::query()
+                ->where('status', '!=', 'fixed')
+                ->where(fn ($query) => $query
+                    ->whereKey($report->id)
+                    ->when($request->boolean('apply_to_question'), fn ($query) => $query->orWhere(fn ($query) => $query
+                        ->where('question_id', $report->question_id)
+                        ->where('status', 'pending'))))
+                ->pluck('user_id')
+                ->unique();
+        }
+
         $report->update($values);
 
         if ($request->boolean('apply_to_question')) {
@@ -69,6 +85,8 @@ class QuestionReportController extends Controller
                 ->where('status', 'pending')
                 ->update($values + ['updated_at' => now()]);
         }
+
+        User::query()->whereIn('id', $reporterIds)->each(fn (User $reporter) => $push->notify($reporter, 'report_fixed'));
 
         return redirect()->route('admin.reports.index')->with('success', 'Signalement mis à jour.');
     }

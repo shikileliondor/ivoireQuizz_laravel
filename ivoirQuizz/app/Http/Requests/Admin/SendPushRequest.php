@@ -26,6 +26,8 @@ class SendPushRequest extends FormRequest
             'platform' => ['nullable', Rule::in(PushNotificationService::PLATFORMS)],
             'title' => ['required', 'string', 'max:100'],
             'body' => ['required', 'string', 'max:500'],
+            'when' => ['nullable', Rule::in(['now', 'later'])],
+            'send_at' => ['nullable', 'required_if:when,later', 'date', 'after:now', 'before:+60 days'],
         ];
     }
 
@@ -68,6 +70,7 @@ class SendPushRequest extends FormRequest
             'platform' => 'plateforme',
             'title' => 'titre',
             'body' => 'message',
+            'send_at' => 'date d’envoi',
         ];
     }
 }

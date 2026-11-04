@@ -26,6 +26,8 @@ FTP ne lance pas Artisan. Après l'extraction de l'archive du déploiement qui i
 2. `php artisan admin:create <email>` : crée le premier compte.
 3. `php artisan storage:link` si ce n'est pas déjà fait : nécessaire pour afficher les images envoyées.
 
+Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan migrate --force`) et une tâche Cron. Voir « Planificateur et file d'attente » plus bas.
+
 ## Fonctionnalités
 
 | Section | Ce qu'on peut faire |
@@ -38,6 +40,40 @@ FTP ne lance pas Artisan. Après l'extraction de l'archive du déploiement qui i
 | Questions | Recherche et filtres, création/édition avec 2 à 6 réponses, activation, archivage |
 | Signalements | Traitement (examiné, corrigé, rejeté), application groupée aux signalements de la même question |
 | Coffres, collection, ligues | CRUD des récompenses et paliers |
+| Notifications | Envoi push maintenant ou programmé, par lots de 500 joueurs, suivi de progression, annulation |
+| Notifications auto | Rappel du matin, relances et notifications d'action : activation, réglages, textes, test sur ses appareils |
+
+## Notifications automatiques
+
+Deux familles, définies dans `App\Services\Notifications\PushCatalog`. L'admin modifie les réglages et les textes, qui sont enregistrés dans `push_automations`.
+
+- **Actions**, envoyées sur le moment et sans plafond : demande d'ami, ami accepté, défi reçu, résultat de défi, signalement corrigé, cadeau de l'équipe (case « Prévenir le joueur » de la fiche joueur).
+- **Relances**, envoyées par le planificateur :
+
+  | Relance | Quand | Règle |
+  | --- | --- | --- |
+  | Rappel du matin | 8 h | Rien si le joueur a joué dans la journée. Le texte dépend de sa situation : nouveau joueur, série en cours, question du matin, absent depuis plus de 8 jours (un rappel tous les 3 jours), endormi après 31 jours (un rappel par semaine). Plus rien après 90 jours. |
+  | Série en danger | 19 h | Série d'au moins 2 jours et pas encore joué aujourd'hui. |
+  | Vies rechargées | Toutes les 10 min | Joueur tombé à 0 vie, une fois toutes ses vies revenues. |
+  | Coffre à ouvrir | 17 h | Coffre disponible depuis plus de 24 h. Une fois par coffre. |
+  | Défi sans réponse | Toutes les heures | Défi reçu il y a plus de 24 h et pas joué. Une fois par défi. |
+  | Fin de saison de ligue | Toutes les heures | 24 h avant la fin. Une fois par saison. |
+
+  Les relances respectent deux règles communes : 2 relances au maximum par joueur et par jour, et aucune relance pendant les heures calmes (21 h – 7 h, heure d'Abidjan, c'est-à-dire UTC). Chaque envoi est journalisé dans `push_logs`, qui est purgée après 90 jours. Ce journal sert au plafond, à éviter les doublons et aux statistiques.
+
+Côté app, `data.type` indique l'écran à ouvrir : `daily_reminder`, `streak`, `lives`, `chests`, `league`, `challenge` (avec `code`), `friend_request`, `friend_accepted`, `report_fixed`, `gift`, `admin_broadcast`. Les types que l'app ne connaît pas ouvrent l'accueil.
+
+## Planificateur et file d'attente (LWS)
+
+Les envois programmés et les relances ne partent que si le planificateur tourne. Dans cPanel, ouvrir **Tâches Cron**, choisir « Une fois par minute » et saisir la commande affichée dans l'admin (page Notifications auto, encart « Planificateur ») :
+
+```
+/usr/local/bin/php /home/COMPTE/CHEMIN_APP/artisan schedule:run >> /dev/null 2>&1
+```
+
+- À chaque passage, `notifications:tick` lance les envois dus. Si `QUEUE_CONNECTION=database`, un `queue:work --stop-when-empty` de 50 s au maximum envoie ensuite les lots.
+- **Recommandé en production** : mettre `QUEUE_CONNECTION=database` dans le `.env`, puis lancer `php artisan config:cache` si la configuration est en cache. Avec `sync`, tout fonctionne aussi, mais les envois partent pendant la requête ou le passage du Cron, ce qui est plus lent pour les grosses audiences.
+- L'encart « Planificateur » passe au vert au premier passage. S'il reste rouge, vérifier la commande Cron et la version de `/usr/local/bin/php -v`, qui doit être 8.2 ou plus. Si cPanel utilise un autre binaire PHP, le renseigner dans `CRON_PHP_BINARY` du `.env`.
 
 ## Règles de cohérence
 
