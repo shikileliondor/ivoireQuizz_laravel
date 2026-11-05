@@ -58,16 +58,15 @@ class AdminQuestionTest extends TestCase
     {
         Storage::fake('public');
         $logos = Category::query()->create(['name' => 'Logos', 'slug' => Category::LOGOS]);
-        $png = base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');
 
         $this->post(route('admin.questions.store'), $this->payload([
             'level_id' => '',
             'category_id' => $logos->id,
             'type' => 'image',
             'question_text' => 'Quelle entreprise utilise ce logo ?',
-            'image' => UploadedFile::fake()->createWithContent('logo.png', $png),
+            'image' => UploadedFile::fake()->image('logo.png', 256, 256),
             'image_source' => 'Site officiel, novembre 2026',
-        ]))->assertSessionHasNoErrors()->assertRedirect(route('admin.questions.index'));
+        ]))->assertSessionHasNoErrors()->assertRedirect(route('admin.logos.index'));
 
         $question = Question::query()->sole();
         $this->assertNull($question->level_id);

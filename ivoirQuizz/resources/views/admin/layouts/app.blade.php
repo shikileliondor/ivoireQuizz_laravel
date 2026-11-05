@@ -15,6 +15,7 @@
             ['label' => 'Niveaux', 'route' => 'admin.levels.index', 'match' => 'admin.levels.*', 'icon' => 'stairs'],
             ['label' => 'Catégories', 'route' => 'admin.categories.index', 'match' => 'admin.categories.*', 'icon' => 'tag'],
             ['label' => 'Questions', 'route' => 'admin.questions.index', 'match' => 'admin.questions.*', 'icon' => 'question'],
+            ['label' => 'Logos', 'route' => 'admin.logos.index', 'match' => 'admin.logos.*', 'icon' => 'photo'],
             ['label' => 'Signalements', 'route' => 'admin.reports.index', 'match' => 'admin.reports.*', 'icon' => 'flag', 'badge' => $pendingReportsCount ?? 0],
         ],
         'Récompenses' => [

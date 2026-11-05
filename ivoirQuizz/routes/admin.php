@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GameSessionController;
 use App\Http\Controllers\Admin\LeagueController;
 use App\Http\Controllers\Admin\LevelController;
+use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\PushAutomationController;
 use App\Http\Controllers\Admin\PushNotificationController;
 use App\Http\Controllers\Admin\QuestionController;
@@ -45,6 +46,10 @@ Route::middleware(['auth', 'admin'])->group(function (): void {
 
     Route::resource('questions', QuestionController::class)->except('show');
     Route::patch('/questions/{question}/toggle', [QuestionController::class, 'toggle'])->name('questions.toggle');
+
+    Route::get('/logos', [LogoController::class, 'index'])->name('logos.index');
+    Route::get('/logos/import', [LogoController::class, 'create'])->name('logos.create');
+    Route::post('/logos/import', [LogoController::class, 'store'])->name('logos.store');
 
     Route::get('/reports', [QuestionReportController::class, 'index'])->name('reports.index');
     Route::get('/reports/{report}', [QuestionReportController::class, 'show'])->name('reports.show');

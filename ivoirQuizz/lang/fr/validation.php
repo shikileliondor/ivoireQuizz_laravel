@@ -26,6 +26,7 @@ return [
         'numeric' => 'Le champ :attribute ne doit pas dépasser :max.',
         'string' => 'Le champ :attribute ne doit pas dépasser :max caractères.',
     ],
+    'mimes' => 'Le fichier :attribute doit être de type : :values.',
     'min' => [
         'array' => 'Le champ :attribute doit contenir au moins :min éléments.',
         'numeric' => 'Le champ :attribute doit être au moins :min.',

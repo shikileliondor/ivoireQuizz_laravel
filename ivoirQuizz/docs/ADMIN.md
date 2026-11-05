@@ -38,6 +38,7 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 | Régions, villes, niveaux | CRUD de la carte de campagne, images, ordre, récompenses ; le cache `game:regions:map` est vidé à chaque modification |
 | Catégories | CRUD |
 | Questions | Recherche et filtres, création/édition avec 2 à 6 réponses, activation, archivage |
+| Logos | Grille de vignettes sur damier (le fond non transparent se voit), filtres marque/statut/source manquante, import en lot |
 | Signalements | Traitement (examiné, corrigé, rejeté), application groupée aux signalements de la même question |
 | Coffres, collection, ligues | CRUD des récompenses et paliers |
 | Notifications | Envoi push maintenant ou programmé, par lots de 500 joueurs, suivi de progression, annulation |
@@ -89,5 +90,17 @@ Les envois programmés, les envois groupés et les relances ne partent que si le
 - Les questions sont archivées (soft delete) pour conserver l'historique des parties. Les réponses existantes sont modifiées en place pour garder le lien avec `game_session_answers`.
 - Une question importée d'un fichier de campagne garde ses modifications tant que son JSON ne change pas. Si le JSON change, le prochain import crée une nouvelle version et désactive l'ancienne.
 - Une question sans niveau n'apparaît pas sur la carte : elle se joue seulement dans le lancement rapide, via sa catégorie.
-- Les questions de la catégorie Logos (slug `logos`) ne sortent jamais en mode mixte, dans le défi du jour ni dans un défi entre amis sans catégorie. L'app affiche la mention légale à l'entrée de cette catégorie.
-- Une question de type image exige une image. La « Source de l'image » (site, date) reste dans l'admin et n'est jamais envoyée à l'app. Pour retirer un logo à la demande d'une marque, désactiver la question : elle disparaît de l'app sans mise à jour.
+- Les questions de la catégorie Logos (slug `logos`) ne sortent jamais sur la carte, en mode mixte, dans le défi du jour ni dans un défi entre amis sans catégorie. L'app affiche la mention légale à l'entrée de cette catégorie.
+- Un logo est toujours de type image et n'a jamais de niveau. Une question image dont l'énoncé parle de logo doit être rangée dans la catégorie Logos.
+- Une question de type image exige une image : JPG, PNG ou WebP, 2 Mo maximum. Un logo doit être en PNG ou WebP, pour garder la transparence, et mesurer au moins 128 px sur son plus grand côté. Au-delà de 512 px, il est réduit automatiquement à l'envoi.
+- La « Source de l'image » (site, date) reste dans l'admin et n'est jamais envoyée à l'app. La page Logos signale les logos sans source.
+- Pour retirer un logo à la demande d'une marque :
+  - **désactiver** la question le retire de l'app sans mise à jour, et on peut la réactiver ;
+  - **archiver** la question la retire définitivement et efface aussi le fichier image du serveur, donc l'ancienne URL ne répond plus. Le fichier est gardé seulement s'il sert encore à une autre question.
+
+  L'archivage efface l'image de toute question archivée, pas seulement des logos.
+- Import en lot des logos (page Logos → Import en lot) :
+  - le nom de chaque fichier donne la bonne réponse, tel qu'il s'affichera : `MTN.png`, `Moov_Africa.png` (le « _ » devient une espace, la casse et les tirets sont gardés) ;
+  - les trois mauvaises réponses sont tirées parmi les autres marques de la catégorie, et une marque déjà présente est ignorée ;
+  - 20 fichiers au maximum par envoi, la limite par défaut de PHP (`max_file_uploads`) ;
+  - par défaut, les logos importés restent inactifs, le temps de vérifier les mauvaises réponses.

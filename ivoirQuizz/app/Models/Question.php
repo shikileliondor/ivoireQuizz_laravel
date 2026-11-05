@@ -14,6 +14,9 @@ class Question extends Model
 {
     use HasFactory, SoftDeletes;
 
+    /** Énoncé proposé par défaut pour une question de la catégorie Logos. */
+    public const LOGO_QUESTION_TEXT = 'Quelle entreprise utilise ce logo ?';
+
     protected $guarded = [];
 
     /** La source d'une image ne sert qu'à l'admin. */

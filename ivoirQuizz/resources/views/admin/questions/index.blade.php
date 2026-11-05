@@ -56,7 +56,7 @@
                             </td>
                             <td class="whitespace-nowrap text-right">
                                 <a href="{{ route('admin.questions.edit', $question) }}" class="btn btn-ghost btn-sm"><x-admin.icon name="pencil" class="size-4" /><span class="sr-only sm:not-sr-only">Modifier</span></a>
-                                <x-admin.delete-button :action="route('admin.questions.destroy', $question)" label="Archiver" confirm="Archiver cette question ? Elle ne sera plus proposée aux joueurs." />
+                                <x-admin.delete-button :action="route('admin.questions.destroy', $question)" label="Archiver" :confirm="'Archiver cette question ? Elle ne sera plus proposée aux joueurs.'.($question->image ? ' Son image sera effacée du serveur.' : '')" />
                             </td>
                         </tr>
                     @empty

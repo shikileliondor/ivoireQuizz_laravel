@@ -23,4 +23,12 @@ class Category extends Model
     {
         return $this->hasMany(Question::class);
     }
+
+    /** Identifiant de la catégorie Logos, ou null tant qu'elle n'existe pas. */
+    public static function logosId(): ?int
+    {
+        $id = static::query()->where('slug', self::LOGOS)->value('id');
+
+        return $id === null ? null : (int) $id;
+    }
 }

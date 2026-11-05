@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Level;
 use App\Models\Question;
 use App\Services\Admin\QuestionAdminService;
+use App\Support\LogoImage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -46,13 +47,17 @@ class QuestionController extends Controller
 
     public function create(Request $request): View
     {
-        $level = $request->filled('level') ? Level::query()->find($request->integer('level')) : null;
+        // ?logo=1 prépare un logo : catégorie Logos, type image, sans niveau.
+        $logosId = $request->boolean('logo') ? Category::logosId() : null;
+        $level = $logosId === null && $request->filled('level') ? Level::query()->find($request->integer('level')) : null;
 
         return view('admin.questions.form', [
             'question' => new Question([
                 'level_id' => $level?->id,
+                'category_id' => $logosId,
+                'question_text' => $logosId !== null ? Question::LOGO_QUESTION_TEXT : null,
                 'difficulty' => $level?->difficulty ?? 'easy',
-                'type' => 'text',
+                'type' => $logosId !== null ? 'image' : 'text',
                 'points' => 10,
                 'xp_reward' => 5,
                 'time_limit' => 20,
@@ -66,13 +71,19 @@ class QuestionController extends Controller
     public function store(QuestionRequest $request): RedirectResponse
     {
         $attributes = $request->safe()->except(['image', 'answers', 'correct']);
-        $attributes['image'] = $this->storeImage($request, 'image', 'questions', null);
+        $attributes['image'] = $this->storeQuestionImage($request, null);
 
         $question = $this->questions->save(new Question, $attributes, $request->validated('answers'), $request->validated('correct'));
 
+        if ($request->boolean('create_another')) {
+            return redirect()
+                ->route('admin.questions.create', $request->isLogo() ? ['logo' => 1] : ['level' => $question->level_id])
+                ->with('success', 'Question créée.');
+        }
+
         return redirect()
-            ->route($request->boolean('create_another') ? 'admin.questions.create' : 'admin.questions.index', $request->boolean('create_another') ? ['level' => $question->level_id] : [])
-            ->with('success', 'Question créée.');
+            ->route($request->isLogo() ? 'admin.logos.index' : 'admin.questions.index')
+            ->with('success', $request->isLogo() ? 'Logo ajouté.' : 'Question créée.');
     }
 
     public function edit(Question $question): View
@@ -87,7 +98,7 @@ class QuestionController extends Controller
     public function update(QuestionRequest $request, Question $question): RedirectResponse
     {
         $attributes = $request->safe()->except(['image', 'answers', 'correct']);
-        $attributes['image'] = $this->storeImage($request, 'image', 'questions', $question->image);
+        $attributes['image'] = $this->storeQuestionImage($request, $question->image);
 
         $this->questions->save($question, $attributes, $request->validated('answers'), $request->validated('correct'));
 
@@ -103,9 +114,22 @@ class QuestionController extends Controller
 
     public function destroy(Question $question): RedirectResponse
     {
-        $question->delete();
+        $isLogo = $question->category_id !== null && (int) $question->category_id === Category::logosId();
+        $this->questions->archive($question);
 
-        return redirect()->route('admin.questions.index')->with('success', 'Question supprimée (archivée).');
+        return $isLogo
+            ? redirect()->route('admin.logos.index')->with('success', 'Logo archivé : il a disparu de l’app et son fichier a été effacé du serveur.')
+            : redirect()->route('admin.questions.index')->with('success', 'Question supprimée (archivée).');
+    }
+
+    /** Un logo trop grand est réduit avant d'être enregistré. */
+    private function storeQuestionImage(QuestionRequest $request, ?string $current): ?string
+    {
+        if ($request->isLogo() && $request->hasFile('image')) {
+            LogoImage::shrink($request->file('image'));
+        }
+
+        return $this->storeImage($request, 'image', 'questions', $current);
     }
 
     /**
@@ -115,7 +139,7 @@ class QuestionController extends Controller
     {
         return [
             'levels' => Level::query()->with('city:id,name')->orderBy('city_id')->orderBy('order')->get(['id', 'title', 'city_id']),
-            'categories' => Category::query()->orderBy('name')->get(['id', 'name']),
+            'categories' => Category::query()->orderBy('name')->get(['id', 'name', 'slug']),
             'difficulties' => LevelRequest::DIFFICULTIES,
             'types' => QuestionRequest::TYPES,
         ];

@@ -26,7 +26,8 @@ class GameSessionService
 
         return DB::transaction(function () use ($user, $level, $mode): GameSession {
             $level->loadMissing('city.region');
-            $total = $level->questions()->where('is_active', true)->count();
+            // Les logos ne sortent jamais sur la carte : l'app n'y affiche pas la mention légale.
+            $total = $level->questions()->where('is_active', true)->withoutLogos()->count();
             return GameSession::query()->create([
                 'user_id' => $user->id,
                 'region_id' => $level->city->region_id,
@@ -51,7 +52,7 @@ class GameSessionService
     public function getQuestionsForSession(GameSession $session): Collection
     {
         $this->assertPlayable($session);
-        return $session->level->questions()->where('is_active', true)->with(['answers' => fn ($q) => $q->orderBy('order')])->inRandomOrder()->limit($session->total_questions)->get();
+        return $session->level->questions()->where('is_active', true)->withoutLogos()->with(['answers' => fn ($q) => $q->orderBy('order')])->inRandomOrder()->limit($session->total_questions)->get();
     }
 
     public function abandon(GameSession $session): GameSession
