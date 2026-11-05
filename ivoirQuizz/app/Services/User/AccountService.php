@@ -17,6 +17,8 @@ class AccountService
             $suffix = $lockedUser->id.'_'.Str::lower(Str::random(12));
 
             $lockedUser->tokens()->delete();
+            // Le soft delete ne déclenche pas la cascade SQL : sans ceci, l'appareil recevrait encore des push.
+            $lockedUser->deviceTokens()->delete();
             $lockedUser->forceFill([
                 'name' => 'Compte supprimé',
                 'username' => 'deleted_'.$suffix,

@@ -1,0 +1,1 @@
+@if (config('site.contact_email'))<a href="mailto:{{ config('site.contact_email') }}">{{ config('site.contact_email') }}</a>@elseif (! app()->isProduction())<mark class="rounded bg-brand-100 px-1 text-brand-800">[SITE_CONTACT_EMAIL à renseigner dans .env]</mark>@else l'adresse e-mail de contact indiquée sur la fiche Google Play de l'application @endif

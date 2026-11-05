@@ -1,11 +1,120 @@
-@import 'tailwindcss';
+/* Site public. source(none) : seules les vues du site sont scannées, pour garder un CSS léger. */
+@import 'tailwindcss' source(none);
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@source '../views/site/**/*.blade.php';
+@source '../views/components/admin/icon.blade.php';
+@source '../js/app.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --font-display: 'Bricolage Grotesque', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+
+    /* Orange et vert du drapeau ivoirien, identiques au back-office et à l'application mobile. */
+    --color-brand-50: #fff4e6;
+    --color-brand-100: #ffe3c2;
+    --color-brand-200: #ffc98a;
+    --color-brand-300: #ffad52;
+    --color-brand-400: #fb9526;
+    --color-brand-500: #f77f00;
+    --color-brand-600: #d96e00;
+    --color-brand-700: #b35a00;
+    --color-brand-800: #8c4700;
+    --color-brand-900: #663300;
+
+    --color-ci-50: #e6f6ef;
+    --color-ci-100: #c3eadb;
+    --color-ci-500: #009e60;
+    --color-ci-600: #00804e;
+    --color-ci-700: #006640;
+
+    --color-ink: #1c1917;
+    --color-sand: #fbf7f1;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        background-color: var(--color-sand);
+        color: var(--color-ink);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand-500);
+        outline-offset: 2px;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition;
+    }
+
+    .btn-primary {
+        @apply bg-brand-500 text-white shadow-sm shadow-brand-500/30 hover:bg-brand-600;
+    }
+
+    .btn-dark {
+        @apply bg-ink text-white hover:bg-stone-800;
+    }
+
+    .btn-ghost {
+        @apply text-stone-700 ring-1 ring-stone-300 ring-inset hover:bg-white;
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white shadow-sm hover:bg-red-700;
+    }
+
+    .form-label {
+        @apply mb-1.5 block text-sm font-semibold text-stone-800;
+    }
+
+    .form-input {
+        @apply block w-full rounded-xl border-0 bg-white px-3.5 py-2.5 text-base text-stone-900 shadow-sm ring-1 ring-stone-300 ring-inset placeholder:text-stone-400 focus:ring-2 focus:ring-brand-500 focus:outline-hidden focus:ring-inset sm:text-sm;
+    }
+
+    /* Mise en forme des pages légales, rédigées en HTML simple. */
+    .legal {
+        @apply text-[15px] leading-relaxed text-stone-700;
+    }
+
+    .legal h2 {
+        @apply mt-12 mb-3 scroll-mt-24 font-display text-xl font-bold text-ink sm:text-2xl;
+    }
+
+    .legal h3 {
+        @apply mt-7 mb-2 text-base font-semibold text-ink;
+    }
+
+    .legal p {
+        @apply my-3;
+    }
+
+    .legal ul {
+        @apply my-3 list-disc space-y-1.5 pl-5 marker:text-brand-500;
+    }
+
+    .legal a {
+        @apply font-medium text-brand-700 underline decoration-brand-300 underline-offset-2 hover:decoration-brand-600;
+    }
+
+    .legal strong {
+        @apply font-semibold text-ink;
+    }
+
+    .legal table {
+        @apply my-4 w-full border-collapse text-left text-sm;
+    }
+
+    .legal th {
+        @apply border-b-2 border-stone-200 py-2 pr-4 align-bottom font-semibold text-ink;
+    }
+
+    .legal td {
+        @apply border-b border-stone-200 py-2.5 pr-4 align-top;
+    }
 }
