@@ -4,6 +4,7 @@ namespace Tests\Feature\Api;
 
 use App\Models\Category;
 use App\Models\Friendship;
+use App\Models\GameSession;
 use App\Models\Question;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -36,11 +37,11 @@ class QuickLaunchLogosTest extends TestCase
 
         $this->getJson('/api/quiz/questions?mode=category&category_id='.$this->logos->id)
             ->assertOk()
-            ->assertJsonCount(1, 'data')
-            ->assertJsonPath('data.0.id', $logo->id)
-            ->assertJsonPath('data.0.image_url', 'https://example.test/storage/questions/orange.png')
-            ->assertJsonCount(2, 'data.0.options')
-            ->assertJsonMissingPath('data.0.image_source');
+            ->assertJsonCount(1, 'data.questions')
+            ->assertJsonPath('data.questions.0.id', $logo->id)
+            ->assertJsonPath('data.questions.0.image_url', 'https://example.test/storage/questions/orange.png')
+            ->assertJsonCount(2, 'data.questions.0.options')
+            ->assertJsonMissingPath('data.questions.0.image_source');
     }
 
     public function test_mixed_and_daily_modes_leave_logos_out(): void
@@ -52,9 +53,9 @@ class QuickLaunchLogosTest extends TestCase
         foreach (['mixed', 'daily'] as $mode) {
             $this->getJson('/api/quiz/questions?mode='.$mode)
                 ->assertOk()
-                ->assertJsonCount(1, 'data')
-                ->assertJsonPath('data.0.id', $history->id)
-                ->assertJsonPath('data.0.image_url', null);
+                ->assertJsonCount(1, 'data.questions')
+                ->assertJsonPath('data.questions.0.id', $history->id)
+                ->assertJsonPath('data.questions.0.image_url', null);
         }
     }
 
@@ -67,8 +68,31 @@ class QuickLaunchLogosTest extends TestCase
 
         $this->getJson('/api/quiz/questions?mode=category&category_id='.$this->logos->id)
             ->assertOk()
-            ->assertJsonCount(1, 'data')
-            ->assertJsonPath('data.0.id', $playable->id);
+            ->assertJsonCount(1, 'data.questions')
+            ->assertJsonPath('data.questions.0.id', $playable->id);
+    }
+
+    public function test_quick_launch_creates_a_session_and_returns_helper_configuration(): void
+    {
+        $question = $this->question($this->history, ['hint' => 'Un indice']);
+        $user = User::factory()->create(['coins' => 200]);
+        Sanctum::actingAs($user);
+
+        $response = $this->getJson('/api/quiz/questions?mode=chrono')
+            ->assertOk()
+            ->assertJsonPath('data.coins_balance', 200)
+            ->assertJsonPath('data.seconds_per_question', 10)
+            ->assertJsonPath('data.helpers.hint.available', true)
+            ->assertJsonPath('data.helpers.hint.price', 30)
+            ->assertJsonPath('data.helpers.skip.available', true)
+            ->assertJsonPath('data.helpers.skip.price', 50)
+            ->assertJsonPath('data.questions.0.id', $question->id);
+
+        $session = GameSession::query()->findOrFail($response->json('data.session_id'));
+        $this->assertSame($user->id, $session->user_id);
+        $this->assertSame('chrono', $session->mode);
+        $this->assertSame('started', $session->status);
+        $this->assertSame([$question->id], $session->questions()->pluck('questions.id')->all());
     }
 
     public function test_challenge_without_category_leaves_logos_out(): void

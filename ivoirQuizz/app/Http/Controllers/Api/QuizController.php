@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\GetQuizQuestionsRequest;
+use App\Models\GameSession;
 use App\Models\Question;
 use App\Models\GameplaySetting;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 
 class QuizController extends Controller
 {
@@ -49,18 +51,43 @@ class QuizController extends Controller
         });
 
         $settings = GameplaySetting::snapshot();
+        $session = DB::transaction(function () use ($request, $validated, $questions, $settings): GameSession {
+            $session = GameSession::query()->create([
+                'user_id' => $request->user()->id,
+                'category_id' => $validated['mode'] === 'category' ? (int) $validated['category_id'] : null,
+                'mode' => match ($validated['mode']) {
+                    'chrono' => 'chrono',
+                    'daily' => 'daily_challenge',
+                    default => 'level',
+                },
+                'status' => 'started',
+                'total_questions' => $questions->count(),
+                'seconds_per_question' => $validated['mode'] === 'chrono' ? (int) $settings['chrono_seconds'] : null,
+                'gameplay_config' => $settings,
+                'started_at' => now(),
+            ]);
+
+            $session->questions()->attach($questions->values()->mapWithKeys(
+                fn (Question $question, int $position): array => [$question->id => ['position' => $position + 1]],
+            )->all());
+
+            return $session;
+        });
+
         return response()->json([
             'success' => true,
-            'data' => $questions,
-            'meta' => [
+            'data' => [
+                'session_id' => $session->id,
+                'coins_balance' => (int) $request->user()->coins,
                 'mode' => $validated['mode'],
                 'seconds_per_question' => $validated['mode'] === 'chrono' ? (int) $settings['chrono_seconds'] : null,
                 'helpers' => [
-                    'hint' => ['enabled' => (bool) $settings['hint_enabled'], 'cost' => (int) $settings['hint_cost']],
-                    'skip' => ['enabled' => (bool) $settings['skip_enabled'], 'cost' => (int) $settings['skip_cost']],
+                    'hint' => ['available' => (bool) $settings['hint_enabled'], 'price' => (int) $settings['hint_cost']],
+                    'skip' => ['available' => (bool) $settings['skip_enabled'], 'price' => (int) $settings['skip_cost']],
                     'pause_on_hint' => $validated['mode'] === 'chrono' && (bool) $settings['chrono_pause_on_hint'],
                     'pause_seconds' => $validated['mode'] === 'chrono' ? (int) $settings['chrono_hint_pause_seconds'] : 0,
                 ],
+                'questions' => $questions,
             ],
             'message' => $validated['mode'] === 'daily'
                 ? 'Questions du jour récupérées.'
