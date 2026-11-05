@@ -8,6 +8,7 @@ final class GameConstants
     public const MODE_BOSS = 'boss';
     public const MODE_DAILY_CHALLENGE = 'daily_challenge';
     public const MODE_MIXED = 'mixed';
+    public const MODE_CHRONO = 'chrono';
 
     public const STATUS_STARTED = 'started';
     public const STATUS_COMPLETED = 'completed';
@@ -32,5 +33,5 @@ final class GameConstants
     public const LIFE_REGENERATION_MINUTES = 30;
     public const MAX_SESSION_HOURS = 6;
 
-    public const MODES = [self::MODE_LEVEL, self::MODE_BOSS, self::MODE_DAILY_CHALLENGE, self::MODE_MIXED];
+    public const MODES = [self::MODE_LEVEL, self::MODE_BOSS, self::MODE_DAILY_CHALLENGE, self::MODE_CHRONO];
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CollectibleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GameSessionController;
+use App\Http\Controllers\Admin\GameplaySettingController;
 use App\Http\Controllers\Admin\LeagueController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\LogoController;
@@ -67,6 +68,8 @@ Route::middleware(['auth', 'admin'])->group(function (): void {
 
     Route::get('/sessions', [GameSessionController::class, 'index'])->name('sessions.index');
     Route::get('/sessions/{session}', [GameSessionController::class, 'show'])->name('sessions.show');
+    Route::get('/gameplay', [GameplaySettingController::class, 'edit'])->name('gameplay.edit');
+    Route::put('/gameplay', [GameplaySettingController::class, 'update'])->name('gameplay.update');
 
     Route::resource('chests', ChestController::class)->except('show');
     Route::resource('collectibles', CollectibleController::class)->except('show');

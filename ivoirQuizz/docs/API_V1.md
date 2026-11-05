@@ -156,6 +156,43 @@ Body:
 ```
 Reasons: `wrong_answer`, `typo`, `inappropriate`, `duplicate`, `other`. Un même utilisateur ne peut pas spammer la même question dans une fenêtre de 24h.
 
+## Mode Chrono et aides en pièces
+
+Les nouvelles parties chronométrées utilisent `mode=chrono`. La réponse de démarrage contient
+`seconds_per_question` et `helpers`, copie immuable des réglages définis dans le panel admin.
+Les anciennes sessions `mixed` restent lisibles pour préserver l'historique.
+
+### POST /game-sessions/{session}/questions/{question}/hint
+
+Achète l'indice de la question active. Le prix est déterminé par le serveur. En mode Chrono,
+`timer_paused_until` indique jusqu'à quand le frontend peut arrêter le compteur.
+
+```json
+{
+  "success": true,
+  "data": {
+    "hint": "Cette ville est située au centre du pays.",
+    "cost": 30,
+    "coins_balance": 470,
+    "timer_paused_until": "2026-11-05T12:00:05.000000Z"
+  }
+}
+```
+
+### POST /game-sessions/{session}/questions/{question}/skip
+
+Débite le prix configuré et termine la question avec le statut `skipped`, sans point ni XP.
+
+```json
+{
+  "success": true,
+  "data": { "status": "skipped", "cost": 50, "coins_balance": 420 }
+}
+```
+
+Ces routes exigent Sanctum. Une aide déjà utilisée ou une question terminée retourne `409` ;
+un solde insuffisant retourne `422`. Le client n'envoie jamais le prix ni le nouveau solde.
+
 ## Rate limiting
 
 - Auth: 5/min

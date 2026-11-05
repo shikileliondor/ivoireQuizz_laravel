@@ -11,7 +11,7 @@ class GameSessionController extends Controller
 {
     public const STATUSES = ['started', 'completed', 'failed', 'abandoned'];
 
-    public const MODES = ['level', 'boss', 'daily_challenge', 'mixed'];
+    public const MODES = ['level', 'boss', 'daily_challenge', 'chrono', 'mixed'];
 
     public function index(Request $request): View
     {

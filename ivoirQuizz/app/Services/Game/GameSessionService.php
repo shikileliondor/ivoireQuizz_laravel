@@ -7,6 +7,7 @@ use App\Exceptions\Game\InvalidGameSessionException;
 use App\Exceptions\Game\LevelLockedException;
 use App\Exceptions\Game\NotEnoughLivesException;
 use App\Models\GameSession;
+use App\Models\GameplaySetting;
 use App\Models\Level;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
@@ -20,6 +21,7 @@ class GameSessionService
 
     public function start(User $user, Level $level, string $mode = GameConstants::MODE_LEVEL): GameSession
     {
+        $mode = $mode === GameConstants::MODE_MIXED ? GameConstants::MODE_CHRONO : $mode;
         if (! in_array($mode, GameConstants::MODES, true)) { throw new InvalidArgumentException('Unsupported game mode.'); }
         if (! $this->lifeService->canPlay($user)) { Log::warning('Not enough lives start attempt', ['user_id' => $user->id, 'level_id' => $level->id]); throw new NotEnoughLivesException('Not enough lives to start a game.'); }
         if (! $this->progressionService->isLevelUnlocked($user, $level)) { Log::warning('Locked level start attempt', ['user_id' => $user->id, 'level_id' => $level->id]); throw new LevelLockedException('This level is locked.'); }
@@ -27,7 +29,9 @@ class GameSessionService
         return DB::transaction(function () use ($user, $level, $mode): GameSession {
             $level->loadMissing('city.region');
             // Les logos ne sortent jamais sur la carte : l'app n'y affiche pas la mention légale.
-            $total = $level->questions()->where('is_active', true)->withoutLogos()->count();
+            $config = GameplaySetting::snapshot();
+            $available = $level->questions()->where('is_active', true)->withoutLogos()->count();
+            $total = $mode === GameConstants::MODE_CHRONO ? min($available, (int) $config['chrono_questions']) : $available;
             return GameSession::query()->create([
                 'user_id' => $user->id,
                 'region_id' => $level->city->region_id,
@@ -36,6 +40,8 @@ class GameSessionService
                 'mode' => $level->is_boss ? GameConstants::MODE_BOSS : $mode,
                 'status' => GameConstants::STATUS_STARTED,
                 'total_questions' => $total,
+                'seconds_per_question' => $mode === GameConstants::MODE_CHRONO ? (int) $config['chrono_seconds'] : null,
+                'gameplay_config' => $config,
                 'started_at' => now(),
             ]);
         });
@@ -52,7 +58,12 @@ class GameSessionService
     public function getQuestionsForSession(GameSession $session): Collection
     {
         $this->assertPlayable($session);
-        return $session->level->questions()->where('is_active', true)->withoutLogos()->with(['answers' => fn ($q) => $q->orderBy('order')])->inRandomOrder()->limit($session->total_questions)->get();
+        if ($session->questions()->exists()) {
+            return $session->questions()->with(['answers' => fn ($q) => $q->orderBy('order')])->get();
+        }
+        $questions = $session->level->questions()->where('is_active', true)->withoutLogos()->with(['answers' => fn ($q) => $q->orderBy('order')])->inRandomOrder()->limit($session->total_questions)->get();
+        $session->questions()->attach($questions->values()->mapWithKeys(fn ($question, $position) => [$question->id => ['position' => $position + 1]])->all());
+        return $questions;
     }
 
     public function abandon(GameSession $session): GameSession

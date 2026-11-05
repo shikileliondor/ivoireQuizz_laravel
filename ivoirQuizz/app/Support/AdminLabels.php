@@ -11,7 +11,7 @@ final class AdminLabels
         'difficulty' => ['easy' => ['Facile', 'green'], 'medium' => ['Moyen', 'amber'], 'hard' => ['Difficile', 'orange'], 'expert' => ['Expert', 'red']],
         'user_status' => ['active' => ['Actif', 'green'], 'suspended' => ['Suspendu', 'amber'], 'disabled' => ['Désactivé', 'slate']],
         'session_status' => ['started' => ['En cours', 'blue'], 'completed' => ['Réussie', 'green'], 'failed' => ['Échouée', 'red'], 'abandoned' => ['Abandonnée', 'slate']],
-        'session_mode' => ['level' => ['Niveau', 'blue'], 'boss' => ['Boss', 'purple'], 'daily_challenge' => ['Défi du jour', 'amber'], 'mixed' => ['Mixte', 'slate']],
+        'session_mode' => ['level' => ['Niveau', 'blue'], 'boss' => ['Boss', 'purple'], 'daily_challenge' => ['Défi du jour', 'amber'], 'chrono' => ['Chrono', 'slate'], 'mixed' => ['Mixte (ancien)', 'slate']],
         'report_status' => ['pending' => ['En attente', 'amber'], 'reviewed' => ['Examiné', 'blue'], 'fixed' => ['Corrigé', 'green'], 'rejected' => ['Rejeté', 'slate']],
         'report_reason' => ['wrong_answer' => ['Mauvaise réponse', 'red'], 'typo' => ['Faute de frappe', 'amber'], 'inappropriate' => ['Inapproprié', 'purple'], 'duplicate' => ['Doublon', 'blue'], 'other' => ['Autre', 'slate']],
         'question_type' => ['text' => ['Texte', 'slate'], 'image' => ['Image', 'blue'], 'audio' => ['Audio', 'purple']],

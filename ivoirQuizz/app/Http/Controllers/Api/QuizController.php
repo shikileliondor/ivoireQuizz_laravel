@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\GetQuizQuestionsRequest;
 use App\Models\Question;
+use App\Models\GameplaySetting;
 use Illuminate\Http\JsonResponse;
 
 class QuizController extends Controller
@@ -47,9 +48,20 @@ class QuizController extends Controller
             return $question;
         });
 
+        $settings = GameplaySetting::snapshot();
         return response()->json([
             'success' => true,
             'data' => $questions,
+            'meta' => [
+                'mode' => $validated['mode'],
+                'seconds_per_question' => $validated['mode'] === 'chrono' ? (int) $settings['chrono_seconds'] : null,
+                'helpers' => [
+                    'hint' => ['enabled' => (bool) $settings['hint_enabled'], 'cost' => (int) $settings['hint_cost']],
+                    'skip' => ['enabled' => (bool) $settings['skip_enabled'], 'cost' => (int) $settings['skip_cost']],
+                    'pause_on_hint' => $validated['mode'] === 'chrono' && (bool) $settings['chrono_pause_on_hint'],
+                    'pause_seconds' => $validated['mode'] === 'chrono' ? (int) $settings['chrono_hint_pause_seconds'] : 0,
+                ],
+            ],
             'message' => $validated['mode'] === 'daily'
                 ? 'Questions du jour récupérées.'
                 : 'Questions récupérées avec succès.',

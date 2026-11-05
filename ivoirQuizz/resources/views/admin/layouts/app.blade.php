@@ -19,6 +19,7 @@
             ['label' => 'Signalements', 'route' => 'admin.reports.index', 'match' => 'admin.reports.*', 'icon' => 'flag', 'badge' => $pendingReportsCount ?? 0],
         ],
         'Récompenses' => [
+            ['label' => 'Pièces et Chrono', 'route' => 'admin.gameplay.edit', 'match' => 'admin.gameplay.*', 'icon' => 'clock'],
             ['label' => 'Coffres', 'route' => 'admin.chests.index', 'match' => 'admin.chests.*', 'icon' => 'gift'],
             ['label' => 'Collection', 'route' => 'admin.collectibles.index', 'match' => 'admin.collectibles.*', 'icon' => 'sparkles'],
             ['label' => 'Ligues', 'route' => 'admin.leagues.index', 'match' => 'admin.leagues.*', 'icon' => 'trophy'],

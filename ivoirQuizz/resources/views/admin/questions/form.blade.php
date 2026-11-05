@@ -84,6 +84,7 @@
             </div>
 
             <x-admin.textarea name="explanation" label="Explication" :value="$question->explanation" rows="2" hint="Affichée au joueur après sa réponse." />
+            <x-admin.textarea name="hint" label="Indice achetable" :value="$question->hint" rows="2" hint="Révélé seulement après validation et débit des pièces par le serveur." />
         </section>
 
         <section class="card space-y-5 p-6">

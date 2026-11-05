@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreGameSessionRequest;
 use App\Models\GameSession;
 use App\Models\GameSessionAnswer;
+use App\Models\GameplaySetting;
 use App\Services\Game\StreakService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class GameSessionController extends Controller
     public function store(StoreGameSessionRequest $request, StreakService $streaks): JsonResponse
     {
         $input = $request->validated();
+        $input['mode'] = $input['mode'] === 'mixed' ? 'chrono' : $input['mode'];
         $user = $request->user();
         $questionIds = collect($input['answers'])->pluck('question_id')->map(fn ($id): int => (int) $id);
         $questionsById = \App\Models\Question::with('answers')
@@ -25,9 +27,11 @@ class GameSessionController extends Controller
             $session = GameSession::create([
                 'user_id' => $user->id,
                 'category_id' => $input['category_id'] ?? null,
-                'mode' => $input['mode'] === 'category' ? 'level' : ($input['mode'] === 'daily' ? 'daily_challenge' : 'mixed'),
+                'mode' => $input['mode'] === 'category' ? 'level' : ($input['mode'] === 'daily' ? 'daily_challenge' : 'chrono'),
                 'status' => 'completed',
                 'total_questions' => count($input['answers']),
+                'seconds_per_question' => $input['mode'] === 'chrono' ? (int) GameplaySetting::valueOf('chrono_seconds') : null,
+                'gameplay_config' => GameplaySetting::snapshot(),
                 'duration_seconds' => $input['duration_seconds'],
                 'started_at' => now()->subSeconds($input['duration_seconds']),
                 'finished_at' => now(),

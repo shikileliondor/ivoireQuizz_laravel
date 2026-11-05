@@ -32,7 +32,16 @@ class AnswerQuestionService
             $session = GameSession::query()->lockForUpdate()->findOrFail($session->id);
             if ($session->status !== GameConstants::STATUS_STARTED || $session->started_at?->lt(now()->subHours(GameConstants::MAX_SESSION_HOURS))) { Log::warning('Invalid game session answer attempt', ['session_id' => $session->id, 'status' => $session->status]); throw new InvalidGameSessionException('Cannot answer in this session.'); }
             if ($question->level_id !== $session->level_id) { Log::warning('Question outside session level', ['session_id' => $session->id, 'question_id' => $question->id]); throw new InvalidAnswerException('Question does not belong to this session.'); }
-            if ($responseTime < 0 || $responseTime > $question->time_limit) { Log::warning('Suspicious answer response time', ['session_id' => $session->id, 'question_id' => $question->id, 'response_time' => $responseTime, 'time_limit' => $question->time_limit]); throw new InvalidAnswerException('Invalid response time.'); }
+            if ($session->questions()->exists() && ! $session->questions()->whereKey($question->id)->exists()) { throw new InvalidAnswerException('Question does not belong to this session draw.'); }
+            $timeLimit = $session->mode === GameConstants::MODE_CHRONO
+                ? (int) ($session->seconds_per_question ?: 10)
+                : (int) $question->time_limit;
+            $hintAction = $session->mode === GameConstants::MODE_CHRONO && ($session->gameplay_config['chrono_pause_on_hint'] ?? false)
+                ? $session->questionActions()->where('question_id', $question->id)->where('type', 'hint')->first() : null;
+            $pause = $hintAction?->paused_until
+                ? min((int) ($session->gameplay_config['chrono_hint_pause_seconds'] ?? 0), $hintAction->created_at->diffInSeconds($hintAction->paused_until))
+                : 0;
+            if ($responseTime < 0 || $responseTime > $timeLimit + $pause) { Log::warning('Suspicious answer response time', ['session_id' => $session->id, 'question_id' => $question->id, 'response_time' => $responseTime, 'time_limit' => $timeLimit + $pause]); throw new InvalidAnswerException('Invalid response time.'); }
             if ($answer && $answer->question_id !== $question->id) { Log::warning('Answer outside question attempt', ['session_id' => $session->id, 'question_id' => $question->id, 'answer_id' => $answer->id]); throw new InvalidAnswerException('Answer does not belong to this question.'); }
             if (GameSessionAnswer::query()->where('game_session_id', $session->id)->where('question_id', $question->id)->exists()) { Log::warning('Duplicate question answer attempt', ['session_id' => $session->id, 'question_id' => $question->id]); throw new QuestionAlreadyAnsweredException('Question already answered.'); }
             if ($session->gameSessionAnswers()->count() >= $session->total_questions) { Log::warning('Suspicious extra answer attempt', ['session_id' => $session->id, 'question_id' => $question->id, 'total_questions' => $session->total_questions]); throw new InvalidGameSessionException('Too many answers for this session.'); }

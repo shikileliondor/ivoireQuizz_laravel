@@ -111,6 +111,11 @@ class User extends Authenticatable
         return $this->hasMany(RewardTransaction::class);
     }
 
+    public function coinTransactions(): HasMany
+    {
+        return $this->hasMany(CoinTransaction::class);
+    }
+
     public function userCollectibles(): HasMany
     {
         return $this->hasMany(UserCollectible::class);

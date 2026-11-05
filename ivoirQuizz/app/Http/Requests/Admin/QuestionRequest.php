@@ -66,6 +66,7 @@ class QuestionRequest extends FormRequest
             'type' => ['required', Rule::in(self::TYPES)],
             'difficulty' => ['required', Rule::in(LevelRequest::DIFFICULTIES)],
             'explanation' => ['nullable', 'string', 'max:2000'],
+            'hint' => ['nullable', 'string', 'max:1000'],
             'points' => ['required', 'integer', 'min:0', 'max:1000'],
             'xp_reward' => ['required', 'integer', 'min:0', 'max:1000'],
             'time_limit' => ['required', 'integer', 'min:5', 'max:300'],

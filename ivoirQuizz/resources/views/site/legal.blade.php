@@ -45,6 +45,16 @@
         Toute reproduction sans autorisation est interdite.
     </p>
 
+    <h2 id="marques">Marques et logos</h2>
+    <p>
+        La catégorie « Logos » du jeu présente des logos de marques. Ces marques et logos appartiennent à leurs propriétaires respectifs.
+        Ils sont reproduits uniquement pour permettre aux joueurs de les reconnaître, sans aucune affiliation, partenariat ni approbation de leur part.
+    </p>
+    <p>
+        Si vous représentez une marque et souhaitez que son logo soit retiré du jeu, écrivez-nous à @include('site.partials.contact') :
+        il sera retiré de l'application sans attendre de mise à jour.
+    </p>
+
     <h2 id="credits">Crédits photographiques</h2>
     <p>Certaines photographies de villes proviennent de Wikimedia Commons et sont utilisées selon leur licence :</p>
     <table>

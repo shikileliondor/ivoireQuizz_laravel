@@ -24,7 +24,7 @@ class StoreGameSessionRequest extends FormRequest
     {
         return [
             'category_id' => ['nullable', 'exists:categories,id'],
-            'mode' => ['required', 'in:category,mixed,daily'],
+            'mode' => ['required', 'in:category,chrono,mixed,daily'],
             'duration_seconds' => ['required', 'integer', 'min:0'],
             // Une catégorie peut avoir moins de 10 questions actives : /quiz/questions
             // en sert alors moins, la partie doit quand même être acceptée.

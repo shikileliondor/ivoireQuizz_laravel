@@ -22,6 +22,7 @@ use App\Http\Controllers\Api\V1\PassportController;
 use App\Http\Controllers\Api\V1\PasswordController;
 use App\Http\Controllers\Api\V1\ProfileController;
 use App\Http\Controllers\Api\V1\QuestionReportController;
+use App\Http\Controllers\Api\V1\QuestionAidController;
 use App\Http\Controllers\Api\V1\StreakController;
 use Illuminate\Support\Facades\Route;
 
@@ -89,6 +90,8 @@ Route::prefix('v1')->group(function (): void {
         Route::get('/game-sessions/history', [GameSessionController::class, 'history'])->name('api.v1.game-sessions.history');
         Route::get('/game-sessions/{session}', [GameSessionController::class, 'show'])->name('api.v1.game-sessions.show');
         Route::post('/game-sessions/{session}/answer', [GameSessionController::class, 'answer'])->middleware('throttle:quiz-answer')->name('api.v1.game-sessions.answer');
+        Route::post('/game-sessions/{session}/questions/{question}/hint', [QuestionAidController::class, 'hint'])->middleware('throttle:quiz-answer')->name('api.v1.game-sessions.hint');
+        Route::post('/game-sessions/{session}/questions/{question}/skip', [QuestionAidController::class, 'skip'])->middleware('throttle:quiz-answer')->name('api.v1.game-sessions.skip');
         Route::post('/game-sessions/{session}/finish', [GameSessionController::class, 'finish'])->name('api.v1.game-sessions.finish');
         Route::post('/game-sessions/{session}/abandon', [GameSessionController::class, 'abandon'])->name('api.v1.game-sessions.abandon');
 

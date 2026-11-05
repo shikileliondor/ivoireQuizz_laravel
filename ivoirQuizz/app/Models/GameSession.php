@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class GameSession extends Model
@@ -22,6 +23,8 @@ class GameSession extends Model
         'correct_answers' => 'integer',
         'wrong_answers' => 'integer',
         'total_questions' => 'integer',
+        'seconds_per_question' => 'integer',
+        'gameplay_config' => 'array',
         'accuracy' => 'decimal:2',
         'started_at' => 'datetime',
         'finished_at' => 'datetime',
@@ -34,4 +37,6 @@ class GameSession extends Model
     public function level(): BelongsTo { return $this->belongsTo(Level::class); }
     public function category(): BelongsTo { return $this->belongsTo(Category::class); }
     public function gameSessionAnswers(): HasMany { return $this->hasMany(GameSessionAnswer::class); }
+    public function questionActions(): HasMany { return $this->hasMany(GameQuestionAction::class); }
+    public function questions(): BelongsToMany { return $this->belongsToMany(Question::class)->withPivot('position')->orderByPivot('position'); }
 }
