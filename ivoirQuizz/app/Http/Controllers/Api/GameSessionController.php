@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\StoreGameSessionRequest;
+use App\Models\GameplaySetting;
 use App\Models\GameSession;
 use App\Models\GameSessionAnswer;
-use App\Models\GameplaySetting;
+use App\Models\Question;
+use App\Services\Game\RewardService;
 use App\Services\Game\StreakService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -14,16 +16,16 @@ use Illuminate\Support\Facades\DB;
 
 class GameSessionController extends Controller
 {
-    public function store(StoreGameSessionRequest $request, StreakService $streaks): JsonResponse
+    public function store(StoreGameSessionRequest $request, StreakService $streaks, RewardService $rewards): JsonResponse
     {
         $input = $request->validated();
         $input['mode'] = $input['mode'] === 'mixed' ? 'chrono' : $input['mode'];
         $user = $request->user();
         $questionIds = collect($input['answers'])->pluck('question_id')->map(fn ($id): int => (int) $id);
-        $questionsById = \App\Models\Question::with('answers')
+        $questionsById = Question::with('answers')
             ->whereIn('id', $questionIds)->get()->keyBy('id');
 
-        $session = DB::transaction(function () use ($input, $user, $questionsById, $streaks): GameSession {
+        $session = DB::transaction(function () use ($input, $user, $questionsById, $streaks, $rewards): GameSession {
             $session = GameSession::create([
                 'user_id' => $user->id,
                 'category_id' => $input['category_id'] ?? null,
@@ -40,6 +42,7 @@ class GameSessionController extends Controller
 
             $correct = 0;
             $score = 0;
+            $xp = 0;
             foreach ($input['answers'] as $answerData) {
                 $question = $questionsById->get((int) $answerData['question_id']);
                 abort_if(! $question, 422, 'Question invalide.');
@@ -60,6 +63,7 @@ class GameSessionController extends Controller
                 if ($isCorrect) {
                     $correct++;
                     $score += $points;
+                    $xp += (int) ($question->xp_reward ?? 0);
                 }
             }
 
@@ -68,19 +72,27 @@ class GameSessionController extends Controller
                 'points_earned' => $score,
                 'bonus_score' => 0,
                 'total_score' => $score,
+                'xp_earned' => $xp,
                 'correct_answers' => $correct,
                 'wrong_answers' => count($input['answers']) - $correct,
                 'accuracy' => round($correct / max(1, count($input['answers'])) * 100, 2),
             ]);
-            $user->increment('total_score', $score);
+            if ($score > 0) {
+                $rewards->addPoints($user, $score, 'game_session', $session->id, 'Game score');
+            }
+            if ($xp > 0) {
+                $rewards->addXp($user, $xp, 'game_session', $session->id, 'Game XP');
+            }
             $user->increment('games_played');
             $streaks->updateAfterGame($user);
+
             return $session->fresh();
         });
 
         $session->load(['category', 'gameSessionAnswers.question.answers', 'gameSessionAnswers.answer']);
         $answers = $session->gameSessionAnswers->map(function (GameSessionAnswer $row): array {
             $correct = $row->question?->answers->firstWhere('is_correct', true);
+
             return [
                 'question_id' => $row->question_id,
                 'selected_option_id' => $row->answer_id,
@@ -103,6 +115,14 @@ class GameSessionController extends Controller
             'score' => $session->score,
             'bonus_score' => $session->bonus_score,
             'total_score' => $session->total_score,
+            'xp_earned' => $session->xp_earned,
+            'coins_earned' => $session->coins_earned,
+            'gems_earned' => $session->gems_earned,
+            'rewards' => [
+                'xp' => $session->xp_earned,
+                'coins' => $session->coins_earned,
+                'gems' => $session->gems_earned,
+            ],
             'correct_answers' => $session->correct_answers,
             'total_questions' => $session->total_questions,
             'duration_seconds' => $session->duration_seconds,
@@ -115,6 +135,7 @@ class GameSessionController extends Controller
     {
         $sessions = GameSession::where('user_id', $request->user()->id)
             ->with('category:id,name')->latest()->limit(50)->get();
+
         return response()->json(['success' => true, 'data' => $sessions]);
     }
 
@@ -123,6 +144,7 @@ class GameSessionController extends Controller
         $session = GameSession::where('user_id', $request->user()->id)
             ->with(['category', 'gameSessionAnswers.question.answers', 'gameSessionAnswers.answer'])
             ->findOrFail($id);
+
         return response()->json(['success' => true, 'data' => $session]);
     }
 }
