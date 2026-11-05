@@ -26,7 +26,7 @@ class FriendshipController extends Controller
                 $query->where('requester_id', $userId)
                     ->orWhere('receiver_id', $userId);
             })
-            ->with(['requester:id,name,avatar_id,total_score', 'receiver:id,name,avatar_id,total_score'])
+            ->with(['requester:id,name,pseudo,avatar_id,total_score', 'receiver:id,name,pseudo,avatar_id,total_score'])
             ->get();
 
         $friends = $friendships->map(function (Friendship $friendship) use ($userId) {
@@ -35,6 +35,7 @@ class FriendshipController extends Controller
             return [
                 'id' => $friend?->id,
                 'name' => $friend?->name,
+                'pseudo' => $friend?->pseudo,
                 'avatar_id' => $friend?->avatar_id,
                 'total_score' => $friend?->total_score,
             ];
@@ -57,7 +58,7 @@ class FriendshipController extends Controller
         $requests = Friendship::query()
             ->pending()
             ->where('receiver_id', $request->user()->id)
-            ->with('requester:id,name,avatar_id,total_score')
+            ->with('requester:id,name,pseudo,avatar_id,total_score')
             ->get();
 
         return response()->json([
@@ -121,7 +122,7 @@ class FriendshipController extends Controller
                 'status' => 'pending',
             ]);
 
-            app(PushSender::class)->notify($friend, 'friend_request', ['ami' => $user->name]);
+            app(PushSender::class)->notify($friend, 'friend_request', ['ami' => $user->publicName()]);
 
             return response()->json([
                 'success' => true,
@@ -169,7 +170,7 @@ class FriendshipController extends Controller
 
             $requester = User::query()->find($friendship->requester_id);
             if ($requester) {
-                app(PushSender::class)->notify($requester, 'friend_accepted', ['ami' => $request->user()->name]);
+                app(PushSender::class)->notify($requester, 'friend_accepted', ['ami' => $request->user()->publicName()]);
             }
 
             return response()->json([

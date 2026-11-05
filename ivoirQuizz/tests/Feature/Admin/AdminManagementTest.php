@@ -10,6 +10,7 @@ use App\Models\QuestionReport;
 use App\Models\Region;
 use App\Models\User;
 use App\Services\Game\GameCacheService;
+use App\Support\Pseudo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Cache;
@@ -108,6 +109,29 @@ class AdminManagementTest extends TestCase
         $this->assertSame(100, $player->xp_total);
     }
 
+    public function test_admin_sees_searches_and_edits_the_public_pseudo(): void
+    {
+        $player = User::factory()->create(['name' => 'Awa Koné', 'pseudo' => 'AwaK225']);
+
+        $this->get(route('admin.users.index', ['q' => 'AwaK225']))->assertOk()->assertSee('Awa Koné')->assertSee('AwaK225');
+        $this->get(route('admin.users.edit', $player))->assertOk()->assertSee('Pseudo public');
+
+        $this->put(route('admin.users.update', $player), [
+            'name' => 'Awa Koné',
+            'email' => $player->email,
+            'pseudo' => 'Awa d’Abidjan',
+        ])->assertSessionHasErrors(['pseudo' => Pseudo::MESSAGE]);
+
+        $this->put(route('admin.users.update', $player), [
+            'name' => 'Awa Koné',
+            'email' => $player->email,
+            'pseudo' => 'Awa-Abidjan',
+        ])->assertRedirect(route('admin.users.show', $player));
+
+        $this->assertSame('Awa-Abidjan', $player->fresh()->pseudo);
+        $this->get(route('admin.users.show', $player))->assertOk()->assertSee('Awa-Abidjan');
+    }
+
     public function test_deleting_a_player_anonymizes_the_account(): void
     {
         $player = User::factory()->create(['email' => 'secret@ivoire.test']);
@@ -117,6 +141,7 @@ class AdminManagementTest extends TestCase
         $deleted = User::withTrashed()->findOrFail($player->id);
         $this->assertSoftDeleted($deleted);
         $this->assertSame('Compte supprimé', $deleted->name);
+        $this->assertNull($deleted->pseudo);
         $this->assertStringEndsWith('@example.invalid', $deleted->email);
     }
 

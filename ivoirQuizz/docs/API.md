@@ -54,12 +54,62 @@ Erreur :
 
 Codes principaux : `200`, `201`, `401`, `403`, `404`, `422`, `429`.
 
+## Pseudo public
+
+Chaque joueur a un `pseudo` : le nom affiché aux autres joueurs (accueil, classements, amis, défis, ligue, notifications d'amis). L'app l'affiche partout et retombe sur le prénom (premier mot de `name`) s'il vaut `null`.
+
+- Format : `/^[\p{L}\p{N}_-]{3,15}$/u`, soit 3 à 15 lettres (accents compris), chiffres, `_` ou `-`, sans espace.
+- **Pas unique** : deux joueurs peuvent avoir le même pseudo. Le code ami reste l'identifiant d'un joueur.
+- Erreur de validation (`422`) : `errors.pseudo[0]` vaut « Le pseudo doit contenir 3 à 15 caractères (lettres, chiffres, _ ou -). »
+- Pseudo attribué automatiquement quand le client n'en envoie pas : premier mot de `name`, nettoyé des caractères interdits et coupé à 15 caractères. S'il reste moins de 3 caractères : `Joueur<id>` (ex. `Joueur42`).
+- Les comptes supprimés (anonymisés) ont `pseudo: null`.
+
+Champs `pseudo` renvoyés :
+
+| Endpoint | Où |
+| --- | --- |
+| `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/v1/auth/register`, `POST /api/v1/auth/login`, `POST /api/v1/auth/google` | `data.user.pseudo` |
+| `GET /api/auth/me`, `GET /api/v1/me`, `PUT /api/v1/me`, `PUT /api/v1/profile` | `data.pseudo` |
+| `GET /api/home` | `data.user.pseudo` |
+| `GET /api/leaderboard/global`, `/weekly`, `/cities/{city}` | `data.leaderboard.data[].pseudo` |
+| `GET /api/leaderboard/friends` | `data.leaderboard[].pseudo` |
+| `GET /api/friends` | `data.friends[].pseudo` |
+| `GET /api/friends/requests` | `data.requests[].requester.pseudo` |
+| `GET /api/challenges` | `data.challenges[].challenger_pseudo`, `opponent_pseudo` |
+| `GET /api/challenges/{code}` | `data.challenger` et `data.opponent` : `{ id, name, pseudo, avatar_id }` |
+| `GET /api/v1/league/ranking` | `data[].user.pseudo` |
+
+### Inscription par l'app : `POST /api/auth/register`
+
+```json
+{ "pseudo": "Awa225", "email": "awa@example.com", "password": "password123", "password_confirmation": "password123" }
+```
+
+- `pseudo` : règles ci-dessus. `name` devient facultatif ; s'il manque, `name` prend la valeur du pseudo.
+- Il faut au moins `pseudo` ou `name`.
+- Les anciennes versions de l'app envoient seulement `name` : le pseudo est alors calculé à partir de `name` (voir ci-dessus).
+
+### Connexion Google
+
+À la création du compte uniquement, le pseudo est le prénom Google (`given_name`), nettoyé ; à défaut, le premier mot de `name` ; à défaut, `Joueur<id>`. Les connexions suivantes ne modifient jamais le pseudo, et un compte e-mail existant relié à Google garde le sien.
+
+### Modifier son pseudo : `PUT /me`
+
+Sanctum.
+
+```json
+{ "pseudo": "Awa-CI" }
+```
+
+Retour `200` : l'utilisateur mis à jour, au même format que `GET /me`. En cas d'erreur, `422` avec le message ci-dessus dans `message` et dans `errors.pseudo[0]`.
+
 ## Inscription
 
 `POST /auth/register` — publique — limite `5/minute` par adresse IP.
 
 ```json
 {
+  "pseudo": "Awa225",
   "name": "Awa Koné",
   "username": "awa_kone",
   "email": "awa@example.com",
@@ -69,7 +119,8 @@ Codes principaux : `200`, `201`, `401`, `403`, `404`, `422`, `429`.
 }
 ```
 
-- `name` : obligatoire, chaîne, 100 caractères maximum.
+- `pseudo` : voir « Pseudo public ». Obligatoire si `name` est absent ; sinon calculé à partir de `name`.
+- `name` : facultatif si `pseudo` est fourni (prend alors la valeur du pseudo), chaîne, 100 caractères maximum.
 - `username` : obligatoire, 3 à 50 caractères ASCII, lettres/chiffres/tirets/underscores, unique.
 - `email` : obligatoire, valide, 191 caractères maximum, unique.
 - `phone` : facultatif, 30 caractères maximum.
@@ -117,13 +168,15 @@ Après succès, tous les tokens API existants sont révoqués.
 
 `GET /me` — Sanctum.
 
-Retourne le profil, les valeurs serveur `level`, `xp`, `coins` et la progression vers le prochain niveau.
+Retourne le profil (dont `pseudo`), les valeurs serveur `level`, `xp`, `coins` et la progression vers le prochain niveau.
+
+`PUT /me` modifie le pseudo : voir « Pseudo public ».
 
 ## Modification du profil
 
 `PUT /profile` — Sanctum.
 
-Tous les champs sont facultatifs : `name`, `username`, `phone`, `avatar`, `city`, `bio`. `email`, `xp`, `xp_total`, `level`, `current_level`, `coins` et `status` sont interdits.
+Tous les champs sont facultatifs : `name`, `pseudo`, `username`, `phone`, `avatar`, `city`, `bio`. `email`, `xp`, `xp_total`, `level`, `current_level`, `coins` et `status` sont interdits.
 
 ## Modification du mot de passe
 

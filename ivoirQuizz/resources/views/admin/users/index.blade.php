@@ -8,7 +8,7 @@
     <x-admin.filters :action="route('admin.users.index')">
         <div class="min-w-56 flex-1">
             <label for="q" class="form-label">Recherche</label>
-            <input id="q" name="q" type="search" value="{{ request('q') }}" placeholder="Nom, pseudo, email, code ami…" class="form-input">
+            <input id="q" name="q" type="search" value="{{ request('q') }}" placeholder="Nom, pseudo, nom d’utilisateur, email, code ami…" class="form-input">
         </div>
         <x-admin.select name="status" label="Statut" :options="\App\Support\AdminLabels::options('user_status')" :value="request('status')" placeholder="Tous" class="w-40" />
         <x-admin.select name="role" label="Rôle" :options="['admin' => 'Administrateurs']" :value="request('role')" placeholder="Tous" class="w-44" />
@@ -35,6 +35,9 @@
                         <tr>
                             <td>
                                 <a href="{{ route('admin.users.show', $user) }}" class="font-medium text-slate-900 hover:text-brand-600">{{ $user->name }}</a>
+                                @if ($user->pseudo)
+                                    <span class="ml-1 text-xs font-medium text-brand-600" title="Pseudo public">« {{ $user->pseudo }} »</span>
+                                @endif
                                 @if ($user->is_admin)
                                     <x-admin.badge color="orange" class="ml-1">Admin</x-admin.badge>
                                 @endif

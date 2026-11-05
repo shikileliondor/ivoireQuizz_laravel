@@ -166,7 +166,7 @@ final class PushCatalog
                     'bodies' => ['Tu n’as pas encore joué son défi. Montre-lui qui est le plus fort !'],
                 ],
             ],
-            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'nom du lanceur du défi'],
+            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'pseudo du lanceur du défi'],
             'sample' => ['ami' => 'Awa'],
         ],
         'season_ending' => [
@@ -197,7 +197,7 @@ final class PushCatalog
             'segments' => [
                 'default' => ['label' => 'Message', 'title' => 'Nouvelle demande d’ami', 'bodies' => ['{ami} veut devenir ton ami sur IvoireQuizz.']],
             ],
-            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'nom du demandeur'],
+            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'pseudo du demandeur'],
             'sample' => ['ami' => 'Awa'],
         ],
         'friend_accepted' => [
@@ -209,7 +209,7 @@ final class PushCatalog
             'segments' => [
                 'default' => ['label' => 'Message', 'title' => 'Demande acceptée', 'bodies' => ['{ami} a accepté ta demande d’ami.']],
             ],
-            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'nom de l’ami'],
+            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'pseudo de l’ami'],
             'sample' => ['ami' => 'Awa'],
         ],
         'challenge_received' => [
@@ -221,7 +221,7 @@ final class PushCatalog
             'segments' => [
                 'default' => ['label' => 'Message', 'title' => 'Nouveau défi ! ⚔️', 'bodies' => ['{ami} te défie sur IvoireQuizz. Code : {code}']],
             ],
-            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'nom du lanceur', 'code' => 'code du défi'],
+            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'pseudo du lanceur', 'code' => 'code du défi'],
             'sample' => ['ami' => 'Awa', 'code' => 'A1B2C3D4'],
         ],
         'challenge_result' => [
@@ -235,7 +235,7 @@ final class PushCatalog
                 'lose' => ['label' => 'Défaite', 'title' => 'Défaite… 😅', 'bodies' => ['{ami} a joué ton défi et gagne {score_ami} à {score_toi}. Prends ta revanche !']],
                 'draw' => ['label' => 'Égalité', 'title' => 'Égalité 🤝', 'bodies' => ['{ami} a joué ton défi : égalité, {score_toi} partout.']],
             ],
-            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'nom de l’adversaire', 'score_toi' => 'ton score', 'score_ami' => 'score de l’adversaire'],
+            'variables' => ['prenom' => 'prénom du joueur', 'ami' => 'pseudo de l’adversaire', 'score_toi' => 'ton score', 'score_ami' => 'score de l’adversaire'],
             'sample' => ['ami' => 'Awa', 'score_toi' => 80, 'score_ami' => 60],
         ],
         'report_fixed' => [

@@ -35,7 +35,7 @@ class LeaderboardController extends Controller
         $rows = User::query()
             ->leftJoinSub($totals, 'campaign_totals', 'campaign_totals.user_id', '=', 'users.id')
             ->leftJoinSub($answerStats, 'answer_stats', 'answer_stats.user_id', '=', 'users.id')
-            ->select(['users.id', 'users.name', 'users.avatar_id', 'users.games_played'])
+            ->select(['users.id', 'users.name', 'users.pseudo', 'users.avatar_id', 'users.games_played'])
             ->selectRaw('COALESCE(campaign_totals.total_score, 0) as score')
             ->selectRaw('COALESCE(answer_stats.correct_answers, 0) as correct_answers')
             ->selectRaw('COALESCE(answer_stats.response_time, 0) as response_time');
@@ -97,7 +97,7 @@ class LeaderboardController extends Controller
 
         $rows = User::query()
             ->leftJoinSub($weeklyScores, 'weekly_scores', 'weekly_scores.user_id', '=', 'users.id')
-            ->select(['users.id', 'users.name', 'users.avatar_id', 'users.games_played'])
+            ->select(['users.id', 'users.name', 'users.pseudo', 'users.avatar_id', 'users.games_played'])
             ->selectRaw('COALESCE(weekly_scores.weekly_points, 0) as score')
             ->selectRaw('COALESCE(weekly_scores.correct_answers, 0) as correct_answers')
             ->selectRaw('COALESCE(weekly_scores.response_time, 0) as response_time');
@@ -152,7 +152,7 @@ class LeaderboardController extends Controller
         $users = User::query()
             ->whereIn('id', $friendIds)
             ->orderByDesc('total_score')
-            ->get(['id', 'name', 'avatar_id', 'total_score', 'games_played'])
+            ->get(['id', 'name', 'pseudo', 'avatar_id', 'total_score', 'games_played'])
             ->values();
 
         $rankedUsers = $users->map(function (User $user, int $index): array {
@@ -160,6 +160,7 @@ class LeaderboardController extends Controller
                 'rank' => $index + 1,
                 'id' => $user->id,
                 'name' => $user->name,
+                'pseudo' => $user->pseudo,
                 'avatar_id' => $user->avatar_id,
                 'total_score' => $user->total_score,
                 'games_played' => $user->games_played,
@@ -186,7 +187,7 @@ class LeaderboardController extends Controller
 
         $leaderboard = User::query()
             ->joinSub(clone $campaignScores, 'campaign_scores', 'campaign_scores.user_id', '=', 'users.id')
-            ->select(['users.id', 'users.name', 'users.avatar_id', 'users.games_played', 'campaign_scores.campaign_score'])
+            ->select(['users.id', 'users.name', 'users.pseudo', 'users.avatar_id', 'users.games_played', 'campaign_scores.campaign_score'])
             ->orderByDesc('campaign_scores.campaign_score')
             ->orderBy('users.id')
             ->paginate(100);

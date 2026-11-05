@@ -17,14 +17,18 @@ class AuthService
     public function __construct(private ProgressionService $progression) {}
 
     /**
-     * @param  array{name: string, username: string, email: string, phone?: string|null, password: string}  $data
+     * @param  array{name?: string|null, pseudo?: string|null, username: string, email: string, phone?: string|null, password: string}  $data
      * @return array{user: User, token: string}
      */
     public function register(array $data): array
     {
         return DB::transaction(function () use ($data): array {
+            $pseudo = $data['pseudo'] ?? null;
+
+            // Sans pseudo, User::booted() le déduit du premier mot de « name ».
             $user = User::query()->create([
-                'name' => $data['name'],
+                'name' => $data['name'] ?? $pseudo,
+                'pseudo' => $pseudo,
                 'username' => mb_strtolower($data['username']),
                 'email' => mb_strtolower($data['email']),
                 'phone' => $data['phone'] ?? null,

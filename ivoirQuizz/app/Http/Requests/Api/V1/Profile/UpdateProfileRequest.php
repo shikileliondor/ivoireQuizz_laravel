@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Api\V1\Profile;
 
 use App\Http\Requests\Api\V1\ApiRequest;
+use App\Support\Pseudo;
 use Illuminate\Validation\Rule;
 
 class UpdateProfileRequest extends ApiRequest
@@ -23,6 +24,7 @@ class UpdateProfileRequest extends ApiRequest
     {
         return [
             'name' => ['sometimes', 'required', 'string', 'max:100'],
+            'pseudo' => ['sometimes', 'required', ...Pseudo::rules()],
             'username' => ['sometimes', 'required', 'string', 'min:3', 'max:50', 'alpha_dash:ascii', Rule::unique('users')->ignore($this->user()?->id)],
             'phone' => ['sometimes', 'nullable', 'string', 'max:30'],
             'avatar' => ['sometimes', 'nullable', 'string', 'max:2048'],
@@ -36,5 +38,10 @@ class UpdateProfileRequest extends ApiRequest
             'coins' => ['prohibited'],
             'status' => ['prohibited'],
         ];
+    }
+
+    public function messages(): array
+    {
+        return Pseudo::messages();
     }
 }

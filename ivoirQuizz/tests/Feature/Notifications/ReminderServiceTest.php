@@ -148,7 +148,7 @@ class ReminderServiceTest extends TestCase
     public function test_unanswered_challenge_is_reminded_once(): void
     {
         $this->travelTo(Carbon::parse('2026-11-05 11:00'));
-        $challenger = $this->playerWithDevice('challenger', ['name' => 'Awa Traoré']);
+        $challenger = $this->playerWithDevice('challenger', ['name' => 'Awa Traoré', 'pseudo' => 'AwaT225']);
         $opponent = $this->playerWithDevice('opponent');
         DB::table('friend_challenges')->insert([
             'code' => 'ABCD1234', 'challenger_id' => $challenger->id, 'opponent_id' => $opponent->id,
@@ -161,7 +161,7 @@ class ReminderServiceTest extends TestCase
         app(ReminderService::class)->tick();
 
         $this->assertSame(1, $this->messagesFor('opponent'));
-        $this->assertSame('Awa Traoré t’attend ⚔️', $this->messageFor('opponent')['notification']['title']);
+        $this->assertSame('AwaT225 t’attend ⚔️', $this->messageFor('opponent')['notification']['title']);
         $this->assertSame(['type' => 'challenge', 'code' => 'ABCD1234'], $this->messageFor('opponent')['data']);
         $this->assertNull($this->messageFor('challenger'));
     }

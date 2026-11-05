@@ -26,6 +26,8 @@ FTP ne lance pas Artisan. Après l'extraction de l'archive du déploiement qui i
 2. `php artisan admin:create <email>` : crée le premier compte.
 3. `php artisan storage:link` si ce n'est pas déjà fait : nécessaire pour afficher les images envoyées.
 
+Le déploiement du pseudo public ajoute la migration `add_pseudo_to_users_table` (`php artisan migrate --force`) : elle crée `users.pseudo` et le remplit pour les comptes existants (premier mot du nom, sinon `Joueur<id>`).
+
 Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan migrate --force`) et une tâche Cron. Voir « Planificateur et file d'attente » plus bas.
 
 ## Fonctionnalités
@@ -33,7 +35,7 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 | Section | Ce qu'on peut faire |
 | --- | --- |
 | Tableau de bord | Indicateurs clés, parties et inscriptions des 14 derniers jours, signalements en attente, meilleurs joueurs |
-| Joueurs | Recherche, fiche détaillée, modification du profil, suspension, déconnexion des appareils, ajustement pièces/gemmes, droits admin, suppression anonymisée |
+| Joueurs | Recherche (nom, pseudo, e-mail, code ami), fiche détaillée, modification du profil et du pseudo public, suspension, déconnexion des appareils, ajustement pièces/gemmes, droits admin, suppression anonymisée |
 | Parties | Historique filtrable, détail réponse par réponse |
 | Régions, villes, niveaux | CRUD de la carte de campagne, images, ordre, récompenses ; le cache `game:regions:map` est vidé à chaque modification |
 | Catégories | CRUD |

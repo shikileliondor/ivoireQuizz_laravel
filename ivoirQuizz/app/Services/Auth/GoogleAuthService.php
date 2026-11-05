@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\UserLife;
 use App\Models\UserStreak;
 use App\Services\Game\ProgressionService;
+use App\Support\Pseudo;
 use Firebase\JWT\JWK;
 use Firebase\JWT\JWT;
 use Illuminate\Support\Facades\Cache;
@@ -49,8 +50,12 @@ class GoogleAuthService
 
             $created = false;
             if (! $user) {
+                // Pseudo fixé à la création seulement : les connexions suivantes ne le touchent plus.
+                $pseudo = Pseudo::clean($claims['given_name'] ?? null) ?? Pseudo::fromName($claims['name'] ?? null);
+
                 $user = User::query()->create([
                     'name' => mb_substr((string) ($claims['name'] ?? 'Utilisateur Google'), 0, 100),
+                    'pseudo' => $pseudo,
                     'email' => mb_strtolower($claims['email']),
                     'google_id' => $claims['sub'],
                     'password' => Hash::make(Str::random(64)),
@@ -59,6 +64,11 @@ class GoogleAuthService
                     'email_verified_at' => now(),
                     'last_activity_date' => today(),
                 ]);
+
+                if ($pseudo === null) {
+                    // Sans prénom Google, le nom de repli « Utilisateur Google » ne doit pas servir de pseudo.
+                    $user->forceFill(['pseudo' => Pseudo::fallback((int) $user->id)])->save();
+                }
 
                 $this->progression->initializeForUser($user);
                 UserLife::query()->firstOrCreate(['user_id' => $user->id], ['lives' => 5, 'max_lives' => 5]);
@@ -86,7 +96,7 @@ class GoogleAuthService
         });
     }
 
-    private function verifyIdToken(string $idToken, string $clientId): object
+    protected function verifyIdToken(string $idToken, string $clientId): object
     {
         if (count(explode('.', $idToken)) !== 3) {
             throw new InvalidArgumentException('Malformed Google ID token.');

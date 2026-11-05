@@ -312,7 +312,8 @@ class ReminderService
 
         foreach ($challenges->lazyById(PushSender::CHUNK)->chunk(PushSender::CHUNK) as $chunk) {
             $opponents = $this->reachableUsers()->whereIn('id', $chunk->pluck('opponent_id'))->get()->keyBy('id');
-            $challengers = User::query()->whereIn('id', $chunk->pluck('challenger_id'))->pluck('name', 'id');
+            $challengers = User::query()->whereIn('id', $chunk->pluck('challenger_id'))->get(['id', 'name', 'pseudo'])
+                ->mapWithKeys(fn (User $challenger) => [$challenger->id => $challenger->publicName()]);
 
             yield $chunk
                 ->filter(fn (object $challenge) => $opponents->has($challenge->opponent_id))

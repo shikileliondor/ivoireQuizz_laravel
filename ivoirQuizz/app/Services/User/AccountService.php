@@ -21,6 +21,7 @@ class AccountService
             $lockedUser->deviceTokens()->delete();
             $lockedUser->forceFill([
                 'name' => 'Compte supprimé',
+                'pseudo' => null,
                 'username' => 'deleted_'.$suffix,
                 'email' => 'deleted+'.$suffix.'@example.invalid',
                 'phone' => null,

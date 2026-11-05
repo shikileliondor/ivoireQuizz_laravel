@@ -85,6 +85,7 @@
                 <h2 class="text-sm font-semibold text-slate-900">Profil</h2>
                 <dl class="mt-3 space-y-2 text-sm">
                     @foreach ([
+                        'Pseudo public' => $user->pseudo,
                         'Code ami' => $user->friend_code,
                         'Téléphone' => $user->phone,
                         'Ville' => $user->city,

@@ -36,13 +36,13 @@ class ActionNotificationTest extends TestCase
 
     public function test_friend_request_uses_the_admin_text_and_can_be_disabled(): void
     {
-        $awa = $this->playerWithDevice('awa', ['name' => 'Awa Traoré']);
+        $awa = $this->playerWithDevice('awa', ['name' => 'Awa Traoré', 'pseudo' => 'AwaT225']);
         $koffi = $this->playerWithDevice('koffi');
 
         $this->actingAs($awa, 'sanctum')->postJson('/api/friends/add', ['friend_code' => $koffi->friend_code])->assertCreated();
 
         $this->assertSame(
-            ['token' => 'koffi', 'notification' => ['title' => 'Nouvelle demande d’ami', 'body' => 'Awa Traoré veut devenir ton ami sur IvoireQuizz.'], 'data' => ['type' => 'friend_request']],
+            ['token' => 'koffi', 'notification' => ['title' => 'Nouvelle demande d’ami', 'body' => 'AwaT225 veut devenir ton ami sur IvoireQuizz.'], 'data' => ['type' => 'friend_request']],
             $this->messageFor('koffi'),
         );
         $this->assertDatabaseHas('push_logs', ['user_id' => $koffi->id, 'type' => 'friend_request', 'is_reminder' => false]);
@@ -58,7 +58,7 @@ class ActionNotificationTest extends TestCase
     {
         $this->createQuestions(10);
         $awa = $this->playerWithDevice('awa', ['name' => 'Awa Traoré']);
-        $koffi = $this->playerWithDevice('koffi', ['name' => 'Koffi Kouassi']);
+        $koffi = $this->playerWithDevice('koffi', ['name' => 'Koffi Kouassi', 'pseudo' => 'Koko']);
         Friendship::query()->create(['requester_id' => $awa->id, 'receiver_id' => $koffi->id, 'status' => 'accepted']);
 
         $challenge = $this->actingAs($awa, 'sanctum')->postJson('/api/challenges', ['opponent_id' => $koffi->id])->assertCreated()->json('data');
@@ -79,7 +79,7 @@ class ActionNotificationTest extends TestCase
             ->assertJsonPath('data.status', 'completed');
 
         $this->assertSame(
-            ['title' => 'Victoire ! 🏆', 'body' => 'Koffi Kouassi a joué ton défi : tu gagnes 100 à 0.'],
+            ['title' => 'Victoire ! 🏆', 'body' => 'Koko a joué ton défi : tu gagnes 100 à 0.'],
             $this->messageFor('awa')['notification'],
         );
         $this->assertSame(1, $this->messagesFor('koffi'));

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\UserStatus;
 use App\Notifications\ResetPasswordNotification;
+use App\Support\Pseudo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -23,6 +24,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'pseudo',
         'username',
         'email',
         'phone',
@@ -79,6 +81,29 @@ class User extends Authenticatable
         'status' => UserStatus::class,
         'is_admin' => 'boolean',
     ];
+
+    /**
+     * Tout compte créé sans pseudo en reçoit un : premier mot du nom, sinon « Joueur » + id.
+     * Uniquement à la création : un pseudo existant n'est jamais recalculé.
+     */
+    protected static function booted(): void
+    {
+        static::created(function (User $user): void {
+            if (blank($user->pseudo)) {
+                $user->forceFill([
+                    'pseudo' => Pseudo::fromName($user->name) ?? Pseudo::fallback((int) $user->id),
+                ])->saveQuietly();
+            }
+        });
+    }
+
+    /**
+     * Nom montré aux autres joueurs (notifications d'amis, défis).
+     */
+    public function publicName(): string
+    {
+        return $this->pseudo ?: (Pseudo::fromName($this->name) ?? (string) $this->name);
+    }
 
     /**
      * Get all game sessions for the user.

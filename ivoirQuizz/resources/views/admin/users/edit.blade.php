@@ -10,7 +10,8 @@
         @method('PUT')
         <div class="grid gap-5 sm:grid-cols-2">
             <x-admin.input name="name" label="Nom" :value="$user->name" required />
-            <x-admin.input name="username" label="Pseudo" :value="$user->username" />
+            <x-admin.input name="pseudo" label="Pseudo public" :value="$user->pseudo" required minlength="3" maxlength="15" hint="Affiché aux autres joueurs : 3 à 15 lettres, chiffres, _ ou -." />
+            <x-admin.input name="username" label="Nom d’utilisateur" :value="$user->username" />
             <x-admin.input name="email" label="Email" type="email" :value="$user->email" required />
             <x-admin.input name="phone" label="Téléphone" :value="$user->phone" />
             <x-admin.input name="city" label="Ville" :value="$user->city" />

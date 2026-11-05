@@ -19,9 +19,10 @@ Utiliser `Authorization: Bearer <token>` pour tous les endpoints sauf `POST /aut
 ### POST /auth/register
 Body:
 ```json
-{ "name": "Azziz", "email": "azziz@test.com", "phone": "0700000000", "password": "password123", "password_confirmation": "password123" }
+{ "pseudo": "Azziz", "name": "Azziz", "username": "azziz", "email": "azziz@test.com", "phone": "0700000000", "password": "password123", "password_confirmation": "password123" }
 ```
-Succès: retourne `user` et `token`.
+`pseudo` ou `name` est obligatoire ; sans `pseudo`, il est calculé à partir de `name`. Règles : voir « Pseudo public » dans `docs/API.md`.
+Succès: retourne `user` (avec `pseudo`) et `token`.
 
 ### POST /auth/login
 Body:
@@ -34,7 +35,10 @@ Succès: retourne `user` et `token`.
 Révoque le token courant.
 
 ### GET /me
-Retourne le profil joueur.
+Retourne le profil joueur, dont `pseudo`.
+
+### PUT /me
+Body: `{ "pseudo": "Azziz-07" }`. Modifie le pseudo public (3 à 15 lettres, chiffres, `_` ou `-` ; pas unique). Retourne l'utilisateur au même format que `GET /me`, ou `422` avec « Le pseudo doit contenir 3 à 15 caractères (lettres, chiffres, _ ou -). »
 
 ## Carte et progression
 
@@ -121,7 +125,7 @@ Retourne `current_streak`, `longest_streak`, `last_played_date`, `streak_freezes
 Retourne ligue, saison, XP et rang du joueur.
 
 ### GET /league/ranking
-Query: `limit` (défaut/max 50). Retourne rang, nom, avatar et XP; jamais email/téléphone des autres joueurs.
+Query: `limit` (défaut/max 50). Retourne rang, nom, pseudo, avatar et XP; jamais email/téléphone des autres joueurs.
 
 ## Coffres
 

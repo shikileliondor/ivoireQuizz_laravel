@@ -36,6 +36,7 @@ class UserController extends Controller
                 $term = '%'.$request->string('q')->trim().'%';
                 $query->where(fn ($inner) => $inner
                     ->where('name', 'like', $term)
+                    ->orWhere('pseudo', 'like', $term)
                     ->orWhere('username', 'like', $term)
                     ->orWhere('email', 'like', $term)
                     ->orWhere('friend_code', 'like', $term));

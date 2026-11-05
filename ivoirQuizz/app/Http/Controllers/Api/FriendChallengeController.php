@@ -23,7 +23,7 @@ class FriendChallengeController extends Controller
             ->where(fn ($q) => $q->where('c.challenger_id', $userId)->orWhere('c.opponent_id', $userId))
             ->orderByDesc('c.created_at')
             ->limit(50)
-            ->get(['c.code', 'c.status', 'c.challenger_id', 'c.opponent_id', 'c.challenger_score', 'c.opponent_score', 'challenger.name as challenger_name', 'opponent.name as opponent_name', 'c.created_at']);
+            ->get(['c.code', 'c.status', 'c.challenger_id', 'c.opponent_id', 'c.challenger_score', 'c.opponent_score', 'challenger.name as challenger_name', 'opponent.name as opponent_name', 'challenger.pseudo as challenger_pseudo', 'opponent.pseudo as opponent_pseudo', 'c.created_at']);
 
         return response()->json(['success' => true, 'data' => ['challenges' => $challenges]]);
     }
@@ -61,7 +61,7 @@ class FriendChallengeController extends Controller
 
         $opponent = User::query()->find($opponentId);
         if ($opponent) {
-            app(PushSender::class)->notify($opponent, 'challenge_received', ['ami' => $challenger->name, 'code' => $code], ['code' => $code]);
+            app(PushSender::class)->notify($opponent, 'challenge_received', ['ami' => $challenger->publicName(), 'code' => $code], ['code' => $code]);
         }
 
         return response()->json(['success' => true, 'data' => ['code' => $code, 'questions' => $this->formatQuestions($questions), 'status' => 'pending']], 201);
@@ -79,8 +79,31 @@ class FriendChallengeController extends Controller
         $questions = Question::query()->whereIn('id', json_decode($challenge->question_ids, true) ?: [])
             ->with(['answers:id,question_id,answer_text,is_correct,order'])->get()
             ->sortBy(fn ($q) => array_search($q->id, json_decode($challenge->question_ids, true), true))->values();
+        $players = User::withTrashed()
+            ->whereIn('id', [$challenge->challenger_id, $challenge->opponent_id])
+            ->get(['id', 'name', 'pseudo', 'avatar_id'])
+            ->keyBy('id');
 
-        return response()->json(['success' => true, 'data' => ['code' => $challenge->code, 'status' => $challenge->status, 'questions' => $this->formatQuestions($questions), 'challenger_score' => $challenge->challenger_score, 'opponent_score' => $challenge->opponent_score]]);
+        return response()->json(['success' => true, 'data' => [
+            'code' => $challenge->code,
+            'status' => $challenge->status,
+            'challenger' => $this->formatPlayer($players->get($challenge->challenger_id)),
+            'opponent' => $this->formatPlayer($players->get($challenge->opponent_id)),
+            'questions' => $this->formatQuestions($questions),
+            'challenger_score' => $challenge->challenger_score,
+            'opponent_score' => $challenge->opponent_score,
+        ]]);
+    }
+
+    /** @return array{id: int, name: string, pseudo: ?string, avatar_id: ?int}|null */
+    private function formatPlayer(?User $player): ?array
+    {
+        return $player ? [
+            'id' => (int) $player->id,
+            'name' => $player->name,
+            'pseudo' => $player->pseudo,
+            'avatar_id' => $player->avatar_id,
+        ] : null;
     }
 
     public function submit(Request $request, string $code): JsonResponse
@@ -152,7 +175,7 @@ class FriendChallengeController extends Controller
         app(PushSender::class)->notify(
             $other,
             'challenge_result',
-            ['ami' => $finisher->name, 'score_toi' => $theirScore, 'score_ami' => $finisherScore],
+            ['ami' => $finisher->publicName(), 'score_toi' => $theirScore, 'score_ami' => $finisherScore],
             ['code' => $challenge->code],
             match ($theirScore <=> $finisherScore) {
                 1 => 'win',

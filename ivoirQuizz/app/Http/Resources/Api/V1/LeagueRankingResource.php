@@ -9,6 +9,6 @@ class LeagueRankingResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
-        return ['user'=>['id'=>$this->user?->id ?? $this->user_id,'name'=>$this->user?->name,'avatar'=>$this->user?->avatar],'xp_earned'=>(int)$this->xp_earned,'rank'=>(int)$this->rank];
+        return ['user'=>['id'=>$this->user?->id ?? $this->user_id,'name'=>$this->user?->name,'pseudo'=>$this->user?->pseudo,'avatar'=>$this->user?->avatar],'xp_earned'=>(int)$this->xp_earned,'rank'=>(int)$this->rank];
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Support\Pseudo;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,14 +20,20 @@ class AuthController extends Controller
     public function register(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'name' => ['required', 'string', 'max:100'],
+            // Les anciennes versions de l'app envoient seulement « name ».
+            'pseudo' => ['required_without:name', 'nullable', ...Pseudo::rules()],
+            'name' => ['nullable', 'string', 'max:100'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ], Pseudo::messages());
 
         try {
+            $pseudo = $validated['pseudo'] ?? null;
+
+            // Sans pseudo, User::booted() le déduit du premier mot de « name ».
             $user = User::create([
-                'name' => $validated['name'],
+                'name' => $validated['name'] ?? $pseudo,
+                'pseudo' => $pseudo,
                 'email' => $validated['email'],
                 'password' => Hash::make($validated['password']),
                 'friend_code' => User::generateFriendCode(),

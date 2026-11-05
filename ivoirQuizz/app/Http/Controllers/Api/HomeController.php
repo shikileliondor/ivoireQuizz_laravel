@@ -34,6 +34,7 @@ class HomeController extends Controller
                 'user' => [
                     'id' => $user->id,
                     'name' => $user->name,
+                    'pseudo' => $user->pseudo,
                     'email' => $user->email,
                     'friend_code' => $user->friend_code,
                     'avatar_id' => $user->avatar_id,
