@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#f0fdf4"/>
+  <path d="M104 202 256 94l152 108v35H104zM132 257h45v109h-45zM234 257h45v109h-45zM336 257h45v109h-45zM96 386h320v42H96z" fill="#15803d"/>
+  <circle cx="256" cy="178" r="35" fill="#fbbf24"/>
+  <text x="256" y="478" text-anchor="middle" font-family="Arial,sans-serif" font-size="44" font-weight="700" fill="#14532d">N'ZASSA BANK</text>
+</svg>

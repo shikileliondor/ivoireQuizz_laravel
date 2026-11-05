@@ -46,6 +46,14 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 | Notifications | Envoi push maintenant ou programmé, par lots de 500 joueurs, suivi de progression, annulation |
 | Notifications auto | Rappel du matin, relances et notifications d'action : activation, réglages, textes, test sur ses appareils |
 
+Pour charger quatre logos fictifs de démonstration en local (images et réponses incluses), exécutez :
+
+```bash
+php artisan db:seed --class="Database\Seeders\Local\LogoDemoSeeder"
+```
+
+Le seeder est idempotent et refuse de s'exécuter en production.
+
 ## Notifications automatiques
 
 Deux familles, définies dans `App\Services\Notifications\PushCatalog`. L'admin modifie les réglages et les textes, qui sont enregistrés dans `push_automations`.
