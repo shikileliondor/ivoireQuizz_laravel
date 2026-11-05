@@ -88,3 +88,6 @@ Les envois programmés, les envois groupés et les relances ne partent que si le
 - Une région, une ville, un niveau ou une catégorie qui contient encore des éléments ne peut pas être supprimé : il faut le désactiver.
 - Les questions sont archivées (soft delete) pour conserver l'historique des parties. Les réponses existantes sont modifiées en place pour garder le lien avec `game_session_answers`.
 - Une question importée d'un fichier de campagne garde ses modifications tant que son JSON ne change pas. Si le JSON change, le prochain import crée une nouvelle version et désactive l'ancienne.
+- Une question sans niveau n'apparaît pas sur la carte : elle se joue seulement dans le lancement rapide, via sa catégorie.
+- Les questions de la catégorie Logos (slug `logos`) ne sortent jamais en mode mixte, dans le défi du jour ni dans un défi entre amis sans catégorie. L'app affiche la mention légale à l'entrée de cette catégorie.
+- Une question de type image exige une image. La « Source de l'image » (site, date) reste dans l'admin et n'est jamais envoyée à l'app. Pour retirer un logo à la demande d'une marque, désactiver la question : elle disparaît de l'app sans mise à jour.

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Support\PublicImage;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +15,9 @@ class Question extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    /** La source d'une image ne sert qu'à l'admin. */
+    protected $hidden = ['image_source'];
 
     protected $casts = [
         'points' => 'integer',
@@ -45,5 +50,29 @@ class Question extends Model
     public function questionReports(): HasMany
     {
         return $this->hasMany(QuestionReport::class);
+    }
+
+    /** Une question de type image sans image ne peut pas être jouée. */
+    public function scopeDisplayable(Builder $query): Builder
+    {
+        return $query->where(fn (Builder $query) => $query->where('type', '!=', 'image')->orWhere(
+            fn (Builder $query) => $query->whereNotNull('image')->where('image', '!=', ''),
+        ));
+    }
+
+    /** Les logos restent dans leur catégorie, où le joueur voit la mention légale. */
+    public function scopeWithoutLogos(Builder $query): Builder
+    {
+        return $query->whereDoesntHave('category', fn (Builder $category) => $category->where('slug', Category::LOGOS));
+    }
+
+    public function imageUrl(): ?string
+    {
+        return PublicImage::url($this->image);
+    }
+
+    public function isDisplayable(): bool
+    {
+        return $this->type !== 'image' || $this->imageUrl() !== null;
     }
 }

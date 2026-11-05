@@ -40,8 +40,8 @@ class FriendChallengeController extends Controller
             return response()->json(['success' => false, 'message' => 'Un défi est possible uniquement avec un ami accepté.'], 422);
         }
 
-        $questions = Question::query()->where('is_active', true)
-            ->when(! empty($data['category_id']), fn ($q) => $q->where('category_id', $data['category_id']))
+        $questions = Question::query()->where('is_active', true)->displayable()
+            ->when(! empty($data['category_id']), fn ($q) => $q->where('category_id', $data['category_id']), fn ($q) => $q->withoutLogos())
             ->with(['answers:id,question_id,answer_text,is_correct,order'])
             ->inRandomOrder()->limit(10)->get();
         if ($questions->count() !== 10) {
@@ -171,6 +171,7 @@ class FriendChallengeController extends Controller
     {
         return $questions->map(fn ($q) => [
             'id' => $q->id, 'question_text' => $q->question_text ?? $q->text ?? $q->title ?? '',
+            'image_url' => $q->imageUrl(),
             'points' => (int) $q->points,
             'explanation' => $q->explanation, 'difficulty' => $q->difficulty ?? 1,
             'options' => $q->answers->shuffle()->values()->map(fn ($a) => ['id' => $a->id, 'option_text' => $a->answer_text, 'is_correct' => (bool) $a->is_correct])->all(),

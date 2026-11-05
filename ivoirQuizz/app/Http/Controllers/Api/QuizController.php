@@ -12,10 +12,12 @@ class QuizController extends Controller
     public function getQuestions(GetQuizQuestionsRequest $request): JsonResponse
     {
         $validated = $request->validated();
-        $query = Question::query()->where('is_active', true);
+        $query = Question::query()->where('is_active', true)->displayable();
 
         if ($validated['mode'] === 'category') {
             $query->where('category_id', (int) $validated['category_id']);
+        } else {
+            $query->withoutLogos();
         }
         if (! empty($validated['difficulty'])) {
             $query->where('difficulty', $validated['difficulty']);
@@ -30,7 +32,11 @@ class QuizController extends Controller
                 ->inRandomOrder()->limit(10)->get();
         }
 
+        // Une image référencée mais absente du disque rendrait la question injouable.
+        $questions = $questions->filter(fn (Question $question): bool => $question->isDisplayable())->values();
+
         $questions = $questions->map(function (Question $question): Question {
+            $question->setAttribute('image_url', $question->imageUrl());
             $question->setAttribute('options', $question->answers->shuffle()->values()->map(
                 fn ($answer): array => [
                     'id' => $answer->id,

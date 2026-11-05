@@ -84,8 +84,8 @@
         <section class="card space-y-5 p-6">
             <h2 class="text-sm font-semibold text-slate-900">Classement</h2>
             <div class="grid gap-5 sm:grid-cols-2">
-                <x-admin.select name="level_id" label="Niveau" :options="$levelOptions" :value="$question->level_id" placeholder="Choisir un niveau" required />
-                <x-admin.select name="category_id" label="Catégorie" :options="$categories->pluck('name', 'id')->all()" :value="$question->category_id" placeholder="Aucune" />
+                <x-admin.select name="level_id" label="Niveau" :options="$levelOptions" :value="$question->level_id" placeholder="Aucun (lancement rapide uniquement)" hint="Sans niveau, la question n’apparaît pas sur la carte : elle se joue seulement via sa catégorie." />
+                <x-admin.select name="category_id" label="Catégorie" :options="$categories->pluck('name', 'id')->all()" :value="$question->category_id" placeholder="Aucune" hint="Les questions Logos ne sortent que dans leur catégorie, jamais en mode mixte, défi du jour ou défi sans catégorie." />
                 <x-admin.select name="difficulty" label="Difficulté" :options="\App\Support\AdminLabels::options('difficulty', $difficulties)" :value="$question->difficulty" required />
                 <x-admin.select name="type" label="Type" :options="\App\Support\AdminLabels::options('question_type', $types)" :value="$question->type" required />
             </div>
@@ -98,7 +98,8 @@
                 <x-admin.input name="xp_reward" label="XP" type="number" min="0" max="1000" :value="$question->xp_reward" required />
                 <x-admin.input name="time_limit" label="Temps limite (s)" type="number" min="5" max="300" :value="$question->time_limit" required />
             </div>
-            <x-admin.image :current="$question->image" hint="Pour les questions de type image. JPG, PNG ou WebP, 2 Mo maximum." />
+            <x-admin.image :current="$question->image" contain hint="Obligatoire pour les questions de type image. Logos : PNG à fond transparent, environ 256 px. JPG, PNG ou WebP, 2 Mo maximum." />
+            <x-admin.input name="image_source" label="Source de l’image" :value="$question->image_source" maxlength="255" hint="Où et quand l’image a été récupérée, ex. : site officiel orange.ci, novembre 2026. Jamais envoyé à l’app." />
             <x-admin.checkbox name="is_active" label="Question active" hint="Une question inactive n’est plus tirée dans les parties." :checked="$question->is_active" />
         </section>
 

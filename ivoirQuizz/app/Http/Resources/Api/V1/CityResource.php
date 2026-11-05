@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\Api\V1;
 
+use App\Support\PublicImage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\Storage;
 
 class CityResource extends JsonResource
 {
@@ -20,26 +20,7 @@ class CityResource extends JsonResource
     private function imageUrl(): ?string
     {
         $image = trim((string) $this->image);
-        if ($image === '') {
-            $image = 'cities/'.$this->slug.'.jpg';
-        }
 
-        $disk = Storage::disk('public');
-        if (! $disk->exists($image)) {
-            return null;
-        }
-
-        $parts = parse_url($disk->url($image));
-        $host = $parts['host'] ?? parse_url((string) config('app.url'), PHP_URL_HOST);
-        if (! is_string($host) || $host === '') {
-            return null;
-        }
-
-        $port = isset($parts['port']) ? ':'.$parts['port'] : '';
-        $path = $parts['path'] ?? '/'.ltrim($image, '/');
-        $query = isset($parts['query']) ? '?'.$parts['query'] : '';
-        $fragment = isset($parts['fragment']) ? '#'.$parts['fragment'] : '';
-
-        return 'https://'.$host.$port.$path.$query.$fragment;
+        return PublicImage::url($image !== '' ? $image : 'cities/'.$this->slug.'.jpg');
     }
 }

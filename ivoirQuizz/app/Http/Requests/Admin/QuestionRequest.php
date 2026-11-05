@@ -36,7 +36,7 @@ class QuestionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'level_id' => ['required', 'integer', 'exists:levels,id'],
+            'level_id' => ['nullable', 'integer', 'exists:levels,id'],
             'category_id' => ['nullable', 'integer', 'exists:categories,id'],
             'question_text' => ['required', 'string', 'max:1000'],
             'type' => ['required', Rule::in(self::TYPES)],
@@ -47,6 +47,7 @@ class QuestionRequest extends FormRequest
             'time_limit' => ['required', 'integer', 'min:5', 'max:300'],
             'is_active' => ['boolean'],
             'image' => ['nullable', 'image', 'max:2048'],
+            'image_source' => ['nullable', 'string', 'max:255'],
             'answers' => ['required', 'array', 'min:2', 'max:'.self::MAX_ANSWERS],
             'answers.*.id' => ['nullable', 'integer'],
             'answers.*.text' => ['required', 'string', 'max:255', 'distinct:ignore_case'],
@@ -61,6 +62,11 @@ class QuestionRequest extends FormRequest
                 if (! array_key_exists((string) $this->input('correct'), $this->input('answers', []))) {
                     $validator->errors()->add('correct', 'Choisissez la bonne réponse parmi les réponses remplies.');
                 }
+
+                $keepsImage = $this->route('question')?->image && ! $this->boolean('remove_image');
+                if ($this->input('type') === 'image' && ! $this->hasFile('image') && ! $keepsImage) {
+                    $validator->errors()->add('image', 'Une question de type image a besoin d’une image.');
+                }
             },
         ];
     }
@@ -73,6 +79,7 @@ class QuestionRequest extends FormRequest
             'question_text' => 'question',
             'difficulty' => 'difficulté',
             'time_limit' => 'temps limite',
+            'image_source' => "source de l'image",
             'answers' => 'réponses',
             'answers.*.text' => 'réponse',
             'correct' => 'bonne réponse',

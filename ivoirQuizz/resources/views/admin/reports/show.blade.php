@@ -31,7 +31,7 @@
                 @if ($question)
                     <p class="mt-3 text-base font-medium text-slate-900">{{ $question->question_text }}</p>
                     <p class="mt-1 text-xs text-slate-500">
-                        {{ $question->level?->city?->name }} · {{ $question->level?->title }}
+                        {{ $question->level ? $question->level->city?->name.' · '.$question->level->title : 'Lancement rapide' }}
                         @if ($question->category) · {{ $question->category->name }} @endif
                         @if ($question->trashed()) · <span class="font-semibold text-red-600">archivée</span> @endif
                     </p>

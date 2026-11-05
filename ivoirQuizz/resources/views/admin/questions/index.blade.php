@@ -42,7 +42,7 @@
                                     @endif
                                 </p>
                             </td>
-                            <td class="text-sm">{{ $question->level?->title ?? '—' }}<span class="block text-xs text-slate-400">{{ $question->level?->city?->name }}</span></td>
+                            <td class="text-sm">{{ $question->level?->title ?? 'Lancement rapide' }}<span class="block text-xs text-slate-400">{{ $question->level?->city?->name }}</span></td>
                             <td>{{ $question->category?->name ?? '—' }}</td>
                             <td><x-admin.enum group="difficulty" :value="$question->difficulty" /></td>
                             <td>

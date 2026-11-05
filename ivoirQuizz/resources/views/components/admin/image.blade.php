@@ -1,4 +1,5 @@
-@props(['name' => 'image', 'label' => 'Image', 'current' => null, 'hint' => 'JPG, PNG ou WebP, 2 Mo maximum.'])
+{{-- contain : l'aperçu montre l'image entière (un logo ne doit pas être recadré). --}}
+@props(['name' => 'image', 'label' => 'Image', 'current' => null, 'hint' => 'JPG, PNG ou WebP, 2 Mo maximum.', 'contain' => false])
 
 @php($id = 'field-'.$name)
 @php($url = $current ? (str_starts_with($current, 'http') ? $current : Storage::disk('public')->url($current)) : null)
@@ -10,7 +11,7 @@
             id="{{ $id }}-preview"
             src="{{ $url ?? '' }}"
             alt=""
-            @class(['size-20 shrink-0 rounded-lg object-cover ring-1 ring-slate-200', 'hidden' => ! $url])
+            @class(['size-20 shrink-0 rounded-lg ring-1 ring-slate-200', 'object-cover' => ! $contain, 'bg-white object-contain p-1' => $contain, 'hidden' => ! $url])
         >
         <div class="min-w-0 flex-1 space-y-2">
             <input

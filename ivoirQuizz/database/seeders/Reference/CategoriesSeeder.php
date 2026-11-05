@@ -23,6 +23,7 @@ class CategoriesSeeder extends Seeder
         'musique' => ['name' => 'Musique'],
         'patrimoine' => ['name' => 'Patrimoine'],
         'infrastructures' => ['name' => 'Infrastructures'],
+        Category::LOGOS => ['name' => 'Logos'],
     ];
 
     public function run(): void

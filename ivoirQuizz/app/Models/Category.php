@@ -10,6 +10,9 @@ class Category extends Model
 {
     use HasFactory;
 
+    /** Catégorie du mode Logos, jouable seulement depuis le lancement rapide. */
+    public const LOGOS = 'logos';
+
     protected $guarded = [];
 
     protected $casts = [
