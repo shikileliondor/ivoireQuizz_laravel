@@ -63,6 +63,12 @@ class Question extends Model
         ));
     }
 
+    /** Questions du lancement rapide (quiz du jour, défis, catégories) : celles des campagnes de villes restent sur la carte. */
+    public function scopeQuickPlay(Builder $query): Builder
+    {
+        return $query->whereNull('level_id');
+    }
+
     /** Les logos restent dans leur catégorie, où le joueur voit la mention légale. */
     public function scopeWithoutLogos(Builder $query): Builder
     {

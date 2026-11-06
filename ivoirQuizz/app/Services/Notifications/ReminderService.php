@@ -229,6 +229,7 @@ class ReminderService
     private function questionOfTheDay(Carbon $today): ?string
     {
         return Cache::remember('push:question:'.$today->toDateString(), $today->copy()->addDay(), fn () => Question::query()
+            ->quickPlay()
             ->where('is_active', true)
             ->where('type', 'text')
             ->inRandomOrder()

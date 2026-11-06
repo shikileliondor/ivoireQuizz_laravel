@@ -40,7 +40,7 @@ class FriendChallengeController extends Controller
             return response()->json(['success' => false, 'message' => 'Un défi est possible uniquement avec un ami accepté.'], 422);
         }
 
-        $questions = Question::query()->where('is_active', true)->displayable()
+        $questions = Question::query()->quickPlay()->where('is_active', true)->displayable()
             ->when(! empty($data['category_id']), fn ($q) => $q->where('category_id', $data['category_id']), fn ($q) => $q->withoutLogos())
             ->with(['answers:id,question_id,answer_text,is_correct,order'])
             ->inRandomOrder()->limit(10)->get();

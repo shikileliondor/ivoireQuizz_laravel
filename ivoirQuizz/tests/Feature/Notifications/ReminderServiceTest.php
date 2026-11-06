@@ -76,7 +76,7 @@ class ReminderServiceTest extends TestCase
         $region = Region::query()->create(['name' => 'Savanes', 'slug' => 'savanes']);
         $city = City::query()->create(['region_id' => $region->id, 'name' => 'Korhogo', 'slug' => 'korhogo']);
         $level = Level::query()->create(['city_id' => $city->id, 'title' => 'Niveau 1', 'slug' => 'niveau-1']);
-        Question::query()->create(['level_id' => $level->id, 'question_text' => 'Quelle ville est la capitale des Sénoufo ?']);
+        Question::query()->create(['level_id' => null, 'question_text' => 'Quelle ville est la capitale des Sénoufo ?']);
         $this->playerWithDevice('regular', ['created_at' => now()->subDays(30), 'last_activity_date' => today()->subDay()]);
 
         app(ReminderService::class)->tick();

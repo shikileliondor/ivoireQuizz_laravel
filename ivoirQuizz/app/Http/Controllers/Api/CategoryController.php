@@ -18,9 +18,9 @@ class CategoryController extends Controller
             ->where('is_active', true)
             ->when($request->filled('search'), fn ($query) => $query->where('name', 'like', '%'.$request->string('search')->trim().'%'))
             ->withCount([
-                'questions as questions_count' => fn ($query) => $query->where('is_active', true),
+                'questions as questions_count' => fn ($query) => $query->quickPlay()->where('is_active', true),
             ])
-            ->when($request->boolean('has_questions'), fn ($query) => $query->whereHas('questions', fn ($questions) => $questions->where('is_active', true)))
+            ->when($request->boolean('has_questions'), fn ($query) => $query->whereHas('questions', fn ($questions) => $questions->quickPlay()->where('is_active', true)))
             ->orderBy('name')
             ->get();
 

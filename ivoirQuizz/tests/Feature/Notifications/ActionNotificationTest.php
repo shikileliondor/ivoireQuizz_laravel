@@ -136,7 +136,7 @@ class ActionNotificationTest extends TestCase
         $level = Level::query()->create(['city_id' => $city->id, 'title' => 'Niveau 1', 'slug' => 'niveau-1']);
 
         return collect(range(1, $count))->map(function (int $index) use ($level): Question {
-            $question = Question::query()->create(['level_id' => $level->id, 'question_text' => "Question $index ?"]);
+            $question = Question::query()->create(['level_id' => null, 'question_text' => "Question $index ?"]);
             Answer::query()->create(['question_id' => $question->id, 'answer_text' => 'Bonne', 'is_correct' => true, 'order' => 1]);
             Answer::query()->create(['question_id' => $question->id, 'answer_text' => 'Mauvaise', 'is_correct' => false, 'order' => 2]);
 

@@ -15,7 +15,7 @@ class QuizController extends Controller
     public function getQuestions(GetQuizQuestionsRequest $request): JsonResponse
     {
         $validated = $request->validated();
-        $query = Question::query()->where('is_active', true)->displayable();
+        $query = Question::query()->quickPlay()->where('is_active', true)->displayable();
 
         if ($validated['mode'] === 'category') {
             $query->where('category_id', (int) $validated['category_id']);
