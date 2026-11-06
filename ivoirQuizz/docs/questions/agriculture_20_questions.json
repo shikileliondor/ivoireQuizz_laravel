@@ -1,0 +1,562 @@
+[
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel produit agricole ivoirien est à l’origine de la fabrication du chocolat ?",
+    "options": [
+      {
+        "text": "Le caoutchouc",
+        "correct": false
+      },
+      {
+        "text": "Le cacao",
+        "correct": true
+      },
+      {
+        "text": "Le café",
+        "correct": false
+      },
+      {
+        "text": "Le coton",
+        "correct": false
+      }
+    ],
+    "explanation": "Les fèves récoltées dans les cabosses du cacaoyer sont transformées pour fabriquer le chocolat.",
+    "hint": "La récolte se fait à partir de fruits appelés cabosses.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel fruit à coque issu d’un arbre cultivé dans le nord ivoirien est une grande filière d’exportation ?",
+    "options": [
+      {
+        "text": "La noisette",
+        "correct": false
+      },
+      {
+        "text": "La noix de pécan",
+        "correct": false
+      },
+      {
+        "text": "La noix de coco",
+        "correct": false
+      },
+      {
+        "text": "La noix de cajou",
+        "correct": true
+      }
+    ],
+    "explanation": "Le cajou représente une importante culture de rente, notamment dans le nord du pays.",
+    "hint": "Le fruit comporte une noix au bout d'une pomme charnue.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel nom porte l’arbre dont on récolte des noix destinées à l’industrie du cajou ?",
+    "options": [
+      {
+        "text": "L’anacardier",
+        "correct": true
+      },
+      {
+        "text": "Le cotonnier",
+        "correct": false
+      },
+      {
+        "text": "Le cacaoyer",
+        "correct": false
+      },
+      {
+        "text": "Le caféier",
+        "correct": false
+      }
+    ],
+    "explanation": "L'anacardier produit la noix brute de cajou, destinée à la transformation.",
+    "hint": "Cet arbre fournit aussi une pomme charnue.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle partie d’un fruit de cacaoyer contient les graines transformées après récolte ?",
+    "options": [
+      {
+        "text": "La gousse de vanille",
+        "correct": false
+      },
+      {
+        "text": "La cabosse",
+        "correct": true
+      },
+      {
+        "text": "La tige",
+        "correct": false
+      },
+      {
+        "text": "La racine",
+        "correct": false
+      }
+    ],
+    "explanation": "Les fèves se trouvent à l'intérieur de la cabosse du cacaoyer.",
+    "hint": "Il s'agit de l'enveloppe du fruit récolté.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel processus biologique améliore la qualité des fèves avant leur mise à sécher ?",
+    "options": [
+      {
+        "text": "La pasteurisation",
+        "correct": false
+      },
+      {
+        "text": "La distillation",
+        "correct": false
+      },
+      {
+        "text": "La congélation",
+        "correct": false
+      },
+      {
+        "text": "La fermentation",
+        "correct": true
+      }
+    ],
+    "explanation": "La fermentation est une étape essentielle du traitement post-récolte du cacao.",
+    "hint": "Cette étape se déroule après l'ouverture des fruits.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel traitement suit la fermentation pour réduire l’humidité des fèves de cacao ?",
+    "options": [
+      {
+        "text": "L'enrobage",
+        "correct": false
+      },
+      {
+        "text": "Le glaçage",
+        "correct": false
+      },
+      {
+        "text": "Le séchage",
+        "correct": true
+      },
+      {
+        "text": "La friture",
+        "correct": false
+      }
+    ],
+    "explanation": "Le séchage vise notamment à limiter les moisissures et stabiliser la conservation des fèves.",
+    "hint": "Les fèves sont étalées pour perdre leur eau.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel organisme ivoirien accompagne et réglemente les filières café et cacao ?",
+    "options": [
+      {
+        "text": "L’ANADER",
+        "correct": false
+      },
+      {
+        "text": "Le Conseil du Café-Cacao",
+        "correct": true
+      },
+      {
+        "text": "Le CNRA",
+        "correct": false
+      },
+      {
+        "text": "La Chambre nationale d’agriculture",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Conseil du Café-Cacao intervient dans l'organisation des filières concernées.",
+    "hint": "Son action touche les producteurs et la commercialisation.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel stade de maturité faut-il privilégier pour une récolte de qualité ?",
+    "options": [
+      {
+        "text": "Les fruits germés",
+        "correct": false
+      },
+      {
+        "text": "Les fruits mûrs et sains",
+        "correct": true
+      },
+      {
+        "text": "Les fruits pourris",
+        "correct": false
+      },
+      {
+        "text": "Les fruits très immatures",
+        "correct": false
+      }
+    ],
+    "explanation": "La récolte à bonne maturité permet de préserver la qualité des fèves de cacao.",
+    "hint": "L'objectif est de limiter la pourriture et les défauts.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel risque augmente lorsque les fèves sont conservées trop humides ?",
+    "options": [
+      {
+        "text": "La germination",
+        "correct": false
+      },
+      {
+        "text": "La décoloration",
+        "correct": false
+      },
+      {
+        "text": "La fermentation",
+        "correct": false
+      },
+      {
+        "text": "La moisissure",
+        "correct": true
+      }
+    ],
+    "explanation": "Le Conseil du Café-Cacao recommande de bien sécher les fèves pour éviter les moisissures.",
+    "hint": "Ce défaut est lié à la présence de champignons.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel procédé consiste à ouvrir les fruits du cacaoyer pour en retirer les graines ?",
+    "options": [
+      {
+        "text": "Le sarclage",
+        "correct": false
+      },
+      {
+        "text": "Le repiquage",
+        "correct": false
+      },
+      {
+        "text": "L'élagage",
+        "correct": false
+      },
+      {
+        "text": "L’écabossage",
+        "correct": true
+      }
+    ],
+    "explanation": "L'écabossage est l'ouverture des cabosses permettant d'en extraire les fèves.",
+    "hint": "C'est une opération faite après la récolte.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel produit trouve-t-on au centre de la filière ivoirienne dont la Banque mondiale a soutenu la transformation locale ?",
+    "options": [
+      {
+        "text": "La noix de cajou",
+        "correct": true
+      },
+      {
+        "text": "Le maïs",
+        "correct": false
+      },
+      {
+        "text": "Le café",
+        "correct": false
+      },
+      {
+        "text": "Le coton",
+        "correct": false
+      }
+    ],
+    "explanation": "La Banque mondiale a appuyé des activités de transformation locale du cajou.",
+    "hint": "Cette filière emploie des travailleurs dans des usines de décorticage.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Selon la Banque mondiale, quelle activité industrielle accroît la valeur ajoutée de la filière du cajou ?",
+    "options": [
+      {
+        "text": "L’exportation brute",
+        "correct": false
+      },
+      {
+        "text": "Le courtage à l’export",
+        "correct": false
+      },
+      {
+        "text": "La transformation locale",
+        "correct": true
+      },
+      {
+        "text": "Le stockage prolongé",
+        "correct": false
+      }
+    ],
+    "explanation": "Le décorticage et la transformation sur place créent davantage de valeur et d'emplois.",
+    "hint": "Elle rapproche le produit brut d'un produit commercialisable.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Selon la Banque mondiale, combien de zones agro-industrielles dédiées au cajou ont été développées ?",
+    "options": [
+      {
+        "text": "Trois",
+        "correct": true
+      },
+      {
+        "text": "Sept",
+        "correct": false
+      },
+      {
+        "text": "Une",
+        "correct": false
+      },
+      {
+        "text": "Douze",
+        "correct": false
+      }
+    ],
+    "explanation": "La Banque mondiale signale trois zones agro-industrielles dédiées à la transformation du cajou.",
+    "hint": "Ces zones visent à rapprocher les unités de transformation de la filière agricole.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En 2024, environ quelle capacité annuelle de transformation de cajou la Banque mondiale mentionne-t-elle ?",
+    "options": [
+      {
+        "text": "350 000 tonnes",
+        "correct": true
+      },
+      {
+        "text": "35 000 tonnes",
+        "correct": false
+      },
+      {
+        "text": "5 000 tonnes",
+        "correct": false
+      },
+      {
+        "text": "3,5 millions de tonnes",
+        "correct": false
+      }
+    ],
+    "explanation": "La capacité annuelle de transformation atteint environ 350 000 tonnes en 2024 selon la Banque mondiale.",
+    "hint": "Elle est exprimée en centaines de milliers de tonnes.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel organe de la plante fournit la matière première transformée en amandes de cajou ?",
+    "options": [
+      {
+        "text": "La feuille",
+        "correct": false
+      },
+      {
+        "text": "La noix",
+        "correct": true
+      },
+      {
+        "text": "La fleur",
+        "correct": false
+      },
+      {
+        "text": "La racine",
+        "correct": false
+      }
+    ],
+    "explanation": "La noix brute récoltée sur l'anacardier est décortiquée pour obtenir l'amande.",
+    "hint": "Le produit commercial est protégé par une coque.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Selon la Banque mondiale, quel type d’infrastructure facilite l’accès des producteurs aux unités de transformation ?",
+    "options": [
+      {
+        "text": "Les voies ferrées",
+        "correct": false
+      },
+      {
+        "text": "Les pistes aériennes",
+        "correct": false
+      },
+      {
+        "text": "Les installations portuaires",
+        "correct": false
+      },
+      {
+        "text": "Les routes rurales",
+        "correct": true
+      }
+    ],
+    "explanation": "Un programme d'appui au cajou a construit ou réhabilité 1 800 km de routes d'accès.",
+    "hint": "Ces voies relient les zones de production aux marchés.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle opération sert à retirer les éléments impropres et les fèves abîmées après la récolte ?",
+    "options": [
+      {
+        "text": "La fermentation",
+        "correct": false
+      },
+      {
+        "text": "Le calibrage",
+        "correct": false
+      },
+      {
+        "text": "Le tri",
+        "correct": true
+      },
+      {
+        "text": "Le lavage",
+        "correct": false
+      }
+    ],
+    "explanation": "Le tri améliore la qualité commerciale du cacao en écartant les fèves défectueuses.",
+    "hint": "Elle repose sur la séparation des bons et mauvais éléments.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Pourquoi évite-t-on de blesser les fèves lors de l’ouverture des cabosses ?",
+    "options": [
+      {
+        "text": "Pour préserver leur couleur",
+        "correct": false
+      },
+      {
+        "text": "Pour éviter leur germination",
+        "correct": false
+      },
+      {
+        "text": "Pour protéger leur qualité",
+        "correct": true
+      },
+      {
+        "text": "Pour limiter les pertes de poids",
+        "correct": false
+      }
+    ],
+    "explanation": "Les blessures favorisent les défauts lors des opérations post-récolte.",
+    "hint": "L'objectif concerne la conservation du produit.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Selon le Conseil du Café-Cacao, vers quel taux d’humidité doit-on ramener les fèves bien séchées ?",
+    "options": [
+      {
+        "text": "8 %",
+        "correct": true
+      },
+      {
+        "text": "30 %",
+        "correct": false
+      },
+      {
+        "text": "2 %",
+        "correct": false
+      },
+      {
+        "text": "18 %",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Conseil du Café-Cacao recommande un taux d'humidité d'environ 8 % pour limiter les moisissures.",
+    "hint": "L’objectif est de réduire les risques de moisissure pendant le stockage.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "agriculture",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Dans quel espace faut-il stocker les sacs de cacao pour préserver leur qualité ?",
+    "options": [
+      {
+        "text": "Un entrepôt humide",
+        "correct": false
+      },
+      {
+        "text": "Un hangar non ventilé",
+        "correct": false
+      },
+      {
+        "text": "Un local sec et aéré",
+        "correct": true
+      },
+      {
+        "text": "Une réserve en plein air",
+        "correct": false
+      }
+    ],
+    "explanation": "Le stockage à l'abri de l'humidité, sans fumée et dans un local ventilé est recommandé.",
+    "hint": "Le lieu doit éviter les mauvaises odeurs et l'eau.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

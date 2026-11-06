@@ -1,0 +1,562 @@
+[
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel est le surnom de l’équipe nationale masculine de football ivoirienne ?",
+    "options": [
+      {
+        "text": "Les Lions",
+        "correct": false
+      },
+      {
+        "text": "Les Pharaons",
+        "correct": false
+      },
+      {
+        "text": "Les Éléphants",
+        "correct": true
+      },
+      {
+        "text": "Les Aigles",
+        "correct": false
+      }
+    ],
+    "explanation": "La sélection nationale ivoirienne est connue sous le nom des Éléphants.",
+    "hint": "Le surnom est un animal emblématique du pays.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année les footballeurs ivoiriens ont-ils remporté leur première CAN ?",
+    "options": [
+      {
+        "text": "1992",
+        "correct": true
+      },
+      {
+        "text": "2006",
+        "correct": false
+      },
+      {
+        "text": "1988",
+        "correct": false
+      },
+      {
+        "text": "2000",
+        "correct": false
+      }
+    ],
+    "explanation": "La première victoire ivoirienne en Coupe d’Afrique des nations date de 1992.",
+    "hint": "Le titre fut remporté après des tirs au but.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel pays les Ivoiriens ont-ils battu en finale de la CAN 2015 ?",
+    "options": [
+      {
+        "text": "L’Égypte",
+        "correct": false
+      },
+      {
+        "text": "Le Nigeria",
+        "correct": false
+      },
+      {
+        "text": "Le Cameroun",
+        "correct": false
+      },
+      {
+        "text": "Le Ghana",
+        "correct": true
+      }
+    ],
+    "explanation": "La Côte d’Ivoire a remporté la finale de 2015 face au Ghana aux tirs au but.",
+    "hint": "C’était le même adversaire qu’en 1992.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle ville s’est jouée la finale de la CAN 2023 ?",
+    "options": [
+      {
+        "text": "Bouaké",
+        "correct": false
+      },
+      {
+        "text": "San Pedro",
+        "correct": false
+      },
+      {
+        "text": "Abidjan",
+        "correct": true
+      },
+      {
+        "text": "Korhogo",
+        "correct": false
+      }
+    ],
+    "explanation": "La finale de février 2024 a eu lieu au stade Alassane Ouattara, à Abidjan.",
+    "hint": "C’est la capitale économique.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel pays a perdu la finale de la CAN 2023 contre la Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "Le Nigeria",
+        "correct": true
+      },
+      {
+        "text": "L’Algérie",
+        "correct": false
+      },
+      {
+        "text": "Le Sénégal",
+        "correct": false
+      },
+      {
+        "text": "Le Maroc",
+        "correct": false
+      }
+    ],
+    "explanation": "Les Éléphants ont battu les Super Eagles 2-1.",
+    "hint": "Son équipe est surnommée les Super Eagles.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel joueur a inscrit le but décisif de la finale de la CAN 2023 ?",
+    "options": [
+      {
+        "text": "Sébastien Haller",
+        "correct": true
+      },
+      {
+        "text": "Simon Adingra",
+        "correct": false
+      },
+      {
+        "text": "Franck Kessié",
+        "correct": false
+      },
+      {
+        "text": "Serge Aurier",
+        "correct": false
+      }
+    ],
+    "explanation": "Sébastien Haller a marqué le but du 2-1 en seconde période.",
+    "hint": "C’était un attaquant formé notamment en Europe.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel joueur a égalisé pour la Côte d’Ivoire lors de la finale de la CAN 2023 ?",
+    "options": [
+      {
+        "text": "Max-Alain Gradel",
+        "correct": false
+      },
+      {
+        "text": "Franck Kessié",
+        "correct": true
+      },
+      {
+        "text": "Jean-Michaël Seri",
+        "correct": false
+      },
+      {
+        "text": "Nicolas Pépé",
+        "correct": false
+      }
+    ],
+    "explanation": "Franck Kessié a marqué de la tête sur corner en seconde période.",
+    "hint": "Le but est intervenu après la pause.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel joueur a reçu le titre d’homme du match de la finale de la CAN 2023 ?",
+    "options": [
+      {
+        "text": "Simon Adingra",
+        "correct": true
+      },
+      {
+        "text": "William Troost-Ekong",
+        "correct": false
+      },
+      {
+        "text": "Sébastien Haller",
+        "correct": false
+      },
+      {
+        "text": "Emilio Nsue",
+        "correct": false
+      }
+    ],
+    "explanation": "Simon Adingra a délivré deux passes décisives lors de cette finale.",
+    "hint": "Il évoluait sur le côté de l’attaque.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel sélectionneur a remporté la CAN 2023 sans avoir commencé le tournoi comme entraîneur principal ?",
+    "options": [
+      {
+        "text": "Jean-Louis Gasset",
+        "correct": false
+      },
+      {
+        "text": "Hervé Renard",
+        "correct": false
+      },
+      {
+        "text": "Henri Michel",
+        "correct": false
+      },
+      {
+        "text": "Emerse Faé",
+        "correct": true
+      }
+    ],
+    "explanation": "Emerse Faé a pris l’équipe en cours de tournoi et remporté le titre.",
+    "hint": "Il avait été joueur international ivoirien.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel sport a offert une médaille d’or olympique à la Côte d’Ivoire à Rio en 2016 ?",
+    "options": [
+      {
+        "text": "Le judo",
+        "correct": false
+      },
+      {
+        "text": "Le taekwondo",
+        "correct": true
+      },
+      {
+        "text": "La boxe",
+        "correct": false
+      },
+      {
+        "text": "L’athlétisme",
+        "correct": false
+      }
+    ],
+    "explanation": "Cheick Sallah Cissé a gagné l’or olympique en taekwondo à Rio 2016.",
+    "hint": "C’est un art martial d’origine coréenne.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel athlète ivoirien a remporté l’or olympique à Rio en 2016 ?",
+    "options": [
+      {
+        "text": "Didier Drogba",
+        "correct": false
+      },
+      {
+        "text": "Cheick Sallah Cissé",
+        "correct": true
+      },
+      {
+        "text": "Sébastien Haller",
+        "correct": false
+      },
+      {
+        "text": "Franck Kessié",
+        "correct": false
+      }
+    ],
+    "explanation": "Cheick Sallah Cissé est champion olympique de taekwondo à Rio 2016.",
+    "hint": "Il a été sacré lors des Jeux organisés au Brésil.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année la Côte d’Ivoire a-t-elle disputé sa première Coupe du monde masculine de football ?",
+    "options": [
+      {
+        "text": "2010",
+        "correct": false
+      },
+      {
+        "text": "2014",
+        "correct": false
+      },
+      {
+        "text": "1998",
+        "correct": false
+      },
+      {
+        "text": "2006",
+        "correct": true
+      }
+    ],
+    "explanation": "Les Éléphants ont débuté au Mondial en Allemagne en 2006.",
+    "hint": "Le tournoi a eu lieu en Allemagne.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Face à quelle sélection les Éléphants ont-ils joué leur premier match de Coupe du monde ?",
+    "options": [
+      {
+        "text": "La Grèce",
+        "correct": false
+      },
+      {
+        "text": "Le Japon",
+        "correct": false
+      },
+      {
+        "text": "La France",
+        "correct": false
+      },
+      {
+        "text": "L’Argentine",
+        "correct": true
+      }
+    ],
+    "explanation": "En 2006, la Côte d’Ivoire a joué son premier match de Coupe du monde face à l’Argentine.",
+    "hint": "L’adversaire était sud-américain.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Qui a marqué le premier but ivoirien en Coupe du monde masculine ?",
+    "options": [
+      {
+        "text": "Salomon Kalou",
+        "correct": false
+      },
+      {
+        "text": "Gervinho",
+        "correct": false
+      },
+      {
+        "text": "Didier Drogba",
+        "correct": true
+      },
+      {
+        "text": "Yaya Touré",
+        "correct": false
+      }
+    ],
+    "explanation": "Didier Drogba a marqué contre l’Argentine le 10 juin 2006.",
+    "hint": "L’attaquant a aussi joué à Chelsea.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel club ivoirien a remporté la Ligue des champions d’Afrique en 1998 ?",
+    "options": [
+      {
+        "text": "Stade d’Abidjan",
+        "correct": false
+      },
+      {
+        "text": "Séwé Sport",
+        "correct": false
+      },
+      {
+        "text": "ASEC Mimosas",
+        "correct": true
+      },
+      {
+        "text": "Africa Sports",
+        "correct": false
+      }
+    ],
+    "explanation": "L’ASEC Mimosas figure au palmarès continental pour 1998.",
+    "hint": "Ce club est connu pour son académie de formation.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel club ivoirien a remporté la Coupe des clubs champions africains en 1965 ?",
+    "options": [
+      {
+        "text": "Stade d’Abidjan",
+        "correct": true
+      },
+      {
+        "text": "USC Bassam",
+        "correct": false
+      },
+      {
+        "text": "Africa Sports",
+        "correct": false
+      },
+      {
+        "text": "ASEC Mimosas",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Stade d’Abidjan a remporté l’édition 1965.",
+    "hint": "Ce club porte le nom de la principale ville ivoirienne.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "En quelle année Africa Sports a-t-il remporté la Supercoupe de la CAF ?",
+    "options": [
+      {
+        "text": "1998",
+        "correct": false
+      },
+      {
+        "text": "1993",
+        "correct": true
+      },
+      {
+        "text": "2010",
+        "correct": false
+      },
+      {
+        "text": "2004",
+        "correct": false
+      }
+    ],
+    "explanation": "Africa Sports a remporté la Supercoupe de la CAF en 1993.",
+    "hint": "La victoire appartient aux années 1990.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel pays a accueilli la première édition du CHAN en 2009 ?",
+    "options": [
+      {
+        "text": "Le Ghana",
+        "correct": false
+      },
+      {
+        "text": "L’Afrique du Sud",
+        "correct": false
+      },
+      {
+        "text": "Le Maroc",
+        "correct": false
+      },
+      {
+        "text": "La Côte d’Ivoire",
+        "correct": true
+      }
+    ],
+    "explanation": "La première édition du Championnat d’Afrique des nations s’est tenue en Côte d’Ivoire.",
+    "hint": "C’était un pays francophone d’Afrique de l’Ouest.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "En quelle année la Côte d’Ivoire a-t-elle accueilli la Ligue des champions féminine de la CAF ?",
+    "options": [
+      {
+        "text": "2025",
+        "correct": false
+      },
+      {
+        "text": "2023",
+        "correct": true
+      },
+      {
+        "text": "2018",
+        "correct": false
+      },
+      {
+        "text": "2020",
+        "correct": false
+      }
+    ],
+    "explanation": "La troisième édition de cette compétition continentale s’est tenue en Côte d’Ivoire en 2023.",
+    "hint": "Elle s’est déroulée après celles de l’Égypte et du Maroc.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "sport",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "En 2026, quelle nation a éliminé la Côte d’Ivoire en seizièmes de finale de la Coupe du monde ?",
+    "options": [
+      {
+        "text": "L’Équateur",
+        "correct": false
+      },
+      {
+        "text": "L’Allemagne",
+        "correct": false
+      },
+      {
+        "text": "La Norvège",
+        "correct": true
+      },
+      {
+        "text": "Le Curaçao",
+        "correct": false
+      }
+    ],
+    "explanation": "La Norvège a battu les Éléphants 2-1 en seizièmes de finale du Mondial 2026.",
+    "hint": "Il s’agit d’une sélection européenne nordique.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

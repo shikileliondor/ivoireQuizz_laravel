@@ -1,0 +1,562 @@
+[
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel océan borde la Côte d’Ivoire au sud ?",
+    "options": [
+      {
+        "text": "L’océan Atlantique",
+        "correct": true
+      },
+      {
+        "text": "L’océan Indien",
+        "correct": false
+      },
+      {
+        "text": "L’océan Arctique",
+        "correct": false
+      },
+      {
+        "text": "L’océan Pacifique",
+        "correct": false
+      }
+    ],
+    "explanation": "Le littoral ivoirien s’ouvre sur l’Atlantique, dans le golfe de Guinée.",
+    "hint": "Ce même océan baigne les côtes du Ghana.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel pays se trouve à l’est de la Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "Le Ghana",
+        "correct": true
+      },
+      {
+        "text": "Le Mali",
+        "correct": false
+      },
+      {
+        "text": "Le Libéria",
+        "correct": false
+      },
+      {
+        "text": "La Guinée",
+        "correct": false
+      }
+    ],
+    "explanation": "La frontière orientale de la Côte d’Ivoire est partagée avec le Ghana.",
+    "hint": "Le pays recherché borde lui aussi le golfe de Guinée.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle lagune borde une grande partie d’Abidjan ?",
+    "options": [
+      {
+        "text": "La lagune Aby",
+        "correct": false
+      },
+      {
+        "text": "La lagune Ouladine",
+        "correct": false
+      },
+      {
+        "text": "La lagune Ébrié",
+        "correct": true
+      },
+      {
+        "text": "La lagune de Fresco",
+        "correct": false
+      }
+    ],
+    "explanation": "La ville d’Abidjan s’est développée autour de la lagune Ébrié.",
+    "hint": "Elle est reliée à la mer par un canal.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel massif concentre l’essentiel du relief montagneux ivoirien ?",
+    "options": [
+      {
+        "text": "La région de Dabou",
+        "correct": false
+      },
+      {
+        "text": "La région de Man",
+        "correct": true
+      },
+      {
+        "text": "La région d’Aboisso",
+        "correct": false
+      },
+      {
+        "text": "La région de Bondoukou",
+        "correct": false
+      }
+    ],
+    "explanation": "La région de Man, dans l’Ouest, rassemble les reliefs les plus accidentés.",
+    "hint": "Cette région se situe près de la Guinée.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel sommet se trouve sur la frontière entre la Côte d’Ivoire et la Guinée ?",
+    "options": [
+      {
+        "text": "Le mont Péko",
+        "correct": false
+      },
+      {
+        "text": "Le mont Nimba",
+        "correct": true
+      },
+      {
+        "text": "Le mont Tonkoui",
+        "correct": false
+      },
+      {
+        "text": "Le mont Momi",
+        "correct": false
+      }
+    ],
+    "explanation": "Le mont Nimba domine une chaîne montagneuse partagée avec la Guinée.",
+    "hint": "La montagne abrite une réserve transfrontalière.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Combien de grands fleuves traversent principalement le pays du nord au sud ?",
+    "options": [
+      {
+        "text": "Quatre",
+        "correct": true
+      },
+      {
+        "text": "Huit",
+        "correct": false
+      },
+      {
+        "text": "Six",
+        "correct": false
+      },
+      {
+        "text": "Deux",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Cavally, le Sassandra, le Bandama et la Comoé constituent quatre grands cours d’eau.",
+    "hint": "Ils rejoignent le bassin atlantique.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Lequel de ces fleuves est l’un des quatre grands cours d’eau ivoiriens ?",
+    "options": [
+      {
+        "text": "Le Sénégal",
+        "correct": false
+      },
+      {
+        "text": "Le Bandama",
+        "correct": true
+      },
+      {
+        "text": "Le Niger",
+        "correct": false
+      },
+      {
+        "text": "La Gambie",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Bandama traverse le pays et fait partie des quatre grands fleuves ivoiriens.",
+    "hint": "Il arrose notamment la partie centrale du pays.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle partie de la Côte d’Ivoire possède de vastes lagunes littorales ?",
+    "options": [
+      {
+        "text": "Le Nord-Est",
+        "correct": false
+      },
+      {
+        "text": "Le Nord-Ouest",
+        "correct": false
+      },
+      {
+        "text": "Le Nord",
+        "correct": false
+      },
+      {
+        "text": "Le Sud",
+        "correct": true
+      }
+    ],
+    "explanation": "Le littoral sud comporte des lagunes, notamment Ébrié, Aby et Fresco.",
+    "hint": "Elle est au contact direct de l’océan.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Dans quelle partie du pays les savanes dominent-elles davantage ?",
+    "options": [
+      {
+        "text": "Le Sud-Ouest forestier",
+        "correct": false
+      },
+      {
+        "text": "Le bord des lagunes",
+        "correct": false
+      },
+      {
+        "text": "Le Nord",
+        "correct": true
+      },
+      {
+        "text": "Le Sud littoral",
+        "correct": false
+      }
+    ],
+    "explanation": "Les savanes et les forêts claires occupent surtout le Centre et le Nord.",
+    "hint": "Le climat y connaît une saison sèche marquée.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel parc national protège une importante forêt tropicale primaire dans le Sud-Ouest ?",
+    "options": [
+      {
+        "text": "Le parc du W",
+        "correct": false
+      },
+      {
+        "text": "Le parc de Pendjari",
+        "correct": false
+      },
+      {
+        "text": "Le parc national de Taï",
+        "correct": true
+      },
+      {
+        "text": "Le parc du Djoudj",
+        "correct": false
+      }
+    ],
+    "explanation": "Le parc national de Taï abrite une forêt tropicale ancienne et une faune rare.",
+    "hint": "Il héberge notamment l’hippopotame pygmée.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel vent sec est associé à la saison sèche dans le nord ivoirien ?",
+    "options": [
+      {
+        "text": "La brise de mer",
+        "correct": false
+      },
+      {
+        "text": "L’harmattan",
+        "correct": true
+      },
+      {
+        "text": "La mousson",
+        "correct": false
+      },
+      {
+        "text": "L’alizé maritime",
+        "correct": false
+      }
+    ],
+    "explanation": "L’harmattan accentue la sécheresse et les variations d’humidité du Nord.",
+    "hint": "Il vient de l’intérieur du continent.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle ville ivoirienne possède un grand port ouvert sur l’Atlantique via un canal ?",
+    "options": [
+      {
+        "text": "Abidjan",
+        "correct": true
+      },
+      {
+        "text": "Daloa",
+        "correct": false
+      },
+      {
+        "text": "Bouaflé",
+        "correct": false
+      },
+      {
+        "text": "Korhogo",
+        "correct": false
+      }
+    ],
+    "explanation": "Le canal de Vridi donne aux navires l’accès au Port d’Abidjan.",
+    "hint": "Cette ville est située sur une grande lagune.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel cours d’eau donne son nom à un parc national du Nord-Est ivoirien ?",
+    "options": [
+      {
+        "text": "Le Cavally",
+        "correct": false
+      },
+      {
+        "text": "Le Sassandra",
+        "correct": false
+      },
+      {
+        "text": "La Comoé",
+        "correct": true
+      },
+      {
+        "text": "Le Bandama",
+        "correct": false
+      }
+    ],
+    "explanation": "Le parc national de la Comoé est inscrit au patrimoine mondial depuis 1983.",
+    "hint": "Ce cours d’eau figure parmi les quatre grands fleuves.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Laquelle de ces lagunes est citée parmi les lagunes du littoral ivoirien ?",
+    "options": [
+      {
+        "text": "La lagune de Keta",
+        "correct": false
+      },
+      {
+        "text": "La lagune de Lagos",
+        "correct": false
+      },
+      {
+        "text": "La lagune de Porto-Novo",
+        "correct": false
+      },
+      {
+        "text": "La lagune Aby",
+        "correct": true
+      }
+    ],
+    "explanation": "La lagune Aby figure parmi les lagunes du cordon littoral ivoirien.",
+    "hint": "Elle n’est pas la grande lagune d’Abidjan.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle partie du littoral ivoirien devient plus rocheuse vers la frontière libérienne ?",
+    "options": [
+      {
+        "text": "Le Centre-Nord",
+        "correct": false
+      },
+      {
+        "text": "Le Nord-Est",
+        "correct": false
+      },
+      {
+        "text": "L’Est",
+        "correct": false
+      },
+      {
+        "text": "L’Ouest",
+        "correct": true
+      }
+    ],
+    "explanation": "À l’ouest de Fresco, le littoral devient davantage rocheux.",
+    "hint": "Cette côte se rapproche du Libéria.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Dans quel type de végétation se situe principalement le parc national de Taï ?",
+    "options": [
+      {
+        "text": "La forêt claire",
+        "correct": false
+      },
+      {
+        "text": "La savane arborée",
+        "correct": false
+      },
+      {
+        "text": "La forêt tropicale dense",
+        "correct": true
+      },
+      {
+        "text": "La mangrove côtière",
+        "correct": false
+      }
+    ],
+    "explanation": "Taï protège une forêt tropicale primaire rare en Afrique de l’Ouest.",
+    "hint": "Sa végétation est humide et arborée.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel pays partage avec la Côte d’Ivoire la réserve du mont Nimba ?",
+    "options": [
+      {
+        "text": "La Guinée",
+        "correct": true
+      },
+      {
+        "text": "Le Bénin",
+        "correct": false
+      },
+      {
+        "text": "Le Sénégal",
+        "correct": false
+      },
+      {
+        "text": "Le Togo",
+        "correct": false
+      }
+    ],
+    "explanation": "La réserve du mont Nimba comprend une partie ivoirienne et une partie guinéenne.",
+    "hint": "Le site naturel s’étend sur deux pays inscrits ensemble à l’UNESCO.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle ville est située sur la lagune Ébrié et s’étend sur plusieurs péninsules et îles ?",
+    "options": [
+      {
+        "text": "Korhogo",
+        "correct": false
+      },
+      {
+        "text": "Bouaké",
+        "correct": false
+      },
+      {
+        "text": "Yamoussoukro",
+        "correct": false
+      },
+      {
+        "text": "Abidjan",
+        "correct": true
+      }
+    ],
+    "explanation": "Abidjan occupe un site lagunaire complexe, relié par des ponts.",
+    "hint": "Le Plateau est son quartier d’affaires historique.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Dans le Nord, quelle saison est particulièrement marquée selon le climat décrit par Larousse ?",
+    "options": [
+      {
+        "text": "La petite saison des pluies",
+        "correct": false
+      },
+      {
+        "text": "La saison des averses côtières",
+        "correct": false
+      },
+      {
+        "text": "La grande saison des pluies",
+        "correct": false
+      },
+      {
+        "text": "La saison sèche",
+        "correct": true
+      }
+    ],
+    "explanation": "Le Nord connaît une saison sèche prononcée, avec l’harmattan.",
+    "hint": "Elle est souvent accompagnée de poussière.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "geographie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel amphibien rare et endémique vit dans les zones d’altitude du mont Nimba ?",
+    "options": [
+      {
+        "text": "Le crapaud buffle",
+        "correct": false
+      },
+      {
+        "text": "Le crapaud vivipare",
+        "correct": true
+      },
+      {
+        "text": "La grenouille goliath",
+        "correct": false
+      },
+      {
+        "text": "La rainette verte",
+        "correct": false
+      }
+    ],
+    "explanation": "Le crapaud vivipare du mont Nimba vit dans les prairies d’altitude de ce massif, où son habitat est très limité.",
+    "hint": "Cette espèce est remarquable par son mode de reproduction.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

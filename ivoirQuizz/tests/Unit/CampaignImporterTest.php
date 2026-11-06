@@ -2,15 +2,16 @@
 
 namespace Tests\Unit;
 
-use Database\Seeders\Campaigns\CampaignImporter;
+use App\Services\Questions\CampaignImporter;
 use InvalidArgumentException;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 class CampaignImporterTest extends TestCase
 {
     private function bank(string $city): array
     {
-        return json_decode(file_get_contents(database_path("seeders/Campaigns/data/{$city}_questions.json")), true, 512, JSON_THROW_ON_ERROR);
+        return GameWorld::bank($city);
     }
 
     public function test_both_campaign_banks_have_fifty_questions_with_expected_points_and_one_correct_answer(): void

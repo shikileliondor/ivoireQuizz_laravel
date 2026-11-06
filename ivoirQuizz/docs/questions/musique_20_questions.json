@@ -1,0 +1,562 @@
+[
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel genre musical ivoirien a émergé dans les milieux étudiants au début des années 1990 ?",
+    "options": [
+      {
+        "text": "Le highlife",
+        "correct": false
+      },
+      {
+        "text": "Le mbalax",
+        "correct": false
+      },
+      {
+        "text": "Le zouglou",
+        "correct": true
+      },
+      {
+        "text": "Le makossa",
+        "correct": false
+      }
+    ],
+    "explanation": "Le zouglou s’est développé à partir de chants d’étudiants et de supporters scolaires.",
+    "hint": "Ses textes évoquaient les difficultés de la jeunesse.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel groupe ivoirien a popularisé « Premier Gaou » à l’international ?",
+    "options": [
+      {
+        "text": "Magic System",
+        "correct": true
+      },
+      {
+        "text": "Les Potes de la Rue",
+        "correct": false
+      },
+      {
+        "text": "Espoir 2000",
+        "correct": false
+      },
+      {
+        "text": "Les Garagistes",
+        "correct": false
+      }
+    ],
+    "explanation": "Magic System a fait connaître le zouglou au-delà des frontières avec « Premier Gaou ».",
+    "hint": "Le groupe comprend notamment A’Salfo.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel musicien ivoirien a créé le style appelé Zoblazo ?",
+    "options": [
+      {
+        "text": "Alpha Blondy",
+        "correct": false
+      },
+      {
+        "text": "DJ Arafat",
+        "correct": false
+      },
+      {
+        "text": "Ernesto Djédjé",
+        "correct": false
+      },
+      {
+        "text": "Meiway",
+        "correct": true
+      }
+    ],
+    "explanation": "Meiway, de son vrai nom Frédéric Désiré Ehui, a développé le Zoblazo.",
+    "hint": "Ses prestations utilisent la danse des mouchoirs.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel style est associé à Ernesto Djédjé ?",
+    "options": [
+      {
+        "text": "Le kizomba",
+        "correct": false
+      },
+      {
+        "text": "Le ziglibity",
+        "correct": true
+      },
+      {
+        "text": "La rumba",
+        "correct": false
+      },
+      {
+        "text": "Le zouk",
+        "correct": false
+      }
+    ],
+    "explanation": "Ernesto Djédjé est une figure majeure du ziglibity.",
+    "hint": "Son nom est lié à la musique ivoirienne des années 1970.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel artiste ivoirien est internationalement associé au reggae ?",
+    "options": [
+      {
+        "text": "Didier Bilé",
+        "correct": false
+      },
+      {
+        "text": "Alpha Blondy",
+        "correct": true
+      },
+      {
+        "text": "Meiway",
+        "correct": false
+      },
+      {
+        "text": "A’Salfo",
+        "correct": false
+      }
+    ],
+    "explanation": "Alpha Blondy est l’une des grandes figures du reggae ivoirien.",
+    "hint": "Il appartient à une génération antérieure au coupé-décalé.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel musicien est associé aux débuts du coupé-décalé au début des années 2000 ?",
+    "options": [
+      {
+        "text": "Douk Saga",
+        "correct": true
+      },
+      {
+        "text": "Amédé Pierre",
+        "correct": false
+      },
+      {
+        "text": "Ernesto Djédjé",
+        "correct": false
+      },
+      {
+        "text": "Allah Thérèse",
+        "correct": false
+      }
+    ],
+    "explanation": "Douk Saga figure parmi les artistes pionniers du coupé-décalé.",
+    "hint": "Cette figure a précédé l’essor de DJ Arafat.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel groupe a sorti le single « Magic in the Air » avec Chawki ?",
+    "options": [
+      {
+        "text": "Magic System",
+        "correct": true
+      },
+      {
+        "text": "Les Garagistes",
+        "correct": false
+      },
+      {
+        "text": "Zougloumania",
+        "correct": false
+      },
+      {
+        "text": "Les Salopards",
+        "correct": false
+      }
+    ],
+    "explanation": "Le titre figure sur l’album « Africainement Vôtre » de Magic System en 2014.",
+    "hint": "Le groupe est né à Abidjan.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel groupe de zouglou a publié l’album « Génération sacrifiée » en 1997 ?",
+    "options": [
+      {
+        "text": "Les Garagistes",
+        "correct": false
+      },
+      {
+        "text": "Espoir 2000",
+        "correct": false
+      },
+      {
+        "text": "Les Salopards",
+        "correct": true
+      },
+      {
+        "text": "Magic System",
+        "correct": false
+      }
+    ],
+    "explanation": "Le groupe Les Salopards a publié l’album « Génération sacrifiée » en 1997.",
+    "hint": "Ce groupe appartient à la deuxième génération du zouglou.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle chanson de Didier Bilé et des Parents du Campus a marqué les débuts du zouglou ?",
+    "options": [
+      {
+        "text": "Magic in the Air",
+        "correct": false
+      },
+      {
+        "text": "Zoblazo",
+        "correct": false
+      },
+      {
+        "text": "Gboglo Koffi",
+        "correct": true
+      },
+      {
+        "text": "Premier Gaou",
+        "correct": false
+      }
+    ],
+    "explanation": "« Gboglo Koffi », enregistrée en 1991, est associée aux débuts du zouglou.",
+    "hint": "Ce titre est antérieur à « Premier Gaou ».",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel style vocal et percussif scolaire a nourri les origines du zouglou ?",
+    "options": [
+      {
+        "text": "Le flamenco",
+        "correct": false
+      },
+      {
+        "text": "Le chant grégorien",
+        "correct": false
+      },
+      {
+        "text": "Le jazz bebop",
+        "correct": false
+      },
+      {
+        "text": "Le woyo",
+        "correct": true
+      }
+    ],
+    "explanation": "Le woyo, ou ambiance facile, était pratiqué par des groupes de supporters scolaires.",
+    "hint": "On y utilisait notamment des objets comme percussions.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle danse populaire utilise des mouchoirs dans l’univers du Zoblazo ?",
+    "options": [
+      {
+        "text": "La polka",
+        "correct": false
+      },
+      {
+        "text": "La danse des mouchoirs",
+        "correct": true
+      },
+      {
+        "text": "La danse du robot",
+        "correct": false
+      },
+      {
+        "text": "La valse",
+        "correct": false
+      }
+    ],
+    "explanation": "Meiway a notamment popularisé une danse utilisant des mouchoirs.",
+    "hint": "Les danseurs brandissent un accessoire textile.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel duo de zouglou était autrefois connu sous le nom « Poussins Chocs » ?",
+    "options": [
+      {
+        "text": "Les Potes de la Rue",
+        "correct": false
+      },
+      {
+        "text": "Les Garagistes",
+        "correct": false
+      },
+      {
+        "text": "Yodé et Siro",
+        "correct": true
+      },
+      {
+        "text": "Magic System",
+        "correct": false
+      }
+    ],
+    "explanation": "Yodé et Siro ont d’abord utilisé le nom de groupe Poussins Chocs.",
+    "hint": "Le duo a participé à l’évolution du zouglou dans les années 1990.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel album du groupe Les Garagistes est cité dans l’histoire du zouglou ?",
+    "options": [
+      {
+        "text": "Racines",
+        "correct": false
+      },
+      {
+        "text": "Mon combat",
+        "correct": false
+      },
+      {
+        "text": "Tapis Rouge",
+        "correct": true
+      },
+      {
+        "text": "Africainement Vôtre",
+        "correct": false
+      }
+    ],
+    "explanation": "« Tapis Rouge », paru en 2003, fait partie des albums marquants des Garagistes.",
+    "hint": "Cet album est associé à l’année 2003.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel groupe ivoirien a sorti l’album « Gloire à Dieu » en 2006 ?",
+    "options": [
+      {
+        "text": "Espoir 2000",
+        "correct": true
+      },
+      {
+        "text": "Zougloumania",
+        "correct": false
+      },
+      {
+        "text": "Les Salopards",
+        "correct": false
+      },
+      {
+        "text": "Magic System",
+        "correct": false
+      }
+    ],
+    "explanation": "Music in Africa recense « Gloire à Dieu » parmi les albums d’Espoir 2000.",
+    "hint": "Il s’agit d’un duo célèbre dans le zouglou.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel titre des Potes de la Rue apparaît dans les premiers enregistrements zouglou ?",
+    "options": [
+      {
+        "text": "Premier Gaou",
+        "correct": false
+      },
+      {
+        "text": "Ziopin",
+        "correct": true
+      },
+      {
+        "text": "Poisson d’avril",
+        "correct": false
+      },
+      {
+        "text": "Magic in the Air",
+        "correct": false
+      }
+    ],
+    "explanation": "Le titre « Ziopin (Faut pas fâcher) » a été enregistré en 1992.",
+    "hint": "La chanson date du début des années 1990.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel artiste ivoirien a partagé un Grammy en 2010 pour « Pearls » ?",
+    "options": [
+      {
+        "text": "Allah Thérèse",
+        "correct": false
+      },
+      {
+        "text": "Nayanka Bell",
+        "correct": false
+      },
+      {
+        "text": "Josey",
+        "correct": false
+      },
+      {
+        "text": "Dobet Gnahoré",
+        "correct": true
+      }
+    ],
+    "explanation": "Dobet Gnahoré a été récompensée avec India.Arie pour « Pearls ».",
+    "hint": "La récompense concerne une collaboration internationale.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Avec quelle artiste américaine Dobet Gnahoré a-t-elle remporté son Grammy ?",
+    "options": [
+      {
+        "text": "India.Arie",
+        "correct": true
+      },
+      {
+        "text": "Alicia Keys",
+        "correct": false
+      },
+      {
+        "text": "Rihanna",
+        "correct": false
+      },
+      {
+        "text": "Beyoncé",
+        "correct": false
+      }
+    ],
+    "explanation": "Le titre « Pearls » associe India.Arie et Dobet Gnahoré.",
+    "hint": "Cette artiste américaine interprète de la soul.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel genre musical ivoirien est associé au langage urbain nouchi ?",
+    "options": [
+      {
+        "text": "La salsa",
+        "correct": false
+      },
+      {
+        "text": "Le tango",
+        "correct": false
+      },
+      {
+        "text": "Le fado",
+        "correct": false
+      },
+      {
+        "text": "Le zouglou",
+        "correct": true
+      }
+    ],
+    "explanation": "Le zouglou a popularisé l’utilisation d’argot urbain dans ses textes.",
+    "hint": "Il s’est développé à Abidjan.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel groupe de quatre membres comprend A’Salfo, Goudé, Tino et Manadja ?",
+    "options": [
+      {
+        "text": "Les Garagistes",
+        "correct": false
+      },
+      {
+        "text": "Magic System",
+        "correct": true
+      },
+      {
+        "text": "Les Patrons",
+        "correct": false
+      },
+      {
+        "text": "Espoir 2000",
+        "correct": false
+      }
+    ],
+    "explanation": "Ces quatre artistes composent Magic System.",
+    "hint": "Son plus grand succès des débuts fut « Premier Gaou ».",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "musique",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel style moderne fut porté notamment par DJ Arafat et Serge Beynaud ?",
+    "options": [
+      {
+        "text": "Le blues du Delta",
+        "correct": false
+      },
+      {
+        "text": "Le soukous classique",
+        "correct": false
+      },
+      {
+        "text": "Le mbalax",
+        "correct": false
+      },
+      {
+        "text": "Le coupé-décalé",
+        "correct": true
+      }
+    ],
+    "explanation": "DJ Arafat et Serge Beynaud sont associés à la scène coupé-décalé.",
+    "hint": "Ce genre s’est diffusé dans les années 2000.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

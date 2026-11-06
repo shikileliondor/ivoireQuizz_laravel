@@ -1,0 +1,562 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle communauté ivoirienne pratique la danse masquée Zaouli ?",
+    "options": [
+      {
+        "text": "Les Sénoufo",
+        "correct": false
+      },
+      {
+        "text": "Les Abron",
+        "correct": false
+      },
+      {
+        "text": "Les Gouro",
+        "correct": true
+      },
+      {
+        "text": "Les Ébrié",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Zaouli est une musique et une danse populaire des communautés gouro.",
+    "hint": "La tradition est liée aux départements de Bouaflé et Zuénoula.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel élément de costume est au cœur de la pratique du Zaouli ?",
+    "options": [
+      {
+        "text": "Le masque sculpté",
+        "correct": true
+      },
+      {
+        "text": "La couronne métallique",
+        "correct": false
+      },
+      {
+        "text": "La cape de plumes",
+        "correct": false
+      },
+      {
+        "text": "Le casque colonial",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Zaouli associe masque sculpté, costume, musique et danse.",
+    "hint": "Un artisan le fabrique avant la représentation.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année le Zaouli est-il entré au patrimoine culturel immatériel de l’UNESCO ?",
+    "options": [
+      {
+        "text": "2017",
+        "correct": true
+      },
+      {
+        "text": "2021",
+        "correct": false
+      },
+      {
+        "text": "2008",
+        "correct": false
+      },
+      {
+        "text": "2024",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO a inscrit cette tradition en 2017.",
+    "hint": "L’inscription précède celle du tissage du pagne.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quels départements la tradition du Zaouli est-elle particulièrement documentée ?",
+    "options": [
+      {
+        "text": "Man et Danané",
+        "correct": false
+      },
+      {
+        "text": "Kong et Ferkessédougou",
+        "correct": false
+      },
+      {
+        "text": "Bouaflé et Zuénoula",
+        "correct": true
+      },
+      {
+        "text": "Daloa et Issia",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO situe cette pratique parmi les communautés gouro de Bouaflé et Zuénoula.",
+    "hint": "Ces localités se trouvent au Centre-Ouest.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel hommage symbolique est associé à la danse Zaouli ?",
+    "options": [
+      {
+        "text": "La mémoire des ancêtres",
+        "correct": false
+      },
+      {
+        "text": "La fertilité des cultures",
+        "correct": false
+      },
+      {
+        "text": "La beauté féminine",
+        "correct": true
+      },
+      {
+        "text": "La force guerrière",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO décrit le Zaouli comme un hommage à la beauté féminine.",
+    "hint": "Le sens symbolique est lié à une figure féminine.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quels groupes pratiquent notamment un tissage traditionnel du pagne inscrit par l’UNESCO ?",
+    "options": [
+      {
+        "text": "Les Ébrié et les Adjoukrou",
+        "correct": false
+      },
+      {
+        "text": "Les Attié et les Wè",
+        "correct": false
+      },
+      {
+        "text": "Les Alladjan et les Abouré",
+        "correct": false
+      },
+      {
+        "text": "Les Baoulé et les Gouro",
+        "correct": true
+      }
+    ],
+    "explanation": "Les savoir-faire du pagne tissé sont pratiqués par plusieurs communautés ivoiriennes, dont les Gouro et les Baoulé.",
+    "hint": "Ces communautés sont présentes en Côte d’Ivoire.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle fibre est utilisée dans plusieurs traditions ivoiriennes de pagnes tissés en bandes ?",
+    "options": [
+      {
+        "text": "Le lin",
+        "correct": false
+      },
+      {
+        "text": "Le raphia",
+        "correct": false
+      },
+      {
+        "text": "La soie",
+        "correct": false
+      },
+      {
+        "text": "Le coton",
+        "correct": true
+      }
+    ],
+    "explanation": "Des fils de coton teintés sont tissés puis assemblés en bandes étroites.",
+    "hint": "La plante fournit une fibre textile végétale.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel matériau textile est particulièrement employé dans certains pagnes dida traditionnels ?",
+    "options": [
+      {
+        "text": "Le cuir de bovin",
+        "correct": false
+      },
+      {
+        "text": "La soie artificielle",
+        "correct": false
+      },
+      {
+        "text": "Le raphia",
+        "correct": true
+      },
+      {
+        "text": "Le lin",
+        "correct": false
+      }
+    ],
+    "explanation": "Des communautés dida réalisent des tissus à partir de fibres de raphia.",
+    "hint": "Cette fibre provient d’un végétal tropical.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel animal apparaît parmi les motifs symboliques des tissus sénoufo ?",
+    "options": [
+      {
+        "text": "Le renne",
+        "correct": false
+      },
+      {
+        "text": "Le pingouin",
+        "correct": false
+      },
+      {
+        "text": "Le kangourou",
+        "correct": false
+      },
+      {
+        "text": "Le calao",
+        "correct": true
+      }
+    ],
+    "explanation": "Le calao, la panthère et la tortue figurent parmi les motifs symboliques cités par l’UNESCO.",
+    "hint": "C’est un oiseau au bec particulièrement remarquable.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Comment les artisans assemblent-ils souvent les pièces de tissu des pagnes traditionnels ?",
+    "options": [
+      {
+        "text": "En nouant des fibres sans couture",
+        "correct": false
+      },
+      {
+        "text": "En assemblant des carrés crochetés",
+        "correct": false
+      },
+      {
+        "text": "En feutrant de la laine",
+        "correct": false
+      },
+      {
+        "text": "En cousant des bandes tissées",
+        "correct": true
+      }
+    ],
+    "explanation": "Les bandes étroites tissées sont assemblées pour former un pagne.",
+    "hint": "Chaque pièce est d’abord étroite.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année le tissage traditionnel du pagne ivoirien a-t-il été inscrit par l’UNESCO ?",
+    "options": [
+      {
+        "text": "2012",
+        "correct": false
+      },
+      {
+        "text": "2017",
+        "correct": false
+      },
+      {
+        "text": "2023",
+        "correct": true
+      },
+      {
+        "text": "2001",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO a inscrit ces savoir-faire traditionnels en 2023.",
+    "hint": "C’était l’année précédant l’inscription de l’attiéké.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle communauté est associée au Gbofé d’Afounkaha ?",
+    "options": [
+      {
+        "text": "Les N’zima",
+        "correct": false
+      },
+      {
+        "text": "Les Tagbana",
+        "correct": true
+      },
+      {
+        "text": "Les Adioukrou",
+        "correct": false
+      },
+      {
+        "text": "Les Ébrié",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Gbofé d’Afounkaha est une musique de trompes traversières de la communauté Tagbana.",
+    "hint": "La tradition est liée au centre-nord ivoirien.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel instrument est au centre du Gbofé d’Afounkaha ?",
+    "options": [
+      {
+        "text": "La flûte à bec scolaire",
+        "correct": false
+      },
+      {
+        "text": "Les trompes traversières",
+        "correct": true
+      },
+      {
+        "text": "Le violon électrique",
+        "correct": false
+      },
+      {
+        "text": "Le piano droit",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Gbofé repose sur un ensemble de trompes traversières.",
+    "hint": "Ces instruments produisent un son par le souffle.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année le Gbofé d’Afounkaha a-t-il été inscrit par l’UNESCO ?",
+    "options": [
+      {
+        "text": "2008",
+        "correct": true
+      },
+      {
+        "text": "2017",
+        "correct": false
+      },
+      {
+        "text": "2024",
+        "correct": false
+      },
+      {
+        "text": "2023",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Gbofé est inscrit sur la Liste représentative depuis 2008.",
+    "hint": "Cette inscription est antérieure à celle du Zaouli.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel savoir-faire artisanal a été reconnu par l’UNESCO en 2023 ?",
+    "options": [
+      {
+        "text": "La sculpture des masques de Man",
+        "correct": false
+      },
+      {
+        "text": "La poterie de Kong",
+        "correct": false
+      },
+      {
+        "text": "La vannerie d’Assinie",
+        "correct": false
+      },
+      {
+        "text": "Le tissage traditionnel du pagne",
+        "correct": true
+      }
+    ],
+    "explanation": "La liste de l’UNESCO reconnaît les savoir-faire de tissage du pagne en Côte d’Ivoire.",
+    "hint": "L’activité se pratique sur un métier manuel.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle technique sert à transmettre traditionnellement le savoir-faire de l’attiéké ?",
+    "options": [
+      {
+        "text": "Des manuels scolaires uniquement",
+        "correct": false
+      },
+      {
+        "text": "L’observation en famille",
+        "correct": true
+      },
+      {
+        "text": "Des brevets secrets",
+        "correct": false
+      },
+      {
+        "text": "Des vidéos obligatoires",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO décrit une transmission orale et par observation au sein des familles.",
+    "hint": "Le geste est appris au contact des aînés.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "À quel type d’événement peut être associé un pagne tissé traditionnel en Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "Une compétition de lutte",
+        "correct": false
+      },
+      {
+        "text": "Une cérémonie de mariage",
+        "correct": true
+      },
+      {
+        "text": "Une course piroguière",
+        "correct": false
+      },
+      {
+        "text": "Une rencontre sportive",
+        "correct": false
+      }
+    ],
+    "explanation": "Les pagnes traditionnels sont utilisés lors de mariages, fêtes et funérailles.",
+    "hint": "L’événement peut marquer l’union de deux personnes.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel aspect culturel accompagne le masque dans une représentation Zaouli ?",
+    "options": [
+      {
+        "text": "La sculpture sur glace",
+        "correct": false
+      },
+      {
+        "text": "La musique et la danse",
+        "correct": true
+      },
+      {
+        "text": "La navigation à voile",
+        "correct": false
+      },
+      {
+        "text": "La compétition cycliste",
+        "correct": false
+      }
+    ],
+    "explanation": "La tradition combine notamment sculpture du masque, costumes, musique et danse.",
+    "hint": "La représentation est exécutée en rythme.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quelle pratique inscrite en 2024 associe Côte d’Ivoire, Mali, Burkina Faso et Indonésie ?",
+    "options": [
+      {
+        "text": "Le balafon et le kolintang",
+        "correct": true
+      },
+      {
+        "text": "La kora et le djembé",
+        "correct": false
+      },
+      {
+        "text": "Le xalam et le ngoni",
+        "correct": false
+      },
+      {
+        "text": "La flûte et le tambour",
+        "correct": false
+      }
+    ],
+    "explanation": "L’UNESCO a reconnu les pratiques liées au balafon et au kolintang dans ces pays.",
+    "hint": "Elle met en avant des instruments mélodiques.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "culture",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Combien d’éléments ivoiriens figuraient sur les listes du patrimoine immatériel de l’UNESCO en 2024 ?",
+    "options": [
+      {
+        "text": "Cinq",
+        "correct": true
+      },
+      {
+        "text": "Dix",
+        "correct": false
+      },
+      {
+        "text": "Douze",
+        "correct": false
+      },
+      {
+        "text": "Deux",
+        "correct": false
+      }
+    ],
+    "explanation": "Le répertoire UNESCO affiche cinq éléments ivoiriens en 2024, dont l’attiéké et le Zaouli.",
+    "hint": "Ce total comprend des inscriptions partagées avec d’autres pays.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

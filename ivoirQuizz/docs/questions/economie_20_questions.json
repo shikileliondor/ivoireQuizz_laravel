@@ -1,0 +1,562 @@
+[
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle monnaie est utilisée en Côte d’Ivoire dans le cadre de son union monétaire ?",
+    "options": [
+      {
+        "text": "Le cedi",
+        "correct": false
+      },
+      {
+        "text": "Le naira",
+        "correct": false
+      },
+      {
+        "text": "Le dalasi",
+        "correct": false
+      },
+      {
+        "text": "Le franc CFA",
+        "correct": true
+      }
+    ],
+    "explanation": "La Côte d'Ivoire utilise le franc CFA émis par la BCEAO.",
+    "hint": "C'est une monnaie partagée avec plusieurs pays voisins.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle institution assure l’émission monétaire pour la Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "La BAD",
+        "correct": false
+      },
+      {
+        "text": "La BRVM",
+        "correct": false
+      },
+      {
+        "text": "La BCEAO",
+        "correct": true
+      },
+      {
+        "text": "La BCE",
+        "correct": false
+      }
+    ],
+    "explanation": "La Banque centrale des États de l'Afrique de l'Ouest émet la monnaie de l'UMOA.",
+    "hint": "Cette institution possède un siège à Dakar.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle ville se trouve le siège de la banque centrale de l’union monétaire ouest-africaine ?",
+    "options": [
+      {
+        "text": "Bamako",
+        "correct": false
+      },
+      {
+        "text": "Dakar",
+        "correct": true
+      },
+      {
+        "text": "Abidjan",
+        "correct": false
+      },
+      {
+        "text": "Cotonou",
+        "correct": false
+      }
+    ],
+    "explanation": "Le siège de la BCEAO est établi à Dakar, au Sénégal.",
+    "hint": "Cette ville est sur l'Atlantique.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Combien de pays partagent la bourse régionale utilisée en Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "Quatre",
+        "correct": false
+      },
+      {
+        "text": "Quinze",
+        "correct": false
+      },
+      {
+        "text": "Huit",
+        "correct": true
+      },
+      {
+        "text": "Douze",
+        "correct": false
+      }
+    ],
+    "explanation": "La BRVM est commune aux huit États de l'UEMOA.",
+    "hint": "Ce total correspond au nombre de membres de l'UEMOA.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Que signifie le sigle BRVM dans le système financier ouest-africain ?",
+    "options": [
+      {
+        "text": "Banque régionale de la monnaie",
+        "correct": false
+      },
+      {
+        "text": "Banque de réserve des ventes minières",
+        "correct": false
+      },
+      {
+        "text": "Bureau de régulation des ventes",
+        "correct": false
+      },
+      {
+        "text": "Bourse régionale des valeurs mobilières",
+        "correct": true
+      }
+    ],
+    "explanation": "BRVM signifie Bourse régionale des valeurs mobilières.",
+    "hint": "Cette institution organise un marché de titres.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle ville se trouve le siège opérationnel de la bourse régionale ouest-africaine ?",
+    "options": [
+      {
+        "text": "Abidjan",
+        "correct": true
+      },
+      {
+        "text": "Niamey",
+        "correct": false
+      },
+      {
+        "text": "Ouagadougou",
+        "correct": false
+      },
+      {
+        "text": "Lomé",
+        "correct": false
+      }
+    ],
+    "explanation": "La BRVM a son siège à Abidjan et dessert les huit États de l'UEMOA.",
+    "hint": "Cette ville est la capitale économique ivoirienne.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année la bourse régionale ouest-africaine a-t-elle démarré ses activités ?",
+    "options": [
+      {
+        "text": "1998",
+        "correct": true
+      },
+      {
+        "text": "2008",
+        "correct": false
+      },
+      {
+        "text": "2018",
+        "correct": false
+      },
+      {
+        "text": "1988",
+        "correct": false
+      }
+    ],
+    "explanation": "La BRVM a débuté ses activités le 16 septembre 1998.",
+    "hint": "C'était à la fin des années 1990.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle ville la bourse régionale a-t-elle été créée en 1996 ?",
+    "options": [
+      {
+        "text": "Abidjan",
+        "correct": false
+      },
+      {
+        "text": "Dakar",
+        "correct": false
+      },
+      {
+        "text": "Cotonou",
+        "correct": true
+      },
+      {
+        "text": "Ouagadougou",
+        "correct": false
+      }
+    ],
+    "explanation": "La BRVM a été créée le 18 décembre 1996 à Cotonou, au Bénin.",
+    "hint": "La fondation s’est déroulée dans un État membre de l’union monétaire.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année le franc CFA a-t-il été créé ?",
+    "options": [
+      {
+        "text": "1975",
+        "correct": false
+      },
+      {
+        "text": "1999",
+        "correct": false
+      },
+      {
+        "text": "1960",
+        "correct": false
+      },
+      {
+        "text": "1945",
+        "correct": true
+      }
+    ],
+    "explanation": "La BCEAO situe la création du franc CFA au 26 décembre 1945.",
+    "hint": "La création remonte à l'après-guerre.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle institution régionale réglemente la monnaie de l’UMOA ?",
+    "options": [
+      {
+        "text": "La CEDEAO",
+        "correct": false
+      },
+      {
+        "text": "La BCEAO",
+        "correct": true
+      },
+      {
+        "text": "La Banque mondiale",
+        "correct": false
+      },
+      {
+        "text": "Le FMI",
+        "correct": false
+      }
+    ],
+    "explanation": "La BCEAO est l'institut d'émission commun aux États de l'UMOA.",
+    "hint": "Son gouverneur dirige une banque centrale commune.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel espace économique ouest-africain regroupe huit pays utilisant la même monnaie ?",
+    "options": [
+      {
+        "text": "Le MERCOSUR",
+        "correct": false
+      },
+      {
+        "text": "L’UEMOA",
+        "correct": true
+      },
+      {
+        "text": "La CEMAC",
+        "correct": false
+      },
+      {
+        "text": "L’Union européenne",
+        "correct": false
+      }
+    ],
+    "explanation": "L'UEMOA rassemble huit États ouest-africains, dont la Côte d'Ivoire.",
+    "hint": "Son sigle se termine par une référence à l'Afrique de l'Ouest.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel type de titre représente une part de propriété dans une entreprise cotée ?",
+    "options": [
+      {
+        "text": "Une obligation",
+        "correct": false
+      },
+      {
+        "text": "Un billet de trésorerie",
+        "correct": false
+      },
+      {
+        "text": "Une action",
+        "correct": true
+      },
+      {
+        "text": "Une part de fonds",
+        "correct": false
+      }
+    ],
+    "explanation": "Une action correspond à une part de capital dans une société cotée.",
+    "hint": "Elle donne accès, sous conditions, au versement de dividendes.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel type de titre correspond généralement à un prêt consenti à un émetteur ?",
+    "options": [
+      {
+        "text": "Une option d’achat",
+        "correct": false
+      },
+      {
+        "text": "Une part sociale",
+        "correct": false
+      },
+      {
+        "text": "Une action ordinaire",
+        "correct": false
+      },
+      {
+        "text": "Une obligation",
+        "correct": true
+      }
+    ],
+    "explanation": "Une obligation est un titre de dette pouvant être échangé sur un marché financier.",
+    "hint": "L'émetteur doit généralement verser des intérêts.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année la BRVM est-elle passée à la cotation quotidienne ?",
+    "options": [
+      {
+        "text": "1995",
+        "correct": false
+      },
+      {
+        "text": "2016",
+        "correct": false
+      },
+      {
+        "text": "2008",
+        "correct": false
+      },
+      {
+        "text": "2001",
+        "correct": true
+      }
+    ],
+    "explanation": "La BRVM a adopté la cotation quotidienne le 12 novembre 2001.",
+    "hint": "Le changement est survenu au début du XXIe siècle.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "À partir de quelle année la BRVM a-t-elle mis en place la cotation en continu ?",
+    "options": [
+      {
+        "text": "2013",
+        "correct": true
+      },
+      {
+        "text": "1998",
+        "correct": false
+      },
+      {
+        "text": "2023",
+        "correct": false
+      },
+      {
+        "text": "2004",
+        "correct": false
+      }
+    ],
+    "explanation": "La cotation en continu a débuté le 16 septembre 2013.",
+    "hint": "C'était quinze ans après le démarrage de la bourse.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel pays a rejoint l’union monétaire ouest-africaine en 1997 ?",
+    "options": [
+      {
+        "text": "Le Ghana",
+        "correct": false
+      },
+      {
+        "text": "La Guinée-Bissau",
+        "correct": true
+      },
+      {
+        "text": "La Gambie",
+        "correct": false
+      },
+      {
+        "text": "Le Nigeria",
+        "correct": false
+      }
+    ],
+    "explanation": "La Guinée-Bissau a rejoint l'UMOA en 1997.",
+    "hint": "Ce pays a le portugais comme langue officielle.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle installation permettait le transbordement maritime sur le littoral ivoirien avant le grand port moderne ?",
+    "options": [
+      {
+        "text": "Les wharfs",
+        "correct": true
+      },
+      {
+        "text": "Les écluses fluviales",
+        "correct": false
+      },
+      {
+        "text": "Les silos flottants",
+        "correct": false
+      },
+      {
+        "text": "Les ports secs",
+        "correct": false
+      }
+    ],
+    "explanation": "Avant l’ouverture du canal de Vridi, plusieurs wharfs facilitaient la manutention maritime sur la côte.",
+    "hint": "Ce sont des ouvrages d’accostage s’avançant vers le large.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Dans quelle ville un premier wharf ivoirien fut-il installé en 1901 ?",
+    "options": [
+      {
+        "text": "San Pedro",
+        "correct": false
+      },
+      {
+        "text": "Grand-Bassam",
+        "correct": true
+      },
+      {
+        "text": "Port-Bouët",
+        "correct": false
+      },
+      {
+        "text": "Sassandra",
+        "correct": false
+      }
+    ],
+    "explanation": "Le premier wharf mentionné par le Port autonome d’Abidjan fut construit à Grand-Bassam en 1901.",
+    "hint": "Cette ville fut aussi la première capitale de la colonie.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel produit agricole est décrit par la Banque mondiale comme la première exportation ivoirienne devant le cajou ?",
+    "options": [
+      {
+        "text": "Le cacao",
+        "correct": true
+      },
+      {
+        "text": "Le café",
+        "correct": false
+      },
+      {
+        "text": "L’huile de palme",
+        "correct": false
+      },
+      {
+        "text": "Le coton",
+        "correct": false
+      }
+    ],
+    "explanation": "La Banque mondiale présente le cajou comme la deuxième exportation après le cacao.",
+    "hint": "C'est un ingrédient de base de la chocolaterie.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "economie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quelle année marque l’arrivée de la monnaie commune ouest-africaine dans le régime de parité fixé avec l’euro ?",
+    "options": [
+      {
+        "text": "2007",
+        "correct": false
+      },
+      {
+        "text": "1960",
+        "correct": false
+      },
+      {
+        "text": "1999",
+        "correct": true
+      },
+      {
+        "text": "1973",
+        "correct": false
+      }
+    ],
+    "explanation": "La BCEAO situe l'arrimage du franc CFA à l'euro au 1er janvier 1999.",
+    "hint": "Cette décision précède la mise en circulation des billets en euros.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

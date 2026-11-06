@@ -46,13 +46,25 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 | Notifications | Envoi push maintenant ou programmé, par lots de 500 joueurs, suivi de progression, annulation |
 | Notifications auto | Rappel du matin, relances et notifications d'action : activation, réglages, textes, test sur ses appareils |
 
-Pour charger quatre logos fictifs de démonstration en local (images et réponses incluses), exécutez :
+## Importer des questions
+
+Le projet n'a plus de seeders : les questions arrivent par fichiers JSON.
+
+**Lancement rapide** (quiz du jour, défis ; format du livrable B de `docs/prompt-generation-contenu.md`), un ou plusieurs fichiers, les questions déjà présentes sont ignorées :
 
 ```bash
-php artisan db:seed --class="Database\Seeders\Local\LogoDemoSeeder"
+php artisan questions:import docs/questions/*_20_questions.json --dry-run
+php artisan questions:import docs/questions/*_20_questions.json
 ```
 
-Le seeder est idempotent et refuse de s'exécuter en production.
+**Campagne d'une ville** : un fichier JSON de 50 questions par ville (5 niveaux de 10, format décrit dans `docs/prompt-generation-contenu.md`). La région, la ville et les catégories doivent déjà exister et être actives dans l'admin.
+
+```bash
+php artisan questions:import storage/app/imports/korhogo.json --city=korhogo --region=poro --dry-run
+php artisan questions:import storage/app/imports/korhogo.json --city=korhogo --region=poro
+```
+
+`--dry-run` vérifie le fichier sans rien écrire. Réimporter un fichier corrigé crée une nouvelle version des questions modifiées et désactive celles retirées, sans toucher à l'historique des joueurs.
 
 ## Notifications automatiques
 
@@ -90,7 +102,7 @@ Les envois programmés, les envois groupés et les relances ne partent que si le
   - « Vies rechargées » arrive 5 à 15 minutes après la recharge.
 
   Un Cron chaque minute fonctionne aussi.
-- **Recommandé en production** : mettre `QUEUE_CONNECTION=database` dans le `.env`, puis lancer `php artisan config:cache` si la configuration est en cache. Avec `sync`, tout fonctionne aussi, mais les envois partent pendant la requête ou le passage du Cron, ce qui est plus lent pour les grosses audiences.
+- **Production (mutualisé LWS)** : `QUEUE_CONNECTION=sync` dans le `.env`, puis `php artisan optimize:clear` et `php artisan optimize`. Aucun `queue:work` n'est nécessaire : les lots partent pendant le passage du Cron `schedule:run`. Le Cron reste indispensable pour les envois programmés, groupés et les relances.
 - L'encart « Planificateur » passe au vert au premier passage. S'il reste rouge, vérifier la commande Cron et la version de `/usr/local/bin/php -v`, qui doit être 8.2 ou plus. Si cPanel utilise un autre binaire PHP, le renseigner dans `CRON_PHP_BINARY` du `.env`.
 
 ## Règles de cohérence

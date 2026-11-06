@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\Campaigns;
+namespace App\Services\Questions;
 
 use App\Models\Answer;
 use App\Models\Category;
@@ -26,9 +26,19 @@ class CampaignImporter
         ['title' => 'Maître', 'slug' => 'maitre', 'is_boss' => true],
     ];
 
+    /**
+     * Importe une banque de 50 questions pour une ville depuis un fichier JSON.
+     *
+     * @param  array{key: string, region_slug: string, city_slug: string, file: string}  $campaign
+     */
     public function import(array $campaign): void
     {
-        $file = $campaign['file'] ?? null;
+        $this->importBank($campaign, $this->readBank($campaign['file'] ?? null));
+    }
+
+    /** @return array<int, mixed> */
+    public function readBank(mixed $file): array
+    {
         if (! is_string($file) || ! is_file($file) || ! is_readable($file)) {
             throw new RuntimeException('Le fichier JSON de la campagne est introuvable ou illisible.');
         }
@@ -43,13 +53,19 @@ class CampaignImporter
             throw new InvalidArgumentException('La banque de campagne doit être un tableau JSON.');
         }
 
+        return $questions;
+    }
+
+    /** @param  array{key: string, region_slug: string, city_slug: string}  $campaign */
+    public function importBank(array $campaign, array $questions): void
+    {
         $categorySlugs = Category::query()->where('is_active', true)->pluck('slug')->all();
         $this->validateBank($questions, $campaign['key'], $categorySlugs);
 
         DB::transaction(function () use ($campaign, $questions): void {
             $region = Region::query()->where('slug', $campaign['region_slug'])->where('is_active', true)->first();
             if (! $region) {
-                throw new RuntimeException("La région {$campaign['region_slug']} doit être créée par RegionsSeeder avant l’import.");
+                throw new RuntimeException("La région {$campaign['region_slug']} doit exister et être active avant l’import (admin → Régions).");
             }
 
             $city = City::query()
@@ -58,7 +74,7 @@ class CampaignImporter
                 ->where('is_active', true)
                 ->first();
             if (! $city) {
-                throw new RuntimeException("La ville {$campaign['city_slug']} doit être créée par CitiesSeeder avant l’import.");
+                throw new RuntimeException("La ville {$campaign['city_slug']} doit exister et être active dans cette région avant l’import (admin → Villes).");
             }
 
             $levels = $this->syncLevels($city);

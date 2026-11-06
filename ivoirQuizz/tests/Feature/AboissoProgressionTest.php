@@ -11,8 +11,8 @@ use App\Models\UserCityProgress;
 use App\Models\UserLevelProgress;
 use App\Models\UserRegionProgress;
 use App\Services\Game\ProgressionService;
-use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 class AboissoProgressionTest extends TestCase
@@ -53,7 +53,7 @@ class AboissoProgressionTest extends TestCase
 
     public function test_aboi­sso_unlocks_at_twenty_five_distinct_correct_questions_and_is_idempotent(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $user = User::factory()->create();
         $progression = app(ProgressionService::class);
         $city = City::query()->where('slug', 'aboisso')->firstOrFail();
@@ -77,7 +77,7 @@ class AboissoProgressionTest extends TestCase
 
     public function test_failed_and_mixed_sessions_do_not_count_toward_aboi­sso(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $user = User::factory()->create();
         $question = Question::query()->whereHas('level.city', fn ($query) => $query->where('slug', 'korhogo'))->firstOrFail();
         $city = $question->level->city;

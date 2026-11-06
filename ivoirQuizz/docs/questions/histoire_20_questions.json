@@ -1,0 +1,562 @@
+[
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle ville fut la première capitale coloniale de la Côte d’Ivoire ?",
+    "options": [
+      {
+        "text": "Bingerville",
+        "correct": false
+      },
+      {
+        "text": "Grand-Bassam",
+        "correct": true
+      },
+      {
+        "text": "Abidjan",
+        "correct": false
+      },
+      {
+        "text": "Bouaké",
+        "correct": false
+      }
+    ],
+    "explanation": "Grand-Bassam fut le premier chef-lieu de la colonie, avant Bingerville.",
+    "hint": "Cette ville historique est située près de l’océan.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année la Côte d’Ivoire a-t-elle proclamé son indépendance ?",
+    "options": [
+      {
+        "text": "1958",
+        "correct": false
+      },
+      {
+        "text": "1963",
+        "correct": false
+      },
+      {
+        "text": "1960",
+        "correct": true
+      },
+      {
+        "text": "1970",
+        "correct": false
+      }
+    ],
+    "explanation": "L’indépendance a été proclamée le 7 août 1960.",
+    "hint": "La date se situe au début des années soixante.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel président a dirigé la Côte d’Ivoire de 1960 à 1993 ?",
+    "options": [
+      {
+        "text": "Félix Houphouët-Boigny",
+        "correct": true
+      },
+      {
+        "text": "Henri Konan Bédié",
+        "correct": false
+      },
+      {
+        "text": "Laurent Gbagbo",
+        "correct": false
+      },
+      {
+        "text": "Alassane Ouattara",
+        "correct": false
+      }
+    ],
+    "explanation": "Félix Houphouët-Boigny fut le premier président de la République.",
+    "hint": "Il avait également été député à l’Assemblée française.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle ville a succédé à Grand-Bassam comme capitale coloniale ?",
+    "options": [
+      {
+        "text": "Dabou",
+        "correct": false
+      },
+      {
+        "text": "Bingerville",
+        "correct": true
+      },
+      {
+        "text": "Korhogo",
+        "correct": false
+      },
+      {
+        "text": "Daloa",
+        "correct": false
+      }
+    ],
+    "explanation": "Bingerville a reçu cette fonction en 1900, avant Abidjan.",
+    "hint": "Elle porte le nom d’un administrateur colonial.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle ville est devenue capitale administrative de la colonie en 1934 ?",
+    "options": [
+      {
+        "text": "Yamoussoukro",
+        "correct": false
+      },
+      {
+        "text": "Abidjan",
+        "correct": true
+      },
+      {
+        "text": "San Pedro",
+        "correct": false
+      },
+      {
+        "text": "Gagnoa",
+        "correct": false
+      }
+    ],
+    "explanation": "Abidjan a officiellement remplacé Bingerville comme chef-lieu en 1934.",
+    "hint": "Cette ville se développe autour de la lagune Ébrié.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année Yamoussoukro est-elle devenue capitale politique ?",
+    "options": [
+      {
+        "text": "1983",
+        "correct": true
+      },
+      {
+        "text": "1973",
+        "correct": false
+      },
+      {
+        "text": "1993",
+        "correct": false
+      },
+      {
+        "text": "1960",
+        "correct": false
+      }
+    ],
+    "explanation": "Yamoussoukro a pris le statut de capitale politique en 1983.",
+    "hint": "C’était plus de vingt ans après l’indépendance.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel pays européen a établi la colonie de Côte d’Ivoire en 1893 ?",
+    "options": [
+      {
+        "text": "La Belgique",
+        "correct": false
+      },
+      {
+        "text": "L’Espagne",
+        "correct": false
+      },
+      {
+        "text": "Le Portugal",
+        "correct": false
+      },
+      {
+        "text": "La France",
+        "correct": true
+      }
+    ],
+    "explanation": "La colonie française de Côte d’Ivoire fut créée par décret en 1893.",
+    "hint": "Cette puissance contrôlait aussi d’autres territoires d’Afrique occidentale.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "À quelle date célèbre-t-on la fête de l’indépendance ivoirienne ?",
+    "options": [
+      {
+        "text": "Le 15 août",
+        "correct": false
+      },
+      {
+        "text": "Le 1er mai",
+        "correct": false
+      },
+      {
+        "text": "Le 7 décembre",
+        "correct": false
+      },
+      {
+        "text": "Le 7 août",
+        "correct": true
+      }
+    ],
+    "explanation": "La proclamation de l’indépendance a eu lieu le 7 août 1960.",
+    "hint": "Cette fête tombe pendant la saison des pluies dans le Sud.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel nom désigne l’organisation coloniale française regroupant plusieurs territoires d’Afrique de l’Ouest ?",
+    "options": [
+      {
+        "text": "L’UA",
+        "correct": false
+      },
+      {
+        "text": "L’UEMOA",
+        "correct": false
+      },
+      {
+        "text": "L’AOF",
+        "correct": true
+      },
+      {
+        "text": "La CEDEAO",
+        "correct": false
+      }
+    ],
+    "explanation": "L’Afrique-Occidentale française, ou AOF, regroupait plusieurs colonies françaises.",
+    "hint": "Cette organisation a précédé l’indépendance des États.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année le territoire de Côte d’Ivoire fut-il constitué en colonie française autonome ?",
+    "options": [
+      {
+        "text": "1880",
+        "correct": false
+      },
+      {
+        "text": "1905",
+        "correct": false
+      },
+      {
+        "text": "1893",
+        "correct": true
+      },
+      {
+        "text": "1918",
+        "correct": false
+      }
+    ],
+    "explanation": "Le décret du 10 mars 1893 institua la colonie.",
+    "hint": "C’est une date de la fin du XIXe siècle.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel dirigeant malinké a résisté à la conquête française dans le nord ivoirien ?",
+    "options": [
+      {
+        "text": "Samory Touré",
+        "correct": true
+      },
+      {
+        "text": "Behanzin",
+        "correct": false
+      },
+      {
+        "text": "El Hadj Omar Tall",
+        "correct": false
+      },
+      {
+        "text": "Soundiata Keïta",
+        "correct": false
+      }
+    ],
+    "explanation": "Samory Touré mena une résistance régionale avant sa défaite en 1898.",
+    "hint": "Il mena aussi des campagnes dans l’actuelle Guinée.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Dans quel siècle s’est constitué le royaume baoulé du centre ivoirien ?",
+    "options": [
+      {
+        "text": "Au XVIIIe siècle",
+        "correct": true
+      },
+      {
+        "text": "Au XVe siècle",
+        "correct": false
+      },
+      {
+        "text": "Au XXe siècle",
+        "correct": false
+      },
+      {
+        "text": "Au XIIIe siècle",
+        "correct": false
+      }
+    ],
+    "explanation": "La formation du royaume baoulé est située au XVIIIe siècle.",
+    "hint": "Il s’agit du siècle des années 1700.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "À quel royaume marchand du nord est associée une importante ville historique ivoirienne ?",
+    "options": [
+      {
+        "text": "Le royaume du Bénin",
+        "correct": false
+      },
+      {
+        "text": "Le royaume de Kong",
+        "correct": true
+      },
+      {
+        "text": "Le royaume du Kongo",
+        "correct": false
+      },
+      {
+        "text": "Le royaume du Dahomey",
+        "correct": false
+      }
+    ],
+    "explanation": "Le royaume dioula de Kong a joué un rôle majeur dans les échanges commerciaux régionaux.",
+    "hint": "Il se trouvait dans la zone des savanes du Nord.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "En quelle année la première capitale coloniale a-t-elle perdu cette fonction ?",
+    "options": [
+      {
+        "text": "1934",
+        "correct": false
+      },
+      {
+        "text": "1950",
+        "correct": false
+      },
+      {
+        "text": "1920",
+        "correct": false
+      },
+      {
+        "text": "1900",
+        "correct": true
+      }
+    ],
+    "explanation": "Le chef-lieu a été transféré de Grand-Bassam à Bingerville en 1900.",
+    "hint": "La date correspond à un changement de siècle.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle ville était capitale politique juste avant le transfert de 1983 ?",
+    "options": [
+      {
+        "text": "Grand-Bassam",
+        "correct": false
+      },
+      {
+        "text": "Bingerville",
+        "correct": false
+      },
+      {
+        "text": "Abidjan",
+        "correct": true
+      },
+      {
+        "text": "Bouaké",
+        "correct": false
+      }
+    ],
+    "explanation": "Abidjan a été capitale administrative puis politique avant Yamoussoukro.",
+    "hint": "Elle est toujours la grande métropole économique.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel ouvrage ouvert en 1950 a relié la lagune Ébrié à l’Atlantique ?",
+    "options": [
+      {
+        "text": "Le canal de Panama",
+        "correct": false
+      },
+      {
+        "text": "Le canal de Jonglei",
+        "correct": false
+      },
+      {
+        "text": "Le canal de Suez",
+        "correct": false
+      },
+      {
+        "text": "Le canal de Vridi",
+        "correct": true
+      }
+    ],
+    "explanation": "Le dernier obstacle du canal de Vridi fut ouvert le 23 juillet 1950.",
+    "hint": "Il permit aux navires de rejoindre le port d’Abidjan.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "En quelle année le Port d’Abidjan a-t-il été officiellement inauguré ?",
+    "options": [
+      {
+        "text": "1934",
+        "correct": false
+      },
+      {
+        "text": "1951",
+        "correct": true
+      },
+      {
+        "text": "1960",
+        "correct": false
+      },
+      {
+        "text": "1972",
+        "correct": false
+      }
+    ],
+    "explanation": "Le port fut inauguré officiellement le 5 février 1951.",
+    "hint": "L’ouverture suivit de peu celle du canal de Vridi.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel député a porté la loi de 1946 abolissant le travail forcé colonial ?",
+    "options": [
+      {
+        "text": "Félix Houphouët-Boigny",
+        "correct": true
+      },
+      {
+        "text": "Samory Touré",
+        "correct": false
+      },
+      {
+        "text": "Jean-Baptiste Marchand",
+        "correct": false
+      },
+      {
+        "text": "Gustave Binger",
+        "correct": false
+      }
+    ],
+    "explanation": "La loi de 1946 sur la suppression du travail forcé porte le nom de Félix Houphouët-Boigny.",
+    "hint": "Ce député a ensuite dirigé la Côte d’Ivoire indépendante.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel ancien centre colonial de la Côte d’Ivoire a été inscrit par l’UNESCO en 2012 ?",
+    "options": [
+      {
+        "text": "Odienné",
+        "correct": false
+      },
+      {
+        "text": "Ferkessédougou",
+        "correct": false
+      },
+      {
+        "text": "Grand-Bassam",
+        "correct": true
+      },
+      {
+        "text": "Abengourou",
+        "correct": false
+      }
+    ],
+    "explanation": "La ville historique de Grand-Bassam a rejoint le patrimoine mondial en 2012.",
+    "hint": "La localité conserve un quartier ancien près de la mer.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "histoire",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "En quelle année l’UNESCO a-t-elle créé un prix international portant le nom du premier président ivoirien ?",
+    "options": [
+      {
+        "text": "1999",
+        "correct": false
+      },
+      {
+        "text": "2009",
+        "correct": false
+      },
+      {
+        "text": "1979",
+        "correct": false
+      },
+      {
+        "text": "1989",
+        "correct": true
+      }
+    ],
+    "explanation": "Le prix Félix Houphouët-Boigny pour la recherche de la paix a été créé en 1989.",
+    "hint": "Ce prix récompense la recherche de la paix.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

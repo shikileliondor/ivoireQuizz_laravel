@@ -1,0 +1,562 @@
+[
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle ville ivoirienne se trouve la basilique Notre-Dame-de-la-Paix ?",
+    "options": [
+      {
+        "text": "Abidjan",
+        "correct": false
+      },
+      {
+        "text": "Korhogo",
+        "correct": false
+      },
+      {
+        "text": "Yamoussoukro",
+        "correct": true
+      },
+      {
+        "text": "Bouaké",
+        "correct": false
+      }
+    ],
+    "explanation": "Cette basilique se situe à Yamoussoukro, capitale politique du pays.",
+    "hint": "La ville est au centre du pays.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel pape a consacré la grande basilique de Yamoussoukro en septembre 1990 ?",
+    "options": [
+      {
+        "text": "Jean-Paul II",
+        "correct": true
+      },
+      {
+        "text": "François",
+        "correct": false
+      },
+      {
+        "text": "Paul VI",
+        "correct": false
+      },
+      {
+        "text": "Benoît XVI",
+        "correct": false
+      }
+    ],
+    "explanation": "Jean-Paul II a consacré l'édifice le 10 septembre 1990.",
+    "hint": "Il a exercé son pontificat de 1978 à 2005.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année l’édifice religieux monumental de Yamoussoukro a-t-il été consacré ?",
+    "options": [
+      {
+        "text": "1990",
+        "correct": true
+      },
+      {
+        "text": "1980",
+        "correct": false
+      },
+      {
+        "text": "2010",
+        "correct": false
+      },
+      {
+        "text": "2000",
+        "correct": false
+      }
+    ],
+    "explanation": "Sa consécration par Jean-Paul II date du 10 septembre 1990.",
+    "hint": "La cérémonie a suivi les travaux des années 1980.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel architecte a conçu la basilique monumentale de la capitale politique ivoirienne ?",
+    "options": [
+      {
+        "text": "Jean Nouvel",
+        "correct": false
+      },
+      {
+        "text": "Pierre Fakhoury",
+        "correct": true
+      },
+      {
+        "text": "David Adjaye",
+        "correct": false
+      },
+      {
+        "text": "Paul Andreu",
+        "correct": false
+      }
+    ],
+    "explanation": "Pierre Fakhoury a établi les plans de la basilique Notre-Dame-de-la-Paix.",
+    "hint": "Cet architecte a également travaillé sur d'autres projets ivoiriens.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année a commencé la construction de la basilique de la capitale politique ivoirienne ?",
+    "options": [
+      {
+        "text": "1976",
+        "correct": false
+      },
+      {
+        "text": "2006",
+        "correct": false
+      },
+      {
+        "text": "1996",
+        "correct": false
+      },
+      {
+        "text": "1986",
+        "correct": true
+      }
+    ],
+    "explanation": "Le chantier de la basilique a débuté en juillet 1986.",
+    "hint": "Les travaux se sont achevés en 1989.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel président ivoirien fut à l’initiative de la basilique de Yamoussoukro ?",
+    "options": [
+      {
+        "text": "Laurent Gbagbo",
+        "correct": false
+      },
+      {
+        "text": "Henri Konan Bédié",
+        "correct": false
+      },
+      {
+        "text": "Félix Houphouët-Boigny",
+        "correct": true
+      },
+      {
+        "text": "Robert Guéï",
+        "correct": false
+      }
+    ],
+    "explanation": "Félix Houphouët-Boigny a voulu faire édifier cette basilique dans sa ville natale.",
+    "hint": "Il était le premier chef de l'État indépendant.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Dans quelle commune d’Abidjan se trouve le Palais de la Culture Bernard Binlin-Dadié ?",
+    "options": [
+      {
+        "text": "Treichville",
+        "correct": true
+      },
+      {
+        "text": "Cocody",
+        "correct": false
+      },
+      {
+        "text": "Yopougon",
+        "correct": false
+      },
+      {
+        "text": "Abobo",
+        "correct": false
+      }
+    ],
+    "explanation": "Le Palais de la Culture est situé sur le boulevard lagunaire, à Treichville.",
+    "hint": "Cette commune est traversée par des axes reliant le Plateau.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "En quelle année la première partie du Palais de la Culture d’Abidjan a-t-elle été inaugurée ?",
+    "options": [
+      {
+        "text": "2009",
+        "correct": false
+      },
+      {
+        "text": "1989",
+        "correct": false
+      },
+      {
+        "text": "2019",
+        "correct": false
+      },
+      {
+        "text": "1999",
+        "correct": true
+      }
+    ],
+    "explanation": "L'inauguration a eu lieu le 1er octobre 1999.",
+    "hint": "C'était à la toute fin du XXe siècle.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel espace culturel abidjanais porte le nom d’un grand écrivain né à Assinie ?",
+    "options": [
+      {
+        "text": "Le Musée des civilisations",
+        "correct": false
+      },
+      {
+        "text": "Le Stade Champroux",
+        "correct": false
+      },
+      {
+        "text": "Le Parc national du Banco",
+        "correct": false
+      },
+      {
+        "text": "Le Palais de la Culture",
+        "correct": true
+      }
+    ],
+    "explanation": "Le Palais de la Culture d'Abidjan porte le nom de Bernard Binlin-Dadié.",
+    "hint": "Il accueille spectacles, concerts et événements culturels.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "À proximité de quel milieu naturel se trouve le Palais de la Culture d’Abidjan ?",
+    "options": [
+      {
+        "text": "Une baie marine",
+        "correct": false
+      },
+      {
+        "text": "Une lagune",
+        "correct": true
+      },
+      {
+        "text": "Un estuaire fluvial",
+        "correct": false
+      },
+      {
+        "text": "Un lac artificiel",
+        "correct": false
+      }
+    ],
+    "explanation": "L'établissement se situe au bord de la lagune dans la commune de Treichville.",
+    "hint": "Le site comporte des appontements pour bateaux-bus.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Dans quelle partie de la Côte d’Ivoire se trouvent les mosquées historiques de style soudanais classées par l’UNESCO ?",
+    "options": [
+      {
+        "text": "Le Sud-Est lagunaire",
+        "correct": false
+      },
+      {
+        "text": "Le Nord",
+        "correct": true
+      },
+      {
+        "text": "Le Centre-Sud",
+        "correct": false
+      },
+      {
+        "text": "Le Sud côtier",
+        "correct": false
+      }
+    ],
+    "explanation": "Les mosquées de style soudanais classées se trouvent dans plusieurs localités du nord ivoirien.",
+    "hint": "Elles sont liées aux routes commerciales transsahariennes.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel matériau traditionnel caractérise la construction de ces mosquées historiques du nord ivoirien ?",
+    "options": [
+      {
+        "text": "La brique cuite",
+        "correct": false
+      },
+      {
+        "text": "Le béton armé",
+        "correct": false
+      },
+      {
+        "text": "La terre",
+        "correct": true
+      },
+      {
+        "text": "La pierre de taille",
+        "correct": false
+      }
+    ],
+    "explanation": "Les mosquées de style soudanais sont connues pour leurs constructions en terre.",
+    "hint": "Le matériau provient directement du sol.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle ville figure parmi les localités des mosquées historiques classées en 2021 ?",
+    "options": [
+      {
+        "text": "Daloa",
+        "correct": false
+      },
+      {
+        "text": "Divo",
+        "correct": false
+      },
+      {
+        "text": "Kong",
+        "correct": true
+      },
+      {
+        "text": "Bonoua",
+        "correct": false
+      }
+    ],
+    "explanation": "Kong fait partie des localités dont les mosquées de style soudanais sont inscrites à l'UNESCO.",
+    "hint": "Cette localité se situe dans le Nord.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Combien de mosquées composent l’ensemble ivoirien classé en 2021 ?",
+    "options": [
+      {
+        "text": "Vingt",
+        "correct": false
+      },
+      {
+        "text": "Huit",
+        "correct": true
+      },
+      {
+        "text": "Douze",
+        "correct": false
+      },
+      {
+        "text": "Deux",
+        "correct": false
+      }
+    ],
+    "explanation": "L'ensemble UNESCO des mosquées de style soudanais comprend huit édifices.",
+    "hint": "L’ensemble classé regroupe des édifices situés dans plusieurs localités du Nord.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel élément peut couronner les contreforts de ces édifices du nord ivoirien ?",
+    "options": [
+      {
+        "text": "Des lanternes de métal",
+        "correct": false
+      },
+      {
+        "text": "Des statuettes de bois",
+        "correct": false
+      },
+      {
+        "text": "Des ornements de cuivre",
+        "correct": false
+      },
+      {
+        "text": "Des œufs d’autruche",
+        "correct": true
+      }
+    ],
+    "explanation": "Des poteries ou des œufs d'autruche peuvent couronner leurs contreforts verticaux.",
+    "hint": "Il s'agit d'un élément naturel plutôt inhabituel.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel élément architectural marque les mosquées de style soudanais du nord ivoirien ?",
+    "options": [
+      {
+        "text": "Des contreforts verticaux",
+        "correct": true
+      },
+      {
+        "text": "Des verrières ogivales",
+        "correct": false
+      },
+      {
+        "text": "Des pilastres de marbre",
+        "correct": false
+      },
+      {
+        "text": "Des arcs en fer forgé",
+        "correct": false
+      }
+    ],
+    "explanation": "Leurs murs présentent des contreforts verticaux et des charpentes en saillie.",
+    "hint": "Il renforce visuellement les murs.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel site ivoirien inscrit en 2012 comprend un quartier colonial et un village de pêcheurs ?",
+    "options": [
+      {
+        "text": "Grand-Bassam",
+        "correct": true
+      },
+      {
+        "text": "Bingerville",
+        "correct": false
+      },
+      {
+        "text": "San Pedro",
+        "correct": false
+      },
+      {
+        "text": "Aboisso",
+        "correct": false
+      }
+    ],
+    "explanation": "Le site historique de Grand-Bassam réunit plusieurs quartiers anciens et le village de N'zima.",
+    "hint": "Il se trouve sur le littoral à l'est d'Abidjan.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel village de pêcheurs figure dans le périmètre historique inscrit à Grand-Bassam ?",
+    "options": [
+      {
+        "text": "Koumassi",
+        "correct": false
+      },
+      {
+        "text": "Akouédo",
+        "correct": false
+      },
+      {
+        "text": "N’zima",
+        "correct": true
+      },
+      {
+        "text": "Anono",
+        "correct": false
+      }
+    ],
+    "explanation": "L'UNESCO cite le village de pêcheurs N'zima dans la ville historique de Grand-Bassam.",
+    "hint": "Ce quartier apparaît à côté de l'architecture coloniale.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel élément d’architecture est courant sur les maisons historiques de Grand-Bassam ?",
+    "options": [
+      {
+        "text": "Les fenêtres à meneaux",
+        "correct": false
+      },
+      {
+        "text": "Les vérandas",
+        "correct": true
+      },
+      {
+        "text": "Les façades métalliques",
+        "correct": false
+      },
+      {
+        "text": "Les arcades romanes",
+        "correct": false
+      }
+    ],
+    "explanation": "L'UNESCO décrit des maisons dotées de galeries, de vérandas et de jardins.",
+    "hint": "Il protège souvent une zone ouverte attenante à la façade.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "monuments",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quelle localité du nord ivoirien possède une mosquée faisant partie du classement UNESCO de 2021 ?",
+    "options": [
+      {
+        "text": "Sassandra",
+        "correct": false
+      },
+      {
+        "text": "Adiaké",
+        "correct": false
+      },
+      {
+        "text": "Grand-Lahou",
+        "correct": false
+      },
+      {
+        "text": "Tengréla",
+        "correct": true
+      }
+    ],
+    "explanation": "Tengréla figure parmi les localités des mosquées classées de style soudanais.",
+    "hint": "Cette localité est proche de la frontière malienne.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

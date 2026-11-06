@@ -10,11 +10,15 @@ MAIL_HOST=<serveur SMTP indiqué par cPanel>
 MAIL_PORT=465
 MAIL_ENCRYPTION=ssl
 MAIL_USERNAME=noreply@studiobeyam.net
-MAIL_PASSWORD=<mot de passe de la boîte>
+MAIL_PASSWORD='<mot de passe de la boîte>'
 MAIL_FROM_ADDRESS=noreply@studiobeyam.net
 MAIL_FROM_NAME="IvoirQuizz"
-QUEUE_CONNECTION=database
+QUEUE_CONNECTION=sync
 ```
+
+Garder les guillemets simples autour de `MAIL_PASSWORD` : sans eux, tout ce qui suit un `#` est ignoré et le serveur répond `535 Incorrect authentication data`.
+
+Sur l’hébergement mutualisé, aucun worker de file d’attente ne tourne : `QUEUE_CONNECTION=sync` exécute les tâches immédiatement.
 
 Si cPanel indique le port 587, utiliser `MAIL_PORT=587` et `MAIL_ENCRYPTION=tls`.
 

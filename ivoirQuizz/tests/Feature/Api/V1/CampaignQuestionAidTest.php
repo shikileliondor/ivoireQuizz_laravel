@@ -10,11 +10,10 @@ use App\Models\Question;
 use App\Models\Region;
 use App\Models\User;
 use App\Models\UserLevelProgress;
-use Database\Seeders\Reference\ChestsSeeder;
-use Database\Seeders\Reference\LeaguesSeeder;
 use Illuminate\Routing\Middleware\ThrottleRequests;
 use Illuminate\Support\Arr;
 use Laravel\Sanctum\Sanctum;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 /** Indice et « passer » sur une session de Campagne (POST /v1/levels/{id}/start). */
@@ -28,7 +27,8 @@ class CampaignQuestionAidTest extends TestCase
     {
         parent::setUp();
         $this->withoutMiddleware(ThrottleRequests::class);
-        $this->seed([LeaguesSeeder::class, ChestsSeeder::class]);
+        GameWorld::leagues();
+        GameWorld::chests();
         $region = Region::query()->create(['name' => 'Lagunes', 'slug' => 'lagunes', 'order' => 1, 'is_active' => true]);
         $city = City::query()->create(['region_id' => $region->id, 'name' => 'Yopougon', 'slug' => 'yopougon', 'order' => 1, 'is_active' => true]);
         $this->level = Level::query()->create(['city_id' => $city->id, 'title' => 'Découverte', 'slug' => 'decouverte', 'order' => 1, 'passing_score' => 70, 'is_active' => true]);

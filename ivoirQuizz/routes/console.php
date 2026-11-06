@@ -2,6 +2,7 @@
 
 use App\Enums\UserStatus;
 use App\Jobs\RefreshLeagueRanksJob;
+use App\Models\Category;
 use App\Models\PushLog;
 use App\Models\Question;
 use App\Models\User;
@@ -9,6 +10,8 @@ use App\Services\Admin\QuestionImageAudit;
 use App\Services\Game\GameCacheService;
 use App\Services\Game\LeagueService;
 use App\Services\Notifications\ReminderService;
+use App\Services\Questions\CampaignImporter;
+use App\Services\Questions\QuickPlayImporter;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
@@ -45,6 +48,57 @@ Artisan::command('questions:check-images', function (QuestionImageAudit $audit):
 
     return Command::FAILURE;
 })->purpose('Liste les questions actives dont le fichier image est introuvable sur le disque public.');
+
+Artisan::command('questions:import {files* : Fichier(s) JSON} {--city= : Campagne : slug de la ville, ex. korhogo} {--region= : Campagne : slug de la région, ex. poro} {--dry-run : Vérifie sans rien écrire}', function (CampaignImporter $importer, QuickPlayImporter $quickPlay, GameCacheService $cache): int {
+    $files = (array) $this->argument('files');
+    $city = trim((string) $this->option('city'));
+    $region = trim((string) $this->option('region'));
+    $dryRun = (bool) $this->option('dry-run');
+
+    // Sans ville : questions de « Lancement rapide » (quiz du jour, défis), un ou plusieurs fichiers.
+    if ($city === '' && $region === '') {
+        $failed = false;
+        foreach ($files as $file) {
+            try {
+                $result = $quickPlay->import($importer->readBank($file), $dryRun);
+                $this->info(basename($file).' : '.$result['created'].($dryRun ? ' à importer' : ' importée(s)').', '.$result['skipped'].' déjà présente(s).');
+            } catch (Throwable $exception) {
+                $failed = true;
+                $this->error(basename($file).' refusé : '.$exception->getMessage());
+            }
+        }
+
+        return $failed ? Command::FAILURE : Command::SUCCESS;
+    }
+
+    if ($city === '' || $region === '' || count($files) !== 1) {
+        $this->error('Campagne : un seul fichier, avec la ville et sa région : --city=korhogo --region=poro');
+
+        return Command::FAILURE;
+    }
+
+    try {
+        $bank = $importer->readBank($files[0]);
+
+        if ($dryRun) {
+            $importer->validateBank($bank, $city, Category::query()->where('is_active', true)->pluck('slug')->all());
+            $this->info(count($bank).' questions valides pour '.$city.'. Rien n’a été écrit.');
+
+            return Command::SUCCESS;
+        }
+
+        $importer->importBank(['key' => $city, 'region_slug' => $region, 'city_slug' => $city], $bank);
+    } catch (Throwable $exception) {
+        $this->error('Import refusé : '.$exception->getMessage());
+
+        return Command::FAILURE;
+    }
+
+    $cache->clearRegionsMapCache();
+    $this->info(count($bank)." questions importées pour {$city} (5 niveaux). Les questions retirées du fichier sont désactivées, l’historique des joueurs est conservé.");
+
+    return Command::SUCCESS;
+})->purpose('Import quick-play questions, or a 50-question city campaign with --city/--region (re-importing is safe).');
 
 Artisan::command('game:cache-map', function (GameCacheService $cache): int {
     $regions = $cache->cacheRegionsMap();

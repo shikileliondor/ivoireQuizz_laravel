@@ -1,6 +1,6 @@
 # Crédits des images de villes
 
-Les fichiers sources du dépôt sont dans `database/seeders/Reference/images/`. `CityImagesSeeder` les installe dans `storage/app/public/cities/`, où Laravel les sert via le disque `public`. Les versions incluses sont des miniatures Wikimedia Commons de 960 px.
+Ces images sont installées dans `storage/app/public/cities/` sur le serveur, où Laravel les sert via le disque `public`. Elles ne sont plus versionnées dans le dépôt. Les versions incluses sont des miniatures Wikimedia Commons de 960 px.
 
 | Ville | Fichier | Auteur et source | Licence |
 |---|---|---|---|

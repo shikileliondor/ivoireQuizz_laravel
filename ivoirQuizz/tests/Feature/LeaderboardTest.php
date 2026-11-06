@@ -10,9 +10,9 @@ use App\Models\Question;
 use App\Models\User;
 use App\Models\UserLevelProgress;
 use Carbon\CarbonImmutable;
-use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 class LeaderboardTest extends TestCase
@@ -21,7 +21,7 @@ class LeaderboardTest extends TestCase
 
     public function test_global_leaderboard_uses_best_campaign_scores_and_reports_personal_rank(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $leader = User::factory()->create(['total_score' => 50]);
         $currentUser = User::factory()->create(['total_score' => 50000]);
         $levels = Level::query()->whereHas('city', fn ($query) => $query->where('slug', 'korhogo'))->orderBy('order')->take(2)->get();
@@ -58,7 +58,7 @@ class LeaderboardTest extends TestCase
     {
         CarbonImmutable::setTestNow('2026-10-22 12:00:00');
         try {
-            $this->seed(DatabaseSeeder::class);
+            GameWorld::build();
             $leader = User::factory()->create();
             $currentUser = User::factory()->create();
             $city = City::query()->where('slug', 'yopougon')->firstOrFail();

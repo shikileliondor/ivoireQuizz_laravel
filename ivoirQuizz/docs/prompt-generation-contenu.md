@@ -1,6 +1,6 @@
 # Prompt de génération de contenu IvoireQuizz
 
-**Mode d’emploi.** Copiez tout ce qui se trouve sous la ligne ci-dessous dans l’IA de votre choix, puis remplissez la section « 2. Ma demande ». Les formats décrits sont ceux qu’attendent le script d’import des campagnes (`database/seeders/Campaigns/CampaignImporter.php`), le formulaire de questions et l’import de logos de l’admin : si ces règles changent dans le code, mettez ce fichier à jour.
+**Mode d’emploi.** Copiez tout ce qui se trouve sous la ligne ci-dessous dans l’IA de votre choix, puis remplissez la section « 2. Ma demande ». Les formats décrits sont ceux qu’attendent le script d’import des campagnes (`app/Services/Questions/CampaignImporter.php`, commande `php artisan questions:import`), le formulaire de questions et l’import de logos de l’admin : si ces règles changent dans le code, mettez ce fichier à jour.
 
 ---
 
@@ -108,7 +108,7 @@ Si ta réponse risque d’être coupée, livre les niveaux un par un (questions 
 
 ## 5. Livrable B : questions de lancement rapide
 
-Ces questions sont saisies une par une dans l’administration. Elles ne dépendent d’aucune ville et se jouent mélangées avec celles des autres catégories. Format :
+Ces questions sont importées par fichier avec `php artisan questions:import` (ou saisies une par une dans l’administration). Elles ne dépendent d’aucune ville et se jouent mélangées avec celles des autres catégories. Format :
 
 ```json
 [

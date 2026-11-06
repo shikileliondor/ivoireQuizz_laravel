@@ -1,0 +1,562 @@
+[
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel écrivain ivoirien est né à Boundiali en 1927 ?",
+    "options": [
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": false
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": true
+      }
+    ],
+    "explanation": "La BnF situe la naissance d’Ahmadou Kourouma à Boundiali en 1927.",
+    "hint": "Il a aussi exercé le métier de statisticien.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel écrivain ivoirien a également exercé la profession de statisticien ?",
+    "options": [
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": true
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Marguerite Abouet",
+        "correct": false
+      }
+    ],
+    "explanation": "La notice de la BnF mentionne l’activité de statisticien d’Ahmadou Kourouma.",
+    "hint": "Ses romans ont marqué la littérature francophone.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel auteur ivoirien du XXe siècle est né à Assinie ?",
+    "options": [
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": false
+      },
+      {
+        "text": "Frédéric Ehui",
+        "correct": false
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": true
+      },
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": false
+      }
+    ],
+    "explanation": "Bernard Binlin Dadié est né à Assinie en 1916.",
+    "hint": "Il fut aussi ministre de la Culture.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel auteur ivoirien fut également ministre de la Culture ?",
+    "options": [
+      {
+        "text": "Dobet Gnahoré",
+        "correct": false
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": true
+      },
+      {
+        "text": "Didier Drogba",
+        "correct": false
+      },
+      {
+        "text": "Marguerite Abouet",
+        "correct": false
+      }
+    ],
+    "explanation": "Bernard Dadié était poète, dramaturge, romancier et ancien ministre de la Culture.",
+    "hint": "Il a vécu plus d’un siècle.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel ancien footballeur ivoirien a longtemps joué à Chelsea ?",
+    "options": [
+      {
+        "text": "Gervinho",
+        "correct": false
+      },
+      {
+        "text": "Yaya Touré",
+        "correct": false
+      },
+      {
+        "text": "Didier Drogba",
+        "correct": true
+      },
+      {
+        "text": "Salomon Kalou",
+        "correct": false
+      }
+    ],
+    "explanation": "Didier Drogba a rejoint Chelsea en 2004 et y a remporté la Ligue des champions en 2012.",
+    "hint": "Il était avant-centre.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel ancien attaquant des Éléphants avait commencé sa carrière professionnelle au Mans ?",
+    "options": [
+      {
+        "text": "Didier Drogba",
+        "correct": true
+      },
+      {
+        "text": "Nicolas Pépé",
+        "correct": false
+      },
+      {
+        "text": "Wilfried Bony",
+        "correct": false
+      },
+      {
+        "text": "Sébastien Haller",
+        "correct": false
+      }
+    ],
+    "explanation": "Drogba a commencé sa carrière professionnelle au Mans en 1998.",
+    "hint": "Il a ensuite joué à Guingamp et Marseille.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel auteur a créé la série de bandes dessinées « Aya de Yopougon » ?",
+    "options": [
+      {
+        "text": "Marguerite Abouet",
+        "correct": true
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": false
+      }
+    ],
+    "explanation": "Marguerite Abouet signe les scénarios de la série illustrée par Clément Oubrerie.",
+    "hint": "Elle a aussi créé le personnage Akissi.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle autrice ivoirienne est à l’origine du personnage de bande dessinée Akissi ?",
+    "options": [
+      {
+        "text": "Nayanka Bell",
+        "correct": false
+      },
+      {
+        "text": "Marguerite Abouet",
+        "correct": true
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": false
+      },
+      {
+        "text": "Dobet Gnahoré",
+        "correct": false
+      }
+    ],
+    "explanation": "Akissi est l’une des séries jeunesse créées par Marguerite Abouet.",
+    "hint": "L’héroïne est une fillette vive et curieuse.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle écrivaine ivoirienne a également illustré des ouvrages pour la jeunesse ?",
+    "options": [
+      {
+        "text": "Ernesto Djédjé",
+        "correct": false
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": true
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Amadou Hampâté Bâ",
+        "correct": false
+      }
+    ],
+    "explanation": "La BnF décrit Véronique Tadjo comme romancière, poète et illustratrice.",
+    "hint": "Elle a aussi enseigné l’anglais à l’université.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel écrivain ivoirien a également enseigné la philosophie ?",
+    "options": [
+      {
+        "text": "Marguerite Abouet",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": false
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": true
+      }
+    ],
+    "explanation": "Jean-Marie Adiaffi a enseigné la philosophie en Côte d’Ivoire.",
+    "hint": "Il a aussi étudié le cinéma.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel auteur ivoirien a étudié le cinéma et écrit de la poésie ?",
+    "options": [
+      {
+        "text": "Tiken Jah Fakoly",
+        "correct": false
+      },
+      {
+        "text": "Didier Drogba",
+        "correct": false
+      },
+      {
+        "text": "Meiway",
+        "correct": false
+      },
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": true
+      }
+    ],
+    "explanation": "Jean-Marie Adiaffi était poète, romancier, scénariste et cinéaste.",
+    "hint": "Il est décédé en 1999.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel artiste de reggae est né à Odienné en 1968 ?",
+    "options": [
+      {
+        "text": "Ernesto Djédjé",
+        "correct": false
+      },
+      {
+        "text": "Ismaël Isaac",
+        "correct": false
+      },
+      {
+        "text": "Alpha Blondy",
+        "correct": false
+      },
+      {
+        "text": "Tiken Jah Fakoly",
+        "correct": true
+      }
+    ],
+    "explanation": "Tiken Jah Fakoly, né Moussa Doumbia Fakoly, est originaire d’Odienné.",
+    "hint": "Il est reconnu pour ses chansons engagées.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel est le nom de naissance du chanteur Tiken Jah Fakoly ?",
+    "options": [
+      {
+        "text": "Salif Keïta",
+        "correct": false
+      },
+      {
+        "text": "Kaba Diakité Issiaka",
+        "correct": false
+      },
+      {
+        "text": "Moussa Doumbia Fakoly",
+        "correct": true
+      },
+      {
+        "text": "Frédéric Désiré Ehui",
+        "correct": false
+      }
+    ],
+    "explanation": "Le profil biographique de Tiken Jah Fakoly indique le nom Moussa Doumbia Fakoly.",
+    "hint": "Il est associé au reggae africain.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel chanteur ivoirien porte le nom civil de Kaba Diakité Issiaka ?",
+    "options": [
+      {
+        "text": "Ismaël Isaac",
+        "correct": true
+      },
+      {
+        "text": "Alpha Blondy",
+        "correct": false
+      },
+      {
+        "text": "Tiken Jah Fakoly",
+        "correct": false
+      },
+      {
+        "text": "Meiway",
+        "correct": false
+      }
+    ],
+    "explanation": "Ismaël Isaac est né sous le nom de Kaba Diakité Issiaka.",
+    "hint": "Il chante principalement du reggae.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel chanteur de reggae ivoirien est né à Abidjan en 1966 ?",
+    "options": [
+      {
+        "text": "Tiken Jah Fakoly",
+        "correct": false
+      },
+      {
+        "text": "Meiway",
+        "correct": false
+      },
+      {
+        "text": "Ernesto Djédjé",
+        "correct": false
+      },
+      {
+        "text": "Ismaël Isaac",
+        "correct": true
+      }
+    ],
+    "explanation": "La biographie d’Ismaël Isaac situe sa naissance à Abidjan en 1966.",
+    "hint": "Il est associé au quartier de Treichville.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel compositeur et chanteur ivoirien s’appelle Frédéric Désiré Ehui ?",
+    "options": [
+      {
+        "text": "Meiway",
+        "correct": true
+      },
+      {
+        "text": "A’Salfo",
+        "correct": false
+      },
+      {
+        "text": "DJ Arafat",
+        "correct": false
+      },
+      {
+        "text": "Alpha Blondy",
+        "correct": false
+      }
+    ],
+    "explanation": "Meiway est le nom de scène de Frédéric Désiré Ehui.",
+    "hint": "Il a créé un style musical très dansant.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle sportive ivoirienne a obtenu une médaille de bronze en taekwondo aux Jeux de Rio 2016 ?",
+    "options": [
+      {
+        "text": "Inès Boubakri",
+        "correct": false
+      },
+      {
+        "text": "Marie-Josée Ta Lou",
+        "correct": false
+      },
+      {
+        "text": "Ruth Gbagbi",
+        "correct": true
+      },
+      {
+        "text": "Murielle Ahouré",
+        "correct": false
+      }
+    ],
+    "explanation": "Ruth Gbagbi a décroché le bronze en taekwondo aux Jeux olympiques de Rio en 2016.",
+    "hint": "Elle a également remporté un titre mondial dans sa discipline.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel sportif ivoirien a été sacré champion du monde de taekwondo en 2023 ?",
+    "options": [
+      {
+        "text": "Cheick Sallah Cissé",
+        "correct": true
+      },
+      {
+        "text": "Serge Aurier",
+        "correct": false
+      },
+      {
+        "text": "Franck Kessié",
+        "correct": false
+      },
+      {
+        "text": "Didier Drogba",
+        "correct": false
+      }
+    ],
+    "explanation": "Cheick Sallah Cissé a remporté une médaille d’or mondiale en 2023.",
+    "hint": "Il avait déjà gagné l’or olympique.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quelle personnalité littéraire ivoirienne a obtenu un prix UNESCO en sciences humaines et arts en 2015 ?",
+    "options": [
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": false
+      },
+      {
+        "text": "Bernard Dadié",
+        "correct": true
+      },
+      {
+        "text": "Marguerite Abouet",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": false
+      }
+    ],
+    "explanation": "Bernard Dadié a reçu le prix UNESCO-UNAM/Jaime Torres Bodet 2015.",
+    "hint": "Cette figure est née avant l’indépendance.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "personnalites",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel romancier ivoirien est mort à Lyon en décembre 2003 ?",
+    "options": [
+      {
+        "text": "Bernard Dadié",
+        "correct": false
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": false
+      },
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": true
+      },
+      {
+        "text": "Jean-Marie Adiaffi",
+        "correct": false
+      }
+    ],
+    "explanation": "La BnF indique qu’Ahmadou Kourouma est décédé à Lyon le 11 décembre 2003.",
+    "hint": "Il était né à Boundiali.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

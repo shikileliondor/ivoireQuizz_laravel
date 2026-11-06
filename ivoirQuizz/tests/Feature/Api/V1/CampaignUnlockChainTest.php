@@ -8,12 +8,10 @@ use App\Models\Level;
 use App\Models\Question;
 use App\Models\Region;
 use App\Models\User;
-use Database\Seeders\DatabaseSeeder;
-use Database\Seeders\Reference\ChestsSeeder;
-use Database\Seeders\Reference\LeaguesSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Routing\Middleware\ThrottleRequests;
 use Laravel\Sanctum\Sanctum;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 /**
@@ -31,7 +29,7 @@ class CampaignUnlockChainTest extends TestCase
 
     public function test_finishing_yopougon_unlocks_korhogo_then_finishing_korhogo_unlocks_aboisso(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         Sanctum::actingAs(User::factory()->create());
 
         $map = $this->map();
@@ -73,7 +71,8 @@ class CampaignUnlockChainTest extends TestCase
 
     public function test_finishing_a_city_unlocks_the_next_city_then_the_next_region(): void
     {
-        $this->seed([LeaguesSeeder::class, ChestsSeeder::class]);
+        GameWorld::leagues();
+        GameWorld::chests();
         $first = $this->makeRegion('premiere', 1);
         $second = $this->makeRegion('deuxieme', 2);
         $cityA = $this->makeCity($first, 'ville-a', 1);

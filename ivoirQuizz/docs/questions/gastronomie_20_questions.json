@@ -1,0 +1,562 @@
+[
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel mode de cuisson termine traditionnellement la préparation de la semoule d’attiéké ?",
+    "options": [
+      {
+        "text": "La friture profonde",
+        "correct": false
+      },
+      {
+        "text": "La cuisson au barbecue",
+        "correct": false
+      },
+      {
+        "text": "La cuisson à la vapeur",
+        "correct": true
+      },
+      {
+        "text": "La cuisson au four",
+        "correct": false
+      }
+    ],
+    "explanation": "La semoule fermentée est cuite à la vapeur pour obtenir l’attiéké.",
+    "hint": "La préparation n’est pas immergée dans une marmite d’eau.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel matériau végétal garnit traditionnellement les paniers de conditionnement de l’attiéké ?",
+    "options": [
+      {
+        "text": "Des feuilles de bananier",
+        "correct": false
+      },
+      {
+        "text": "Des feuilles de rônier",
+        "correct": false
+      },
+      {
+        "text": "Des feuilles de teck",
+        "correct": false
+      },
+      {
+        "text": "Des feuilles de manioc",
+        "correct": true
+      }
+    ],
+    "explanation": "L’UNESCO indique que les paniers de vente peuvent être garnis de feuilles de manioc.",
+    "hint": "Ces feuilles proviennent de la plante qui fournit la semoule.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Par quel geste retire-t-on l’excès d’eau de la pâte de manioc durant certaines étapes de transformation ?",
+    "options": [
+      {
+        "text": "La torréfaction",
+        "correct": false
+      },
+      {
+        "text": "Le fumage",
+        "correct": false
+      },
+      {
+        "text": "La friture",
+        "correct": false
+      },
+      {
+        "text": "Le pressage",
+        "correct": true
+      }
+    ],
+    "explanation": "Le pressage fait partie des opérations décrites dans la transformation de l’attiéké.",
+    "hint": "On exerce une force mécanique sur la pâte.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle opération permet de séparer les grains et de retirer certains éléments lors de la préparation de l’attiéké ?",
+    "options": [
+      {
+        "text": "La saumure",
+        "correct": false
+      },
+      {
+        "text": "Le fumage",
+        "correct": false
+      },
+      {
+        "text": "Le tamisage",
+        "correct": true
+      },
+      {
+        "text": "Le glaçage",
+        "correct": false
+      }
+    ],
+    "explanation": "Le tamisage fait partie des étapes de fabrication de l’attiéké.",
+    "hint": "Elle nécessite un ustensile percé de mailles.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel procédé intervient dans la pâte de manioc avant la cuisson de l’attiéké ?",
+    "options": [
+      {
+        "text": "La fermentation",
+        "correct": true
+      },
+      {
+        "text": "La caramélisation",
+        "correct": false
+      },
+      {
+        "text": "La congélation",
+        "correct": false
+      },
+      {
+        "text": "La distillation",
+        "correct": false
+      }
+    ],
+    "explanation": "Une fermentation contrôlée intervient avant la préparation de la semoule.",
+    "hint": "C’est une transformation biologique traditionnelle.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quelle communauté a contribué à populariser le garba à Abidjan dans les années 1980 ?",
+    "options": [
+      {
+        "text": "La communauté éthiopienne",
+        "correct": false
+      },
+      {
+        "text": "La communauté nigérienne",
+        "correct": true
+      },
+      {
+        "text": "La communauté angolaise",
+        "correct": false
+      },
+      {
+        "text": "La communauté cap-verdienne",
+        "correct": false
+      }
+    ],
+    "explanation": "La communauté nigérienne d’Abidjan a contribué à diffuser ce mets de rue.",
+    "hint": "Elle est issue d’un pays sahélien enclavé.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Comment appelle-t-on un espace spécialisé dans la vente d’attiéké au thon frit ?",
+    "options": [
+      {
+        "text": "Un garbadrome",
+        "correct": true
+      },
+      {
+        "text": "Un maquis",
+        "correct": false
+      },
+      {
+        "text": "Une poissonnerie",
+        "correct": false
+      },
+      {
+        "text": "Un allocodrome",
+        "correct": false
+      }
+    ],
+    "explanation": "Le terme garbadrome désigne un lieu de consommation du garba.",
+    "hint": "Ce lieu porte un nom populaire apparu dans la restauration de rue.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "easy",
+    "type": "text",
+    "question": "Quel condiment accompagne fréquemment le plat de rue à base d’attiéké et de thon frit ?",
+    "options": [
+      {
+        "text": "Le piment",
+        "correct": true
+      },
+      {
+        "text": "Le poivre noir",
+        "correct": false
+      },
+      {
+        "text": "La moutarde",
+        "correct": false
+      },
+      {
+        "text": "Le gingembre",
+        "correct": false
+      }
+    ],
+    "explanation": "Le garba associe typiquement attiéké, thon frit et piment.",
+    "hint": "Il peut être ajouté frais ou en pâte selon les goûts.",
+    "points": 10,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle graine grillée et pilée parfume une recette de sauce gouagouassou ?",
+    "options": [
+      {
+        "text": "Le sésame",
+        "correct": false
+      },
+      {
+        "text": "Le café",
+        "correct": false
+      },
+      {
+        "text": "L’akpi",
+        "correct": true
+      },
+      {
+        "text": "La kola",
+        "correct": false
+      }
+    ],
+    "explanation": "Dans une recette de gouagouassou, l’akpi est grillé puis écrasé.",
+    "hint": "Cette graine est aussi connue sous le nom de djansan.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quel autre nom désigne l’akpi dans la cuisine d’Afrique centrale ?",
+    "options": [
+      {
+        "text": "Le soumbara",
+        "correct": false
+      },
+      {
+        "text": "Le tamarin",
+        "correct": false
+      },
+      {
+        "text": "Le bissap",
+        "correct": false
+      },
+      {
+        "text": "Le djansan",
+        "correct": true
+      }
+    ],
+    "explanation": "Le djansan et l’akpi désignent une épice issue de graines de Ricinodendron.",
+    "hint": "Ce synonyme est courant au Cameroun.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "De quel arbre proviennent les graines appelées akpi ?",
+    "options": [
+      {
+        "text": "Elaeis guineensis",
+        "correct": false
+      },
+      {
+        "text": "Ricinodendron heudelotii",
+        "correct": true
+      },
+      {
+        "text": "Coffea arabica",
+        "correct": false
+      },
+      {
+        "text": "Theobroma cacao",
+        "correct": false
+      }
+    ],
+    "explanation": "L’akpi est obtenu à partir des graines de Ricinodendron heudelotii.",
+    "hint": "Le nom botanique compte deux mots latins.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle communauté de pêcheurs est associée à la sauce N’Kouaketchi ?",
+    "options": [
+      {
+        "text": "Les Koulango",
+        "correct": false
+      },
+      {
+        "text": "Les Alladjan",
+        "correct": true
+      },
+      {
+        "text": "Les Sénoufo",
+        "correct": false
+      },
+      {
+        "text": "Les Lobi",
+        "correct": false
+      }
+    ],
+    "explanation": "Une recette du Sud associe cette sauce aux communautés alladjan.",
+    "hint": "Cette communauté vit sur le littoral.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle préparation du poisson est retenue dans une recette documentée de sauce N’Kouaketchi ?",
+    "options": [
+      {
+        "text": "Le poisson frais",
+        "correct": true
+      },
+      {
+        "text": "Le poisson salé",
+        "correct": false
+      },
+      {
+        "text": "Le poisson fumé",
+        "correct": false
+      },
+      {
+        "text": "Le poisson séché",
+        "correct": false
+      }
+    ],
+    "explanation": "La recette documentée utilise du poisson frais et de l’huile de palme.",
+    "hint": "Cette version ne repose pas sur la conservation préalable du poisson.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "medium",
+    "type": "text",
+    "question": "Quelle variété de manioc a été appréciée par une majorité de dégustateurs dans une étude du CIRAD ?",
+    "options": [
+      {
+        "text": "Yacé",
+        "correct": true
+      },
+      {
+        "text": "I083774",
+        "correct": false
+      },
+      {
+        "text": "Bocou 2",
+        "correct": false
+      },
+      {
+        "text": "Bocou 4",
+        "correct": false
+      }
+    ],
+    "explanation": "Dans l’étude du CIRAD, l’attiéké préparé avec la variété Yacé a obtenu de bons résultats sensoriels.",
+    "hint": "Cette variété traditionnelle a été comparée à plusieurs variétés améliorées de manioc.",
+    "points": 15,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Dans quelle région urbaine de Côte d’Ivoire un essai de dégustation de plusieurs attiékés a-t-il été mené ?",
+    "options": [
+      {
+        "text": "Odienné",
+        "correct": false
+      },
+      {
+        "text": "Aboisso",
+        "correct": false
+      },
+      {
+        "text": "Korhogo",
+        "correct": false
+      },
+      {
+        "text": "Bouaké",
+        "correct": true
+      }
+    ],
+    "explanation": "Une étude du CIRAD a organisé des essais dans la région de Bouaké.",
+    "hint": "L’étude concernait les préférences des consommateurs pour une semoule de manioc.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quelle texture caractérise les grains d’attiéké de bonne qualité selon des essais sensoriels ?",
+    "options": [
+      {
+        "text": "Complètement liquides",
+        "correct": false
+      },
+      {
+        "text": "Légèrement cohésifs",
+        "correct": true
+      },
+      {
+        "text": "Totalement poudreux",
+        "correct": false
+      },
+      {
+        "text": "Très durs et fibreux",
+        "correct": false
+      }
+    ],
+    "explanation": "Les grains appréciés sont arrondis et légèrement cohésifs, sans excès d’acidité.",
+    "hint": "Ils doivent rester distincts sans être entièrement secs.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel défaut peut apparaître lorsque la fermentation de la semoule destinée à l’attiéké est excessive ?",
+    "options": [
+      {
+        "text": "Une saveur de vanille",
+        "correct": false
+      },
+      {
+        "text": "Un goût trop acide",
+        "correct": true
+      },
+      {
+        "text": "Une odeur de café",
+        "correct": false
+      },
+      {
+        "text": "Un goût chocolaté",
+        "correct": false
+      }
+    ],
+    "explanation": "Des études associent la sur-fermentation à une acidité trop forte.",
+    "hint": "Ce défaut concerne l’équilibre des saveurs.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "hard",
+    "type": "text",
+    "question": "Quel ingrédient d’origine animale peut donner une saveur fumée à une sauce graine ?",
+    "options": [
+      {
+        "text": "La viande braisée",
+        "correct": false
+      },
+      {
+        "text": "Le poisson cru",
+        "correct": false
+      },
+      {
+        "text": "Le poisson fumé",
+        "correct": true
+      },
+      {
+        "text": "Le poulet rôti",
+        "correct": false
+      }
+    ],
+    "explanation": "Le poisson fumé est une variante fréquemment utilisée dans la sauce graine ivoirienne.",
+    "hint": "Il est conservé par exposition à la fumée.",
+    "points": 25,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel accompagnement ivoirien peut être préparé en pilant des tubercules cuits ?",
+    "options": [
+      {
+        "text": "Le choukouya",
+        "correct": false
+      },
+      {
+        "text": "Le bissap",
+        "correct": false
+      },
+      {
+        "text": "Le foutou",
+        "correct": true
+      },
+      {
+        "text": "Le garba",
+        "correct": false
+      }
+    ],
+    "explanation": "Le foutou est une pâte obtenue en pilant igname, manioc ou banane plantain.",
+    "hint": "Sa texture est souple et compacte.",
+    "points": 30,
+    "time_limit": 20
+  },
+  {
+    "category": "gastronomie",
+    "difficulty": "expert",
+    "type": "text",
+    "question": "Quel plat ivoirien est obtenu à partir d’une pâte de manioc fermentée cuite en une masse souple ?",
+    "options": [
+      {
+        "text": "Le kabato",
+        "correct": false
+      },
+      {
+        "text": "L’attiéké",
+        "correct": false
+      },
+      {
+        "text": "L’attoukpou",
+        "correct": false
+      },
+      {
+        "text": "Le placali",
+        "correct": true
+      }
+    ],
+    "explanation": "Le placali est une pâte obtenue à partir de manioc fermenté, cuite en une masse souple et servie avec une sauce.",
+    "hint": "Il ne se présente pas sous forme de grains détachés.",
+    "points": 30,
+    "time_limit": 20
+  }
+]

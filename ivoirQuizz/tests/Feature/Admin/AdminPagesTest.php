@@ -16,8 +16,8 @@ use App\Models\QuestionReport;
 use App\Models\Region;
 use App\Models\RewardTransaction;
 use App\Models\User;
-use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 /**
@@ -30,7 +30,7 @@ class AdminPagesTest extends TestCase
     public function test_every_admin_page_renders_with_seeded_data(): void
     {
         $this->withoutVite();
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
 
         $admin = User::factory()->create(['is_admin' => true, 'name' => 'Awa Admin']);
         $player = User::factory()->create(['last_activity_date' => today(), 'xp_total' => 420, 'coins' => 30]);

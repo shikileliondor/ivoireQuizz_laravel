@@ -9,10 +9,10 @@ use App\Models\User;
 use App\Models\UserCityProgress;
 use App\Models\UserLevelProgress;
 use App\Models\UserRegionProgress;
-use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\Sanctum;
+use Tests\Fixtures\GameWorld;
 use Tests\TestCase;
 
 class GameMapTest extends TestCase
@@ -27,7 +27,7 @@ class GameMapTest extends TestCase
 
     public function test_map_shows_only_the_three_requested_regions_and_repairs_the_initial_unlock(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $user = User::factory()->create(['friend_code' => 'MAP002']);
         $region = Region::query()->where('slug', 'abidjan')->firstOrFail();
         $city = City::query()->where('slug', 'yopougon')->firstOrFail();
@@ -52,7 +52,7 @@ class GameMapTest extends TestCase
 
     public function test_city_without_an_available_image_returns_null_without_breaking_the_map(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $user = User::factory()->create(['friend_code' => 'MAP003']);
         $city = City::query()->where('slug', 'yopougon')->firstOrFail();
         $city->update(['image' => 'cities/missing-yopougon.jpg']);
@@ -69,7 +69,7 @@ class GameMapTest extends TestCase
 
     public function test_city_image_urls_are_absolute_https_and_included_in_level_details(): void
     {
-        $this->seed(DatabaseSeeder::class);
+        GameWorld::build();
         $user = User::factory()->create(['friend_code' => 'MAP004']);
         $city = City::query()->where('slug', 'yopougon')->firstOrFail();
         $city->update(['image' => null]);
