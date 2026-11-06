@@ -9,6 +9,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
 use Throwable;
 
@@ -40,6 +41,14 @@ class AuthController extends Controller
             ]);
 
             $token = $user->createToken('auth_token')->plainTextToken;
+            try {
+                $user->sendEmailVerificationNotification();
+            } catch (Throwable $exception) {
+                Log::warning('Échec de programmation de la vérification email.', [
+                    'user_id' => $user->id,
+                    'exception' => $exception::class,
+                ]);
+            }
 
             return $this->successResponse([
                 'user' => $user,
@@ -95,20 +104,21 @@ class AuthController extends Controller
      * Return authenticated user profile with counts.
      */
     public function me(Request $request): JsonResponse
-{
-    /** @var User $user */
-    $user = $request->user();
-    $user->loadCount('gameSessions');
+    {
+        /** @var User $user */
+        $user = $request->user();
+        $user->loadCount('gameSessions');
 
-    $userData = $user->toArray();
-    $userData['friends_count'] = $user->friends->count();
-    $userData['game_sessions_count'] = $user->game_sessions_count;
+        $userData = $user->toArray();
+        $userData['friends_count'] = $user->friends->count();
+        $userData['game_sessions_count'] = $user->game_sessions_count;
 
-    return $this->successResponse(
-        $userData,
-        'Profil utilisateur récupéré.'
-    );
-}
+        return $this->successResponse(
+            $userData,
+            'Profil utilisateur récupéré.'
+        );
+    }
+
     /**
      * Authenticate or register a user with Google OAuth token.
      */

@@ -5,14 +5,24 @@ namespace App\Services\Auth;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Throwable;
 
 class PasswordResetService
 {
     public function sendLink(string $email): string
     {
-        return Password::broker()->sendResetLink(['email' => mb_strtolower($email)]);
+        try {
+            return Password::broker()->sendResetLink(['email' => mb_strtolower($email)]);
+        } catch (Throwable $exception) {
+            Log::warning('Échec d’envoi du lien de réinitialisation.', [
+                'exception' => $exception::class,
+            ]);
+
+            return Password::RESET_LINK_SENT;
+        }
     }
 
     /**

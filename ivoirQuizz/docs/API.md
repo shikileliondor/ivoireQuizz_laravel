@@ -24,7 +24,7 @@ final body = jsonDecode(response.body) as Map<String, dynamic>;
 final apiToken = body['data']['token'] as String;
 ```
 
-Le projet Flutter doit aussi déclarer les identifiants OAuth Android/iOS correspondant aux package/bundle IDs et empreintes de ses builds. Il n'est pas présent dans ce dépôt.
+Le projet Flutter doit aussi déclarer les identifiants OAuth Android correspondant au package ID et aux empreintes de ses builds. Il n'est pas présent dans ce dépôt.
 
 Les routes protégées utilisent l’en-tête `Authorization: Bearer <token>` et acceptent du JSON.
 

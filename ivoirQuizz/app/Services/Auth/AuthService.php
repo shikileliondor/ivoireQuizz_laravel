@@ -11,6 +11,8 @@ use App\Services\Game\ProgressionService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class AuthService
 {
@@ -22,7 +24,7 @@ class AuthService
      */
     public function register(array $data): array
     {
-        return DB::transaction(function () use ($data): array {
+        $result = DB::transaction(function () use ($data): array {
             $pseudo = $data['pseudo'] ?? null;
 
             // Sans pseudo, User::booted() le déduit du premier mot de « name ».
@@ -47,6 +49,17 @@ class AuthService
                 'token' => $user->createToken('mobile')->plainTextToken,
             ];
         });
+
+        try {
+            $result['user']->sendEmailVerificationNotification();
+        } catch (Throwable $exception) {
+            Log::warning('Échec de programmation de la vérification email.', [
+                'user_id' => $result['user']->id,
+                'exception' => $exception::class,
+            ]);
+        }
+
+        return $result;
     }
 
     /** @return array{user: User, token: string} */

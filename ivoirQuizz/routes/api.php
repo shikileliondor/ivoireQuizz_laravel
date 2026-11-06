@@ -8,12 +8,14 @@ use App\Http\Controllers\Api\GameSessionController as LegacyGameSessionControlle
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\LeaderboardController;
 use App\Http\Controllers\Api\ProfileController as LegacyProfileController;
+use App\Http\Controllers\Api\ProgressController;
 use App\Http\Controllers\Api\QuizController;
 use App\Http\Controllers\Api\V1\AccountController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\ChestController;
 use App\Http\Controllers\Api\V1\CollectionController;
 use App\Http\Controllers\Api\V1\DeviceTokenController;
+use App\Http\Controllers\Api\V1\EmailVerificationController;
 use App\Http\Controllers\Api\V1\GameMapController;
 use App\Http\Controllers\Api\V1\GameSessionController;
 use App\Http\Controllers\Api\V1\LeagueController;
@@ -21,8 +23,8 @@ use App\Http\Controllers\Api\V1\LifeController;
 use App\Http\Controllers\Api\V1\PassportController;
 use App\Http\Controllers\Api\V1\PasswordController;
 use App\Http\Controllers\Api\V1\ProfileController;
-use App\Http\Controllers\Api\V1\QuestionReportController;
 use App\Http\Controllers\Api\V1\QuestionAidController;
+use App\Http\Controllers\Api\V1\QuestionReportController;
 use App\Http\Controllers\Api\V1\StreakController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,8 +39,8 @@ Route::middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
     Route::post('/auth/logout', [LegacyAuthController::class, 'logout']);
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/categories', [CategoryController::class, 'index']);
-    Route::get('/achievements', [App\Http\Controllers\Api\ProgressController::class, 'achievements']);
-    Route::get('/friends/invite', [App\Http\Controllers\Api\ProgressController::class, 'invite']);
+    Route::get('/achievements', [ProgressController::class, 'achievements']);
+    Route::get('/friends/invite', [ProgressController::class, 'invite']);
     Route::get('/quiz/questions', [QuizController::class, 'getQuestions']);
     Route::post('/sessions', [LegacyGameSessionController::class, 'store']);
     Route::get('/sessions', [LegacyGameSessionController::class, 'index']);
@@ -68,6 +70,7 @@ Route::prefix('v1')->group(function (): void {
     Route::middleware('throttle:password-reset')->group(function (): void {
         Route::post('/auth/forgot-password', [PasswordController::class, 'forgot'])->name('api.v1.auth.password.forgot');
         Route::post('/auth/reset-password', [PasswordController::class, 'reset'])->name('api.v1.auth.password.reset');
+        Route::post('/auth/email/verification-notification', [EmailVerificationController::class, 'resend'])->name('api.v1.auth.email.resend');
     });
 
     Route::middleware(['auth:sanctum', 'user.active', 'throttle:api'])->group(function (): void {
