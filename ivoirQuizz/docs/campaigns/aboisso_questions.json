@@ -1,1482 +1,1502 @@
 [
-    {
-        "number": 1,
-        "category": "geographie",
-        "question": "Dans quelle partie de la Côte d’Ivoire se trouve Aboisso ?",
-        "explanation": "Aboisso est une ville du sud-est de la Côte d’Ivoire, dans la région du Sud-Comoé.",
-        "options": [
-            {
-                "text": "Au Sud-Est",
-                "correct": true,
-                "source_key": "opt_080408514e09"
-            },
-            {
-                "text": "Au Centre-Nord",
-                "correct": false,
-                "source_key": "opt_954067856e58"
-            },
-            {
-                "text": "À l’Ouest",
-                "correct": false,
-                "source_key": "opt_7a9afd89a6a2"
-            },
-            {
-                "text": "Au Nord-Ouest",
-                "correct": false,
-                "source_key": "opt_bbe39329a555"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.61b38926b65746c2a45d4ea38e56c2ad"
-    },
-    {
-        "number": 2,
-        "category": "geographie",
-        "question": "De quelle région Aboisso est-elle le chef-lieu ?",
-        "explanation": "Aboisso est le chef-lieu de la région du Sud-Comoé.",
-        "options": [
-            {
-                "text": "Le Poro",
-                "correct": false,
-                "source_key": "opt_22bb3f3d1a25"
-            },
-            {
-                "text": "Le Sud-Comoé",
-                "correct": true,
-                "source_key": "opt_bf3db28bb2f7"
-            },
-            {
-                "text": "Le Tonkpi",
-                "correct": false,
-                "source_key": "opt_b8be651b56c6"
-            },
-            {
-                "text": "Le Gôh",
-                "correct": false,
-                "source_key": "opt_6c9450083d63"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.972aa82da62941d5857973a128e26413"
-    },
-    {
-        "number": 3,
-        "category": "gastronomie",
-        "question": "Quel ingrédient constitue la base de la sauce n’gatietolo, mentionnée parmi les spécialités du Sud-Comoé ?",
-        "explanation": "La sauce n’gatietolo est décrite dans la gastronomie régionale comme une sauce à base d’arachide.",
-        "options": [
-            {
-                "text": "Le riz",
-                "correct": false,
-                "source_key": "opt_a48e28741186"
-            },
-            {
-                "text": "Le maïs doux",
-                "correct": false,
-                "source_key": "opt_685fe5acb4c4"
-            },
-            {
-                "text": "L’arachide",
-                "correct": true,
-                "source_key": "opt_1c2392c41abf"
-            },
-            {
-                "text": "Le cacao",
-                "correct": false,
-                "source_key": "opt_f0bd0d895f71"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.792edccd35514d9da9b6a8287e952a40"
-    },
-    {
-        "number": 4,
-        "category": "gastronomie",
-        "question": "Quel produit désigne le « kokobé », cité dans la gastronomie du Sud-Comoé ?",
-        "explanation": "Le kokobé est présenté comme une écrevisse noire appréciée notamment dans les environs d’Ayamé et d’Aboisso.",
-        "options": [
-            {
-                "text": "Une variété de mangue",
-                "correct": false,
-                "source_key": "opt_3fa3c8815dd0"
-            },
-            {
-                "text": "Une galette de riz",
-                "correct": false,
-                "source_key": "opt_a91d6753b201"
-            },
-            {
-                "text": "Une boisson au cacao",
-                "correct": false,
-                "source_key": "opt_9ac0b084964e"
-            },
-            {
-                "text": "Une écrevisse noire",
-                "correct": true,
-                "source_key": "opt_1d2cfe19fafe"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.f9f857708d734a66865968afe0b6e2ed"
-    },
-    {
-        "number": 5,
-        "category": "agriculture",
-        "question": "Quel arbre produit les régimes utilisés pour fabriquer l’huile de palme ?",
-        "explanation": "Les fruits du palmier à huile sont récoltés en régimes et transformés pour produire notamment de l’huile de palme.",
-        "options": [
-            {
-                "text": "Le palmier à huile",
-                "correct": true,
-                "source_key": "opt_d01f4f12d597"
-            },
-            {
-                "text": "Le caféier",
-                "correct": false,
-                "source_key": "opt_48cb2a3fdc39"
-            },
-            {
-                "text": "Le cacaoyer",
-                "correct": false,
-                "source_key": "opt_f3e7a1d46dd0"
-            },
-            {
-                "text": "L’hévéa",
-                "correct": false,
-                "source_key": "opt_29e04390207f"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.5434cbf1c06f403d86c3efba75f2fe42"
-    },
-    {
-        "number": 6,
-        "category": "histoire",
-        "question": "Quel village du département d’Aboisso est associé à la création de la première école primaire de Côte d’Ivoire en 1882 ?",
-        "explanation": "Elima est associé à la création de cette école en 1882, un épisode important de l’histoire de l’éducation en Côte d’Ivoire.",
-        "options": [
-            {
-                "text": "Man",
-                "correct": false,
-                "source_key": "opt_67ecdd72ff44"
-            },
-            {
-                "text": "Elima",
-                "correct": true,
-                "source_key": "opt_087f16b6a06b"
-            },
-            {
-                "text": "Yamoussoukro",
-                "correct": false,
-                "source_key": "opt_b8d4092f1f9a"
-            },
-            {
-                "text": "Korhogo",
-                "correct": false,
-                "source_key": "opt_9e2c1d194b77"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.3ff7cfed19424a508cb11bd75b9a81c8"
-    },
-    {
-        "number": 7,
-        "category": "energie",
-        "question": "Quel cours d’eau est associé aux barrages hydroélectriques d’Ayamé ?",
-        "explanation": "Les aménagements hydroélectriques d’Ayamé sont installés sur la rivière Bia.",
-        "options": [
-            {
-                "text": "Le Sassandra",
-                "correct": false,
-                "source_key": "opt_09d367c41fb4"
-            },
-            {
-                "text": "Le Cavally",
-                "correct": false,
-                "source_key": "opt_9d9e6fedee9a"
-            },
-            {
-                "text": "La Bia",
-                "correct": true,
-                "source_key": "opt_ae79fc7e0d08"
-            },
-            {
-                "text": "Le Bandama",
-                "correct": false,
-                "source_key": "opt_659e08b1dd3c"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.a93f6a27113e4d23a7cb8a5f731d2717"
-    },
-    {
-        "number": 8,
-        "category": "agriculture",
-        "question": "Quelle plante est cultivée pour produire le caoutchouc naturel ?",
-        "explanation": "L’hévéa produit un latex qui sert de matière première au caoutchouc naturel.",
-        "options": [
-            {
-                "text": "Le cacaoyer",
-                "correct": false,
-                "source_key": "opt_df1bb9b35ab6"
-            },
-            {
-                "text": "Le cotonnier",
-                "correct": false,
-                "source_key": "opt_6d79a9d0a9b0"
-            },
-            {
-                "text": "Le caféier",
-                "correct": false,
-                "source_key": "opt_ec1fe9e6d4db"
-            },
-            {
-                "text": "L’hévéa",
-                "correct": true,
-                "source_key": "opt_5b638104fa21"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.3c24aeee5e37448d93a182aaad64257e"
-    },
-    {
-        "number": 9,
-        "category": "gastronomie",
-        "question": "Quel plat est décrit dans le Sud-Comoé comme un foutou préparé à partir de banane et de manioc ?",
-        "explanation": "L’akondèh est décrit dans les présentations gastronomiques régionales comme un foutou de banane au manioc.",
-        "options": [
-            {
-                "text": "L’akondèh",
-                "correct": true,
-                "source_key": "opt_ce3c1d88848f"
-            },
-            {
-                "text": "Le bolo",
-                "correct": false,
-                "source_key": "opt_e5a6ebe30e00"
-            },
-            {
-                "text": "Le tchapalo",
-                "correct": false,
-                "source_key": "opt_cbcd4b5bd4cb"
-            },
-            {
-                "text": "L’attoukou",
-                "correct": false,
-                "source_key": "opt_6bb15231e960"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.20bd26547f25473d9a3d2981b72005a3"
-    },
-    {
-        "number": 10,
-        "category": "geographie",
-        "question": "Quel pays se trouve à proximité de la région d’Aboisso, de l’autre côté de la frontière orientale de la Côte d’Ivoire ?",
-        "explanation": "Le Sud-Comoé se trouve dans le sud-est de la Côte d’Ivoire, près de la frontière ghanéenne.",
-        "options": [
-            {
-                "text": "Le Liberia",
-                "correct": false,
-                "source_key": "opt_db6306830db7"
-            },
-            {
-                "text": "Le Ghana",
-                "correct": true,
-                "source_key": "opt_f9a7eddf5937"
-            },
-            {
-                "text": "Le Sénégal",
-                "correct": false,
-                "source_key": "opt_0939330d58d8"
-            },
-            {
-                "text": "La Guinée",
-                "correct": false,
-                "source_key": "opt_90eebca408ed"
-            }
-        ],
-        "points": 10,
-        "source_key": "aboisso.q.23273e9dbbcc4f2498b83e29f8fb10db"
-    },
-    {
-        "number": 11,
-        "category": "gastronomie",
-        "question": "À partir de quel ingrédient est principalement préparé l’attoukou, une spécialité consommée dans le Sud-Comoé ?",
-        "explanation": "L’attoukou est décrit comme une galette ou préparation à base de manioc.",
-        "options": [
-            {
-                "text": "Le café",
-                "correct": false,
-                "source_key": "opt_0f20ab500b5e"
-            },
-            {
-                "text": "Le sorgho",
-                "correct": false,
-                "source_key": "opt_a31d542bd768"
-            },
-            {
-                "text": "Le manioc",
-                "correct": true,
-                "source_key": "opt_c9998c62d315"
-            },
-            {
-                "text": "Le cacao",
-                "correct": false,
-                "source_key": "opt_fc8c94e8d55d"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.366f2988107e4e85854c857a06a61695"
-    },
-    {
-        "number": 12,
-        "category": "gastronomie",
-        "question": "Quel ingrédient caractérise la sauce n’gbota dans les descriptions culinaires du Sud-Comoé ?",
-        "explanation": "La sauce n’gbota est présentée comme une sauce à base de graines. Les recettes précises peuvent varier selon les familles et les localités.",
-        "options": [
-            {
-                "text": "Le chocolat",
-                "correct": false,
-                "source_key": "opt_3d9b663dd2c3"
-            },
-            {
-                "text": "Le lait de vache",
-                "correct": false,
-                "source_key": "opt_065b23b3ae86"
-            },
-            {
-                "text": "La farine de blé",
-                "correct": false,
-                "source_key": "opt_5ec91bb3ca98"
-            },
-            {
-                "text": "Les graines",
-                "correct": true,
-                "source_key": "opt_d23e308a8f95"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.d99e599ddaae4a4786779d4ae36383b6"
-    },
-    {
-        "number": 13,
-        "category": "histoire",
-        "question": "Quel entrepreneur est associé aux premières plantations de café d’Elima à la fin du XIXe siècle ?",
-        "explanation": "Arthur Verdier est associé au développement des premières plantations de café à Elima, dans la région d’Aboisso.",
-        "options": [
-            {
-                "text": "Arthur Verdier",
-                "correct": true,
-                "source_key": "opt_eec717bc916d"
-            },
-            {
-                "text": "Félix Houphouët-Boigny",
-                "correct": false,
-                "source_key": "opt_96b162c454de"
-            },
-            {
-                "text": "Samory Touré",
-                "correct": false,
-                "source_key": "opt_910a547a5b05"
-            },
-            {
-                "text": "René Caillié",
-                "correct": false,
-                "source_key": "opt_68e290a333dd"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.9799fb22acdb49f6b2cb24415c8492a2"
-    },
-    {
-        "number": 14,
-        "category": "energie",
-        "question": "À quoi sert principalement un barrage hydroélectrique comme celui d’Ayamé ?",
-        "explanation": "Un barrage hydroélectrique utilise l’énergie de l’eau pour entraîner des turbines et produire de l’électricité.",
-        "options": [
-            {
-                "text": "À produire directement du caoutchouc",
-                "correct": false,
-                "source_key": "opt_e64bee565d29"
-            },
-            {
-                "text": "À produire de l’électricité grâce à l’énergie de l’eau",
-                "correct": true,
-                "source_key": "opt_a2bc34f81b94"
-            },
-            {
-                "text": "À fabriquer du carburant à partir de sable",
-                "correct": false,
-                "source_key": "opt_1eb3ca3edfe1"
-            },
-            {
-                "text": "À transformer le cacao en chocolat",
-                "correct": false,
-                "source_key": "opt_8ee4dc03c8ba"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.6720c3b8e8a04330b60b4240bc1646b8"
-    },
-    {
-        "number": 15,
-        "category": "agriculture",
-        "question": "Quelle association entre une culture et son produit est correcte ?",
-        "explanation": "Les cabosses du cacaoyer contiennent les fèves qui servent à fabriquer le cacao et le chocolat.",
-        "options": [
-            {
-                "text": "Caféier — régimes de palme",
-                "correct": false,
-                "source_key": "opt_70be046b0623"
-            },
-            {
-                "text": "Palmier à huile — latex de caoutchouc",
-                "correct": false,
-                "source_key": "opt_1b92e2b5f97e"
-            },
-            {
-                "text": "Cacaoyer — fèves de cacao",
-                "correct": true,
-                "source_key": "opt_aab9aa8035c7"
-            },
-            {
-                "text": "Hévéa — grains de café",
-                "correct": false,
-                "source_key": "opt_00f2625f3c5d"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.2ee1c7074f384e87a4a01d98e5a8537a"
-    },
-    {
-        "number": 16,
-        "category": "geographie",
-        "question": "Quel environnement aquatique est associé aux activités de pêche et à la production d’électricité autour d’Ayamé ?",
-        "explanation": "Le barrage d’Ayamé a créé une retenue d’eau sur la Bia. Ce milieu aquatique est associé à différentes activités humaines.",
-        "options": [
-            {
-                "text": "Un glacier de montagne",
-                "correct": false,
-                "source_key": "opt_76bb645812a7"
-            },
-            {
-                "text": "Une mer intérieure salée sans rivière",
-                "correct": false,
-                "source_key": "opt_6726bcaa711d"
-            },
-            {
-                "text": "Un bassin artificiel situé dans le désert du Sahara",
-                "correct": false,
-                "source_key": "opt_3e14adc91ba7"
-            },
-            {
-                "text": "Le lac de retenue formé par le barrage",
-                "correct": true,
-                "source_key": "opt_2719ca54a841"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.b6493a19251b4a8d875d890e7ae56dbd"
-    },
-    {
-        "number": 17,
-        "category": "gastronomie",
-        "question": "Quel plat de la région du Sud-Comoé est décrit comme un gâteau de riz pouvant être sucré ou salé ?",
-        "explanation": "Le bolo est une spécialité mentionnée notamment à Bonoua, dans la région du Sud-Comoé.",
-        "options": [
-            {
-                "text": "Le bolo",
-                "correct": true,
-                "source_key": "opt_de28acc59f87"
-            },
-            {
-                "text": "L’akondèh",
-                "correct": false,
-                "source_key": "opt_2aeb448164a3"
-            },
-            {
-                "text": "Le n’voufou",
-                "correct": false,
-                "source_key": "opt_069039257929"
-            },
-            {
-                "text": "Le kokobé",
-                "correct": false,
-                "source_key": "opt_5dddf9321763"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.ff8b9eb3994f41a39fc2ce5762d2b19b"
-    },
-    {
-        "number": 18,
-        "category": "agriculture",
-        "question": "Quelle culture pérenne est historiquement associée au développement agricole du département d’Aboisso ?",
-        "explanation": "Le café a joué un rôle important dans le développement de l’économie de plantation autour d’Aboisso, notamment à partir des premières plantations d’Elima.",
-        "options": [
-            {
-                "text": "La pomme de terre de montagne",
-                "correct": false,
-                "source_key": "opt_8d28289cf1b5"
-            },
-            {
-                "text": "Le café",
-                "correct": true,
-                "source_key": "opt_c7f771b1187a"
-            },
-            {
-                "text": "Le coton uniquement",
-                "correct": false,
-                "source_key": "opt_19a351db5e04"
-            },
-            {
-                "text": "Le blé d’hiver",
-                "correct": false,
-                "source_key": "opt_af1feb426b78"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.3e9f80ebfc9843758767054ed8e56434"
-    },
-    {
-        "number": 19,
-        "category": "histoire",
-        "question": "Quel roi du Sanwi est associé au traité de protectorat conclu avec les Français en 1843, selon les récits historiques de cette période ?",
-        "explanation": "Des récits historiques sur le Sanwi mentionnent un traité signé en 1843 avec le roi Amon N’Douffou III. Les circonstances et les interprétations de ces relations doivent être étudiées dans leur contexte historique.",
-        "options": [
-            {
-                "text": "Babemba Traoré",
-                "correct": false,
-                "source_key": "opt_ad42670bc49f"
-            },
-            {
-                "text": "Péléforo Gbon Coulibaly",
-                "correct": false,
-                "source_key": "opt_ddd972334b2b"
-            },
-            {
-                "text": "Amon N’Douffou III",
-                "correct": true,
-                "source_key": "opt_e31703c611a8"
-            },
-            {
-                "text": "Samory Touré",
-                "correct": false,
-                "source_key": "opt_21849f67fa90"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.91ddc7821c464922bf410256c4b3d91c"
-    },
-    {
-        "number": 20,
-        "category": "gastronomie",
-        "question": "Le n’voufou peut être préparé avec de l’igname ou de la banane écrasée et de l’huile rouge.",
-        "explanation": "Cette préparation est décrite dans les présentations gastronomiques du Sud-Comoé. Les ingrédients et les méthodes peuvent varier localement.",
-        "options": [
-            {
-                "text": "Faux",
-                "correct": false,
-                "source_key": "opt_1599d8f86d46"
-            },
-            {
-                "text": "Vrai",
-                "correct": true,
-                "source_key": "opt_20a9e594985b"
-            }
-        ],
-        "points": 15,
-        "source_key": "aboisso.q.235758ad73e947e7a707236e070591bb"
-    },
-    {
-        "number": 21,
-        "category": "gastronomie",
-        "question": "Quel accompagnement est associé à certaines sauces traditionnelles du Sud-Comoé ?",
-        "explanation": "L’akondèh, préparation à base de banane et de manioc, est présenté parmi les accompagnements des sauces régionales.",
-        "options": [
-            {
-                "text": "L’akondèh",
-                "correct": true,
-                "source_key": "opt_746a78dcda48"
-            },
-            {
-                "text": "La baguette viennoise",
-                "correct": false,
-                "source_key": "opt_3f3795e1f61b"
-            },
-            {
-                "text": "Les pâtes italiennes uniquement",
-                "correct": false,
-                "source_key": "opt_20deb371028f"
-            },
-            {
-                "text": "Le pain de seigle allemand",
-                "correct": false,
-                "source_key": "opt_283f48dbd4c0"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.44e9b77df81e467c9d13ef92390da3d5"
-    },
-    {
-        "number": 22,
-        "category": "histoire",
-        "question": "Pourquoi le village d’Elima occupe-t-il une place particulière dans l’histoire de l’éducation en Côte d’Ivoire ?",
-        "explanation": "Les sources historiques et les articles de presse ivoiriens situent à Elima la création de cette école en 1882.",
-        "options": [
-            {
-                "text": "Il a accueilli la première école d’aviation civile en 1970",
-                "correct": false,
-                "source_key": "opt_237d94149757"
-            },
-            {
-                "text": "Il est associé à la création de la première école primaire du pays en 1882",
-                "correct": true,
-                "source_key": "opt_997d2456f9dc"
-            },
-            {
-                "text": "Il a accueilli la première université numérique du pays en 2005",
-                "correct": false,
-                "source_key": "opt_bba283f79e00"
-            },
-            {
-                "text": "Il a été le siège du ministère de l’Éducation après l’indépendance",
-                "correct": false,
-                "source_key": "opt_e056b468e5d7"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.9146e88299f94e36a1559c112f362851"
-    },
-    {
-        "number": 23,
-        "category": "economie",
-        "question": "Quelle transformation a marqué l’économie agricole du département d’Aboisso à partir de la fin du XIXe siècle ?",
-        "explanation": "Le café, puis le cacao et d’autres cultures pérennes, ont contribué à structurer l’économie de plantation dans le Sud-Est ivoirien.",
-        "options": [
-            {
-                "text": "L’abandon définitif de toutes les cultures commerciales",
-                "correct": false,
-                "source_key": "opt_8f6c8b7adadb"
-            },
-            {
-                "text": "La spécialisation exclusive dans le blé d’hiver",
-                "correct": false,
-                "source_key": "opt_36fe63a25d17"
-            },
-            {
-                "text": "Le développement progressif d’une économie de plantation",
-                "correct": true,
-                "source_key": "opt_778337445ec5"
-            },
-            {
-                "text": "Le remplacement complet de l’agriculture par l’exploitation de glaciers",
-                "correct": false,
-                "source_key": "opt_530efbea849c"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.e89529d5aea748929b30ba8b471002af"
-    },
-    {
-        "number": 24,
-        "category": "energie",
-        "question": "Quel barrage hydroélectrique a été mis en service en premier dans l’aménagement de la Bia à Ayamé ?",
-        "explanation": "Ayamé I est le premier aménagement hydroélectrique de la Bia ; Ayamé II a été mis en service plus tard.",
-        "options": [
-            {
-                "text": "Ayamé II",
-                "correct": false,
-                "source_key": "opt_587ef2220ec6"
-            },
-            {
-                "text": "Kossou",
-                "correct": false,
-                "source_key": "opt_4495488c479c"
-            },
-            {
-                "text": "Buyo",
-                "correct": false,
-                "source_key": "opt_c032c1f0e062"
-            },
-            {
-                "text": "Ayamé I",
-                "correct": true,
-                "source_key": "opt_7b8f2c5c94eb"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.856ca9cecea542b1bf6a4e707e8099d3"
-    },
-    {
-        "number": 25,
-        "category": "geographie",
-        "question": "Quel site touristique répertorié autour d’Aboisso est associé à des plantations de palmiers à huile ?",
-        "explanation": "Les plantations de palmiers à huile d’Ehania figurent parmi les attraits touristiques répertoriés pour Aboisso et ses environs.",
-        "options": [
-            {
-                "text": "Ehania",
-                "correct": true,
-                "source_key": "opt_24a2932e3c4b"
-            },
-            {
-                "text": "Le mont Nimba",
-                "correct": false,
-                "source_key": "opt_c94ef1532464"
-            },
-            {
-                "text": "La plage de Grand-Béréby",
-                "correct": false,
-                "source_key": "opt_53c7ece8bda6"
-            },
-            {
-                "text": "La basilique de Yamoussoukro",
-                "correct": false,
-                "source_key": "opt_876be30cbb4f"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.94c2319b734644feaee713301ab6e474"
-    },
-    {
-        "number": 26,
-        "category": "gastronomie",
-        "question": "Quelle spécialité est une galette ou préparation à base de manioc, citée dans la gastronomie régionale ?",
-        "explanation": "L’attoukou est décrit comme une préparation de manioc. Il faut le distinguer du bolo, qui est un gâteau de riz.",
-        "options": [
-            {
-                "text": "Le kokobé",
-                "correct": false,
-                "source_key": "opt_99ece5958d20"
-            },
-            {
-                "text": "L’attoukou",
-                "correct": true,
-                "source_key": "opt_dcb30e7b3c1f"
-            },
-            {
-                "text": "Le bolo de riz",
-                "correct": false,
-                "source_key": "opt_88ae2b70a3b7"
-            },
-            {
-                "text": "Le tchapalo de mil",
-                "correct": false,
-                "source_key": "opt_677990f63e02"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.61ea02a8c99945fba9adf9de5412a108"
-    },
-    {
-        "number": 27,
-        "category": "agriculture",
-        "question": "Quelle culture est utilisée pour produire les fèves à l’origine du chocolat ?",
-        "explanation": "Les fèves de cacao sont extraites des cabosses du cacaoyer, puis transformées pour produire différents ingrédients du chocolat.",
-        "options": [
-            {
-                "text": "Le palmier à huile",
-                "correct": false,
-                "source_key": "opt_eaade8be2cbe"
-            },
-            {
-                "text": "L’hévéa",
-                "correct": false,
-                "source_key": "opt_0c9b29b74c7f"
-            },
-            {
-                "text": "Le cacao",
-                "correct": true,
-                "source_key": "opt_70791ff8c7c0"
-            },
-            {
-                "text": "Le café",
-                "correct": false,
-                "source_key": "opt_efa29c03c956"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.f20ef98dc4164feba7ae4465202a864d"
-    },
-    {
-        "number": 28,
-        "category": "histoire",
-        "question": "Elima est associée à la fois aux débuts de la culture du café en Côte d’Ivoire et à l’histoire de l’enseignement primaire.",
-        "explanation": "Le village est connu pour les premières plantations de café attribuées à Arthur Verdier et pour la création de l’école primaire en 1882.",
-        "options": [
-            {
-                "text": "Faux",
-                "correct": false,
-                "source_key": "opt_1c30fc321239"
-            },
-            {
-                "text": "Vrai",
-                "correct": true,
-                "source_key": "opt_99ed8c01c325"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.8a20dd6a94064e50a1bd4290033ab42b"
-    },
-    {
-        "number": 29,
-        "category": "gastronomie",
-        "question": "Quelle ressource aquatique est particulièrement mise en avant comme spécialité culinaire dans les environs d’Ayamé et d’Aboisso ?",
-        "explanation": "Le kokobé, décrit comme une écrevisse noire, est une ressource appréciée dans la gastronomie régionale.",
-        "options": [
-            {
-                "text": "Le kokobé",
-                "correct": true,
-                "source_key": "opt_5d547494925e"
-            },
-            {
-                "text": "Le hareng de l’Atlantique Nord",
-                "correct": false,
-                "source_key": "opt_d1654d8ad639"
-            },
-            {
-                "text": "Le saumon d’Alaska",
-                "correct": false,
-                "source_key": "opt_6c476b5d2bf5"
-            },
-            {
-                "text": "La morue polaire",
-                "correct": false,
-                "source_key": "opt_9b484a43b768"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.4d55c29fb95b4fe0af033f1b511120cc"
-    },
-    {
-        "number": 30,
-        "category": "economie",
-        "question": "Pourquoi les cultures pérennes ont-elles une importance particulière dans l’économie d’Aboisso ?",
-        "explanation": "Le café, le cacao, le palmier à huile et l’hévéa sont des cultures pérennes qui structurent une partie de l’économie agricole locale.",
-        "options": [
-            {
-                "text": "Elles ne peuvent être vendues sur aucun marché",
-                "correct": false,
-                "source_key": "opt_4d6ff65c968f"
-            },
-            {
-                "text": "Elles fournissent des récoltes commerciales sur plusieurs années",
-                "correct": true,
-                "source_key": "opt_4b147fc30492"
-            },
-            {
-                "text": "Elles sont toutes récoltées chaque jour après un seul semis",
-                "correct": false,
-                "source_key": "opt_19ec2b8f8823"
-            },
-            {
-                "text": "Elles ne nécessitent jamais d’entretien",
-                "correct": false,
-                "source_key": "opt_46a5c3531fda"
-            }
-        ],
-        "points": 20,
-        "source_key": "aboisso.q.de3875c0886143e5855e306d333b1ad4"
-    },
-    {
-        "number": 31,
-        "category": "histoire",
-        "question": "Quel rôle jouait l’installation d’Elima dans le développement de la filière café à la fin du XIXe siècle ?",
-        "explanation": "Elima accueillait des plantations de café associées à Arthur Verdier et une usine de traitement qui préparait les récoltes avant leur expédition.",
-        "options": [
-            {
-                "text": "Elle servait de port d’exportation du coton cultivé au nord du pays",
-                "correct": false,
-                "source_key": "opt_8d6f21b632e9"
-            },
-            {
-                "text": "Elle était une usine de fabrication de machines électriques",
-                "correct": false,
-                "source_key": "opt_78f339a7a0a5"
-            },
-            {
-                "text": "Elle servait de plantation et de centre de traitement du café",
-                "correct": true,
-                "source_key": "opt_5847b675a692"
-            },
-            {
-                "text": "Elle était exclusivement une mine de charbon",
-                "correct": false,
-                "source_key": "opt_2c9c94ee19f2"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.d9a85d77072644818166689205256dc2"
-    },
-    {
-        "number": 32,
-        "category": "energie",
-        "question": "Quel effet direct la construction du barrage d’Ayamé I a-t-elle eu sur le paysage local ?",
-        "explanation": "La mise en eau du barrage a créé une retenue sur la Bia, modifiant le paysage et les usages locaux de l’eau.",
-        "options": [
-            {
-                "text": "La création d’une chaîne de montagnes",
-                "correct": false,
-                "source_key": "opt_6e43b209af2c"
-            },
-            {
-                "text": "L’apparition d’un désert de sable",
-                "correct": false,
-                "source_key": "opt_482e4dbf8600"
-            },
-            {
-                "text": "La disparition de la rivière Bia à l’échelle nationale",
-                "correct": false,
-                "source_key": "opt_5df3ee41fa5f"
-            },
-            {
-                "text": "La formation d’un lac de retenue",
-                "correct": true,
-                "source_key": "opt_c56e36323a45"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.2936faf43b6140e591d79dbed2069fb9"
-    },
-    {
-        "number": 33,
-        "category": "agriculture",
-        "question": "Quel défi peut accompagner l’expansion des plantations dans le département d’Aboisso ?",
-        "explanation": "Des travaux de recherche sur le département étudient les liens entre l’expansion de l’économie de plantation et la dégradation du patrimoine forestier.",
-        "options": [
-            {
-                "text": "La pression sur les espaces forestiers",
-                "correct": true,
-                "source_key": "opt_359ee079d01d"
-            },
-            {
-                "text": "L’augmentation naturelle des glaciers",
-                "correct": false,
-                "source_key": "opt_b3fc365dd844"
-            },
-            {
-                "text": "La disparition de toute saison des pluies",
-                "correct": false,
-                "source_key": "opt_6af804421f6a"
-            },
-            {
-                "text": "La transformation automatique des plantations en récifs coralliens",
-                "correct": false,
-                "source_key": "opt_130b04c51ad7"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.06cbb102ddeb4365857c2238cb553340"
-    },
-    {
-        "number": 34,
-        "category": "gastronomie",
-        "question": "Quelle association entre une spécialité et sa description est correcte ?",
-        "explanation": "Le bolo est une préparation de riz mentionnée notamment dans la gastronomie de Bonoua, dans le Sud-Comoé.",
-        "options": [
-            {
-                "text": "N’voufou — huile extraite des fèves de cacao",
-                "correct": false,
-                "source_key": "opt_ca77f783e734"
-            },
-            {
-                "text": "Bolo — gâteau de riz sucré ou salé",
-                "correct": true,
-                "source_key": "opt_c454c1667bf6"
-            },
-            {
-                "text": "Kokobé — gâteau de riz",
-                "correct": false,
-                "source_key": "opt_bfc5d1012221"
-            },
-            {
-                "text": "Akondèh — boisson fermentée au café",
-                "correct": false,
-                "source_key": "opt_61211e73e4a5"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.5941d212c6f144afb3d780bb793c11a8"
-    },
-    {
-        "number": 35,
-        "category": "agriculture",
-        "question": "Quel lien historique est établi entre Arthur Verdier et Elima ?",
-        "explanation": "Arthur Verdier a développé des plantations à Elima à partir de la fin du XIXe siècle. Cette histoire est liée aux débuts de l’économie de plantation ivoirienne.",
-        "options": [
-            {
-                "text": "Il a fondé l’Université Peleforo Gon Coulibaly",
-                "correct": false,
-                "source_key": "opt_9df201fbde4f"
-            },
-            {
-                "text": "Il a créé le parc national de la Comoé",
-                "correct": false,
-                "source_key": "opt_7f2f4d7814ce"
-            },
-            {
-                "text": "Il est associé aux premières plantations de café de Côte d’Ivoire",
-                "correct": true,
-                "source_key": "opt_073242206645"
-            },
-            {
-                "text": "Il a construit le barrage d’Ayamé II",
-                "correct": false,
-                "source_key": "opt_ffcd9739d353"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.83a08a6fa8f440cdbdd11fcf24fbb43e"
-    },
-    {
-        "number": 36,
-        "category": "energie",
-        "question": "Quel est l’ordre chronologique correct des mises en service des deux aménagements hydroélectriques d’Ayamé ?",
-        "explanation": "Ayamé I a été mis en service en 1959 et Ayamé II en 1965, selon les informations de la Compagnie ivoirienne d’électricité.",
-        "options": [
-            {
-                "text": "Ayamé II avant Ayamé I",
-                "correct": false,
-                "source_key": "opt_bf39176e9c35"
-            },
-            {
-                "text": "Les deux avant la construction de toute infrastructure électrique en Côte d’Ivoire",
-                "correct": false,
-                "source_key": "opt_7f8ef3392659"
-            },
-            {
-                "text": "Ayamé II en 1882, puis Ayamé I en 1900",
-                "correct": false,
-                "source_key": "opt_b4e0707980e3"
-            },
-            {
-                "text": "Ayamé I avant Ayamé II",
-                "correct": true,
-                "source_key": "opt_8f9ae9657f43"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.cc01faba2553474eb0df64d00e5c20e1"
-    },
-    {
-        "number": 37,
-        "category": "gastronomie",
-        "question": "Pourquoi est-il préférable de présenter le kokobé comme une spécialité du Sud-Comoé plutôt que comme un plat exclusivement propre à Aboisso ?",
-        "explanation": "Les présentations touristiques régionales citent le kokobé notamment autour d’Ayamé et d’Aboisso. Il convient donc de respecter cette portée géographique.",
-        "options": [
-            {
-                "text": "Parce qu’il est également associé à Ayamé et que son usage dépasse une seule localité",
-                "correct": true,
-                "source_key": "opt_c1082326848c"
-            },
-            {
-                "text": "Parce qu’il est interdit de le consommer à Aboisso",
-                "correct": false,
-                "source_key": "opt_26d460181cb6"
-            },
-            {
-                "text": "Parce qu’il s’agit d’un plat exclusivement européen",
-                "correct": false,
-                "source_key": "opt_4ad0d57a50ab"
-            },
-            {
-                "text": "Parce qu’il n’est jamais préparé dans la région",
-                "correct": false,
-                "source_key": "opt_5bf4663db304"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.abd19683097840ac948e252b6f480ee0"
-    },
-    {
-        "number": 38,
-        "category": "economie",
-        "question": "Quelle combinaison correspond à plusieurs cultures pérennes importantes dans l’économie de plantation du Sud-Comoé ?",
-        "explanation": "Ces cultures ont joué un rôle important dans l’économie agricole du département d’Aboisso et de ses environs.",
-        "options": [
-            {
-                "text": "Thé, houblon, canneberge et érable",
-                "correct": false,
-                "source_key": "opt_4889fed45a80"
-            },
-            {
-                "text": "Café, cacao, palmier à huile et hévéa",
-                "correct": true,
-                "source_key": "opt_6e80af7b2c7e"
-            },
-            {
-                "text": "Blé, orge, avoine et seigle",
-                "correct": false,
-                "source_key": "opt_147f5460fd31"
-            },
-            {
-                "text": "Pommes, poires, cerises et myrtilles",
-                "correct": false,
-                "source_key": "opt_7cfbe08a549e"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.cc15b2db9add492d99c20f1436ee8f2e"
-    },
-    {
-        "number": 39,
-        "category": "histoire",
-        "question": "Quelle affirmation distingue correctement l’école historique d’Elima d’un établissement d’enseignement supérieur ?",
-        "explanation": "Les sources historiques la présentent comme la première école primaire de Côte d’Ivoire, et non comme une université.",
-        "options": [
-            {
-                "text": "L’école d’Elima était un institut de recherche nucléaire",
-                "correct": false,
-                "source_key": "opt_c45025be4f19"
-            },
-            {
-                "text": "L’école d’Elima était une école de navigation spatiale",
-                "correct": false,
-                "source_key": "opt_e23c5c401b5b"
-            },
-            {
-                "text": "L’école d’Elima était une école primaire créée en 1882",
-                "correct": true,
-                "source_key": "opt_d86b9f5a28d9"
-            },
-            {
-                "text": "L’école d’Elima était une université créée en 1882",
-                "correct": false,
-                "source_key": "opt_b86b44f926aa"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.42ab1f1401e049c48394151e83333465"
-    },
-    {
-        "number": 40,
-        "category": "geographie",
-        "question": "Quel élément permet de relier le barrage d’Ayamé à la question de la gestion des ressources naturelles ?",
-        "explanation": "Le lac de retenue est lié à différents usages de l’eau et aux activités humaines. Sa gestion doit tenir compte des dimensions énergétiques, économiques et environnementales.",
-        "options": [
-            {
-                "text": "Une calotte glaciaire permanente",
-                "correct": false,
-                "source_key": "opt_f948c3808dfe"
-            },
-            {
-                "text": "Une réserve de pétrole située au sommet d’un volcan actif",
-                "correct": false,
-                "source_key": "opt_4e3f9ad6be8e"
-            },
-            {
-                "text": "Une plage océanique située au milieu du barrage",
-                "correct": false,
-                "source_key": "opt_63eae4f1b970"
-            },
-            {
-                "text": "Son lac de retenue, qui constitue un milieu aquatique utilisé par les populations",
-                "correct": true,
-                "source_key": "opt_7391a9a3e899"
-            }
-        ],
-        "points": 25,
-        "source_key": "aboisso.q.8542021f762847f99c95721061e10375"
-    },
-    {
-        "number": 41,
-        "category": "agriculture",
-        "question": "Quel fait rend Elima particulièrement important dans l’histoire économique de la Côte d’Ivoire ?",
-        "explanation": "Elima occupe une place importante dans les débuts de la culture commerciale du café et de son traitement en Côte d’Ivoire.",
-        "options": [
-            {
-                "text": "Le développement de plantations de café et la mise en place d’installations de traitement du café à la fin du XIXe siècle",
-                "correct": true,
-                "source_key": "opt_4f8efd0eac5e"
-            },
-            {
-                "text": "La découverte de la première mine d’uranium du pays",
-                "correct": false,
-                "source_key": "opt_06fcfef18be8"
-            },
-            {
-                "text": "La création de la première usine de fabrication de smartphones",
-                "correct": false,
-                "source_key": "opt_6260f00c06ac"
-            },
-            {
-                "text": "La création de la première centrale solaire du pays en 1882",
-                "correct": false,
-                "source_key": "opt_62447fb20628"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.4e0f94cc3a2241caa0e779a80a3d3edb"
-    },
-    {
-        "number": 42,
-        "category": "economie",
-        "question": "Quelle conséquence économique peut découler du vieillissement des plantations de cultures pérennes ?",
-        "explanation": "Les plantations vieillissantes peuvent perdre en productivité. Leur renouvellement constitue donc un enjeu pour les producteurs et les filières agricoles.",
-        "options": [
-            {
-                "text": "La disparition de tout besoin de main-d’œuvre agricole",
-                "correct": false,
-                "source_key": "opt_b73901e19d25"
-            },
-            {
-                "text": "Une baisse possible des rendements et un besoin de renouvellement des vergers",
-                "correct": true,
-                "source_key": "opt_244e6bdac8f2"
-            },
-            {
-                "text": "Une augmentation automatique des rendements sans entretien",
-                "correct": false,
-                "source_key": "opt_7df5fef46f54"
-            },
-            {
-                "text": "La transformation immédiate du café en cacao",
-                "correct": false,
-                "source_key": "opt_4f71685e2058"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.ce2d9129c20840d883b99c653d2603bb"
-    },
-    {
-        "number": 43,
-        "category": "energie",
-        "question": "Quel événement s’est produit en 1959 dans le secteur énergétique ivoirien, selon les données de la Compagnie ivoirienne d’électricité ?",
-        "explanation": "Ayamé I est présenté comme le premier barrage hydroélectrique mis en service en Côte d’Ivoire, en 1959.",
-        "options": [
-            {
-                "text": "La création du barrage de Kossou",
-                "correct": false,
-                "source_key": "opt_ff2eb406c92d"
-            },
-            {
-                "text": "La création de la centrale thermique de Vridi",
-                "correct": false,
-                "source_key": "opt_f494374d7f3a"
-            },
-            {
-                "text": "La mise en service d’Ayamé I",
-                "correct": true,
-                "source_key": "opt_6c36c2fbf3b6"
-            },
-            {
-                "text": "La mise en service d’Ayamé II",
-                "correct": false,
-                "source_key": "opt_1ee498d749cd"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.50421ab03b044d5eba5b78255e4273f6"
-    },
-    {
-        "number": 44,
-        "category": "gastronomie",
-        "question": "Quelle conclusion est la plus rigoureuse lorsqu’on étudie les plats traditionnels du Sud-Comoé ?",
-        "explanation": "Les traditions culinaires évoluent selon les familles et les communautés. Il est important de distinguer une spécialité régionale d’un plat strictement propre à une seule ville.",
-        "options": [
-            {
-                "text": "Chaque plat est nécessairement exclusif à une seule ville",
-                "correct": false,
-                "source_key": "opt_be62539478d4"
-            },
-            {
-                "text": "Tous les plats de la région utilisent les mêmes ingrédients",
-                "correct": false,
-                "source_key": "opt_823f9981f472"
-            },
-            {
-                "text": "La cuisine régionale ne comprend aucune préparation à base de manioc",
-                "correct": false,
-                "source_key": "opt_5f34a27f14de"
-            },
-            {
-                "text": "Certaines spécialités sont associées à plusieurs localités et les recettes peuvent varier",
-                "correct": true,
-                "source_key": "opt_0512c250614d"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.b746d9902ca64628b448088a48caee35"
-    },
-    {
-        "number": 45,
-        "category": "histoire",
-        "question": "À quel royaume historique Aboisso et une partie de son arrière-pays sont-ils associés ?",
-        "explanation": "Le Sanwi est un royaume historique associé au Sud-Est ivoirien. Son histoire est liée notamment aux populations agni et aux relations politiques de la région.",
-        "options": [
-            {
-                "text": "Le royaume du Sanwi",
-                "correct": true,
-                "source_key": "opt_5b2fefc2bab9"
-            },
-            {
-                "text": "Le royaume du Dahomey",
-                "correct": false,
-                "source_key": "opt_0bc0af4e30dc"
-            },
-            {
-                "text": "L’empire du Mali médiéval",
-                "correct": false,
-                "source_key": "opt_ddebbd84f238"
-            },
-            {
-                "text": "Le royaume du Kongo",
-                "correct": false,
-                "source_key": "opt_0194151ba41c"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.76d2720611824a49a6103da79ff04893"
-    },
-    {
-        "number": 46,
-        "category": "histoire",
-        "question": "Quel personnage est associé à la fondation de Krindjabo, capitale historique du Sanwi, dans les récits traditionnels ?",
-        "explanation": "Des récits traditionnels attribuent à Aka Essoin un rôle dans la découverte du site de Krindjabo. Cette attribution doit être comprise comme un récit historique transmis, et non comme un fait dont tous les détails seraient établis par des documents contemporains.",
-        "options": [
-            {
-                "text": "Félix Houphouët-Boigny",
-                "correct": false,
-                "source_key": "opt_8279e7a3dbc4"
-            },
-            {
-                "text": "Aka Essoin",
-                "correct": true,
-                "source_key": "opt_e600f6332bcc"
-            },
-            {
-                "text": "Arthur Verdier",
-                "correct": false,
-                "source_key": "opt_587911280a6f"
-            },
-            {
-                "text": "Samory Touré",
-                "correct": false,
-                "source_key": "opt_9d18df4643c7"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.ae246ac886ad4242a6d2dead124ca1b5"
-    },
-    {
-        "number": 47,
-        "category": "geographie",
-        "question": "Quel ensemble réunit des attraits touristiques répertoriés autour d’Aboisso ?",
-        "explanation": "Ces sites et espaces figurent parmi les attraits touristiques associés à Aboisso et à ses environs.",
-        "options": [
-            {
-                "text": "Les glaciers alpins, les fjords norvégiens et les geysers islandais",
-                "correct": false,
-                "source_key": "opt_7fba9bf4aebb"
-            },
-            {
-                "text": "Les plages de Grand-Béréby, le mont Nimba et les cascades de Man uniquement",
-                "correct": false,
-                "source_key": "opt_ec45da2a92fd"
-            },
-            {
-                "text": "Les barrages d’Ayamé, les plantations de palmiers à huile d’Ehania et les forêts classées",
-                "correct": true,
-                "source_key": "opt_6c4040008d89"
-            },
-            {
-                "text": "La tour Eiffel, le mont Fuji et les pyramides de Gizeh",
-                "correct": false,
-                "source_key": "opt_b25f2ef18540"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.53d4ecc58f9246f396315458c48fbb60"
-    },
-    {
-        "number": 48,
-        "category": "agriculture",
-        "question": "Pourquoi faut-il étudier ensemble l’expansion des plantations et la conservation des forêts dans le département d’Aboisso ?",
-        "explanation": "Des travaux de recherche consacrés au département d’Aboisso analysent les relations entre l’économie de plantation et la dégradation du patrimoine forestier.",
-        "options": [
-            {
-                "text": "Parce que les plantations n’occupent jamais de terrain",
-                "correct": false,
-                "source_key": "opt_e8edf978fa42"
-            },
-            {
-                "text": "Parce que les forêts sont entièrement constituées de cultures de café",
-                "correct": false,
-                "source_key": "opt_3d1faa2c592f"
-            },
-            {
-                "text": "Parce que la conservation des forêts empêche toute activité agricole",
-                "correct": false,
-                "source_key": "opt_2502487a7b0d"
-            },
-            {
-                "text": "Parce que l’extension des cultures peut exercer une pression sur les espaces forestiers",
-                "correct": true,
-                "source_key": "opt_098b48d924cf"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.b71def4a32f44d5ca55140d6af5a6620"
-    },
-    {
-        "number": 49,
-        "category": "patrimoine",
-        "question": "Quelle méthode permet de mieux documenter l’histoire de l’école d’Elima et des premières plantations de café ?",
-        "explanation": "Le croisement des sources aide à confirmer les dates, à comprendre le contexte colonial et à identifier les éléments qui restent discutés.",
-        "options": [
-            {
-                "text": "Croiser les archives, les travaux historiques et les témoignages disponibles",
-                "correct": true,
-                "source_key": "opt_1a148dc7d529"
-            },
-            {
-                "text": "Retenir uniquement une publication non vérifiée sur les réseaux sociaux",
-                "correct": false,
-                "source_key": "opt_90d2d650ce18"
-            },
-            {
-                "text": "Inventer des dates lorsqu’elles ne concordent pas",
-                "correct": false,
-                "source_key": "opt_a6e308096977"
-            },
-            {
-                "text": "Considérer que toute tradition orale est nécessairement fausse",
-                "correct": false,
-                "source_key": "opt_73242a23873d"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.66e345a1c6dc4c48bf4eccc97bdb3ae1"
-    },
-    {
-        "number": 50,
-        "category": "culture",
-        "question": "Quelle proposition résume le mieux les caractéristiques historiques, économiques et culturelles d’Aboisso et du Sud-Comoé ?",
-        "explanation": "Aboisso et le Sud-Comoé réunissent des traditions historiques, une gastronomie régionale diversifiée, des activités agricoles importantes et des sites liés à la production d’électricité.",
-        "options": [
-            {
-                "text": "Une région située sur la côte méditerranéenne",
-                "correct": false,
-                "source_key": "opt_e8673efba4f8"
-            },
-            {
-                "text": "Une région associant histoire du Sanwi, gastronomie, agriculture de plantation, patrimoine et énergie hydroélectrique",
-                "correct": true,
-                "source_key": "opt_1cb69091e96e"
-            },
-            {
-                "text": "Une région exclusivement spécialisée dans les sports d’hiver",
-                "correct": false,
-                "source_key": "opt_ba36ce3953a0"
-            },
-            {
-                "text": "Une région dépourvue d’activités agricoles et de traditions culinaires",
-                "correct": false,
-                "source_key": "opt_3c9903588188"
-            }
-        ],
-        "points": 30,
-        "source_key": "aboisso.q.49ff2fb5d5b1490ca604ceda6712af2a"
-    }
+  {
+    "number": 1,
+    "category": "geographie",
+    "question": "Dans quelle région administrative se situe Aboisso ?",
+    "explanation": "Aboisso est le chef-lieu de la région du Sud-Comoé, au sud-est du pays.",
+    "options": [
+      {
+        "text": "Le Sud-Comoé",
+        "correct": true,
+        "source_key": "opt_78e2fe1c1d69"
+      },
+      {
+        "text": "Le Poro",
+        "correct": false,
+        "source_key": "opt_497e29f2585c"
+      },
+      {
+        "text": "Le Bélier",
+        "correct": false,
+        "source_key": "opt_58db4158dbc3"
+      },
+      {
+        "text": "La Mé",
+        "correct": false,
+        "source_key": "opt_fccd66a3631f"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.4125865a6d745dfd96496e92f3466028"
+  },
+  {
+    "number": 2,
+    "category": "geographie",
+    "question": "Quelle partie de la Côte d’Ivoire accueille la ville d’Aboisso ?",
+    "explanation": "Aboisso est située dans le sud-est ivoirien, à proximité de la frontière ghanéenne.",
+    "options": [
+      {
+        "text": "Le nord-ouest",
+        "correct": false,
+        "source_key": "opt_c940e602e83d"
+      },
+      {
+        "text": "Le sud-est",
+        "correct": true,
+        "source_key": "opt_b65a69318bf5"
+      },
+      {
+        "text": "Le centre-nord",
+        "correct": false,
+        "source_key": "opt_2fa13b953bab"
+      },
+      {
+        "text": "Le sud-ouest",
+        "correct": false,
+        "source_key": "opt_ef852fdfdf78"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.23d4cbe47e4951fa83b05d4fab7ba660"
+  },
+  {
+    "number": 3,
+    "category": "geographie",
+    "question": "Quel cours d’eau traverse Aboisso et alimente les barrages d’Ayamé ?",
+    "explanation": "La Bia traverse le secteur d’Aboisso et alimente les centrales hydroélectriques d’Ayamé.",
+    "options": [
+      {
+        "text": "La Comoé",
+        "correct": false,
+        "source_key": "opt_493838460e47"
+      },
+      {
+        "text": "Le Bandama",
+        "correct": false,
+        "source_key": "opt_0e3c834b4842"
+      },
+      {
+        "text": "La Bia",
+        "correct": true,
+        "source_key": "opt_84e48d367b09"
+      },
+      {
+        "text": "Le Sassandra",
+        "correct": false,
+        "source_key": "opt_dc1db1fbe833"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.e984a86e8e02598a9cc5539739706d84"
+  },
+  {
+    "number": 4,
+    "category": "culture",
+    "question": "Quel peuple est particulièrement associé à l’histoire d’Aboisso et du Sanwi ?",
+    "explanation": "Les Agni Sanwi occupent une place importante dans l’histoire culturelle locale.",
+    "options": [
+      {
+        "text": "Les Sénoufo",
+        "correct": false,
+        "source_key": "opt_acd76a4403e3"
+      },
+      {
+        "text": "Les Agni",
+        "correct": true,
+        "source_key": "opt_d25a8f1f8f8c"
+      },
+      {
+        "text": "Les Dan",
+        "correct": false,
+        "source_key": "opt_222938a21611"
+      },
+      {
+        "text": "Les Bété",
+        "correct": false,
+        "source_key": "opt_663f20f231b3"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.9cbe7421a18d5f4aaca644c662cb8cde"
+  },
+  {
+    "number": 5,
+    "category": "histoire",
+    "question": "Quelle localité proche d’Aboisso est le siège traditionnel du royaume Sanwi ?",
+    "explanation": "Krindjabo est la capitale traditionnelle du royaume Sanwi, distincte de la ville d’Aboisso.",
+    "options": [
+      {
+        "text": "Krindjabo",
+        "correct": true,
+        "source_key": "opt_3d7e083847b6"
+      },
+      {
+        "text": "Waraniéné",
+        "correct": false,
+        "source_key": "opt_6b0cb8d022cf"
+      },
+      {
+        "text": "Fakaha",
+        "correct": false,
+        "source_key": "opt_8bfe597a54c3"
+      },
+      {
+        "text": "Kong",
+        "correct": false,
+        "source_key": "opt_6720ef653c64"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.930fde1a90645513afa09d4596d7ee3d"
+  },
+  {
+    "number": 6,
+    "category": "geographie",
+    "question": "Quel pays est voisin de la région ivoirienne dont Aboisso est chef-lieu ?",
+    "explanation": "La région du Sud-Comoé se situe près de la frontière entre la Côte d’Ivoire et le Ghana.",
+    "options": [
+      {
+        "text": "Le Sénégal",
+        "correct": false,
+        "source_key": "opt_dd77ea44c018"
+      },
+      {
+        "text": "Le Ghana",
+        "correct": true,
+        "source_key": "opt_42741b623561"
+      },
+      {
+        "text": "Le Bénin",
+        "correct": false,
+        "source_key": "opt_f1d8f50e5de8"
+      },
+      {
+        "text": "Le Mali",
+        "correct": false,
+        "source_key": "opt_ac213e14e58a"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.34a0ae21656958bf8e4f0274e38884b5"
+  },
+  {
+    "number": 7,
+    "category": "energie",
+    "question": "Quelle localité voisine a donné son nom à deux barrages hydroélectriques ?",
+    "explanation": "Les centrales Ayamé I et Ayamé II ont été aménagées sur la rivière Bia.",
+    "options": [
+      {
+        "text": "Bonoua",
+        "correct": false,
+        "source_key": "opt_96363b5256d4"
+      },
+      {
+        "text": "Ayamé",
+        "correct": true,
+        "source_key": "opt_f97c4ab9f4be"
+      },
+      {
+        "text": "Dabou",
+        "correct": false,
+        "source_key": "opt_faa68017346f"
+      },
+      {
+        "text": "Tiassalé",
+        "correct": false,
+        "source_key": "opt_76e348e22c4c"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.cc9b13e4ca945621984f9910fd9edd1a"
+  },
+  {
+    "number": 8,
+    "category": "agriculture",
+    "question": "Quelle culture industrielle est associée aux grandes plantations d’Ehania, près d’Aboisso ?",
+    "explanation": "La palmeraie d’Ehania est liée à la production d’huile de palme.",
+    "options": [
+      {
+        "text": "Le palmier à huile",
+        "correct": true,
+        "source_key": "opt_691ee9f94b17"
+      },
+      {
+        "text": "Le coton",
+        "correct": false,
+        "source_key": "opt_ca07b4488674"
+      },
+      {
+        "text": "Le blé",
+        "correct": false,
+        "source_key": "opt_08a9d0bb644f"
+      },
+      {
+        "text": "Le sorgho",
+        "correct": false,
+        "source_key": "opt_9e527d3a6a7f"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.c78140297d4a5350b0a6d31fb6da3351"
+  },
+  {
+    "number": 9,
+    "category": "culture",
+    "question": "Quelle fête traditionnelle agni du Sanwi marque symboliquement une nouvelle année ?",
+    "explanation": "La fête des ignames est un moment important du calendrier culturel sanwi.",
+    "options": [
+      {
+        "text": "La fête du mil",
+        "correct": false,
+        "source_key": "opt_65cd935f5c35"
+      },
+      {
+        "text": "La fête du coton",
+        "correct": false,
+        "source_key": "opt_797bcf623974"
+      },
+      {
+        "text": "La fête des semailles",
+        "correct": false,
+        "source_key": "opt_7977bbb8b79b"
+      },
+      {
+        "text": "La fête des ignames",
+        "correct": true,
+        "source_key": "opt_510e5bcb0dff"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.2e42e85ec0925ecf9d733938c2d8faa6"
+  },
+  {
+    "number": 10,
+    "category": "geographie",
+    "question": "Quelle grande ville ivoirienne est située à l’ouest d’Aboisso ?",
+    "explanation": "Aboisso se trouve à l’est d’Abidjan, dans le Sud-Comoé.",
+    "options": [
+      {
+        "text": "Bondoukou",
+        "correct": false,
+        "source_key": "opt_32878ab8c2ee"
+      },
+      {
+        "text": "Bouna",
+        "correct": false,
+        "source_key": "opt_eb6eb65d5588"
+      },
+      {
+        "text": "Abidjan",
+        "correct": true,
+        "source_key": "opt_c1f2d1d0051b"
+      },
+      {
+        "text": "Ferkessédougou",
+        "correct": false,
+        "source_key": "opt_220d80396ef3"
+      }
+    ],
+    "points": 10,
+    "source_key": "aboisso.q.20bb6864c49a53f7a1f3b0d6e974536f"
+  },
+  {
+    "number": 11,
+    "category": "agriculture",
+    "question": "Quel arbre est cultivé dans la région d’Aboisso pour produire du latex ?",
+    "explanation": "L’hévéaculture fait partie des activités agricoles de rente du Sud-Comoé.",
+    "options": [
+      {
+        "text": "L’hévéa",
+        "correct": true,
+        "source_key": "opt_ad54ca1d5633"
+      },
+      {
+        "text": "Le karité",
+        "correct": false,
+        "source_key": "opt_bfbe706587ed"
+      },
+      {
+        "text": "Le baobab",
+        "correct": false,
+        "source_key": "opt_b48ed4a8a34e"
+      },
+      {
+        "text": "Le teck",
+        "correct": false,
+        "source_key": "opt_38afcd4d0d03"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.10fa6f3d5f66589f9c4e2ba49dc47c57"
+  },
+  {
+    "number": 12,
+    "category": "agriculture",
+    "question": "Quel produit agricole de la région sert à fabriquer du chocolat ?",
+    "explanation": "Le cacao fait partie des cultures de rente du secteur d’Aboisso.",
+    "options": [
+      {
+        "text": "Le cacao",
+        "correct": true,
+        "source_key": "opt_103b8930457d"
+      },
+      {
+        "text": "Le coton",
+        "correct": false,
+        "source_key": "opt_3359dc50b3e3"
+      },
+      {
+        "text": "L’anacarde",
+        "correct": false,
+        "source_key": "opt_2d1d9d17e889"
+      },
+      {
+        "text": "Le sésame",
+        "correct": false,
+        "source_key": "opt_3c6eb24b0389"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.141dde37d8d252e3a88d70b177805266"
+  },
+  {
+    "number": 13,
+    "category": "agriculture",
+    "question": "Quel tubercule consommé localement entre dans la fabrication de l’attiéké ?",
+    "explanation": "Le manioc figure parmi les cultures vivrières citées pour la région d’Aboisso.",
+    "options": [
+      {
+        "text": "Le taro",
+        "correct": false,
+        "source_key": "opt_03adf0e7cb48"
+      },
+      {
+        "text": "Le manioc",
+        "correct": true,
+        "source_key": "opt_9b9a75ff7af1"
+      },
+      {
+        "text": "L’igname",
+        "correct": false,
+        "source_key": "opt_90adf3ee36ed"
+      },
+      {
+        "text": "La patate douce",
+        "correct": false,
+        "source_key": "opt_80f9ae8a8989"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.978fd0cdcd7f5685bbcf5db2a73e4e22"
+  },
+  {
+    "number": 14,
+    "category": "geographie",
+    "question": "Parmi ces localités, laquelle fait partie de l’environnement immédiat d’Aboisso ?",
+    "explanation": "Maféré compte parmi les localités administratives associées au département d’Aboisso.",
+    "options": [
+      {
+        "text": "Ferkessédougou",
+        "correct": false,
+        "source_key": "opt_5133080ac3ba"
+      },
+      {
+        "text": "Odienné",
+        "correct": false,
+        "source_key": "opt_24422c7055c8"
+      },
+      {
+        "text": "Séguéla",
+        "correct": false,
+        "source_key": "opt_4d5d8201dd7c"
+      },
+      {
+        "text": "Maféré",
+        "correct": true,
+        "source_key": "opt_dc2f3afb8b44"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.44fea691155c56079602ba167ca14c89"
+  },
+  {
+    "number": 15,
+    "category": "patrimoine",
+    "question": "Dans quelle localité du Sud-Comoé trouve-t-on le site d’une école coloniale historique ?",
+    "explanation": "Le site d’Élima, dans l’actuel département d’Adiaké, est lié à l’histoire des premières écoles du pays.",
+    "options": [
+      {
+        "text": "Waraniéné",
+        "correct": false,
+        "source_key": "opt_7a4e234e2722"
+      },
+      {
+        "text": "Niofoin",
+        "correct": false,
+        "source_key": "opt_6c86f110c262"
+      },
+      {
+        "text": "Grand-Lahou",
+        "correct": false,
+        "source_key": "opt_1201800520ff"
+      },
+      {
+        "text": "Élima",
+        "correct": true,
+        "source_key": "opt_3459bda10cb2"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.ff2c07e2bfcf5b5697a83f5c137fcd9a"
+  },
+  {
+    "number": 16,
+    "category": "energie",
+    "question": "Quelle activité économique est liée aux ouvrages construits sur la Bia près d’Aboisso ?",
+    "explanation": "Les aménagements d’Ayamé utilisent l’eau de la Bia pour produire de l’électricité.",
+    "options": [
+      {
+        "text": "La production hydroélectrique",
+        "correct": true,
+        "source_key": "opt_0756fea51f1f"
+      },
+      {
+        "text": "Le raffinage du pétrole",
+        "correct": false,
+        "source_key": "opt_19fad68566a1"
+      },
+      {
+        "text": "La production d’acier",
+        "correct": false,
+        "source_key": "opt_a941bb68753c"
+      },
+      {
+        "text": "La construction navale",
+        "correct": false,
+        "source_key": "opt_758e8e417a84"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.32e7ca35fc795edea07813e2fe7d6a5b"
+  },
+  {
+    "number": 17,
+    "category": "culture",
+    "question": "Dans quelle localité la royauté sanwi célèbre-t-elle traditionnellement la fête des ignames ?",
+    "explanation": "Cette célébration se déroule dans le siège traditionnel du royaume Sanwi.",
+    "options": [
+      {
+        "text": "Abengourou",
+        "correct": false,
+        "source_key": "opt_549ebfac27a0"
+      },
+      {
+        "text": "Odienné",
+        "correct": false,
+        "source_key": "opt_ccb9ef2ba74c"
+      },
+      {
+        "text": "Krindjabo",
+        "correct": true,
+        "source_key": "opt_8d2f2e856c5c"
+      },
+      {
+        "text": "Daloa",
+        "correct": false,
+        "source_key": "opt_2b1034a915e6"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.e0d6e21bb3885cec9c776253428f36fb"
+  },
+  {
+    "number": 18,
+    "category": "histoire",
+    "question": "En quelle année Aboisso est-elle devenue une commune de plein exercice, selon l’office régional ?",
+    "explanation": "L’office de tourisme du Sud-Comoé indique le statut communal à partir de 1978.",
+    "options": [
+      {
+        "text": "1934",
+        "correct": false,
+        "source_key": "opt_9f35a70cc670"
+      },
+      {
+        "text": "1950",
+        "correct": false,
+        "source_key": "opt_744ce8b4951e"
+      },
+      {
+        "text": "1978",
+        "correct": true,
+        "source_key": "opt_124071ac6243"
+      },
+      {
+        "text": "1996",
+        "correct": false,
+        "source_key": "opt_188cacb7b7cf"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.485cdec96c785cda9ab6be229fcfc4c4"
+  },
+  {
+    "number": 19,
+    "category": "geographie",
+    "question": "Quel plan d’eau borde le site historique d’Élima, dans la région du Sud-Comoé ?",
+    "explanation": "Élima se situe au bord de la lagune Aby, dans le département d’Adiaké.",
+    "options": [
+      {
+        "text": "La lagune Ébrié",
+        "correct": false,
+        "source_key": "opt_1fdfa6761cf0"
+      },
+      {
+        "text": "Le lac de Kossou",
+        "correct": false,
+        "source_key": "opt_261a80700516"
+      },
+      {
+        "text": "La lagune de Fresco",
+        "correct": false,
+        "source_key": "opt_45d2e60d4005"
+      },
+      {
+        "text": "La lagune Aby",
+        "correct": true,
+        "source_key": "opt_07d05503c78b"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.1824a01cbf9753df89c38b6bc475d861"
+  },
+  {
+    "number": 20,
+    "category": "agriculture",
+    "question": "Quelle culture vivrière de la région produit un fruit souvent mangé bouilli ou frit ?",
+    "explanation": "La banane plantain figure parmi les productions vivrières autour d’Aboisso.",
+    "options": [
+      {
+        "text": "La pomme",
+        "correct": false,
+        "source_key": "opt_059d076e1fc4"
+      },
+      {
+        "text": "La banane plantain",
+        "correct": true,
+        "source_key": "opt_3725982d9210"
+      },
+      {
+        "text": "La figue",
+        "correct": false,
+        "source_key": "opt_fdfffee9f509"
+      },
+      {
+        "text": "La poire",
+        "correct": false,
+        "source_key": "opt_aedf24cea51f"
+      }
+    ],
+    "points": 15,
+    "source_key": "aboisso.q.fcac5ebe2ff55880993d85346e27f3f7"
+  },
+  {
+    "number": 21,
+    "category": "energie",
+    "question": "Dans quel plan d’eau la rivière Bia finit-elle son cours ?",
+    "explanation": "La Bia rejoint la lagune Aby après avoir traversé le Sud-Comoé.",
+    "options": [
+      {
+        "text": "La lagune Aby",
+        "correct": true,
+        "source_key": "opt_5bdd1d948611"
+      },
+      {
+        "text": "La lagune Ébrié",
+        "correct": false,
+        "source_key": "opt_df0957be06ed"
+      },
+      {
+        "text": "Le lac de Kossou",
+        "correct": false,
+        "source_key": "opt_d1e06f759fa0"
+      },
+      {
+        "text": "La lagune Tendo",
+        "correct": false,
+        "source_key": "opt_415ec6518538"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.b5236cd0c71953c0ad41af4855bafec5"
+  },
+  {
+    "number": 22,
+    "category": "histoire",
+    "question": "En quelle année Aboisso est-elle devenue sous-préfecture selon l’office de tourisme ?",
+    "explanation": "La page historique d’Aboisso mentionne son accession au statut de sous-préfecture en 1961.",
+    "options": [
+      {
+        "text": "1887",
+        "correct": false,
+        "source_key": "opt_86dabdb50f25"
+      },
+      {
+        "text": "1927",
+        "correct": false,
+        "source_key": "opt_1af448ef1fe8"
+      },
+      {
+        "text": "1961",
+        "correct": true,
+        "source_key": "opt_86bec0c67072"
+      },
+      {
+        "text": "2002",
+        "correct": false,
+        "source_key": "opt_77be977a83dd"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.6de7295d38b05e429a548932217375ca"
+  },
+  {
+    "number": 23,
+    "category": "agriculture",
+    "question": "Quelle matière première transforme traditionnellement une huilerie d’Ehania ?",
+    "explanation": "L’huilerie d’Ehania a été destinée au traitement des régimes de palmier à huile.",
+    "options": [
+      {
+        "text": "Des régimes de palme",
+        "correct": true,
+        "source_key": "opt_0d17abdb5652"
+      },
+      {
+        "text": "Des capsules de coton",
+        "correct": false,
+        "source_key": "opt_255842eea791"
+      },
+      {
+        "text": "Des cabosses de cacao",
+        "correct": false,
+        "source_key": "opt_a714c41651e8"
+      },
+      {
+        "text": "Des épis de maïs",
+        "correct": false,
+        "source_key": "opt_2316840edd99"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.6595b8cb4fcd5a8b993b8cf570d9527a"
+  },
+  {
+    "number": 24,
+    "category": "culture",
+    "question": "Quel royaume traditionnel est associé aux Agni vivant autour d’Aboisso ?",
+    "explanation": "Le Sanwi conserve un patrimoine coutumier dont le siège se trouve à Krindjabo.",
+    "options": [
+      {
+        "text": "Le royaume Kong",
+        "correct": false,
+        "source_key": "opt_c06cc38c3df3"
+      },
+      {
+        "text": "Le royaume Baoulé",
+        "correct": false,
+        "source_key": "opt_a9e2f026c6a4"
+      },
+      {
+        "text": "Le royaume Sanwi",
+        "correct": true,
+        "source_key": "opt_1cde140025db"
+      },
+      {
+        "text": "Le royaume Kabadougou",
+        "correct": false,
+        "source_key": "opt_7468e6676107"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.790e499132be55cd91c26c71d37922d1"
+  },
+  {
+    "number": 25,
+    "category": "patrimoine",
+    "question": "Quel commerçant et planteur français est lié au site éducatif historique d’Élima ?",
+    "explanation": "Arthur Verdier est associé à l’établissement scolaire historique d’Élima.",
+    "options": [
+      {
+        "text": "Arthur Verdier",
+        "correct": true,
+        "source_key": "opt_ccd98b9be23e"
+      },
+      {
+        "text": "Jean Millier",
+        "correct": false,
+        "source_key": "opt_f594a7c3630a"
+      },
+      {
+        "text": "Marcel Treich-Laplène",
+        "correct": false,
+        "source_key": "opt_d269234dc395"
+      },
+      {
+        "text": "Pierre Fakhoury",
+        "correct": false,
+        "source_key": "opt_92311e8ddbae"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.dc0aeda1710550d49b6d8b1b7e70dc6e"
+  },
+  {
+    "number": 26,
+    "category": "geographie",
+    "question": "Dans quelle partie du Sud-Comoé se trouvent Aboisso et ses environs ?",
+    "explanation": "Aboisso est une ville du sud-est intérieur, alors qu’Assinie et Grand-Bassam sont sur le littoral.",
+    "options": [
+      {
+        "text": "Le littoral occidental",
+        "correct": false,
+        "source_key": "opt_a8c94363b7c2"
+      },
+      {
+        "text": "L’intérieur sud-oriental",
+        "correct": true,
+        "source_key": "opt_3010df6df4ab"
+      },
+      {
+        "text": "Les savanes du nord",
+        "correct": false,
+        "source_key": "opt_453cb4451b0f"
+      },
+      {
+        "text": "Les plateaux du centre",
+        "correct": false,
+        "source_key": "opt_fd9cceeceb0a"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.aa3c19ad88c85b5db545deb132c87445"
+  },
+  {
+    "number": 27,
+    "category": "agriculture",
+    "question": "Quelle culture de rente produit les grains utilisés pour une boisson chaude torréfiée ?",
+    "explanation": "Le café est cité parmi les productions agricoles du secteur d’Aboisso.",
+    "options": [
+      {
+        "text": "Le coton",
+        "correct": false,
+        "source_key": "opt_00e00ac6c570"
+      },
+      {
+        "text": "Le palmier à huile",
+        "correct": false,
+        "source_key": "opt_320ea3afd95a"
+      },
+      {
+        "text": "Le café",
+        "correct": true,
+        "source_key": "opt_4f7bc2507809"
+      },
+      {
+        "text": "Le manioc",
+        "correct": false,
+        "source_key": "opt_0e2dc02296ca"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.890b8b0e748c54179672f5a9bd3c180a"
+  },
+  {
+    "number": 28,
+    "category": "energie",
+    "question": "Lequel de ces deux barrages proches d’Aboisso a été mis en service en premier ?",
+    "explanation": "Ayamé I fut mis en service en 1959, avant Ayamé II en 1965.",
+    "options": [
+      {
+        "text": "Ayamé I",
+        "correct": true,
+        "source_key": "opt_7eecc133628a"
+      },
+      {
+        "text": "Ayamé II",
+        "correct": false,
+        "source_key": "opt_19d0519fd755"
+      },
+      {
+        "text": "Kossou",
+        "correct": false,
+        "source_key": "opt_7bb8b1831941"
+      },
+      {
+        "text": "Taabo",
+        "correct": false,
+        "source_key": "opt_ab07608c99d0"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.c47399219ec654718966b998f27f1901"
+  },
+  {
+    "number": 29,
+    "category": "culture",
+    "question": "Quel épisode du passé est rappelé par la fête traditionnelle des ignames dans le Sanwi ?",
+    "explanation": "Selon la tradition rapportée par l’AIP, l’igname aurait nourri les ancêtres pendant leur exode.",
+    "options": [
+      {
+        "text": "Une victoire navale",
+        "correct": false,
+        "source_key": "opt_05949bf9efa3"
+      },
+      {
+        "text": "Un exode marqué par la famine",
+        "correct": true,
+        "source_key": "opt_4c5c4bf10f5b"
+      },
+      {
+        "text": "Une épidémie de variole",
+        "correct": false,
+        "source_key": "opt_3c7661f04c1d"
+      },
+      {
+        "text": "Une découverte minière",
+        "correct": false,
+        "source_key": "opt_f24661b4c664"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.2cac7ba6bd3456369cfeb026a5d136d8"
+  },
+  {
+    "number": 30,
+    "category": "patrimoine",
+    "question": "Quel parc marin du Sud-Comoé protège un ensemble insulaire près d’Adiaké ?",
+    "explanation": "Les îles Ehotilé sont une aire protégée de la région, à distinguer du centre-ville d’Aboisso.",
+    "options": [
+      {
+        "text": "Le parc du Banco",
+        "correct": false,
+        "source_key": "opt_a2ba95576382"
+      },
+      {
+        "text": "Le parc du Mont Péko",
+        "correct": false,
+        "source_key": "opt_c6ea4f40868a"
+      },
+      {
+        "text": "Le parc de la Comoé",
+        "correct": false,
+        "source_key": "opt_04f88fc620c2"
+      },
+      {
+        "text": "Les îles Ehotilé",
+        "correct": true,
+        "source_key": "opt_bbcb9f9b795a"
+      }
+    ],
+    "points": 20,
+    "source_key": "aboisso.q.5f3c707f5b7551dbba691f4bd7fdaf85"
+  },
+  {
+    "number": 31,
+    "category": "histoire",
+    "question": "Vers quelle décennie Aboisso fut-elle érigée en cercle colonial selon l’office régional ?",
+    "explanation": "L’office du tourisme situe ce statut vers 1890, avant les transformations administratives du XXe siècle.",
+    "options": [
+      {
+        "text": "Les années 1750",
+        "correct": false,
+        "source_key": "opt_0f78efe77fc6"
+      },
+      {
+        "text": "Les années 1890",
+        "correct": true,
+        "source_key": "opt_0dd443d5cc6f"
+      },
+      {
+        "text": "Les années 1830",
+        "correct": false,
+        "source_key": "opt_3892cff7602d"
+      },
+      {
+        "text": "Les années 1950",
+        "correct": false,
+        "source_key": "opt_5a869c017e18"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.3210a62af6515d72bcd808a276b629d2"
+  },
+  {
+    "number": 32,
+    "category": "energie",
+    "question": "En quelle année la première centrale hydroélectrique d’Ayamé a-t-elle été mise en service ?",
+    "explanation": "Ayamé I, construit sur la Bia, est entré en service en 1959.",
+    "options": [
+      {
+        "text": "1945",
+        "correct": false,
+        "source_key": "opt_9ba2f9b738a6"
+      },
+      {
+        "text": "1959",
+        "correct": true,
+        "source_key": "opt_713386ae31bf"
+      },
+      {
+        "text": "1972",
+        "correct": false,
+        "source_key": "opt_cc6d3e828dff"
+      },
+      {
+        "text": "1980",
+        "correct": false,
+        "source_key": "opt_c1550961aeed"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.695dc1d75c03569d9d3b4a278453dfb5"
+  },
+  {
+    "number": 33,
+    "category": "energie",
+    "question": "En quelle année la deuxième centrale d’Ayamé est-elle entrée en service ?",
+    "explanation": "Ayamé II est entré en service en 1965, six ans après le premier ouvrage.",
+    "options": [
+      {
+        "text": "1965",
+        "correct": true,
+        "source_key": "opt_84a39d82e1b0"
+      },
+      {
+        "text": "1951",
+        "correct": false,
+        "source_key": "opt_0717cdc4a320"
+      },
+      {
+        "text": "1979",
+        "correct": false,
+        "source_key": "opt_0395cfe781d3"
+      },
+      {
+        "text": "1993",
+        "correct": false,
+        "source_key": "opt_5fe5c975db3b"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.df395ba29fed58a4add9d831b503b8f7"
+  },
+  {
+    "number": 34,
+    "category": "personnalites",
+    "question": "Quel souverain sanwi était présent à la fête des ignames relatée par l’AIP en 2017 ?",
+    "explanation": "L’AIP cite le roi Amon N’Douffou V lors de la célébration à Krindjabo en 2017.",
+    "options": [
+      {
+        "text": "Nanan Koffi Agyeman",
+        "correct": false,
+        "source_key": "opt_27a75daa32d7"
+      },
+      {
+        "text": "Péléforo Gbon Coulibaly",
+        "correct": false,
+        "source_key": "opt_2e7d5a19f9aa"
+      },
+      {
+        "text": "Amon N’Douffou V",
+        "correct": true,
+        "source_key": "opt_3b620d438ca6"
+      },
+      {
+        "text": "Nangui Abrogoua",
+        "correct": false,
+        "source_key": "opt_731326854fc0"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.e2f80a1e912654978bba6089a9bd165d"
+  },
+  {
+    "number": 35,
+    "category": "agriculture",
+    "question": "Quel produit était au cœur d’un prêt de la Banque mondiale pour la plantation d’Ehania en 1969 ?",
+    "explanation": "Le programme Palmivoire visait l’extension de la palmeraie et de la filière oléagineuse.",
+    "options": [
+      {
+        "text": "Le tabac",
+        "correct": false,
+        "source_key": "opt_41ed21ba9035"
+      },
+      {
+        "text": "Le cacao en poudre",
+        "correct": false,
+        "source_key": "opt_f00c95557160"
+      },
+      {
+        "text": "L’huile de palme",
+        "correct": true,
+        "source_key": "opt_dcd2e18996d2"
+      },
+      {
+        "text": "Le sucre raffiné",
+        "correct": false,
+        "source_key": "opt_9214d9f5018c"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.f2246f43846d53509cf4eabac9aa07d8"
+  },
+  {
+    "number": 36,
+    "category": "culture",
+    "question": "À quelle grande famille culturelle ouest-africaine se rattache l’histoire du Sanwi ?",
+    "explanation": "Les traditions agni sanwi évoquent une migration de groupes appartenant à l’ensemble akan.",
+    "options": [
+      {
+        "text": "Les Peuls",
+        "correct": false,
+        "source_key": "opt_e2c64f75e55d"
+      },
+      {
+        "text": "Les Akan",
+        "correct": true,
+        "source_key": "opt_9094a1ee2fe5"
+      },
+      {
+        "text": "Les Soninké",
+        "correct": false,
+        "source_key": "opt_0ed5735cc93f"
+      },
+      {
+        "text": "Les Dogon",
+        "correct": false,
+        "source_key": "opt_3bdde371c9f8"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.cc518f86e2b35ec1bc679ccd9c0aa520"
+  },
+  {
+    "number": 37,
+    "category": "geographie",
+    "question": "Dans quel pays prend sa source la rivière qui traverse Aboisso ?",
+    "explanation": "La rivière Bia naît au Ghana puis traverse le sud-est ivoirien.",
+    "options": [
+      {
+        "text": "Le Burkina Faso",
+        "correct": false,
+        "source_key": "opt_de394e6babbc"
+      },
+      {
+        "text": "Le Libéria",
+        "correct": false,
+        "source_key": "opt_2a0665d67178"
+      },
+      {
+        "text": "La Guinée",
+        "correct": false,
+        "source_key": "opt_f0e387bdab5f"
+      },
+      {
+        "text": "Le Ghana",
+        "correct": true,
+        "source_key": "opt_1aaf6eba8d66"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.68c621dd8f2f5257bd004e3399c90371"
+  },
+  {
+    "number": 38,
+    "category": "patrimoine",
+    "question": "Dans quelle ville du Sud-Comoé se trouve le Musée national du costume ?",
+    "explanation": "Le Musée national du costume est situé à Grand-Bassam, dans la région dont Aboisso est chef-lieu.",
+    "options": [
+      {
+        "text": "Adiaké",
+        "correct": false,
+        "source_key": "opt_f747ef965f6f"
+      },
+      {
+        "text": "Maféré",
+        "correct": false,
+        "source_key": "opt_8cf303fdf7c2"
+      },
+      {
+        "text": "Bonoua",
+        "correct": false,
+        "source_key": "opt_61e1c406405a"
+      },
+      {
+        "text": "Grand-Bassam",
+        "correct": true,
+        "source_key": "opt_1537fa276e47"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.5563f0083daa5f45901b08de0ab99866"
+  },
+  {
+    "number": 39,
+    "category": "culture",
+    "question": "Quel thème a été retenu pour l’édition 2026 du festival Yédéyéwon Yédi à Aboisso ?",
+    "explanation": "L’édition 2026 était consacrée à la chefferie villageoise en pays Agni Sanwi.",
+    "options": [
+      {
+        "text": "La navigation fluviale",
+        "correct": false,
+        "source_key": "opt_0f7ddd2f596c"
+      },
+      {
+        "text": "La désignation des chefs",
+        "correct": true,
+        "source_key": "opt_e1d6e6db2415"
+      },
+      {
+        "text": "Les compétitions de lutte",
+        "correct": false,
+        "source_key": "opt_92c7e3d4dc1a"
+      },
+      {
+        "text": "La conservation des éléphants",
+        "correct": false,
+        "source_key": "opt_0a3b79b672fc"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.3ef571fba12b5fa6ac1fd3391543327f"
+  },
+  {
+    "number": 40,
+    "category": "economie",
+    "question": "Quelle huile issue du noyau des fruits est aussi produite dans la filière des palmiers ?",
+    "explanation": "La filière oléagineuse transforme les fruits de palme en huile de palme et en huile de palmiste.",
+    "options": [
+      {
+        "text": "L’huile de colza",
+        "correct": false,
+        "source_key": "opt_8d38c59d3a89"
+      },
+      {
+        "text": "L’huile de tournesol",
+        "correct": false,
+        "source_key": "opt_f97f7958b5f8"
+      },
+      {
+        "text": "L’huile de soja",
+        "correct": false,
+        "source_key": "opt_7db41414fc0b"
+      },
+      {
+        "text": "L’huile de palmiste",
+        "correct": true,
+        "source_key": "opt_f5db5493e1a6"
+      }
+    ],
+    "points": 25,
+    "source_key": "aboisso.q.b7ae3d0e8f4650468b7523fe94f9e6bb"
+  },
+  {
+    "number": 41,
+    "category": "energie",
+    "question": "Combien de mégawatts de puissance installée comptait Ayamé I dans le rapport CIE 2015 ?",
+    "explanation": "Le rapport de la CIE indique deux groupes de 10 MW pour Ayamé I.",
+    "options": [
+      {
+        "text": "10 MW",
+        "correct": false,
+        "source_key": "opt_7d2183133ac3"
+      },
+      {
+        "text": "20 MW",
+        "correct": true,
+        "source_key": "opt_b3ae1227af91"
+      },
+      {
+        "text": "30 MW",
+        "correct": false,
+        "source_key": "opt_1a9d6e6b6074"
+      },
+      {
+        "text": "70 MW",
+        "correct": false,
+        "source_key": "opt_de43d7e05529"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.a358a9272ccf57dd891381033e5600db"
+  },
+  {
+    "number": 42,
+    "category": "energie",
+    "question": "Quelle puissance installée la CIE indiquait-elle pour Ayamé II dans son rapport 2015 ?",
+    "explanation": "Ayamé II est décrit avec deux groupes de 15 MW, soit 30 MW au total.",
+    "options": [
+      {
+        "text": "15 MW",
+        "correct": false,
+        "source_key": "opt_faf83d29ff9e"
+      },
+      {
+        "text": "20 MW",
+        "correct": false,
+        "source_key": "opt_d18332d3280c"
+      },
+      {
+        "text": "30 MW",
+        "correct": true,
+        "source_key": "opt_d70564ed4362"
+      },
+      {
+        "text": "55 MW",
+        "correct": false,
+        "source_key": "opt_990af7122843"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.14c4b3d9244d5651a829cbef2729ab9d"
+  },
+  {
+    "number": 43,
+    "category": "histoire",
+    "question": "Quel enjeu économique a favorisé le choix d’Aboisso comme poste administratif colonial ?",
+    "explanation": "Des routes de caravanes convergeaient vers Aboisso, important centre d’échanges du Sanwi.",
+    "options": [
+      {
+        "text": "Le commerce régional",
+        "correct": true,
+        "source_key": "opt_f7145fed8263"
+      },
+      {
+        "text": "La métallurgie lourde",
+        "correct": false,
+        "source_key": "opt_2238dd418dda"
+      },
+      {
+        "text": "Le tourisme balnéaire",
+        "correct": false,
+        "source_key": "opt_c7a173d58ff9"
+      },
+      {
+        "text": "L’industrie aéronautique",
+        "correct": false,
+        "source_key": "opt_64e2056166af"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.e4c34004322f57e189fe27f3f9d3ac07"
+  },
+  {
+    "number": 44,
+    "category": "histoire",
+    "question": "Quel nom porte le capitaine cité comme premier administrateur colonial du cercle d’Aboisso ?",
+    "explanation": "La présentation historique de l’office régional mentionne le capitaine Marchand.",
+    "options": [
+      {
+        "text": "Marchand",
+        "correct": true,
+        "source_key": "opt_8633eee5c591"
+      },
+      {
+        "text": "Faidherbe",
+        "correct": false,
+        "source_key": "opt_3eaf6c7cb1dd"
+      },
+      {
+        "text": "Archinard",
+        "correct": false,
+        "source_key": "opt_0a8787510d24"
+      },
+      {
+        "text": "Lugard",
+        "correct": false,
+        "source_key": "opt_8c9dd3289fb5"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.1fa40f75b7c05d99988b77a19766cf94"
+  },
+  {
+    "number": 45,
+    "category": "geographie",
+    "question": "Dans quel département du Sud-Comoé se trouvent les îles Ehotilé ?",
+    "explanation": "Le parc marin des îles Ehotilé se situe près d’Adiaké, en dehors de la ville d’Aboisso.",
+    "options": [
+      {
+        "text": "Aboisso",
+        "correct": false,
+        "source_key": "opt_dd290d7b48c9"
+      },
+      {
+        "text": "Abengourou",
+        "correct": false,
+        "source_key": "opt_bcc885c18a95"
+      },
+      {
+        "text": "Divo",
+        "correct": false,
+        "source_key": "opt_45a37c01d476"
+      },
+      {
+        "text": "Adiaké",
+        "correct": true,
+        "source_key": "opt_04b29db37526"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.8b196085c57b5c46a82219f7432efa6f"
+  },
+  {
+    "number": 46,
+    "category": "economie",
+    "question": "Quelle société du groupe SIFCA exploite notamment le site de palmiers d’Ehania ?",
+    "explanation": "PALMCI, filiale de SIFCA, exploite notamment une unité de plantation industrielle à Ehania.",
+    "options": [
+      {
+        "text": "SAPH",
+        "correct": false,
+        "source_key": "opt_1c6265b2c3d1"
+      },
+      {
+        "text": "SOTRA",
+        "correct": false,
+        "source_key": "opt_df5535c2193a"
+      },
+      {
+        "text": "SODECI",
+        "correct": false,
+        "source_key": "opt_13c416f129f5"
+      },
+      {
+        "text": "PALMCI",
+        "correct": true,
+        "source_key": "opt_a0c60291f7b7"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.d8508a9b391a5310a672357374323f9a"
+  },
+  {
+    "number": 47,
+    "category": "histoire",
+    "question": "Quelle période est associée au développement initial de la ville, selon l’office de tourisme ?",
+    "explanation": "L’office situe l’origine du développement d’Aboisso dans les années 1700.",
+    "options": [
+      {
+        "text": "Les années 1400",
+        "correct": false,
+        "source_key": "opt_99da4ef31bb8"
+      },
+      {
+        "text": "Les années 1900",
+        "correct": false,
+        "source_key": "opt_58baf3c23ccc"
+      },
+      {
+        "text": "Les années 1700",
+        "correct": true,
+        "source_key": "opt_28e046bebfeb"
+      },
+      {
+        "text": "Les années 2000",
+        "correct": false,
+        "source_key": "opt_fe31912da8a6"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.68c3e5d4313d57638db6f90a1de5fedd"
+  },
+  {
+    "number": 48,
+    "category": "culture",
+    "question": "Quel festival organisé à Aboisso a tenu sa troisième édition en 2026 ?",
+    "explanation": "L’événement culturel met en avant des aspects de la tradition agni sanwi.",
+    "options": [
+      {
+        "text": "FEMUA",
+        "correct": false,
+        "source_key": "opt_e3cf6ed7fda3"
+      },
+      {
+        "text": "Popo Carnaval",
+        "correct": false,
+        "source_key": "opt_67d87c0e8d28"
+      },
+      {
+        "text": "Festival des Masques",
+        "correct": false,
+        "source_key": "opt_72171fc1e181"
+      },
+      {
+        "text": "Yédéyéwon Yédi",
+        "correct": true,
+        "source_key": "opt_30a7ff8e46a5"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.281c20485ad55132a7c895296223c1c8"
+  },
+  {
+    "number": 49,
+    "category": "patrimoine",
+    "question": "Quel ancien secteur industriel figure parmi les curiosités touristiques citées pour Élima ?",
+    "explanation": "Le tourisme régional cite une ancienne usine de café à Élima parmi les sites patrimoniaux.",
+    "options": [
+      {
+        "text": "Une fabrique d’avions",
+        "correct": false,
+        "source_key": "opt_58111893e38e"
+      },
+      {
+        "text": "Une raffinerie de pétrole",
+        "correct": false,
+        "source_key": "opt_e93b7e7f873e"
+      },
+      {
+        "text": "Une usine de locomotives",
+        "correct": false,
+        "source_key": "opt_493ff8cc0eee"
+      },
+      {
+        "text": "Une usine de café",
+        "correct": true,
+        "source_key": "opt_761e2a3c4691"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.5c5fe7b3c66154faaf64b5f1b2f65f1a"
+  },
+  {
+    "number": 50,
+    "category": "histoire",
+    "question": "Quelle entreprise d’État est à l’origine d’une partie de la filière oléagineuse ensuite reprise par SIFCA ?",
+    "explanation": "SIFCA présente Palmindustrie comme l’un des prédécesseurs de son activité de transformation d’huile de palme.",
+    "options": [
+      {
+        "text": "SITARAIL",
+        "correct": false,
+        "source_key": "opt_3c42d08e427e"
+      },
+      {
+        "text": "SODECI",
+        "correct": false,
+        "source_key": "opt_b5abfe726cfd"
+      },
+      {
+        "text": "Palmindustrie",
+        "correct": true,
+        "source_key": "opt_a86c562c4147"
+      },
+      {
+        "text": "SOTRA",
+        "correct": false,
+        "source_key": "opt_9135476925de"
+      }
+    ],
+    "points": 30,
+    "source_key": "aboisso.q.4ae717d421e9539898b95551c874254c"
+  }
 ]

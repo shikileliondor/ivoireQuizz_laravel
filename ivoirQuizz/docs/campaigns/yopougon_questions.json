@@ -1,1502 +1,1502 @@
 [
-    {
-        "number": 1,
-        "source_key": "yopougon.q.09dd9ce29f6a497e974b8247951eb903",
-        "category": "geographie",
-        "question": "Dans quelle partie de l’agglomération d’Abidjan se trouve Yopougon ?",
-        "explanation": "Yopougon se situe à l’ouest de l’agglomération d’Abidjan.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_2b062f148a28",
-                "text": "À l’ouest",
-                "correct": true
-            },
-            {
-                "source_key": "opt_326993f6613f",
-                "text": "À l’est, au-delà de Bingerville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_77f17949609c",
-                "text": "Au nord de Bouaké",
-                "correct": false
-            },
-            {
-                "source_key": "opt_899be73f1f80",
-                "text": "Dans le District des Savanes",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 2,
-        "source_key": "yopougon.q.01618f85af2f401a9635e70ef519b754",
-        "category": "geographie",
-        "question": "Quelle commune est citée à l’est de Yopougon dans les présentations géographiques du District d’Abidjan ?",
-        "explanation": "Attécoubé figure parmi les limites orientales de Yopougon.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_e156f169141e",
-                "text": "Attécoubé",
-                "correct": true
-            },
-            {
-                "source_key": "opt_bef625f932ee",
-                "text": "Cocody",
-                "correct": false
-            },
-            {
-                "source_key": "opt_e9895f19cfca",
-                "text": "Bingerville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_344eadf3df11",
-                "text": "Port-Bouët",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 3,
-        "source_key": "yopougon.q.fdc30d0aabd943fe8d2b4274f7904539",
-        "category": "geographie",
-        "question": "Quelle ville se trouve à l’ouest de Yopougon ?",
-        "explanation": "Songon est située à l’ouest de Yopougon.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_bf9fe7687851",
-                "text": "Songon",
-                "correct": true
-            },
-            {
-                "source_key": "opt_d8d6ab746c9b",
-                "text": "Grand-Bassam",
-                "correct": false
-            },
-            {
-                "source_key": "opt_40d013e403bf",
-                "text": "Dabou-centre uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_bfc7ada4feef",
-                "text": "Adzopé",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 4,
-        "source_key": "yopougon.q.5170bc8966e048449af8383febda8695",
-        "category": "geographie",
-        "question": "Quelles localités sont citées au nord de Yopougon dans la présentation du District autonome d’Abidjan ?",
-        "explanation": "La présentation géographique du District cite Anyama et Abobo au nord.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_1e359ed64e49",
-                "text": "Anyama et Abobo",
-                "correct": true
-            },
-            {
-                "source_key": "opt_1070ae42640b",
-                "text": "Cocody et Bingerville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_800ce2643849",
-                "text": "Marcory et Treichville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_0514b51a8b0f",
-                "text": "Grand-Bassam et Bonoua",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 5,
-        "source_key": "yopougon.q.ac5623c634e04b4eab7dc6fc2f50e2a4",
-        "category": "geographie",
-        "question": "Quel plan d’eau est associé au paysage de Yopougon ?",
-        "explanation": "La lagune Ébrié fait partie des éléments géographiques associés à Yopougon.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_7e92cd0b418c",
-                "text": "La lagune Ébrié",
-                "correct": true
-            },
-            {
-                "source_key": "opt_dc13749541c2",
-                "text": "Le lac Kossou",
-                "correct": false
-            },
-            {
-                "source_key": "opt_be7e5ef433eb",
-                "text": "Le lac de Buyo",
-                "correct": false
-            },
-            {
-                "source_key": "opt_15a27e1a2ca5",
-                "text": "Le fleuve Comoé uniquement",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 6,
-        "source_key": "yopougon.q.c8cfa53dd2454487a166386fc450c309",
-        "category": "geographie",
-        "question": "Quel surnom populaire est utilisé pour Yopougon ?",
-        "explanation": "Yop City est un surnom populaire de Yopougon.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_14d5d83c63b6",
-                "text": "Yop City",
-                "correct": true
-            },
-            {
-                "source_key": "opt_579611c91aed",
-                "text": "Babi Nord",
-                "correct": false
-            },
-            {
-                "source_key": "opt_4591ae9d2784",
-                "text": "La Ville aux mille collines",
-                "correct": false
-            },
-            {
-                "source_key": "opt_7bdf7b63f550",
-                "text": "Petit Paris",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 7,
-        "source_key": "yopougon.q.7a5ea1b4482948218f2a4da910735ffa",
-        "category": "geographie",
-        "question": "Yopougon est une commune de quel ensemble administratif ?",
-        "explanation": "Yopougon fait partie du District autonome d’Abidjan.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_4f2b4db1215e",
-                "text": "District autonome d’Abidjan",
-                "correct": true
-            },
-            {
-                "source_key": "opt_4d46c77eebdf",
-                "text": "District des Savanes",
-                "correct": false
-            },
-            {
-                "source_key": "opt_ffcc681ed1bc",
-                "text": "Région du Gôh",
-                "correct": false
-            },
-            {
-                "source_key": "opt_16ec4afcf54d",
-                "text": "District de Yamoussoukro",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 8,
-        "source_key": "yopougon.q.02ed638f901240aa8ac5b79f1e885f36",
-        "category": "geographie",
-        "question": "Quelle description correspond à Yopougon ?",
-        "explanation": "Yopougon est l’une des communes de l’agglomération d’Abidjan.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_10781633dff4",
-                "text": "Une commune d’Abidjan",
-                "correct": true
-            },
-            {
-                "source_key": "opt_80991acbb11b",
-                "text": "Une commune de San Pedro",
-                "correct": false
-            },
-            {
-                "source_key": "opt_6ce44a2d4e45",
-                "text": "Une ville de la région du Poro",
-                "correct": false
-            },
-            {
-                "source_key": "opt_d80763ef9ccc",
-                "text": "Une île du lac Kossou",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 9,
-        "source_key": "yopougon.q.c1f0aef4509042cb9d44b1a20f88a524",
-        "category": "geographie",
-        "question": "Quel territoire est cité à l’ouest de Yopougon dans les descriptions du District ?",
-        "explanation": "Les descriptions géographiques situent Songon à l’ouest de Yopougon.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_9122804ac19b",
-                "text": "Songon",
-                "correct": true
-            },
-            {
-                "source_key": "opt_69ef5dddb5db",
-                "text": "Cocody",
-                "correct": false
-            },
-            {
-                "source_key": "opt_22eec0ea1b7b",
-                "text": "Treichville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b83a54b89c45",
-                "text": "Bingerville",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 10,
-        "source_key": "yopougon.q.a8afda9a272a4abaa5d1f37a99904937",
-        "category": "geographie",
-        "question": "Quel repère géographique est associé au sud de Yopougon dans certaines présentations du District ?",
-        "explanation": "Les limites et paysages du sud de la commune sont décrits en lien avec le littoral et les plans d’eau d’Abidjan.",
-        "points": 10,
-        "options": [
-            {
-                "source_key": "opt_88200f784fd1",
-                "text": "Le littoral et la lagune dans l’environnement d’Abidjan",
-                "correct": true
-            },
-            {
-                "source_key": "opt_3a231c9c551e",
-                "text": "Le lac de Kossou",
-                "correct": false
-            },
-            {
-                "source_key": "opt_d39b11400739",
-                "text": "Le mont Nimba",
-                "correct": false
-            },
-            {
-                "source_key": "opt_d7bd46be7112",
-                "text": "Le fleuve Sénégal",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 11,
-        "source_key": "yopougon.q.a0a3ca2fcfaf438ba4d460c6abb149c1",
-        "category": "patrimoine",
-        "question": "Quel village historique est associé à Yopougon ?",
-        "explanation": "Yopougon Kouté fait partie des villages associés à la commune.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_be85d8c558e2",
-                "text": "Yopougon Kouté",
-                "correct": true
-            },
-            {
-                "source_key": "opt_310b9d7de0e7",
-                "text": "Assinie Mafia",
-                "correct": false
-            },
-            {
-                "source_key": "opt_a18e18577619",
-                "text": "Moossou",
-                "correct": false
-            },
-            {
-                "source_key": "opt_afb0e392a927",
-                "text": "Grand-Lahou",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 12,
-        "source_key": "yopougon.q.5334d2fa4a5f4d97a22c6e5620c94c12",
-        "category": "patrimoine",
-        "question": "Lequel de ces villages est associé à Yopougon ?",
-        "explanation": "Andokoi est cité parmi les villages de Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_68d0c5ccf06a",
-                "text": "Andokoi",
-                "correct": true
-            },
-            {
-                "source_key": "opt_faa86b650677",
-                "text": "Bonoua",
-                "correct": false
-            },
-            {
-                "source_key": "opt_06f4293a6d0c",
-                "text": "Azaguié",
-                "correct": false
-            },
-            {
-                "source_key": "opt_cf054ad75473",
-                "text": "Tiassalé",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 13,
-        "source_key": "yopougon.q.631ea21b78fd4340803e49ecad2297d3",
-        "category": "patrimoine",
-        "question": "Quel village de Yopougon porte le nom Azito ?",
-        "explanation": "Azito est une localité associée à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_0d5147fbf74f",
-                "text": "Azito",
-                "correct": true
-            },
-            {
-                "source_key": "opt_b14ee68cec3a",
-                "text": "Azito de Korhogo",
-                "correct": false
-            },
-            {
-                "source_key": "opt_aefac00c729b",
-                "text": "Azito de Man",
-                "correct": false
-            },
-            {
-                "source_key": "opt_8080b9dd3e53",
-                "text": "Azito de Bondoukou",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 14,
-        "source_key": "yopougon.q.e28013b89a914e58b5b91cfcd8d53d44",
-        "category": "patrimoine",
-        "question": "Quel village lié à Yopougon porte le nom Niangon Attié ?",
-        "explanation": "Niangon Attié est cité parmi les villages associés à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_0f910284ef33",
-                "text": "Niangon Attié",
-                "correct": true
-            },
-            {
-                "source_key": "opt_3ce66f248fab",
-                "text": "Niangon de Bouaké",
-                "correct": false
-            },
-            {
-                "source_key": "opt_7bb1d54d07c8",
-                "text": "Niangon de Daloa",
-                "correct": false
-            },
-            {
-                "source_key": "opt_81d8e9ba9fa2",
-                "text": "Niangon de San Pedro",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 15,
-        "source_key": "yopougon.q.3a0b78286ba144b08cb062862267ac6f",
-        "category": "patrimoine",
-        "question": "Quel nom de village associé à Yopougon contient le mot « Lokoa » ?",
-        "explanation": "Niangon Lokoa figure parmi les localités liées à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_6706829aba17",
-                "text": "Niangon Lokoa",
-                "correct": true
-            },
-            {
-                "source_key": "opt_fb69a0a70639",
-                "text": "Bingerville Lokoa",
-                "correct": false
-            },
-            {
-                "source_key": "opt_f512af220662",
-                "text": "Cocody Lokoa",
-                "correct": false
-            },
-            {
-                "source_key": "opt_baca23dbaaa3",
-                "text": "Dabou Lokoa",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 16,
-        "source_key": "yopougon.q.450aa76165f641f697b34cda1d17f327",
-        "category": "patrimoine",
-        "question": "Quelle localité associée à Yopougon porte le nom Béago ?",
-        "explanation": "Béago est cité dans les listes de villages de Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_8c75d816ee11",
-                "text": "Béago",
-                "correct": true
-            },
-            {
-                "source_key": "opt_40bff21ab0d2",
-                "text": "Béago de Bondoukou",
-                "correct": false
-            },
-            {
-                "source_key": "opt_e1112c1b6502",
-                "text": "Béago de Korhogo",
-                "correct": false
-            },
-            {
-                "source_key": "opt_2672b3229642",
-                "text": "Béago de Man",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 17,
-        "source_key": "yopougon.q.b4bef2fee6c942c4899d07ae73370d25",
-        "category": "patrimoine",
-        "question": "Quel nom correspond à une localité historique de Yopougon ?",
-        "explanation": "Adiopodoumé est cité parmi les villages associés à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_3559bc18e7a7",
-                "text": "Adiopodoumé",
-                "correct": true
-            },
-            {
-                "source_key": "opt_cec56978c0ea",
-                "text": "Assinie",
-                "correct": false
-            },
-            {
-                "source_key": "opt_af0a8a3d9d9e",
-                "text": "Aboisso",
-                "correct": false
-            },
-            {
-                "source_key": "opt_a72b24ed6eec",
-                "text": "Agboville",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 18,
-        "source_key": "yopougon.q.d9c71574733a48d091a32d2cd4f7bfea",
-        "category": "patrimoine",
-        "question": "Quelle île est associée au territoire de Yopougon ?",
-        "explanation": "L’Île Boulay est citée dans les localités liées à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_3efc378a56b0",
-                "text": "Île Boulay",
-                "correct": true
-            },
-            {
-                "source_key": "opt_b14679f272ab",
-                "text": "Île de Gorée",
-                "correct": false
-            },
-            {
-                "source_key": "opt_32121da1c165",
-                "text": "Île de Pâques",
-                "correct": false
-            },
-            {
-                "source_key": "opt_83c655e9d0be",
-                "text": "Île de Zanzibar",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 19,
-        "source_key": "yopougon.q.6d07fc7d3efe4f649c1cee272582fd52",
-        "category": "patrimoine",
-        "question": "Quel nom fait partie des villages associés à Yopougon ?",
-        "explanation": "Yopougon Santé est cité parmi les villages de la commune.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_6919a25db4b2",
-                "text": "Yopougon Santé",
-                "correct": true
-            },
-            {
-                "source_key": "opt_c108e319f70b",
-                "text": "Santé de Korhogo",
-                "correct": false
-            },
-            {
-                "source_key": "opt_c8427b7afc92",
-                "text": "Santé de Man",
-                "correct": false
-            },
-            {
-                "source_key": "opt_e082a809aa98",
-                "text": "Santé de Bondoukou",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 20,
-        "source_key": "yopougon.q.4c487278156c4c49a98b56e2323edf5d",
-        "category": "patrimoine",
-        "question": "Quel village associé à Yopougon contient le nom « Niangon Adjamé » ?",
-        "explanation": "Niangon Adjamé figure dans les listes de villages liés à Yopougon.",
-        "points": 15,
-        "options": [
-            {
-                "source_key": "opt_6e0b1b316384",
-                "text": "Niangon Adjamé",
-                "correct": true
-            },
-            {
-                "source_key": "opt_39da77359d24",
-                "text": "Adjamé de Grand-Bassam",
-                "correct": false
-            },
-            {
-                "source_key": "opt_59ca41e08f55",
-                "text": "Adjamé de Dabou",
-                "correct": false
-            },
-            {
-                "source_key": "opt_088ddebd387b",
-                "text": "Adjamé de San Pedro",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 21,
-        "source_key": "yopougon.q.40eb027ccbfa40c0890e83adc77c3485",
-        "category": "histoire",
-        "question": "À quel peuple autochtone les présentations historiques rattachent-elles notamment le territoire de Yopougon ?",
-        "explanation": "Les sources sur Yopougon évoquent le territoire Atchan/Ébrié.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_fb6b85426d9d",
-                "text": "Atchan, aussi appelés Ébrié",
-                "correct": true
-            },
-            {
-                "source_key": "opt_2db4d3dcaf3a",
-                "text": "Touareg",
-                "correct": false
-            },
-            {
-                "source_key": "opt_09fee3960747",
-                "text": "Mossi uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_bfac057eaf28",
-                "text": "Peul du Sahel uniquement",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 22,
-        "source_key": "yopougon.q.87645751b5554c0391e7c370ff42e3dc",
-        "category": "histoire",
-        "question": "Selon une tradition rapportée, à quoi le nom Yopougon est-il lié ?",
-        "explanation": "Une tradition locale relie le nom au champ de Yopou.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_26e78d82ed36",
-                "text": "Au « champ de Yopou »",
-                "correct": true
-            },
-            {
-                "source_key": "opt_114413044ddc",
-                "text": "À un ancien port portugais",
-                "correct": false
-            },
-            {
-                "source_key": "opt_968e350700f7",
-                "text": "À un roi du Ghana",
-                "correct": false
-            },
-            {
-                "source_key": "opt_7463da1beb17",
-                "text": "À une montagne du nord",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 23,
-        "source_key": "yopougon.q.8ca1863385a449cc89bdbab26881c73f",
-        "category": "histoire",
-        "question": "Dans le récit traditionnel de l’origine du nom, qui était Yopou ?",
-        "explanation": "Le récit rapporté présente Yopou comme un chef de famille qui vivait sur ces terres.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_c1f7211474ad",
-                "text": "Un chef de famille associé à ces terres",
-                "correct": true
-            },
-            {
-                "source_key": "opt_5694765f63c9",
-                "text": "Un explorateur portugais",
-                "correct": false
-            },
-            {
-                "source_key": "opt_9a3e99b2bf90",
-                "text": "Un gouverneur français de Bouaké",
-                "correct": false
-            },
-            {
-                "source_key": "opt_16fb00c8d49b",
-                "text": "Un roi du royaume de Kong",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 24,
-        "source_key": "yopougon.q.916edb99635143819e14535f60e790ea",
-        "category": "histoire",
-        "question": "Quelle expression est rapportée dans certaines explications traditionnelles du nom Yopougon ?",
-        "explanation": "Une explication traditionnelle rattache « Yopou gonnin » aux habitants des champs.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_2e0128c15ba6",
-                "text": "« Yopou gonnin », lié aux habitants des champs",
-                "correct": true
-            },
-            {
-                "source_key": "opt_c1ea33819e6e",
-                "text": "« Ville des montagnes »",
-                "correct": false
-            },
-            {
-                "source_key": "opt_da40d211eefd",
-                "text": "« Port des pêcheurs du nord »",
-                "correct": false
-            },
-            {
-                "source_key": "opt_f5b0a1df3576",
-                "text": "« Terre des éléphants blancs »",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 25,
-        "source_key": "yopougon.q.eee4a36f20b94c4c9b80e81852f49ecc",
-        "category": "histoire",
-        "question": "À partir de quelle décennie la modernisation urbaine de Yopougon s’accélère-t-elle selon la présentation du District ?",
-        "explanation": "La présentation du District situe l’essor de la modernisation urbaine à partir des années 1970.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_6cd68ecfabe4",
-                "text": "Les années 1970",
-                "correct": true
-            },
-            {
-                "source_key": "opt_9ed13e96a9d3",
-                "text": "Les années 1920",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b245d8ba4265",
-                "text": "Les années 1840",
-                "correct": false
-            },
-            {
-                "source_key": "opt_1811bab46bfe",
-                "text": "Les années 2010 seulement",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 26,
-        "source_key": "yopougon.q.54426fd1961641e29ddeefd864fe0718",
-        "category": "histoire",
-        "question": "Quels noms de cités sont liés à la phase de développement urbain de Yopougon ?",
-        "explanation": "SICOGI, SOGEFIHA et Selmer sont cités dans le développement des nouveaux quartiers.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_ea5dd262b9e0",
-                "text": "SICOGI, SOGEFIHA et Selmer",
-                "correct": true
-            },
-            {
-                "source_key": "opt_d4479457d65d",
-                "text": "Riviera Golf, Faya et M’Badon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b70a1fec6702",
-                "text": "Zone 4, Biétry et Marcory Résidentiel",
-                "correct": false
-            },
-            {
-                "source_key": "opt_06ded7f3b2ef",
-                "text": "Angré, Danga et Blockhauss",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 27,
-        "source_key": "yopougon.q.1d7a14aa38ce47719625be9b6f8622b7",
-        "category": "histoire",
-        "question": "Quel facteur a contribué à transformer Yopougon à partir des années 1970 ?",
-        "explanation": "Le développement de nouveaux quartiers a participé à la modernisation de la commune.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_30dba376d2a0",
-                "text": "La création de nouveaux quartiers d’habitation",
-                "correct": true
-            },
-            {
-                "source_key": "opt_7f492dd2bf7c",
-                "text": "Le déplacement de la commune à l’intérieur du pays",
-                "correct": false
-            },
-            {
-                "source_key": "opt_6d6ff0713c39",
-                "text": "La fermeture définitive de toutes les routes",
-                "correct": false
-            },
-            {
-                "source_key": "opt_c18a46f035ed",
-                "text": "La disparition des activités urbaines",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 28,
-        "source_key": "yopougon.q.c445a89eb80c498fb3dc4c9f902bbdf6",
-        "category": "histoire",
-        "question": "Pourquoi l’histoire des villages de Yopougon est-elle importante pour comprendre la commune ?",
-        "explanation": "Les villages historiques témoignent de l’occupation et des traditions antérieures à l’expansion urbaine.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_e22985b3531d",
-                "text": "Elle rappelle le peuplement antérieur à l’urbanisation moderne",
-                "correct": true
-            },
-            {
-                "source_key": "opt_9590e40fddd4",
-                "text": "Elle prouve que Yopougon est hors d’Abidjan",
-                "correct": false
-            },
-            {
-                "source_key": "opt_5386d2ba20a6",
-                "text": "Elle remplace l’histoire de toute la Côte d’Ivoire",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b2f6ab60a7e9",
-                "text": "Elle concerne uniquement le commerce extérieur",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 29,
-        "source_key": "yopougon.q.dc1bcf6d3abb455eab723367f1895352",
-        "category": "histoire",
-        "question": "Quel type de sources aide à vérifier l’histoire de Yopougon ?",
-        "explanation": "Le croisement de sources documentaires et de témoignages aide à vérifier les faits historiques.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_52ba383af5fb",
-                "text": "Archives, études et témoignages recoupés",
-                "correct": true
-            },
-            {
-                "source_key": "opt_a8e0f38d0f1b",
-                "text": "Rumeurs anonymes seulement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_4ec4f128a081",
-                "text": "Publicités sans date",
-                "correct": false
-            },
-            {
-                "source_key": "opt_c476e3250d33",
-                "text": "Commentaires non sourcés uniquement",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 30,
-        "source_key": "yopougon.q.3d0d8aa074ef4bf1839e7cd0245b416e",
-        "category": "histoire",
-        "question": "Quel thème fait partie de l’histoire urbaine de Yopougon ?",
-        "explanation": "L’extension des quartiers et des logements est un aspect central de l’évolution urbaine de Yopougon.",
-        "points": 20,
-        "options": [
-            {
-                "source_key": "opt_a71d6545a593",
-                "text": "L’extension des quartiers et des zones de logement",
-                "correct": true
-            },
-            {
-                "source_key": "opt_27517c314c95",
-                "text": "La fondation de Rome",
-                "correct": false
-            },
-            {
-                "source_key": "opt_03aefc331817",
-                "text": "L’histoire des pharaons",
-                "correct": false
-            },
-            {
-                "source_key": "opt_6877bf3f7c24",
-                "text": "La construction de la Grande Muraille de Chine",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 31,
-        "source_key": "yopougon.q.aea36c556b3545b7924b8f61f15f8950",
-        "category": "economie",
-        "question": "Quelle grande zone d’activité est présente dans la commune de Yopougon ?",
-        "explanation": "Yopougon possède une importante zone industrielle.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_c3f7fdf6a4f7",
-                "text": "La zone industrielle de Yopougon",
-                "correct": true
-            },
-            {
-                "source_key": "opt_f9c13029404e",
-                "text": "La zone industrielle de Korhogo située à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_0f4613b8cee5",
-                "text": "La zone portuaire de San Pedro située à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_5e837ad7806b",
-                "text": "La zone minière de Séguéla située à Yopougon",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 32,
-        "source_key": "yopougon.q.78331089ecf3476caad3d0f12a0ee345",
-        "category": "economie",
-        "question": "Quel secteur contribue fortement à l’économie de Yopougon en plus du commerce ?",
-        "explanation": "La zone industrielle fait de l’industrie un secteur important de la commune.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_f33eef8a0de0",
-                "text": "L’industrie",
-                "correct": true
-            },
-            {
-                "source_key": "opt_5fa027283c22",
-                "text": "Le tourisme polaire",
-                "correct": false
-            },
-            {
-                "source_key": "opt_75f17d9df8fa",
-                "text": "La pêche dans l’océan Arctique",
-                "correct": false
-            },
-            {
-                "source_key": "opt_9c2d5d45ce77",
-                "text": "L’extraction de diamants sous-marins",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 33,
-        "source_key": "yopougon.q.66b28874a37541d6a60e2368b20fce11",
-        "category": "economie",
-        "question": "Quelle entreprise du secteur textile est cit?e parmi celles pr?sentes dans la zone industrielle de Yopougon ?",
-        "explanation": "Uniwax est cit?e parmi les entreprises pr?sentes dans la zone industrielle de Yopougon.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_c9656efb918a",
-                "text": "Uniwax",
-                "correct": true
-            },
-            {
-                "source_key": "opt_b10ef0456c84",
-                "text": "Airbus",
-                "correct": false
-            },
-            {
-                "source_key": "opt_60503d45bd82",
-                "text": "Ferrari",
-                "correct": false
-            },
-            {
-                "source_key": "opt_55fe5acc8e34",
-                "text": "Air France",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 34,
-        "source_key": "yopougon.q.b0590447f9f64e2f91224213df5b0781",
-        "category": "economie",
-        "question": "Quel nom d’entreprise est cité parmi les entreprises présentes dans la zone industrielle de Yopougon dans des rapports publics ?",
-        "explanation": "Uniwax est citée parmi les entreprises présentes dans la zone industrielle de Yopougon.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_6b3691c3e36d",
-                "text": "Unilever/Univowax?",
-                "correct": false
-            },
-            {
-                "source_key": "opt_5651ce7ff0a1",
-                "text": "Uniwax",
-                "correct": true
-            },
-            {
-                "source_key": "opt_ac0ded7b3b5a",
-                "text": "Air France uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b65036c5ccd5",
-                "text": "Toyota de Yamoussoukro uniquement",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 35,
-        "source_key": "yopougon.q.37637d9baa894261b034d69094820b63",
-        "category": "economie",
-        "question": "Quel produit est associé à l’entreprise Uniwax citée dans les sources sur la zone industrielle de Yopougon ?",
-        "explanation": "Uniwax est connue pour ses activités textiles.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_b8baef44b409",
-                "text": "Les textiles imprimés",
-                "correct": true
-            },
-            {
-                "source_key": "opt_0b3e41de61de",
-                "text": "Les avions de ligne",
-                "correct": false
-            },
-            {
-                "source_key": "opt_ce62db9f7e64",
-                "text": "Le ciment uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_8b5bac4ed129",
-                "text": "Les bateaux de croisière",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 36,
-        "source_key": "yopougon.q.4bd492b939da421cb0575f29bb07814c",
-        "category": "economie",
-        "question": "Quel site énergétique important se trouve à Azito, dans la commune de Yopougon ?",
-        "explanation": "La centrale thermique d’Azito est située dans la commune de Yopougon.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_607347c0eb53",
-                "text": "Une centrale thermique",
-                "correct": true
-            },
-            {
-                "source_key": "opt_0d00040ed4ac",
-                "text": "Une centrale nucléaire",
-                "correct": false
-            },
-            {
-                "source_key": "opt_204e35081a11",
-                "text": "Un barrage hydroélectrique sur le Bandama",
-                "correct": false
-            },
-            {
-                "source_key": "opt_40fcfceb1ce4",
-                "text": "Une centrale marémotrice de l’Atlantique",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 37,
-        "source_key": "yopougon.q.67092cda6123479fb9073ba8ff42bf9c",
-        "category": "economie",
-        "question": "Quel rôle la centrale thermique d’Azito joue-t-elle principalement ?",
-        "explanation": "La centrale d’Azito est une installation de production d’électricité.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_e972e144b6e0",
-                "text": "Produire de l’électricité",
-                "correct": true
-            },
-            {
-                "source_key": "opt_ff50580d7bcb",
-                "text": "Fabriquer des vêtements",
-                "correct": false
-            },
-            {
-                "source_key": "opt_656dd909b4d1",
-                "text": "Traiter les passeports",
-                "correct": false
-            },
-            {
-                "source_key": "opt_6d15fbd5a5ec",
-                "text": "Gérer les vols internationaux",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 38,
-        "source_key": "yopougon.q.bb11e5f386364802a45730f9a2e989f3",
-        "category": "economie",
-        "question": "Quel secteur d’activité est très visible dans la vie quotidienne de Yopougon ?",
-        "explanation": "Le commerce de proximité fait partie des activités économiques de la commune.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_dde6735565cb",
-                "text": "Le commerce de proximité",
-                "correct": true
-            },
-            {
-                "source_key": "opt_a02cf01484ff",
-                "text": "L’exploitation de glaciers",
-                "correct": false
-            },
-            {
-                "source_key": "opt_b45be8d9863c",
-                "text": "La construction de stations de ski",
-                "correct": false
-            },
-            {
-                "source_key": "opt_1661d05f488b",
-                "text": "La pêche sous la banquise",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 39,
-        "source_key": "yopougon.q.c83d9cb01e874782a77fa824d674f88c",
-        "category": "economie",
-        "question": "Pourquoi la zone industrielle de Yopougon est-elle importante pour l’emploi ?",
-        "explanation": "Les entreprises industrielles contribuent à l’activité économique et à l’emploi.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_242e8754cccd",
-                "text": "Elle accueille des entreprises qui recrutent dans plusieurs secteurs",
-                "correct": true
-            },
-            {
-                "source_key": "opt_66cdc1f8e6d7",
-                "text": "Elle ne contient que des logements",
-                "correct": false
-            },
-            {
-                "source_key": "opt_a7bbc3baf21e",
-                "text": "Elle interdit toute activité productive",
-                "correct": false
-            },
-            {
-                "source_key": "opt_5d52c6be1c9c",
-                "text": "Elle ne fonctionne qu’un jour par an",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 40,
-        "source_key": "yopougon.q.22167f2d71ac43149481c28784985d1d",
-        "category": "economie",
-        "question": "Quel axe routier important est associé à la sortie ouest d’Abidjan au niveau de Gesco ?",
-        "explanation": "Gesco est associé au point où l’autoroute du Nord quitte l’agglomération d’Abidjan.",
-        "points": 25,
-        "options": [
-            {
-                "source_key": "opt_848e286eab20",
-                "text": "L’autoroute du Nord",
-                "correct": true
-            },
-            {
-                "source_key": "opt_e8fb34f15458",
-                "text": "L’autoroute Abidjan–Grand-Bassam uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_c73233d6cfef",
-                "text": "La route de Boundiali uniquement",
-                "correct": false
-            },
-            {
-                "source_key": "opt_a8609a61b601",
-                "text": "La route de l’aéroport de Yamoussoukro",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 41,
-        "source_key": "yopougon.q.61cd5802b68346f69faa5826ee93dba6",
-        "category": "infrastructures",
-        "question": "Quel établissement hospitalier important porte le nom de Yopougon ?",
-        "explanation": "Le CHU de Yopougon est un établissement hospitalier situé dans la commune.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_9dfc0238050d",
-                "text": "Le CHU de Yopougon",
-                "correct": true
-            },
-            {
-                "source_key": "opt_ec838a59d549",
-                "text": "Le CHU de Bouaké situé à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_81445c630807",
-                "text": "Le CHU de Korhogo situé à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_a02680c45dc0",
-                "text": "Le CHU de Man situé à Yopougon",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 42,
-        "source_key": "yopougon.q.5697f46001bb4a08b4e6b755d28daec4",
-        "category": "infrastructures",
-        "question": "Quel repère de transport est connu à Yopougon ?",
-        "explanation": "Siporex est cité comme un repère de transport de Yopougon.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_58da54b06f9e",
-                "text": "Siporex",
-                "correct": true
-            },
-            {
-                "source_key": "opt_091628ce85bc",
-                "text": "Gare de Grand-Bassam située à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_36b4ea5f26ca",
-                "text": "Aéroport de Korhogo situé à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_c374c8fddaed",
-                "text": "Gare maritime de San Pedro située à Yopougon",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 43,
-        "source_key": "yopougon.q.5a5bb6244a8c4976b5c8e63e89837e95",
-        "category": "infrastructures",
-        "question": "Quel quartier est associé à l’entrée de l’autoroute du Nord depuis Abidjan ?",
-        "explanation": "Les sources associent Gesco au point où l’autoroute du Nord quitte Abidjan.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_f3cca4b6e888",
-                "text": "Gesco",
-                "correct": true
-            },
-            {
-                "source_key": "opt_f6dae8046232",
-                "text": "Riviera Golf",
-                "correct": false
-            },
-            {
-                "source_key": "opt_12b572bfdbbf",
-                "text": "Bingerville centre",
-                "correct": false
-            },
-            {
-                "source_key": "opt_3bc894d2e22f",
-                "text": "Assinie Mafia",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 44,
-        "source_key": "yopougon.q.fc227088f9514a69aa348bc196a8442a",
-        "category": "infrastructures",
-        "question": "Quel équipement municipal contribue à la vie sportive et culturelle de Yopougon ?",
-        "explanation": "Le stade municipal fait partie des équipements sportifs et culturels de la commune.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_a7616e316ea5",
-                "text": "Le stade municipal",
-                "correct": true
-            },
-            {
-                "source_key": "opt_e480ac5bdb7a",
-                "text": "Le port autonome de San Pedro",
-                "correct": false
-            },
-            {
-                "source_key": "opt_dafd474c18b9",
-                "text": "Le stade de Bouaké situé à Yopougon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_6e68dfb8e091",
-                "text": "L’aéroport international de Yamoussoukro",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 45,
-        "source_key": "yopougon.q.1332bcf1e13f4e4aa4f9b552d81b3c34",
-        "category": "infrastructures",
-        "question": "Quel type de problème est particulièrement surveillé sur certains sites de Yopougon pendant les fortes pluies ?",
-        "explanation": "Les autorités ont identifié certains sites de Yopougon exposés aux risques liés aux pluies et au drainage.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_d512a80021d2",
-                "text": "Les inondations et le drainage",
-                "correct": true
-            },
-            {
-                "source_key": "opt_a0ddf7099ad3",
-                "text": "Les avalanches",
-                "correct": false
-            },
-            {
-                "source_key": "opt_f5f488f0af9f",
-                "text": "Les tempêtes de neige",
-                "correct": false
-            },
-            {
-                "source_key": "opt_3a97bd20d276",
-                "text": "Les éruptions volcaniques",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 46,
-        "source_key": "yopougon.q.48d718755cec418ea1805cb0eb6e2c0f",
-        "category": "infrastructures",
-        "question": "Quels secteurs ont été cités par l’ONPC en 2023 parmi les sites à risque examinés à Yopougon ?",
-        "explanation": "L’ONPC a cité Koweït, Banco 2 et Bougounisso lors d’une visite en mai 2023.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_f5249cadae19",
-                "text": "Koweït, Banco 2 et Bougounisso",
-                "correct": true
-            },
-            {
-                "source_key": "opt_f44bfb20a3fc",
-                "text": "Riviera 3, Faya et M’Badon",
-                "correct": false
-            },
-            {
-                "source_key": "opt_d0761a6f0657",
-                "text": "Port-Bouët, Vridi et Gonzagueville",
-                "correct": false
-            },
-            {
-                "source_key": "opt_2910a9ea88c2",
-                "text": "Cocody Danga, Anono et Blockhauss",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 47,
-        "source_key": "yopougon.q.d61cbc4e4edb4b20a0245130e1a9094a",
-        "category": "infrastructures",
-        "question": "Quelle action est proposée pour réduire les risques liés aux pluies dans certains secteurs de Yopougon ?",
-        "explanation": "L’amélioration du drainage a été proposée sur certains sites à risque.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_b6e2fe694a55",
-                "text": "Améliorer le drainage des eaux",
-                "correct": true
-            },
-            {
-                "source_key": "opt_9a23a9dbb7c0",
-                "text": "Construire des pistes de ski",
-                "correct": false
-            },
-            {
-                "source_key": "opt_bb0b9cfb0346",
-                "text": "Supprimer toutes les canalisations",
-                "correct": false
-            },
-            {
-                "source_key": "opt_06863ffc7a23",
-                "text": "Déplacer la commune au nord du pays",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 48,
-        "source_key": "yopougon.q.813a99297cb148fdbc29b1f992af9bc6",
-        "category": "infrastructures",
-        "question": "Quel lieu de sortie historique est associé à la vie nocturne de Yopougon ?",
-        "explanation": "La rue Princesse est historiquement associée aux maquis et aux sorties à Yopougon.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_c82e7d4fe6ef",
-                "text": "La rue Princesse",
-                "correct": true
-            },
-            {
-                "source_key": "opt_d6e5f8529586",
-                "text": "La rue des Jardins de Cocody",
-                "correct": false
-            },
-            {
-                "source_key": "opt_50f37ae8b167",
-                "text": "Le boulevard de la République à Yamoussoukro",
-                "correct": false
-            },
-            {
-                "source_key": "opt_5df31b28aea5",
-                "text": "La plage de Grand-Bassam située à Yopougon",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 49,
-        "source_key": "yopougon.q.88f4fc31ff1f4f7b8f2d33c586bdf25d",
-        "category": "infrastructures",
-        "question": "Qu’est-il arrivé à la rue Princesse en août 2011 selon les récits historiques publiés ?",
-        "explanation": "Des sources historiques indiquent la démolition de la rue Princesse en août 2011.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_9d817cc39778",
-                "text": "Elle a été démolie",
-                "correct": true
-            },
-            {
-                "source_key": "opt_d4a6b2c0456f",
-                "text": "Elle est devenue un aéroport",
-                "correct": false
-            },
-            {
-                "source_key": "opt_090c1210b162",
-                "text": "Elle a été déplacée à Bouaké",
-                "correct": false
-            },
-            {
-                "source_key": "opt_cb55f00d7e7b",
-                "text": "Elle a été transformée en port maritime",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "number": 50,
-        "source_key": "yopougon.q.cb59c0baf73d408cb50810ce1a127725",
-        "category": "infrastructures",
-        "question": "Quel type de lieu était particulièrement associé à la rue Princesse ?",
-        "explanation": "La rue Princesse était connue pour ses maquis et ses lieux de divertissement.",
-        "points": 30,
-        "options": [
-            {
-                "source_key": "opt_e9b1b08eaaf0",
-                "text": "Des maquis et des lieux de divertissement",
-                "correct": true
-            },
-            {
-                "source_key": "opt_352e9c6dda57",
-                "text": "Des pistes de ski",
-                "correct": false
-            },
-            {
-                "source_key": "opt_d4d6ebd966af",
-                "text": "Des mines d’or souterraines",
-                "correct": false
-            },
-            {
-                "source_key": "opt_2dfcb4b78bdb",
-                "text": "Des ambassades uniquement",
-                "correct": false
-            }
-        ]
-    }
+  {
+    "number": 1,
+    "category": "geographie",
+    "question": "Quelle lagune traverse le paysage urbain d’Abidjan ?",
+    "explanation": "La lagune Ébrié sépare une partie des communes du nord et du sud d’Abidjan.",
+    "options": [
+      {
+        "text": "La lagune Ébrié",
+        "correct": true,
+        "source_key": "opt_74f5dcf67a21"
+      },
+      {
+        "text": "La lagune Aby",
+        "correct": false,
+        "source_key": "opt_d9694cd29b5c"
+      },
+      {
+        "text": "La lagune de Fresco",
+        "correct": false,
+        "source_key": "opt_04ce6dffa6be"
+      },
+      {
+        "text": "La lagune Tendo",
+        "correct": false,
+        "source_key": "opt_ccb96e07f3c7"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.1316343ae8a853bdaf4dc39a07ce2ca4"
+  },
+  {
+    "number": 2,
+    "category": "geographie",
+    "question": "Quelle commune abrite le grand centre administratif et d’affaires d’Abidjan ?",
+    "explanation": "Le Plateau concentre des administrations et de nombreuses activités de services.",
+    "options": [
+      {
+        "text": "Cocody",
+        "correct": false,
+        "source_key": "opt_e34db18063b8"
+      },
+      {
+        "text": "Marcory",
+        "correct": false,
+        "source_key": "opt_69a5e9b938a3"
+      },
+      {
+        "text": "Le Plateau",
+        "correct": true,
+        "source_key": "opt_13e07439ad7f"
+      },
+      {
+        "text": "Abobo",
+        "correct": false,
+        "source_key": "opt_b1638cd17971"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.9ccf2ce85db755afacc05c992da47f1a"
+  },
+  {
+    "number": 3,
+    "category": "geographie",
+    "question": "Dans quelle commune se trouve l’aéroport international d’Abidjan ?",
+    "explanation": "L’aéroport international Félix-Houphouët-Boigny se situe dans la commune de Port-Bouët.",
+    "options": [
+      {
+        "text": "Adjamé",
+        "correct": false,
+        "source_key": "opt_5b564c66ebd7"
+      },
+      {
+        "text": "Port-Bouët",
+        "correct": true,
+        "source_key": "opt_10475a67d272"
+      },
+      {
+        "text": "Attécoubé",
+        "correct": false,
+        "source_key": "opt_2ab7001cf5de"
+      },
+      {
+        "text": "Koumassi",
+        "correct": false,
+        "source_key": "opt_d62ee4ae1bd5"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.eb39df80bbf55b149e5ab4bf29a24ff7"
+  },
+  {
+    "number": 4,
+    "category": "monuments",
+    "question": "Dans quelle commune se situe le Palais de la Culture Bernard Binlin-Dadié ?",
+    "explanation": "Le Palais de la Culture se trouve sur le front lagunaire de Treichville.",
+    "options": [
+      {
+        "text": "Treichville",
+        "correct": true,
+        "source_key": "opt_77dc451fccda"
+      },
+      {
+        "text": "Yopougon",
+        "correct": false,
+        "source_key": "opt_124af380c0fb"
+      },
+      {
+        "text": "Cocody",
+        "correct": false,
+        "source_key": "opt_442abd11504e"
+      },
+      {
+        "text": "Abobo",
+        "correct": false,
+        "source_key": "opt_9c8981e9f2ed"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.37cf10fc21b35171b9ef2e1a851c62e9"
+  },
+  {
+    "number": 5,
+    "category": "culture",
+    "question": "Quel peuple est historiquement lié à la région lagunaire d’Abidjan ?",
+    "explanation": "Les Tchaman, aussi appelés Ébrié, font partie des populations historiques de la zone.",
+    "options": [
+      {
+        "text": "Les Sénoufo",
+        "correct": false,
+        "source_key": "opt_7537e09d7f6a"
+      },
+      {
+        "text": "Les Bété",
+        "correct": false,
+        "source_key": "opt_fd8a470115b0"
+      },
+      {
+        "text": "Les Koulango",
+        "correct": false,
+        "source_key": "opt_d316ce0d218c"
+      },
+      {
+        "text": "Les Tchaman",
+        "correct": true,
+        "source_key": "opt_7443bdc9741d"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.793f760501735a60ab057529d6adbe15"
+  },
+  {
+    "number": 6,
+    "category": "geographie",
+    "question": "Combien de communes composent la ville d’Abidjan selon le découpage officiel ?",
+    "explanation": "La ville compte dix communes ; le district autonome comprend aussi quatre sous-préfectures.",
+    "options": [
+      {
+        "text": "8",
+        "correct": false,
+        "source_key": "opt_e41bc582b1c8"
+      },
+      {
+        "text": "12",
+        "correct": false,
+        "source_key": "opt_4e776ba92b4c"
+      },
+      {
+        "text": "14",
+        "correct": false,
+        "source_key": "opt_648d43a0de13"
+      },
+      {
+        "text": "10",
+        "correct": true,
+        "source_key": "opt_77fb79613264"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.114a9d19a7c05624a514b0f6125dd96b"
+  },
+  {
+    "number": 7,
+    "category": "patrimoine",
+    "question": "Quel espace protégé conserve une forêt tropicale au cœur d’Abidjan ?",
+    "explanation": "Le Banco est une aire protégée entourée par plusieurs communes abidjanaises.",
+    "options": [
+      {
+        "text": "La réserve de N’Zo",
+        "correct": false,
+        "source_key": "opt_e8745fa46fc3"
+      },
+      {
+        "text": "Le parc national du Banco",
+        "correct": true,
+        "source_key": "opt_2d490057fb9b"
+      },
+      {
+        "text": "Le parc de la Comoé",
+        "correct": false,
+        "source_key": "opt_e3dfe0486ea1"
+      },
+      {
+        "text": "Le mont Péko",
+        "correct": false,
+        "source_key": "opt_ae9b6a5701a7"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.cade10696ff45b5cbbb4f60f527c3e15"
+  },
+  {
+    "number": 8,
+    "category": "infrastructures",
+    "question": "Quel ouvrage permet l’accès maritime entre la lagune et l’océan à Abidjan ?",
+    "explanation": "Le canal de Vridi relie la lagune Ébrié à l’océan Atlantique et donne accès au port.",
+    "options": [
+      {
+        "text": "Le canal d’Assinie",
+        "correct": false,
+        "source_key": "opt_e2f9643bc91e"
+      },
+      {
+        "text": "Le canal de Panama",
+        "correct": false,
+        "source_key": "opt_ce672e630737"
+      },
+      {
+        "text": "Le canal de Suez",
+        "correct": false,
+        "source_key": "opt_5ceb9bfab9e5"
+      },
+      {
+        "text": "Le canal de Vridi",
+        "correct": true,
+        "source_key": "opt_93e1e806eb5e"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.d169344994e85ad5b6758bf3a603b9eb"
+  },
+  {
+    "number": 9,
+    "category": "economie",
+    "question": "Quelle activité caractérise particulièrement le grand complexe de Vridi ?",
+    "explanation": "La zone de Vridi accueille des installations portuaires essentielles aux échanges commerciaux.",
+    "options": [
+      {
+        "text": "La culture du coton",
+        "correct": false,
+        "source_key": "opt_d15ba528972d"
+      },
+      {
+        "text": "L’exploitation aurifère",
+        "correct": false,
+        "source_key": "opt_c87b852656ab"
+      },
+      {
+        "text": "Le commerce maritime",
+        "correct": true,
+        "source_key": "opt_7cca4c31bd18"
+      },
+      {
+        "text": "L’élevage bovin",
+        "correct": false,
+        "source_key": "opt_5fcef0f7f098"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.a7de695387e15b0c804e1825f408f466"
+  },
+  {
+    "number": 10,
+    "category": "histoire",
+    "question": "En quelle année Abidjan est-elle officiellement devenue le chef-lieu colonial ?",
+    "explanation": "Abidjan succède à Bingerville comme chef-lieu colonial en juillet 1934.",
+    "options": [
+      {
+        "text": "1902",
+        "correct": false,
+        "source_key": "opt_121795de2139"
+      },
+      {
+        "text": "1934",
+        "correct": true,
+        "source_key": "opt_094e56e147d5"
+      },
+      {
+        "text": "1921",
+        "correct": false,
+        "source_key": "opt_e7742c3061c1"
+      },
+      {
+        "text": "1951",
+        "correct": false,
+        "source_key": "opt_ab70d13c0ea3"
+      }
+    ],
+    "points": 10,
+    "source_key": "yopougon.q.85f5f10791f3575fac4189ae060d0fdd"
+  },
+  {
+    "number": 11,
+    "category": "geographie",
+    "question": "Quelle commune abidjanaise abrite la gare ferroviaire historique du réseau Abidjan–Niger ?",
+    "explanation": "Le site historique du chemin de fer Abidjan–Niger passe par Treichville.",
+    "options": [
+      {
+        "text": "Cocody",
+        "correct": false,
+        "source_key": "opt_43f334eac7b4"
+      },
+      {
+        "text": "Treichville",
+        "correct": true,
+        "source_key": "opt_5b9e59e1a855"
+      },
+      {
+        "text": "Abobo",
+        "correct": false,
+        "source_key": "opt_7c3d5f1bd774"
+      },
+      {
+        "text": "Port-Bouët",
+        "correct": false,
+        "source_key": "opt_2ab088617a48"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.ebc3f0dc98d5582f840cc4687af53a30"
+  },
+  {
+    "number": 12,
+    "category": "histoire",
+    "question": "Quelle ville était chef-lieu colonial juste avant Abidjan ?",
+    "explanation": "Bingerville a précédé Abidjan dans cette fonction administrative.",
+    "options": [
+      {
+        "text": "Dabou",
+        "correct": false,
+        "source_key": "opt_c92d159ca699"
+      },
+      {
+        "text": "Bouaké",
+        "correct": false,
+        "source_key": "opt_711eba2e08bd"
+      },
+      {
+        "text": "Daloa",
+        "correct": false,
+        "source_key": "opt_8eb47032e8f8"
+      },
+      {
+        "text": "Bingerville",
+        "correct": true,
+        "source_key": "opt_242eea0680d6"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.9e94df2f90755a9fbe9b8f260c6f84d1"
+  },
+  {
+    "number": 13,
+    "category": "infrastructures",
+    "question": "Quelles communes le pont Henri-Konan-Bédié relie-t-il ?",
+    "explanation": "Le pont à péage relie Cocody à Marcory en franchissant la lagune Ébrié.",
+    "options": [
+      {
+        "text": "Cocody et Marcory",
+        "correct": true,
+        "source_key": "opt_b4f6c99a679c"
+      },
+      {
+        "text": "Plateau et Treichville",
+        "correct": false,
+        "source_key": "opt_b4ea1cbad297"
+      },
+      {
+        "text": "Abobo et Adjamé",
+        "correct": false,
+        "source_key": "opt_f382842a22d9"
+      },
+      {
+        "text": "Yopougon et Attécoubé",
+        "correct": false,
+        "source_key": "opt_da0d7b8f1ee6"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.e28a6abdb1ec5b0e937c4132d42badae"
+  },
+  {
+    "number": 14,
+    "category": "culture",
+    "question": "Quel était le nom d’un ancien village associé à l’histoire de Treichville ?",
+    "explanation": "Anoumabo est lié à l’histoire de Treichville ; le village actuel se trouve à Marcory.",
+    "options": [
+      {
+        "text": "Anoumabo",
+        "correct": true,
+        "source_key": "opt_96bc97abeb3f"
+      },
+      {
+        "text": "Fakaha",
+        "correct": false,
+        "source_key": "opt_5e2ceaf4458e"
+      },
+      {
+        "text": "Koni",
+        "correct": false,
+        "source_key": "opt_1de88c3443f0"
+      },
+      {
+        "text": "Krindjabo",
+        "correct": false,
+        "source_key": "opt_7eb1204cf441"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.3145d67cbe995b17958331b07a2b3a3b"
+  },
+  {
+    "number": 15,
+    "category": "economie",
+    "question": "Quel service de la SOTRA permet de traverser la lagune sans emprunter de pont ?",
+    "explanation": "Les bateaux-bus desservent plusieurs gares lagunaires du Grand Abidjan.",
+    "options": [
+      {
+        "text": "Le téléphérique",
+        "correct": false,
+        "source_key": "opt_c49692d94eb1"
+      },
+      {
+        "text": "Le tramway",
+        "correct": false,
+        "source_key": "opt_393c32b16a0f"
+      },
+      {
+        "text": "Le bateau-bus",
+        "correct": true,
+        "source_key": "opt_66450fe01f05"
+      },
+      {
+        "text": "Le funiculaire",
+        "correct": false,
+        "source_key": "opt_c38f39760cda"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.d24d24be570d56d78a7712ab38e7cd3f"
+  },
+  {
+    "number": 16,
+    "category": "culture",
+    "question": "Quel établissement de Treichville est particulièrement consacré aux spectacles et aux arts scéniques ?",
+    "explanation": "Le Palais de la Culture de Treichville comprend plusieurs salles et lieux de spectacle.",
+    "options": [
+      {
+        "text": "La Bourse régionale",
+        "correct": false,
+        "source_key": "opt_b7e85218936b"
+      },
+      {
+        "text": "Le Palais de la Culture",
+        "correct": true,
+        "source_key": "opt_6f0357ada1d1"
+      },
+      {
+        "text": "Le Musée des civilisations",
+        "correct": false,
+        "source_key": "opt_6b10f4e59385"
+      },
+      {
+        "text": "La Bibliothèque nationale",
+        "correct": false,
+        "source_key": "opt_7ae1da18d97c"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.192e984ab43e5e36861af4a8a29d332d"
+  },
+  {
+    "number": 17,
+    "category": "geographie",
+    "question": "Quelle commune abrite un grand marché et une importante gare routière d’Abidjan ?",
+    "explanation": "Adjamé est un centre majeur d’échanges et de transport dans l’agglomération.",
+    "options": [
+      {
+        "text": "Cocody",
+        "correct": false,
+        "source_key": "opt_970c47f2e7c5"
+      },
+      {
+        "text": "Marcory",
+        "correct": false,
+        "source_key": "opt_2d3b4feb7b84"
+      },
+      {
+        "text": "Adjamé",
+        "correct": true,
+        "source_key": "opt_1b55581146ec"
+      },
+      {
+        "text": "Port-Bouët",
+        "correct": false,
+        "source_key": "opt_a15bb5963f21"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.e2827998d778580ba007b5615d4bb890"
+  },
+  {
+    "number": 18,
+    "category": "histoire",
+    "question": "Quelle compagnie publique de transport urbain fut créée à Abidjan en 1960 ?",
+    "explanation": "La Société des transports abidjanais a été créée le 16 décembre 1960.",
+    "options": [
+      {
+        "text": "La SITARAIL",
+        "correct": false,
+        "source_key": "opt_29739a790376"
+      },
+      {
+        "text": "Air Côte d’Ivoire",
+        "correct": false,
+        "source_key": "opt_c1cf59e6b446"
+      },
+      {
+        "text": "La SOTRA",
+        "correct": true,
+        "source_key": "opt_ec52e539bc73"
+      },
+      {
+        "text": "La CIE",
+        "correct": false,
+        "source_key": "opt_4a25342eaeda"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.24641bbaa5195b1892b6b759edd9fc79"
+  },
+  {
+    "number": 19,
+    "category": "patrimoine",
+    "question": "Laquelle de ces communes partage une bordure avec le parc national du Banco ?",
+    "explanation": "Le parc du Banco est bordé notamment par Adjamé, Attécoubé, Abobo et Yopougon.",
+    "options": [
+      {
+        "text": "Treichville",
+        "correct": false,
+        "source_key": "opt_a6aac6613cd7"
+      },
+      {
+        "text": "Attécoubé",
+        "correct": true,
+        "source_key": "opt_b090fc952c5a"
+      },
+      {
+        "text": "Marcory",
+        "correct": false,
+        "source_key": "opt_d8ca85b3189f"
+      },
+      {
+        "text": "Port-Bouët",
+        "correct": false,
+        "source_key": "opt_d452dc978b20"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.d45ddbae4c2e5229a733b8e2b506690c"
+  },
+  {
+    "number": 20,
+    "category": "infrastructures",
+    "question": "Quel pont a été inauguré à Abidjan en décembre 2014 ?",
+    "explanation": "Le pont Henri-Konan-Bédié a été inauguré le 16 décembre 2014.",
+    "options": [
+      {
+        "text": "Le pont de Cocody",
+        "correct": false,
+        "source_key": "opt_4ff559d485f8"
+      },
+      {
+        "text": "Le pont Général-de-Gaulle",
+        "correct": false,
+        "source_key": "opt_b143480b7bcb"
+      },
+      {
+        "text": "Le pont Félix-Houphouët-Boigny",
+        "correct": false,
+        "source_key": "opt_c86a45081450"
+      },
+      {
+        "text": "Le pont Henri-Konan-Bédié",
+        "correct": true,
+        "source_key": "opt_d65c4fc00eb2"
+      }
+    ],
+    "points": 15,
+    "source_key": "yopougon.q.893758dbf9755b9298d59bdc2c2aa39c"
+  },
+  {
+    "number": 21,
+    "category": "culture",
+    "question": "Quel peuple a donné son nom, selon l’explication historique retenue par le district, à Abidjan ?",
+    "explanation": "Le nom d’Abidjan est généralement associé aux Bidjan, un groupe du peuple tchaman.",
+    "options": [
+      {
+        "text": "Les Fodonon",
+        "correct": false,
+        "source_key": "opt_b5f28dcaad2f"
+      },
+      {
+        "text": "Les Abron",
+        "correct": false,
+        "source_key": "opt_374dbae0f6e0"
+      },
+      {
+        "text": "Les Abbey",
+        "correct": false,
+        "source_key": "opt_26f7f31f5296"
+      },
+      {
+        "text": "Les Bidjan",
+        "correct": true,
+        "source_key": "opt_4ef0e0db2af9"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.4bfb0258f1c55fb3a59a72fe31fcec11"
+  },
+  {
+    "number": 22,
+    "category": "monuments",
+    "question": "Quelle commune accueille la cathédrale Saint-Paul d’Abidjan ?",
+    "explanation": "La cathédrale Saint-Paul est située au Plateau, dans le centre administratif.",
+    "options": [
+      {
+        "text": "Abobo",
+        "correct": false,
+        "source_key": "opt_77f651676b59"
+      },
+      {
+        "text": "Yopougon",
+        "correct": false,
+        "source_key": "opt_61ffaaaed5d5"
+      },
+      {
+        "text": "Le Plateau",
+        "correct": true,
+        "source_key": "opt_1eb945da0365"
+      },
+      {
+        "text": "Koumassi",
+        "correct": false,
+        "source_key": "opt_4de7fe0a67d3"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.2b961e17342e5040a211dd89386ca2bb"
+  },
+  {
+    "number": 23,
+    "category": "infrastructures",
+    "question": "Quel pont moderne relie directement le Plateau à Cocody ?",
+    "explanation": "Ce pont à haubans a ouvert à la circulation le 12 août 2023.",
+    "options": [
+      {
+        "text": "Le pont Henri-Konan-Bédié",
+        "correct": false,
+        "source_key": "opt_4636fa2078a3"
+      },
+      {
+        "text": "Le pont Général-de-Gaulle",
+        "correct": false,
+        "source_key": "opt_701e8d7d3b86"
+      },
+      {
+        "text": "Le pont Alassane-Ouattara",
+        "correct": true,
+        "source_key": "opt_107e6ee879a2"
+      },
+      {
+        "text": "Le pont Félix-Houphouët-Boigny",
+        "correct": false,
+        "source_key": "opt_96522935dddb"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.70fa11d0dfea5ff68822b611cb08739a"
+  },
+  {
+    "number": 24,
+    "category": "economie",
+    "question": "Quel aménagement a rendu possible l’essor du port moderne au milieu du XXe siècle ?",
+    "explanation": "L’ouverture du canal en 1950 a permis l’accès des navires à la lagune.",
+    "options": [
+      {
+        "text": "Le canal de Vridi",
+        "correct": true,
+        "source_key": "opt_8aef5c8f7c9e"
+      },
+      {
+        "text": "Le barrage de Kossou",
+        "correct": false,
+        "source_key": "opt_c17b64d714fb"
+      },
+      {
+        "text": "La voie du cacao",
+        "correct": false,
+        "source_key": "opt_6ddf5b286c8c"
+      },
+      {
+        "text": "Le pont de Dabou",
+        "correct": false,
+        "source_key": "opt_d05395a20e1e"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.60c36ff162c85ae4b2514bac2d2941aa"
+  },
+  {
+    "number": 25,
+    "category": "histoire",
+    "question": "En quelle année le port moderne d’Abidjan a-t-il été officiellement inauguré ?",
+    "explanation": "Le port a été officiellement inauguré le 5 février 1951.",
+    "options": [
+      {
+        "text": "1951",
+        "correct": true,
+        "source_key": "opt_4c0d77ad3a50"
+      },
+      {
+        "text": "1934",
+        "correct": false,
+        "source_key": "opt_d33987a75e6e"
+      },
+      {
+        "text": "1960",
+        "correct": false,
+        "source_key": "opt_1f58b6bdbe52"
+      },
+      {
+        "text": "1978",
+        "correct": false,
+        "source_key": "opt_59a5b7f405f1"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.64ca80ed61f658d0aa8772a16efb5dbd"
+  },
+  {
+    "number": 26,
+    "category": "monuments",
+    "question": "À quelle institution appartient la gestion du parc national du Banco ?",
+    "explanation": "L’Office ivoirien des parcs et réserves présente et protège le parc du Banco.",
+    "options": [
+      {
+        "text": "À la BCEAO",
+        "correct": false,
+        "source_key": "opt_3bedb66e1e73"
+      },
+      {
+        "text": "À la SOTRA",
+        "correct": false,
+        "source_key": "opt_dc8df3919b0a"
+      },
+      {
+        "text": "À la BRVM",
+        "correct": false,
+        "source_key": "opt_395ab983273f"
+      },
+      {
+        "text": "À l’OIPR",
+        "correct": true,
+        "source_key": "opt_98956de2b096"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.7716068e688d54bca47cf63322d0d427"
+  },
+  {
+    "number": 27,
+    "category": "culture",
+    "question": "Comment nomme-t-on les groupes ou fratries traditionnelles dans l’organisation tchaman ?",
+    "explanation": "Les goto sont les groupes ou fratries présents dans l’organisation traditionnelle tchaman.",
+    "options": [
+      {
+        "text": "Les clans poro",
+        "correct": false,
+        "source_key": "opt_640bc8404eab"
+      },
+      {
+        "text": "Les cantons",
+        "correct": false,
+        "source_key": "opt_cc299302e227"
+      },
+      {
+        "text": "Les goto",
+        "correct": true,
+        "source_key": "opt_3d2ff66b10d5"
+      },
+      {
+        "text": "Les provinces",
+        "correct": false,
+        "source_key": "opt_49c25bddf5b1"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.151c301f1c225b5aadf01b0b841f1a7b"
+  },
+  {
+    "number": 28,
+    "category": "infrastructures",
+    "question": "Quel nom porte le plan d’urbanisme appliqué au début des années 1950 à Abidjan ?",
+    "explanation": "Le plan Badani prévoyait d’étendre les quartiers résidentiels et les zones industrielles.",
+    "options": [
+      {
+        "text": "Le plan Marshall",
+        "correct": false,
+        "source_key": "opt_47e575afbd54"
+      },
+      {
+        "text": "Le plan Badani",
+        "correct": true,
+        "source_key": "opt_8ad242e69ae0"
+      },
+      {
+        "text": "Le plan Lagos",
+        "correct": false,
+        "source_key": "opt_93a8d3571cd3"
+      },
+      {
+        "text": "Le plan Delmas",
+        "correct": false,
+        "source_key": "opt_061d439ed6dd"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.4ffa763a47e355bf9a69be81170b6d4f"
+  },
+  {
+    "number": 29,
+    "category": "monuments",
+    "question": "Dans quelle commune fut inauguré le Parc des expositions en 2023 ?",
+    "explanation": "Le Parc des expositions d’Abidjan a ouvert en juillet 2023 près de l’aéroport.",
+    "options": [
+      {
+        "text": "Port-Bouët",
+        "correct": true,
+        "source_key": "opt_fe1e18cdf333"
+      },
+      {
+        "text": "Le Plateau",
+        "correct": false,
+        "source_key": "opt_b33279457702"
+      },
+      {
+        "text": "Treichville",
+        "correct": false,
+        "source_key": "opt_a9207a6c0774"
+      },
+      {
+        "text": "Attécoubé",
+        "correct": false,
+        "source_key": "opt_482cff87284c"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.cfab958aa0c7599a9003362362603b2f"
+  },
+  {
+    "number": 30,
+    "category": "economie",
+    "question": "Quel type d’événements le complexe inauguré près de l’aéroport en 2023 accueille-t-il ?",
+    "explanation": "Le Parc des expositions est conçu pour salons, congrès, foires et spectacles.",
+    "options": [
+      {
+        "text": "Des courses hippiques",
+        "correct": false,
+        "source_key": "opt_da093463a3c2"
+      },
+      {
+        "text": "Des foires agricoles uniquement",
+        "correct": false,
+        "source_key": "opt_de89777a6440"
+      },
+      {
+        "text": "Des compétitions nautiques",
+        "correct": false,
+        "source_key": "opt_de12fc4a6653"
+      },
+      {
+        "text": "Des salons et congrès",
+        "correct": true,
+        "source_key": "opt_1bdb7695fe06"
+      }
+    ],
+    "points": 20,
+    "source_key": "yopougon.q.c763687f91e6526ea34e5a8a96edfcff"
+  },
+  {
+    "number": 31,
+    "category": "histoire",
+    "question": "À quelle date le canal reliant la lagune Ébrié à la mer a-t-il été ouvert ?",
+    "explanation": "Le dernier obstacle du canal de Vridi fut supprimé le 23 juillet 1950.",
+    "options": [
+      {
+        "text": "7 août 1960",
+        "correct": false,
+        "source_key": "opt_8b635fa768e6"
+      },
+      {
+        "text": "1er juillet 1934",
+        "correct": false,
+        "source_key": "opt_a7b0b676071b"
+      },
+      {
+        "text": "16 décembre 2014",
+        "correct": false,
+        "source_key": "opt_fb48ae5f414c"
+      },
+      {
+        "text": "23 juillet 1950",
+        "correct": true,
+        "source_key": "opt_3985e08db58d"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.e7c8ec1ee0c05abd90f2ded77bc79ea2"
+  },
+  {
+    "number": 32,
+    "category": "histoire",
+    "question": "Quel ingénieur est devenu le premier directeur du port moderne d’Abidjan ?",
+    "explanation": "Jean Millier acheva les grands travaux portuaires avant de diriger le nouveau port.",
+    "options": [
+      {
+        "text": "Jean Millier",
+        "correct": true,
+        "source_key": "opt_303bb95aced6"
+      },
+      {
+        "text": "Marcel Treich-Laplène",
+        "correct": false,
+        "source_key": "opt_a68f42bcb62f"
+      },
+      {
+        "text": "Aldo Spirito",
+        "correct": false,
+        "source_key": "opt_618e76ef7681"
+      },
+      {
+        "text": "Pierre Fakhoury",
+        "correct": false,
+        "source_key": "opt_7a89448079e5"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.6827b425b49f5690bf885f900301b193"
+  },
+  {
+    "number": 33,
+    "category": "infrastructures",
+    "question": "Quel type de pont est celui ouvert entre Cocody et le Plateau en août 2023 ?",
+    "explanation": "Le pont comprend une travée soutenue par des câbles fixés à un pylône.",
+    "options": [
+      {
+        "text": "Un pont suspendu à chaînes",
+        "correct": false,
+        "source_key": "opt_d66d51f9c5b4"
+      },
+      {
+        "text": "Un pont à haubans",
+        "correct": true,
+        "source_key": "opt_d0130eeffb8e"
+      },
+      {
+        "text": "Un pont flottant",
+        "correct": false,
+        "source_key": "opt_b81b6cf92764"
+      },
+      {
+        "text": "Un pont levant",
+        "correct": false,
+        "source_key": "opt_40aba8e21057"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.b197690c5aeb5039ad2c913815c091a7"
+  },
+  {
+    "number": 34,
+    "category": "personnalites",
+    "question": "Quel nom colonial a inspiré celui de la commune de Treichville ?",
+    "explanation": "Treichville tient son nom de Marcel Treich-Laplène, figure de l’administration coloniale.",
+    "options": [
+      {
+        "text": "Marcel Treich-Laplène",
+        "correct": true,
+        "source_key": "opt_be022e73886f"
+      },
+      {
+        "text": "Jean-Baptiste Marchand",
+        "correct": false,
+        "source_key": "opt_1924fd5ecdd9"
+      },
+      {
+        "text": "Arthur Verdier",
+        "correct": false,
+        "source_key": "opt_23c63e6af5f8"
+      },
+      {
+        "text": "Louis Faidherbe",
+        "correct": false,
+        "source_key": "opt_634d4234fd85"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.561d080a389f56189b2e626a9b034340"
+  },
+  {
+    "number": 35,
+    "category": "patrimoine",
+    "question": "En quelle année le parc national du Banco a-t-il été créé ?",
+    "explanation": "Le parc du Banco a été créé en 1953 pour préserver notamment une forêt urbaine.",
+    "options": [
+      {
+        "text": "1934",
+        "correct": false,
+        "source_key": "opt_98ce6ceb06f5"
+      },
+      {
+        "text": "1953",
+        "correct": true,
+        "source_key": "opt_452c649112af"
+      },
+      {
+        "text": "1978",
+        "correct": false,
+        "source_key": "opt_a80ae758a1d4"
+      },
+      {
+        "text": "2005",
+        "correct": false,
+        "source_key": "opt_3771fdd9ff4b"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.2849c47f423059608dc5a2bc94c3607e"
+  },
+  {
+    "number": 36,
+    "category": "economie",
+    "question": "Quel était le premier service régulier de la SOTRA inauguré en mars 1961 ?",
+    "explanation": "La première ligne urbaine régulière de la SOTRA reliait Adjamé au Plateau.",
+    "options": [
+      {
+        "text": "La ligne Abobo–Yopougon",
+        "correct": false,
+        "source_key": "opt_6726fcf8e96a"
+      },
+      {
+        "text": "La ligne Adjamé–Plateau",
+        "correct": true,
+        "source_key": "opt_6c7538ce0f2c"
+      },
+      {
+        "text": "La ligne Cocody–Bassam",
+        "correct": false,
+        "source_key": "opt_6f8e0309d0b9"
+      },
+      {
+        "text": "La ligne Marcory–Songon",
+        "correct": false,
+        "source_key": "opt_07545af5cc2d"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.84d29876bb6d53868c9df480a6c85f8f"
+  },
+  {
+    "number": 37,
+    "category": "culture",
+    "question": "Quel écrivain ivoirien a donné son nom au Palais de la Culture ?",
+    "explanation": "Cet écrivain et homme de culture est honoré dans le nom officiel du Palais.",
+    "options": [
+      {
+        "text": "Ahmadou Kourouma",
+        "correct": false,
+        "source_key": "opt_b90236d6b0f4"
+      },
+      {
+        "text": "Véronique Tadjo",
+        "correct": false,
+        "source_key": "opt_03034cffc6bf"
+      },
+      {
+        "text": "Zadi Zaourou",
+        "correct": false,
+        "source_key": "opt_266ecf7bb191"
+      },
+      {
+        "text": "Bernard Binlin-Dadié",
+        "correct": true,
+        "source_key": "opt_339b9276312a"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.f3cc2e38129c5d15b6cfacd74bd465c9"
+  },
+  {
+    "number": 38,
+    "category": "infrastructures",
+    "question": "Quel organisme exploite historiquement le transport par bateau-bus à Abidjan ?",
+    "explanation": "La SOTRA assure aussi des liaisons lagunaires en bateau-bus.",
+    "options": [
+      {
+        "text": "La BCEAO",
+        "correct": false,
+        "source_key": "opt_71399f8e6259"
+      },
+      {
+        "text": "La SOTRA",
+        "correct": true,
+        "source_key": "opt_710aceafcff7"
+      },
+      {
+        "text": "Le PAA",
+        "correct": false,
+        "source_key": "opt_cf5b2e9dd978"
+      },
+      {
+        "text": "Le CNRA",
+        "correct": false,
+        "source_key": "opt_5bb0a3c3a0dd"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.b9238587ba925e85ba099c413c970acc"
+  },
+  {
+    "number": 39,
+    "category": "monuments",
+    "question": "Quel architecte a conçu la cathédrale Saint-Paul d’Abidjan ?",
+    "explanation": "L’architecte italien Aldo Spirito a conçu cette cathédrale du Plateau.",
+    "options": [
+      {
+        "text": "Pierre Fakhoury",
+        "correct": false,
+        "source_key": "opt_c72120613ea4"
+      },
+      {
+        "text": "Aldo Spirito",
+        "correct": true,
+        "source_key": "opt_827d8ef740b0"
+      },
+      {
+        "text": "Jean Millier",
+        "correct": false,
+        "source_key": "opt_f377b97a0b1f"
+      },
+      {
+        "text": "Henry Chomette",
+        "correct": false,
+        "source_key": "opt_0054e4c25bfd"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.121a45cefd25591a851ce59cc8d8e4d9"
+  },
+  {
+    "number": 40,
+    "category": "histoire",
+    "question": "Quel plan d’urbanisme approuvé en 1960 a succédé aux premières grandes extensions ?",
+    "explanation": "Le plan SETAP privilégiait notamment un développement est-ouest le long de la lagune.",
+    "options": [
+      {
+        "text": "Le plan Badani",
+        "correct": false,
+        "source_key": "opt_3b53d7c02c41"
+      },
+      {
+        "text": "Le plan Lagos",
+        "correct": false,
+        "source_key": "opt_f366edd16c6f"
+      },
+      {
+        "text": "Le plan SETAP",
+        "correct": true,
+        "source_key": "opt_e7e39fda6f9f"
+      },
+      {
+        "text": "Le plan Cotonou",
+        "correct": false,
+        "source_key": "opt_d83c74230962"
+      }
+    ],
+    "points": 25,
+    "source_key": "yopougon.q.dde380d6840359d69e34b6f351c9e255"
+  },
+  {
+    "number": 41,
+    "category": "histoire",
+    "question": "Quel fut le premier navire à emprunter le canal du port moderne d’Abidjan ?",
+    "explanation": "Le port indique que « Marie Dominique » fut le premier navire à franchir le canal.",
+    "options": [
+      {
+        "text": "Marie Dominique",
+        "correct": true,
+        "source_key": "opt_83932ca186b3"
+      },
+      {
+        "text": "Volta",
+        "correct": false,
+        "source_key": "opt_1acd8a55769f"
+      },
+      {
+        "text": "Bougainville",
+        "correct": false,
+        "source_key": "opt_a8061893f099"
+      },
+      {
+        "text": "Liberté",
+        "correct": false,
+        "source_key": "opt_99a7081e463a"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.9c4890a228045ff486faaa5353316d5a"
+  },
+  {
+    "number": 42,
+    "category": "economie",
+    "question": "Quel navire est cité comme le premier bateau au long cours passé par le canal ?",
+    "explanation": "Le Port autonome cite « Volta » comme premier navire au long cours du nouveau canal.",
+    "options": [
+      {
+        "text": "Marie Dominique",
+        "correct": false,
+        "source_key": "opt_a827cfbf4912"
+      },
+      {
+        "text": "Afrique",
+        "correct": false,
+        "source_key": "opt_1386c2b076cd"
+      },
+      {
+        "text": "Volta",
+        "correct": true,
+        "source_key": "opt_c7678f9a3efe"
+      },
+      {
+        "text": "Saint-Louis",
+        "correct": false,
+        "source_key": "opt_005b8e6103bc"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.24cb1cd683655215ac75fe47f8749b95"
+  },
+  {
+    "number": 43,
+    "category": "infrastructures",
+    "question": "Quelle année marque l’adoption officielle du projet technique définitif du canal de Vridi ?",
+    "explanation": "Le projet technique du canal fut officiellement adopté le 17 décembre 1935.",
+    "options": [
+      {
+        "text": "1903",
+        "correct": false,
+        "source_key": "opt_bfc7cbd0cc92"
+      },
+      {
+        "text": "1920",
+        "correct": false,
+        "source_key": "opt_a1c3c92a203b"
+      },
+      {
+        "text": "1951",
+        "correct": false,
+        "source_key": "opt_485dbe970a5b"
+      },
+      {
+        "text": "1935",
+        "correct": true,
+        "source_key": "opt_b63428aa288d"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.25f15f38c5c252db8cb86672c7ff2715"
+  },
+  {
+    "number": 44,
+    "category": "geographie",
+    "question": "Quelle commune accueillait, en 1980, la première gare lagunaire moderne de la SOTRA ?",
+    "explanation": "Le service moderne de transport lagunaire de la SOTRA débute en 1980 avec une gare au Plateau.",
+    "options": [
+      {
+        "text": "Le Plateau",
+        "correct": true,
+        "source_key": "opt_9903ca2a2cc7"
+      },
+      {
+        "text": "Koumassi",
+        "correct": false,
+        "source_key": "opt_12d317738725"
+      },
+      {
+        "text": "Abobo",
+        "correct": false,
+        "source_key": "opt_39d496a4f8dc"
+      },
+      {
+        "text": "Marcory",
+        "correct": false,
+        "source_key": "opt_ee37e970c515"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.3ad7b818f891507fa8b0b26ab10fffd8"
+  },
+  {
+    "number": 45,
+    "category": "culture",
+    "question": "Quel ancien avion fut transformé en bibliothèque au Palais de la Culture ?",
+    "explanation": "Un ancien Fokker présidentiel, appelé « l’oiseau-livres », a servi de bibliothèque.",
+    "options": [
+      {
+        "text": "Un Boeing 747",
+        "correct": false,
+        "source_key": "opt_3133b6041c06"
+      },
+      {
+        "text": "Un Airbus A320",
+        "correct": false,
+        "source_key": "opt_3c8ac49e7f0f"
+      },
+      {
+        "text": "Un Fokker F27",
+        "correct": true,
+        "source_key": "opt_bfa613f34fe7"
+      },
+      {
+        "text": "Un Antonov An-225",
+        "correct": false,
+        "source_key": "opt_ef4c5cb1cf20"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.40be4208c1b55c1ab67342ef72e1f3e4"
+  },
+  {
+    "number": 46,
+    "category": "monuments",
+    "question": "En quelle année la première partie du Palais de la Culture fut-elle inaugurée ?",
+    "explanation": "La remise officielle des clés et l’inauguration eurent lieu le 1er octobre 1999.",
+    "options": [
+      {
+        "text": "1975",
+        "correct": false,
+        "source_key": "opt_6360c5873f32"
+      },
+      {
+        "text": "1985",
+        "correct": false,
+        "source_key": "opt_9e9f54c389aa"
+      },
+      {
+        "text": "2014",
+        "correct": false,
+        "source_key": "opt_a6556b3c3779"
+      },
+      {
+        "text": "1999",
+        "correct": true,
+        "source_key": "opt_06f2514fd6ef"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.6cae949ce6fe5fd4b5ae09d4cf18c853"
+  },
+  {
+    "number": 47,
+    "category": "infrastructures",
+    "question": "Quel est le nombre de câbles cités pour le pylône central du pont de Cocody en 2023 ?",
+    "explanation": "La présidence décrit 19 câbles montés sur le pylône du pont à haubans.",
+    "options": [
+      {
+        "text": "19",
+        "correct": true,
+        "source_key": "opt_515d0f1ea115"
+      },
+      {
+        "text": "8",
+        "correct": false,
+        "source_key": "opt_ffbc1d1fe667"
+      },
+      {
+        "text": "12",
+        "correct": false,
+        "source_key": "opt_577eb32e3126"
+      },
+      {
+        "text": "32",
+        "correct": false,
+        "source_key": "opt_2d81cc800008"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.0018cb42243c5b85aea29b8d624a9f35"
+  },
+  {
+    "number": 48,
+    "category": "patrimoine",
+    "question": "Quelle ancienne maison abrite un espace de type écomusée dans le parc du Banco ?",
+    "explanation": "La maison du Gouverneur Reste est mentionnée par l’OIPR comme un lieu d’écomusée.",
+    "options": [
+      {
+        "text": "La villa Alfassa",
+        "correct": false,
+        "source_key": "opt_a8e0c4c6ed02"
+      },
+      {
+        "text": "La maison du Gouverneur Reste",
+        "correct": true,
+        "source_key": "opt_54e38d68f773"
+      },
+      {
+        "text": "Le palais de Justice",
+        "correct": false,
+        "source_key": "opt_5057a0d42030"
+      },
+      {
+        "text": "La maison de la Lagune",
+        "correct": false,
+        "source_key": "opt_24f200b63f85"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.ca4b6161c6dd51a881f7f46821ca84df"
+  },
+  {
+    "number": 49,
+    "category": "histoire",
+    "question": "Quelle année correspond à l’achèvement du wharf de Port-Bouët mentionné par le district ?",
+    "explanation": "Le wharf de Port-Bouët fut achevé en 1927 avant d’être raccordé au rail.",
+    "options": [
+      {
+        "text": "1927",
+        "correct": true,
+        "source_key": "opt_b1c73218cdec"
+      },
+      {
+        "text": "1903",
+        "correct": false,
+        "source_key": "opt_bfbf7c9bb4bd"
+      },
+      {
+        "text": "1939",
+        "correct": false,
+        "source_key": "opt_f20ee8af7dbb"
+      },
+      {
+        "text": "1958",
+        "correct": false,
+        "source_key": "opt_60a2d83e587a"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.1aba79b33e795a41a4b38cfcff90c2c9"
+  },
+  {
+    "number": 50,
+    "category": "monuments",
+    "question": "Quel architecte a conçu le Parc des expositions inauguré en 2023 ?",
+    "explanation": "Le Parc des expositions de Port-Bouët est une réalisation de Pierre Fakhoury.",
+    "options": [
+      {
+        "text": "Aldo Spirito",
+        "correct": false,
+        "source_key": "opt_8665581b8ed7"
+      },
+      {
+        "text": "Jean Millier",
+        "correct": false,
+        "source_key": "opt_d118f9ae212e"
+      },
+      {
+        "text": "Pierre Fakhoury",
+        "correct": true,
+        "source_key": "opt_35a551b405eb"
+      },
+      {
+        "text": "Roger Taillibert",
+        "correct": false,
+        "source_key": "opt_2d5c47aec25f"
+      }
+    ],
+    "points": 30,
+    "source_key": "yopougon.q.e3df01d556aa569ea8a52eda7a4db994"
+  }
 ]
