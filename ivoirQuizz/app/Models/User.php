@@ -13,7 +13,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Log;
 use Laravel\Sanctum\HasApiTokens;
+use Throwable;
+
+use function Illuminate\Support\defer;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -217,11 +222,31 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function sendPasswordResetNotification($token): void
     {
-        $this->notify(new ResetPasswordNotification($token));
+        $this->sendAuthMailAfterResponse(new ResetPasswordNotification($token));
     }
 
     public function sendEmailVerificationNotification(): void
     {
-        $this->notify(new VerifyEmailNotification);
+        $this->sendAuthMailAfterResponse(new VerifyEmailNotification);
+    }
+
+    /**
+     * Mails d'authentification envoyés juste après la réponse HTTP, sans passer par la file :
+     * sur l'hébergement mutualisé, ils ne dépendent donc pas du Cron qui lance queue:work.
+     */
+    private function sendAuthMailAfterResponse(Notification $notification): void
+    {
+        defer(function () use ($notification): void {
+            try {
+                $this->notifyNow($notification);
+            } catch (Throwable $exception) {
+                Log::error('Échec d’envoi d’un email d’authentification.', [
+                    'user_id' => $this->getKey(),
+                    'notification' => $notification::class,
+                    'exception' => $exception::class,
+                    'message' => $exception->getMessage(),
+                ]);
+            }
+        });
     }
 }

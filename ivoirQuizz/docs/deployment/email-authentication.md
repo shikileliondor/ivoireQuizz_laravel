@@ -26,11 +26,15 @@ php artisan optimize:clear
 php artisan optimize
 ```
 
-Pour une file `database`, ajouter une tâche cron chaque minute :
+`optimize` met la configuration en cache : après toute modification du `.env` (mot de passe compris), relancer `optimize:clear` puis `optimize`, sinon Laravel garde l’ancienne valeur.
 
-```cron
-* * * * * cd /chemin/absolu/du/projet && php artisan queue:work --stop-when-empty --tries=3 >> /dev/null 2>&1
+Tester l’envoi SMTP, qui affiche l’erreur exacte en cas d’échec :
+
+```bash
+php artisan mail:test votre.adresse@exemple.com
 ```
+
+Les emails de vérification et de réinitialisation partent juste après la réponse HTTP, sans passer par la file d’attente : ils ne dépendent pas du Cron. En cas d’échec, le message d’erreur SMTP est écrit dans `storage/logs/laravel.log` (« Échec d’envoi d’un email d’authentification »). Le Cron `schedule:run` (voir `docs/ADMIN.md`) reste nécessaire pour les notifications push.
 
 Les liens Android nécessitent ensuite ces variables fournies par Google Play :
 

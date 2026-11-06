@@ -42,7 +42,7 @@ class PhaseOnePasswordTest extends TestCase
     public function test_forgot_password_stays_neutral_when_notification_dispatch_fails(): void
     {
         User::factory()->create(['email' => 'known@example.com']);
-        Notification::shouldReceive('send')->once()->andThrow(new RuntimeException('SMTP unavailable'));
+        Notification::shouldReceive('sendNow')->once()->andThrow(new RuntimeException('SMTP unavailable'));
 
         $this->postJson('/api/v1/auth/forgot-password', ['email' => 'known@example.com'])
             ->assertOk()->assertJsonPath('success', true);

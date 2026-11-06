@@ -12,6 +12,7 @@ use App\Services\Notifications\ReminderService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Str;
 use Symfony\Component\Console\Command\Command;
@@ -100,6 +101,29 @@ Artisan::command('admin:create {email} {--name= : Nom affiché (nouveau compte u
 
     return Command::SUCCESS;
 })->purpose('Create an admin account or promote an existing user to admin.');
+
+Artisan::command('mail:test {email : Adresse qui recevra le message de test}', function (): int {
+    $email = trim((string) $this->argument('email'));
+    $smtp = config('mail.mailers.smtp');
+
+    $this->line('Mailer : '.config('mail.default').' | '.($smtp['scheme'] ?? 'auto').'://'.$smtp['host'].':'.$smtp['port']);
+    $this->line('Compte : '.($smtp['username'] ?: '(vide)').' | mot de passe : '.(filled($smtp['password']) ? 'renseigné' : 'VIDE'));
+    $this->line('Expéditeur : '.config('mail.from.address'));
+
+    try {
+        Mail::raw('Message de test envoyé par '.config('app.name').' le '.now()->format('d/m/Y H:i').'.', function ($message) use ($email): void {
+            $message->to($email)->subject('Test d’envoi '.config('app.name'));
+        });
+    } catch (Throwable $exception) {
+        $this->error('Échec : '.$exception->getMessage());
+
+        return Command::FAILURE;
+    }
+
+    $this->info("Email accepté par le serveur SMTP pour {$email}. Vérifiez aussi le dossier spam.");
+
+    return Command::SUCCESS;
+})->purpose('Send a test email synchronously and print the exact SMTP error if it fails.');
 
 Artisan::command('leagues:refresh-ranks {--sync : Run synchronously instead of dispatching a queue job}', function (LeagueService $leagues): int {
     if ($this->option('sync')) {
