@@ -24,9 +24,10 @@ class LogoImportService
      * Crée une question par fichier. Le nom du fichier donne la bonne réponse ;
      * les mauvaises réponses sont tirées parmi les autres marques de la catégorie.
      * Une marque déjà présente (question non archivée) est ignorée.
+     * « difficulties » donne, si besoin, une difficulté propre à une marque (clé en minuscules).
      *
      * @param  array<int, UploadedFile>  $files
-     * @param  array{question_text: string, difficulty: string, image_source: ?string, is_active: bool}  $options
+     * @param  array{question_text: string, difficulty: string, difficulties?: array<string, string>, image_source: ?string, is_active: bool}  $options
      * @return array{created: list<string>, skipped: list<string>}
      */
     public function import(int $categoryId, array $files, array $options): array
@@ -79,7 +80,7 @@ class LogoImportService
                         'level_id' => null,
                         'type' => 'image',
                         'question_text' => $options['question_text'],
-                        'difficulty' => $options['difficulty'],
+                        'difficulty' => $options['difficulties'][mb_strtolower($brand)] ?? $options['difficulty'],
                         'image' => $path,
                         'image_source' => $options['image_source'],
                         'is_active' => $options['is_active'],
