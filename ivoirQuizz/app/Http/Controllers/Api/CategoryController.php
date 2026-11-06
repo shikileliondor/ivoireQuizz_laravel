@@ -20,7 +20,7 @@ class CategoryController extends Controller
             ->withCount([
                 'questions as questions_count' => fn ($query) => $query->where('is_active', true),
             ])
-            ->when($request->boolean('has_questions'), fn ($query) => $query->has('questions'))
+            ->when($request->boolean('has_questions'), fn ($query) => $query->whereHas('questions', fn ($questions) => $questions->where('is_active', true)))
             ->orderBy('name')
             ->get();
 

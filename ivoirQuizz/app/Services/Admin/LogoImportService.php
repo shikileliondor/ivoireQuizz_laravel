@@ -2,7 +2,6 @@
 
 namespace App\Services\Admin;
 
-use App\Models\Answer;
 use App\Models\Question;
 use App\Support\LogoImage;
 use App\Support\PublicImage;
@@ -32,10 +31,17 @@ class LogoImportService
      */
     public function import(int $categoryId, array $files, array $options): array
     {
-        $existing = Answer::query()
-            ->where('is_correct', true)
-            ->whereHas('question', fn ($query) => $query->where('category_id', $categoryId))
-            ->pluck('answer_text');
+        $questions = Question::query()
+            ->where('category_id', $categoryId)
+            ->with(['answers' => fn ($query) => $query->where('is_correct', true)])
+            ->get();
+        $existing = $questions->map(fn (Question $question): ?string => $question->answers->first()?->answer_text)->filter()->values();
+
+        // Marque créée sans image (catalogue) : le fichier complète sa question au lieu d'être ignoré.
+        $placeholders = $questions
+            ->filter(fn (Question $question): bool => blank($question->image) && $question->answers->isNotEmpty())
+            ->keyBy(fn (Question $question): string => mb_strtolower($question->answers->first()->answer_text))
+            ->all();
 
         $taken = $existing->mapWithKeys(fn (string $brand): array => [mb_strtolower($brand) => true])->all();
         $batch = [];
@@ -44,15 +50,17 @@ class LogoImportService
         foreach ($files as $file) {
             $brand = self::brandName($file);
             $key = mb_strtolower($brand);
+            $placeholder = $placeholders[$key] ?? null;
+            unset($placeholders[$key]);
 
-            if ($brand === '' || isset($taken[$key])) {
+            if ($brand === '' || (isset($taken[$key]) && $placeholder === null)) {
                 $skipped[] = $brand !== '' ? $brand : $file->getClientOriginalName();
 
                 continue;
             }
 
             $taken[$key] = true;
-            $batch[] = ['brand' => $brand, 'file' => $file];
+            $batch[] = ['brand' => $brand, 'file' => $file, 'question' => $placeholder];
         }
 
         $pool = $existing->concat(array_column($batch, 'brand'))->unique(fn (string $brand): string => mb_strtolower($brand))->values();
@@ -66,9 +74,20 @@ class LogoImportService
 
         try {
             DB::transaction(function () use ($batch, $pool, $categoryId, $options, &$stored): void {
-                foreach ($batch as ['brand' => $brand, 'file' => $file]) {
+                foreach ($batch as ['brand' => $brand, 'file' => $file, 'question' => $placeholder]) {
                     LogoImage::shrink($file);
                     $stored[] = $path = PublicImage::store($file, 'questions', 'logos');
+
+                    if ($placeholder !== null) {
+                        $placeholder->forceFill([
+                            'type' => 'image',
+                            'image' => $path,
+                            'image_source' => $options['image_source'] ?? $placeholder->image_source,
+                            'is_active' => $options['is_active'],
+                        ])->save();
+
+                        continue;
+                    }
 
                     $answers = collect([$brand])
                         ->concat($this->wrongAnswers($pool, $brand))

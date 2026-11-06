@@ -19,6 +19,6 @@ class QuickPlayQuestionsSeederTest extends TestCase
         $this->assertDatabaseHas('categories', ['slug' => 'geographie', 'name' => 'Géographie', 'is_active' => true]);
 
         $this->artisan('db:seed', ['--force' => true])->assertExitCode(0);
-        $this->assertSame(200, Question::query()->whereNull('level_id')->count());
+        $this->assertSame(200, Question::query()->whereNull('level_id')->withoutLogos()->count());
     }
 }

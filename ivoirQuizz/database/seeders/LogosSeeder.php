@@ -7,6 +7,7 @@ use App\Models\Answer;
 use App\Models\Category;
 use App\Models\Question;
 use App\Services\Admin\LogoImportService;
+use App\Services\Admin\QuestionAdminService;
 use App\Support\LogoImage;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
@@ -18,6 +19,8 @@ use RuntimeException;
  * nommé d'après elle (« Moov_Africa.png » donne la bonne réponse « Moov Africa »).
  * Mêmes règles et même traitement que l'import en lot de l'admin : les mauvaises réponses
  * sont tirées parmi les autres marques. La difficulté vient du catalogue des marques, sinon « easy ».
+ * Chaque marque du catalogue sans fichier est créée sans image et inactive : elle s'active quand
+ * son logo arrive, par l'admin (édition de la question ou import en lot) ou par docs/logos.
  * Relançable sans risque : une marque déjà présente est ignorée, une marque archivée
  * (logo retiré à la demande d'une marque) n'est jamais réimportée.
  */
@@ -30,7 +33,7 @@ class LogosSeeder extends Seeder
     /** Dossier lu, docs/logos par défaut. */
     public ?string $directory = null;
 
-    public function run(LogoImportService $importer): void
+    public function run(LogoImportService $importer, QuestionAdminService $questions): void
     {
         $directory = $this->directory ?? base_path('docs/logos');
         $files = [];
@@ -48,12 +51,6 @@ class LogosSeeder extends Seeder
             $files[] = $path;
         }
 
-        if ($files === []) {
-            $this->command?->info('Aucun logo dans docs/logos : rien à importer.');
-
-            return;
-        }
-
         $copies = [];
 
         try {
@@ -66,20 +63,61 @@ class LogosSeeder extends Seeder
             }, $files);
 
             $this->validate($uploads);
-            $this->import($importer, $uploads);
+            $category = Category::query()->firstOrCreate(['slug' => Category::LOGOS], ['name' => 'Logos', 'is_active' => true]);
+            if ($uploads !== []) {
+                $this->import($importer, $category, $uploads);
+            }
         } finally {
             array_map(fn (string $copy): bool => @unlink($copy), $copies);
+        }
+
+        $this->placeholders($questions, $category);
+    }
+
+    /** Marques du catalogue encore absentes (même archivées) : question sans image, inactive. */
+    private function placeholders(QuestionAdminService $questions, Category $category): void
+    {
+        $known = Answer::query()
+            ->where('is_correct', true)
+            ->whereHas('question', fn ($query) => $query->withTrashed()->where('category_id', $category->id))
+            ->pluck('answer_text')
+            ->mapWithKeys(fn (string $brand): array => [mb_strtolower($brand) => true])
+            ->all();
+        $catalogue = collect($this->catalogue());
+        $created = 0;
+
+        foreach ($catalogue as $entry) {
+            if (isset($known[mb_strtolower($entry['marque'])])) {
+                continue;
+            }
+
+            // Mauvaises réponses : d'abord des marques du même secteur, plus crédibles.
+            $others = $catalogue->reject(fn (array $other): bool => $other['marque'] === $entry['marque']);
+            $wrong = $others->where('secteur', $entry['secteur'])->shuffle()
+                ->concat($others->where('secteur', '!=', $entry['secteur'])->shuffle())
+                ->take(3)
+                ->pluck('marque');
+
+            $questions->save(new Question, [
+                'category_id' => $category->id,
+                'level_id' => null,
+                'type' => 'image',
+                'question_text' => Question::LOGO_QUESTION_TEXT,
+                'difficulty' => $entry['difficulte_proposee'],
+                'image' => null,
+                'is_active' => false,
+            ], collect([$entry['marque']])->concat($wrong)->map(fn (string $text): array => ['text' => $text])->all(), 0);
+            $created++;
+        }
+
+        if ($created > 0) {
+            $this->command?->info("Logos du catalogue créés sans image (inactifs) : {$created}");
         }
     }
 
     /** @param  list<UploadedFile>  $uploads */
-    private function import(LogoImportService $importer, array $uploads): void
+    private function import(LogoImportService $importer, Category $category, array $uploads): void
     {
-        $category = Category::query()->firstOrCreate(
-            ['slug' => Category::LOGOS],
-            ['name' => 'Logos', 'is_active' => true],
-        );
-
         $archived = Answer::query()
             ->where('is_correct', true)
             ->whereHas('question', fn ($query) => $query->onlyTrashed()->where('category_id', $category->id))
@@ -102,7 +140,7 @@ class LogosSeeder extends Seeder
         $result = $importer->import($category->id, $uploads, [
             'question_text' => Question::LOGO_QUESTION_TEXT,
             'difficulty' => self::DEFAULT_DIFFICULTY,
-            'difficulties' => $this->catalogueDifficulties(),
+            'difficulties' => collect($this->catalogue())->mapWithKeys(fn (array $entry): array => [mb_strtolower($entry['marque']) => $entry['difficulte_proposee']])->all(),
             'image_source' => null,
             'is_active' => true,
         ]);
@@ -137,21 +175,24 @@ class LogosSeeder extends Seeder
         }
     }
 
-    /** @return array<string, string> difficulté proposée par le catalogue, par marque en minuscules */
-    private function catalogueDifficulties(): array
+    /** @return list<array{marque: string, secteur: string, difficulte_proposee: string}> */
+    private function catalogue(): array
     {
         $path = base_path(self::CATALOGUE);
         $entries = is_file($path) ? json_decode((string) file_get_contents($path), true) : null;
-        $difficulties = [];
+        $catalogue = [];
 
         foreach (is_array($entries) ? $entries : [] as $entry) {
-            $brand = $entry['marque'] ?? null;
-            $difficulty = $entry['difficulte_proposee'] ?? null;
-            if (is_string($brand) && in_array($difficulty, LevelRequest::DIFFICULTIES, true)) {
-                $difficulties[mb_strtolower($brand)] = $difficulty;
+            if (is_string($entry['marque'] ?? null) && trim($entry['marque']) !== ''
+                && in_array($entry['difficulte_proposee'] ?? null, LevelRequest::DIFFICULTIES, true)) {
+                $catalogue[] = [
+                    'marque' => trim($entry['marque']),
+                    'secteur' => is_string($entry['secteur'] ?? null) ? $entry['secteur'] : '',
+                    'difficulte_proposee' => $entry['difficulte_proposee'],
+                ];
             }
         }
 
-        return $difficulties;
+        return $catalogue;
     }
 }

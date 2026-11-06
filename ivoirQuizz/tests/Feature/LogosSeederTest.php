@@ -39,6 +39,7 @@ class LogosSeederTest extends TestCase
         $this->png('Ma_Marque.png');
 
         $this->runSeeder();
+        $this->assertSame(101, Question::query()->count());
         $this->assertSame(3, Question::query()->where('is_active', true)->count());
         $this->assertDatabaseHas('categories', ['slug' => Category::LOGOS]);
         $this->assertSame('medium', $this->logo('BNI')->difficulty);
@@ -48,12 +49,12 @@ class LogosSeederTest extends TestCase
         $this->assertSame(600, getimagesize($this->dir.'/Orange.png')[0]);
 
         $this->runSeeder();
-        $this->assertSame(3, Question::query()->count());
+        $this->assertSame(101, Question::query()->count());
 
         app(QuestionAdminService::class)->archive($this->logo('BNI'));
         $this->runSeeder();
-        $this->assertSame(2, Question::query()->count());
-        $this->assertSame(3, Question::withTrashed()->count());
+        $this->assertSame(100, Question::query()->count());
+        $this->assertSame(101, Question::withTrashed()->count());
     }
 
     public function test_rejects_everything_when_one_file_is_too_small(): void
@@ -70,10 +71,22 @@ class LogosSeederTest extends TestCase
         $this->assertSame(0, Question::query()->count());
     }
 
-    public function test_empty_folder_does_nothing(): void
+    public function test_catalogue_brands_without_file_are_created_inactive_without_image(): void
     {
         $this->runSeeder();
-        $this->assertDatabaseMissing('categories', ['slug' => Category::LOGOS]);
+        $this->runSeeder();
+
+        $this->assertDatabaseHas('categories', ['slug' => Category::LOGOS, 'is_active' => true]);
+        $this->assertSame(100, Question::query()->whereNull('image')->where('is_active', false)->where('type', 'image')->count());
+        $bni = $this->logo('BNI');
+        $this->assertSame('medium', $bni->difficulty);
+        $this->assertSame(4, $bni->answers()->count());
+
+        $this->png('BNI.png');
+        $this->runSeeder();
+        $this->assertSame(100, Question::query()->count());
+        $this->assertTrue($bni->fresh()->is_active);
+        Storage::disk('public')->assertExists($bni->fresh()->image);
     }
 
     private function runSeeder(): void
