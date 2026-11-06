@@ -8,7 +8,9 @@ use App\Models\LeagueSeason;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redis;
+use Throwable;
 
 class LeagueService
 {
@@ -39,7 +41,7 @@ class LeagueService
     {
         if ($xp <= 0) { return 0.0; }
 
-        return (float) Redis::zincrby($this->rankingRedisKey($season), $xp, (string) $user->id);
+        return (float) $this->mirrorToRedis(fn () => Redis::zincrby($this->rankingRedisKey($season), $xp, (string) $user->id), 0.0);
     }
 
     public function getTopPlayersFromRedis(LeagueSeason $season, int $limit = 50): array
@@ -87,14 +89,32 @@ class LeagueService
     private function syncRankingToRedis(LeagueSeason $season): void
     {
         $key = $this->rankingRedisKey($season);
-        Redis::del($key);
 
-        $season->members()
-            ->where('xp_earned', '>', 0)
-            ->chunkById(500, function ($members) use ($key): void {
-                foreach ($members as $member) {
-                    Redis::zadd($key, (int) $member->xp_earned, (string) $member->user_id);
-                }
-            });
+        $this->mirrorToRedis(function () use ($season, $key): void {
+            Redis::del($key);
+
+            $season->members()
+                ->where('xp_earned', '>', 0)
+                ->chunkById(500, function ($members) use ($key): void {
+                    foreach ($members as $member) {
+                        Redis::zadd($key, (int) $member->xp_earned, (string) $member->user_id);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Redis n'est qu'un miroir du classement (MySQL fait foi, resynchronisé par refreshRanks) :
+     * son absence ou une panne ne doit jamais faire échouer la fin d'une partie ni la progression.
+     */
+    private function mirrorToRedis(callable $write, mixed $fallback = null): mixed
+    {
+        try {
+            return $write();
+        } catch (Throwable $e) {
+            Log::warning('League Redis mirror unavailable', ['exception' => $e::class, 'message' => $e->getMessage()]);
+
+            return $fallback;
+        }
     }
 }
