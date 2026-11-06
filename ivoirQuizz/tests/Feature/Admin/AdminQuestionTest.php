@@ -112,6 +112,9 @@ class AdminQuestionTest extends TestCase
 
     public function test_image_question_needs_an_image(): void
     {
+        Storage::fake('public');
+        Storage::disk('public')->put('questions/logo.png', 'png');
+
         $this->post(route('admin.questions.store'), $this->payload(['type' => 'image']))
             ->assertSessionHasErrors('image');
         $this->assertDatabaseCount('questions', 0);

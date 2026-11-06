@@ -3,7 +3,9 @@
 use App\Enums\UserStatus;
 use App\Jobs\RefreshLeagueRanksJob;
 use App\Models\PushLog;
+use App\Models\Question;
 use App\Models\User;
+use App\Services\Admin\QuestionImageAudit;
 use App\Services\Game\GameCacheService;
 use App\Services\Game\LeagueService;
 use App\Services\Notifications\ReminderService;
@@ -17,6 +19,31 @@ use Symfony\Component\Console\Command\Command;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Artisan::command('questions:check-images', function (QuestionImageAudit $audit): int {
+    $missing = $audit->missing();
+
+    if ($missing->isEmpty()) {
+        $this->info('Toutes les questions actives ont leur image sur le disque public.');
+
+        return Command::SUCCESS;
+    }
+
+    $this->table(
+        ['ID', 'Type', 'Chemin', 'Trouvé sur', 'Question'],
+        $missing->map(fn (Question $question): array => [
+            $question->id,
+            $question->type,
+            $question->image ?: '(aucun)',
+            implode(', ', $audit->foundElsewhere($question->image)) ?: '—',
+            Str::limit((string) $question->question_text, 50),
+        ])->all(),
+    );
+    $this->warn($missing->count().' question(s) active(s) avec une image introuvable. À renvoyer depuis l’admin :');
+    $this->line(route('admin.questions.index', ['image' => 'missing']));
+
+    return Command::FAILURE;
+})->purpose('Liste les questions actives dont le fichier image est introuvable sur le disque public.');
 
 Artisan::command('game:cache-map', function (GameCacheService $cache): int {
     $regions = $cache->cacheRegionsMap();

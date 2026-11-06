@@ -5,6 +5,7 @@ namespace App\Services\Admin;
 use App\Models\Answer;
 use App\Models\Question;
 use App\Support\LogoImage;
+use App\Support\PublicImage;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -66,7 +67,7 @@ class LogoImportService
             DB::transaction(function () use ($batch, $pool, $categoryId, $options, &$stored): void {
                 foreach ($batch as ['brand' => $brand, 'file' => $file]) {
                     LogoImage::shrink($file);
-                    $stored[] = $path = $file->store('questions', 'public');
+                    $stored[] = $path = PublicImage::store($file, 'questions', 'logos');
 
                     $answers = collect([$brand])
                         ->concat($this->wrongAnswers($pool, $brand))

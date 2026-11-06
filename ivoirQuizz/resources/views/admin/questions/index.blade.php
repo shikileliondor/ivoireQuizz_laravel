@@ -11,6 +11,16 @@
         </x-slot:actions>
     </x-admin.page-header>
 
+    @if ($missingImageIds !== [] && request('image') !== 'missing')
+        <div class="mb-5 flex items-start gap-3 rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800 ring-1 ring-amber-600/20" role="alert">
+            <x-admin.icon name="photo" class="mt-0.5 size-4 shrink-0" />
+            <p>
+                {{ count($missingImageIds) }} question(s) active(s) ont une image introuvable sur le serveur : l’app affiche « Image indisponible ».
+                <a href="{{ route('admin.questions.index', ['image' => 'missing']) }}" class="font-semibold underline">Voir la liste</a> et renvoyer l’image depuis chaque question.
+            </p>
+        </div>
+    @endif
+
     <x-admin.filters :action="route('admin.questions.index')">
         <div class="min-w-56 flex-1">
             <label for="q" class="form-label">Recherche</label>
@@ -21,6 +31,7 @@
         <x-admin.select name="difficulty" label="Difficulté" :options="\App\Support\AdminLabels::options('difficulty', $difficulties)" :value="request('difficulty')" placeholder="Toutes" class="w-36" />
         <x-admin.select name="status" label="Statut" :options="['active' => 'Actives', 'inactive' => 'Inactives']" :value="request('status')" placeholder="Toutes" class="w-36" />
         <x-admin.select name="source" label="Origine" :options="['campaign' => 'Import campagne', 'manual' => 'Saisie manuelle']" :value="request('source')" placeholder="Toutes" class="w-44" />
+        <x-admin.select name="image" label="Image" :options="['missing' => 'Introuvable ('.count($missingImageIds).')']" :value="request('image')" placeholder="Toutes" class="w-44" />
     </x-admin.filters>
 
     <div class="card overflow-hidden">

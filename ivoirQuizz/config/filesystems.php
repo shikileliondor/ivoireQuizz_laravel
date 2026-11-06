@@ -33,7 +33,9 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
-            'serve' => true,
+            // Désactivé : sa route /storage/{path} (URLs signées, inutilisées ici) masquerait
+            // App\Http\Controllers\PublicStorageController, qui sert le disque public.
+            'serve' => false,
             'throw' => false,
             'report' => false,
         ],

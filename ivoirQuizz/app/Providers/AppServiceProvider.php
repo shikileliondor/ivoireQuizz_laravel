@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\PublicStorageController;
 use App\Models\QuestionReport;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -78,6 +80,28 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('admin.layouts.app', function ($view): void {
             $view->with('pendingReportsCount', QuestionReport::query()->where('status', 'pending')->count());
+        });
+
+        $this->servePublicDisk();
+    }
+
+    /**
+     * Sert les images du disque public sous /storage/{path} (voir PublicStorageController).
+     *
+     * Enregistrée après la route du même chemin que FilesystemServiceProvider crée pour un disque
+     * avec 'serve' => true : elle la remplace même si la prod garde une config en cache où le
+     * disque « local » a encore cette option. Hors groupe « web » : pas de session, image cachable.
+     */
+    private function servePublicDisk(): void
+    {
+        $this->app->booted(function (): void {
+            if ($this->app->routesAreCached()) {
+                return;
+            }
+
+            Route::get('storage/{path}', PublicStorageController::class)
+                ->where('path', '.*')
+                ->name('storage.public');
         });
     }
 }

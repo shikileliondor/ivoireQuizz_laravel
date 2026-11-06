@@ -4,6 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use App\Models\Category;
 use App\Support\LogoImage;
+use App\Support\PublicImage;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Validator;
@@ -90,9 +91,15 @@ class QuestionRequest extends FormRequest
                     $validator->errors()->add('correct', 'Choisissez la bonne réponse parmi les réponses remplies.');
                 }
 
-                $keepsImage = $this->route('question')?->image && ! $this->boolean('remove_image');
-                if ($this->input('type') === 'image' && ! $this->hasFile('image') && ! $keepsImage) {
-                    $validator->errors()->add('image', 'Une question de type image a besoin d’une image.');
+                $currentImage = $this->route('question')?->image;
+                $keepsImage = $currentImage && ! $this->boolean('remove_image');
+                if ($this->input('type') === 'image' && ! $this->hasFile('image')) {
+                    if (! $keepsImage) {
+                        $validator->errors()->add('image', 'Une question de type image a besoin d’une image.');
+                    } elseif (! PublicImage::exists($currentImage)) {
+                        // L'app afficherait « Image indisponible » : le fichier doit être renvoyé.
+                        $validator->errors()->add('image', 'L’image actuelle est introuvable sur le serveur : envoyez-la à nouveau.');
+                    }
                 }
 
                 // Un logo ne se joue que dans sa catégorie, la seule où l'app affiche la mention légale.

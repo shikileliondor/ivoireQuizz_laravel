@@ -65,7 +65,7 @@ Extrait de réponse :
 }
 ```
 
-Une ville sans image retourne `"image_url": null` et reste incluse dans la carte. Les images Korhogo, Aboisso et Yopougon sont versionnées dans `database/seeders/Reference/images/` et copiées par `CityImagesSeeder` vers `storage/app/public/cities/`; le seeder renseigne aussi la colonne existante `cities.image`. Après déploiement des fichiers, exécuter `php artisan db:seed --class='Database\Seeders\Reference\CityImagesSeeder' --force` pour les installer sans relancer les autres seeders. Le lien `public/storage` doit exister (`php artisan storage:link`). Voir `docs/CITY_IMAGE_CREDITS.md` pour les sources et licences.
+Une ville sans image retourne `"image_url": null` et reste incluse dans la carte. Les images Korhogo, Aboisso et Yopougon sont versionnées dans `database/seeders/Reference/images/` et copiées par `CityImagesSeeder` vers `storage/app/public/cities/`; le seeder renseigne aussi la colonne existante `cities.image`. Après déploiement des fichiers, exécuter `php artisan db:seed --class='Database\Seeders\Reference\CityImagesSeeder' --force` pour les installer sans relancer les autres seeders. Les fichiers du disque `public` sont servis sous `/storage/…` : directement par Apache si le lien `public/storage` existe (`php artisan storage:link`), sinon par Laravel (`PublicStorageController`), ce qui est le cas sur l'hébergement FTP. Voir `docs/CITY_IMAGE_CREDITS.md` pour les sources et licences.
 
 ### GET /regions
 Liste des régions.

@@ -2,7 +2,9 @@
 @props(['name' => 'image', 'label' => 'Image', 'current' => null, 'hint' => 'JPG, PNG ou WebP, 2 Mo maximum.', 'contain' => false])
 
 @php($id = 'field-'.$name)
-@php($url = $current ? (str_starts_with($current, 'http') ? $current : Storage::disk('public')->url($current)) : null)
+@php($isExternal = $current && str_starts_with($current, 'http'))
+@php($isMissing = $current && ! $isExternal && ! \App\Support\PublicImage::exists($current))
+@php($url = $current && ! $isMissing ? ($isExternal ? $current : Storage::disk('public')->url($current)) : null)
 
 <div {{ $attributes->only('class') }}>
     <span class="form-label">{{ $label }}</span>
@@ -27,6 +29,9 @@
                     <input type="checkbox" name="remove_{{ $name }}" value="1" class="size-3.5 accent-red-600">
                     Supprimer l’image actuelle
                 </label>
+            @endif
+            @if ($isMissing)
+                <p class="text-xs font-medium text-amber-700">Fichier introuvable sur le serveur ({{ $current }}) : envoyez l’image à nouveau.</p>
             @endif
             @if ($hint)
                 <p class="text-xs text-slate-500">{{ $hint }}</p>

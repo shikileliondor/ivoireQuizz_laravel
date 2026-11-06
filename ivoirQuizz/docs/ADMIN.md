@@ -24,7 +24,7 @@ FTP ne lance pas Artisan. Après l'extraction de l'archive du déploiement qui i
 
 1. `php artisan migrate --force` : ajoute la colonne `users.is_admin`.
 2. `php artisan admin:create <email>` : crée le premier compte.
-3. `php artisan storage:link` si ce n'est pas déjà fait : nécessaire pour afficher les images envoyées.
+3. `php artisan storage:link` est facultatif : sans ce lien, Laravel sert lui-même les images envoyées sous `/storage/…` (route `storage.public`). Le lien les fait servir directement par Apache, un peu plus vite.
 
 Le déploiement du pseudo public ajoute la migration `add_pseudo_to_users_table` (`php artisan migrate --force`) : elle crée `users.pseudo` et le remplit pour les comptes existants (premier mot du nom, sinon `Joueur<id>`).
 
@@ -39,7 +39,7 @@ Le déploiement des notifications automatiques ajoute 2 migrations (`php artisan
 | Parties | Historique filtrable, détail réponse par réponse |
 | Régions, villes, niveaux | CRUD de la carte de campagne, images, ordre, récompenses ; le cache `game:regions:map` est vidé à chaque modification |
 | Catégories | CRUD |
-| Questions | Recherche et filtres, création/édition avec 2 à 6 réponses, activation, archivage |
+| Questions | Recherche et filtres (dont « Image : introuvable », signalé par une alerte), création/édition avec 2 à 6 réponses, activation, archivage. Une image qui n'a pas pu être écrite sur le serveur est refusée à l'enregistrement |
 | Logos | Grille de vignettes sur damier (le fond non transparent se voit), filtres marque/statut/source manquante, import en lot |
 | Signalements | Traitement (examiné, corrigé, rejeté), application groupée aux signalements de la même question |
 | Coffres, collection, ligues | CRUD des récompenses et paliers |

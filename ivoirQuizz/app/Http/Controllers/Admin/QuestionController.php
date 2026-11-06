@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Level;
 use App\Models\Question;
 use App\Services\Admin\QuestionAdminService;
+use App\Services\Admin\QuestionImageAudit;
 use App\Support\LogoImage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
@@ -22,8 +23,10 @@ class QuestionController extends Controller
 
     public function __construct(private readonly QuestionAdminService $questions) {}
 
-    public function index(Request $request): View
+    public function index(Request $request, QuestionImageAudit $audit): View
     {
+        $missingImageIds = $audit->missing()->modelKeys();
+
         $questions = Question::query()
             ->with(['level.city', 'category', 'answers' => fn ($query) => $query->where('is_correct', true)])
             ->withCount(['questionReports as pending_reports_count' => fn ($query) => $query->where('status', 'pending')])
@@ -35,12 +38,14 @@ class QuestionController extends Controller
             ->when($request->query('status') === 'inactive', fn ($query) => $query->where('is_active', false))
             ->when($request->query('source') === 'campaign', fn ($query) => $query->whereNotNull('source_key'))
             ->when($request->query('source') === 'manual', fn ($query) => $query->whereNull('source_key'))
+            ->when($request->query('image') === 'missing', fn ($query) => $query->whereIn('id', $missingImageIds))
             ->latest('id')
             ->paginate(25)
             ->withQueryString();
 
         return view('admin.questions.index', [
             'questions' => $questions,
+            'missingImageIds' => $missingImageIds,
             ...$this->formOptions(),
         ]);
     }
