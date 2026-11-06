@@ -17,7 +17,7 @@ use RuntimeException;
  */
 class QuickPlayQuestionsSeeder extends Seeder
 {
-    private const CATEGORY_NAMES = [
+    public const CATEGORY_NAMES = [
         'histoire' => 'Histoire',
         'geographie' => 'Géographie',
         'gastronomie' => 'Gastronomie',

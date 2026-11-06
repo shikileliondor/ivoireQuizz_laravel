@@ -1,0 +1,1482 @@
+[
+    {
+        "number": 1,
+        "category": "geographie",
+        "question": "Dans quelle partie de la Côte d’Ivoire se trouve Korhogo ?",
+        "explanation": "Korhogo est une grande ville du nord de la Côte d’Ivoire et le chef-lieu de la région du Poro.",
+        "options": [
+            {
+                "text": "Au Nord",
+                "correct": true,
+                "source_key": "opt_ea672bb46f20"
+            },
+            {
+                "text": "Au Sud",
+                "correct": false,
+                "source_key": "opt_40ea2262933f"
+            },
+            {
+                "text": "À l’Ouest",
+                "correct": false,
+                "source_key": "opt_86014b2cb24c"
+            },
+            {
+                "text": "Au Sud-Est",
+                "correct": false,
+                "source_key": "opt_308b0ee29b79"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.dff5b34728ba4520a253b5deda96f403"
+    },
+    {
+        "number": 2,
+        "category": "gastronomie",
+        "question": "Quel accompagnement est utilisé dans le plat régional composé de riz à la sauce arachide ?",
+        "explanation": "Le riz accompagné de sauce arachide est cité parmi les plats typiques de la région de Korhogo.",
+        "options": [
+            {
+                "text": "Une sauce au chocolat",
+                "correct": false,
+                "source_key": "opt_26cb747b1484"
+            },
+            {
+                "text": "Une sauce à base d’arachide",
+                "correct": true,
+                "source_key": "opt_78e86062429a"
+            },
+            {
+                "text": "Une crème au lait",
+                "correct": false,
+                "source_key": "opt_026db9fb0a34"
+            },
+            {
+                "text": "Une sauce à la vanille",
+                "correct": false,
+                "source_key": "opt_98e59fa20c9b"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.bfe7d72236b1441da612230c4359d358"
+    },
+    {
+        "number": 3,
+        "category": "artisanat",
+        "question": "Quel savoir-faire est associé au village de Fakaha ?",
+        "explanation": "Fakaha est réputé pour ses toiles peintes, connues sous le nom de toiles de Korhogo.",
+        "options": [
+            {
+                "text": "La fabrication de chaussures industrielles",
+                "correct": false,
+                "source_key": "opt_2dedf58272e8"
+            },
+            {
+                "text": "La construction de navires",
+                "correct": false,
+                "source_key": "opt_3b7d8265bf2b"
+            },
+            {
+                "text": "La peinture de toiles traditionnelles",
+                "correct": true,
+                "source_key": "opt_b329cafa352a"
+            },
+            {
+                "text": "La taille de diamants",
+                "correct": false,
+                "source_key": "opt_08845ccd5623"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.e171f0dcee48410b9ada2f04ee8567e9"
+    },
+    {
+        "number": 4,
+        "category": "artisanat",
+        "question": "Quelle activité est particulièrement associée à Waraniéné ?",
+        "explanation": "Waraniéné est connu pour ses artisans qui tissent notamment de longues bandes de coton.",
+        "options": [
+            {
+                "text": "La vannerie",
+                "correct": false,
+                "source_key": "opt_2952707caf8b"
+            },
+            {
+                "text": "La pêche maritime",
+                "correct": false,
+                "source_key": "opt_38ecb7f1bea7"
+            },
+            {
+                "text": "La fabrication de verre",
+                "correct": false,
+                "source_key": "opt_af5825081dc7"
+            },
+            {
+                "text": "Le tissage",
+                "correct": true,
+                "source_key": "opt_b5bc8025786e"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.319bcb62b9f74d1a9fd11205b16f131b"
+    },
+    {
+        "number": 5,
+        "category": "musique",
+        "question": "Quel instrument traditionnel est constitué de lames que l’on frappe avec des baguettes ?",
+        "explanation": "Le balafon est un instrument à percussion dont les lames produisent des notes différentes.",
+        "options": [
+            {
+                "text": "Le balafon",
+                "correct": true,
+                "source_key": "opt_17fc051039ed"
+            },
+            {
+                "text": "La kora",
+                "correct": false,
+                "source_key": "opt_9fb29e707d21"
+            },
+            {
+                "text": "La flûte",
+                "correct": false,
+                "source_key": "opt_5d8ac372e7c9"
+            },
+            {
+                "text": "Le violon",
+                "correct": false,
+                "source_key": "opt_7894301973b8"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.bd3f493760ed431ca0599f708bd40f2c"
+    },
+    {
+        "number": 6,
+        "category": "agriculture",
+        "question": "Quelle culture commerciale est importante dans le nord de la Côte d’Ivoire ?",
+        "explanation": "Le coton fait partie des filières agricoles importantes du nord ivoirien.",
+        "options": [
+            {
+                "text": "Le café cultivé sous la neige",
+                "correct": false,
+                "source_key": "opt_689082c90d37"
+            },
+            {
+                "text": "Le coton",
+                "correct": true,
+                "source_key": "opt_e2e664e79273"
+            },
+            {
+                "text": "Le thé de montagne exclusivement",
+                "correct": false,
+                "source_key": "opt_e9701f617550"
+            },
+            {
+                "text": "Le sirop d’érable",
+                "correct": false,
+                "source_key": "opt_04c77d30fc14"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.dfc2e1532a1c40a6908eff21fdeb5cf2"
+    },
+    {
+        "number": 7,
+        "category": "culture",
+        "question": "Quel peuple est particulièrement associé au patrimoine traditionnel de Korhogo ?",
+        "explanation": "Les traditions sénoufo occupent une place importante dans la culture et l’histoire de Korhogo.",
+        "options": [
+            {
+                "text": "Les Ébrié uniquement",
+                "correct": false,
+                "source_key": "opt_d93d49d5f760"
+            },
+            {
+                "text": "Les Basques",
+                "correct": false,
+                "source_key": "opt_2b3de71982c6"
+            },
+            {
+                "text": "Les Sénoufo",
+                "correct": true,
+                "source_key": "opt_7492bf542002"
+            },
+            {
+                "text": "Les Inuits",
+                "correct": false,
+                "source_key": "opt_bf8a4b77f750"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.aac19f41fe9d403ba44acc5cc176e3b8"
+    },
+    {
+        "number": 8,
+        "category": "gastronomie",
+        "question": "Quel ingrédient est indispensable à une sauce arachide traditionnelle ?",
+        "explanation": "L’arachide constitue la base de cette sauce, même si les autres ingrédients varient selon les recettes.",
+        "options": [
+            {
+                "text": "La farine de blé uniquement",
+                "correct": false,
+                "source_key": "opt_a4617d5da93e"
+            },
+            {
+                "text": "Le cacao en poudre",
+                "correct": false,
+                "source_key": "opt_c7552150bf2d"
+            },
+            {
+                "text": "La noix de coco exclusivement",
+                "correct": false,
+                "source_key": "opt_3263b57f4ac2"
+            },
+            {
+                "text": "L’arachide",
+                "correct": true,
+                "source_key": "opt_e1f52e4a54cf"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.07969858d295437ea4bfa0c45528123f"
+    },
+    {
+        "number": 9,
+        "category": "artisanat",
+        "question": "Quel matériau est traditionnellement travaillé par les forgerons de Koni ?",
+        "explanation": "Koni est connu pour ses forgerons et son savoir-faire dans le travail du métal.",
+        "options": [
+            {
+                "text": "Le fer",
+                "correct": true,
+                "source_key": "opt_540f22510b3b"
+            },
+            {
+                "text": "Le verre",
+                "correct": false,
+                "source_key": "opt_a564ea631ad4"
+            },
+            {
+                "text": "Le papier",
+                "correct": false,
+                "source_key": "opt_6d49faa091bd"
+            },
+            {
+                "text": "Le plastique",
+                "correct": false,
+                "source_key": "opt_98a064099069"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.c2a5f4fa4edb43bd90e46fbc7d3e932f"
+    },
+    {
+        "number": 10,
+        "category": "culture",
+        "question": "Le balafon sénoufo peut accompagner des cérémonies traditionnelles et des événements collectifs.",
+        "explanation": "Le balafon intervient dans différents contextes sociaux et rituels, selon les traditions des communautés.",
+        "options": [
+            {
+                "text": "Faux",
+                "correct": false,
+                "source_key": "opt_15781aa7264c"
+            },
+            {
+                "text": "Vrai",
+                "correct": true,
+                "source_key": "opt_d330c24e3063"
+            }
+        ],
+        "points": 10,
+        "source_key": "korhogo.q.3d3e142fc23a4ccba37adaeb7f9a6707"
+    },
+    {
+        "number": 11,
+        "category": "gastronomie",
+        "question": "Quel ingrédient végétal entre dans la composition de la sauce zafigué décrite dans la cuisine régionale ?",
+        "explanation": "La sauce zafigué est décrite comme une sauce épaisse préparée notamment avec des feuilles de dah et de l’arachide moulue.",
+        "options": [
+            {
+                "text": "Des feuilles de vigne européennes exclusivement",
+                "correct": false,
+                "source_key": "opt_ac4ba446bfc2"
+            },
+            {
+                "text": "Des feuilles de thé vert",
+                "correct": false,
+                "source_key": "opt_c9c0930f7e4c"
+            },
+            {
+                "text": "Des feuilles locales appelées dah",
+                "correct": true,
+                "source_key": "opt_5bb6d2152642"
+            },
+            {
+                "text": "Des feuilles de tabac",
+                "correct": false,
+                "source_key": "opt_4f14669ecc24"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.7955b804554444caaa18709474de032f"
+    },
+    {
+        "number": 12,
+        "category": "gastronomie",
+        "question": "Quelle céréale est associée à la préparation du tchapalo, une boisson traditionnelle consommée dans plusieurs régions de Côte d’Ivoire ?",
+        "explanation": "Le tchapalo est une boisson fermentée traditionnelle généralement préparée à partir de céréales, notamment le mil.",
+        "options": [
+            {
+                "text": "Le cacao",
+                "correct": false,
+                "source_key": "opt_a2db3e1476bc"
+            },
+            {
+                "text": "Le café",
+                "correct": false,
+                "source_key": "opt_2fbeceb208d6"
+            },
+            {
+                "text": "Le sésame",
+                "correct": false,
+                "source_key": "opt_a9a67a1d6fcf"
+            },
+            {
+                "text": "Le mil",
+                "correct": true,
+                "source_key": "opt_5de390d4a480"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.503ac3e80df043f288f5f6eb69e185bf"
+    },
+    {
+        "number": 13,
+        "category": "artisanat",
+        "question": "Quel est le rôle des longues bandes de tissu produites par les tisserands de Waraniéné ?",
+        "explanation": "Les bandes tissées peuvent être assemblées et utilisées pour fabriquer des pagnes, des boubous et d’autres articles textiles.",
+        "options": [
+            {
+                "text": "Elles servent notamment à confectionner des étoffes et des vêtements",
+                "correct": true,
+                "source_key": "opt_0ccf80ffa274"
+            },
+            {
+                "text": "Elles sont exclusivement utilisées comme cordes de bateau",
+                "correct": false,
+                "source_key": "opt_3511564441cf"
+            },
+            {
+                "text": "Elles servent uniquement à fabriquer du papier",
+                "correct": false,
+                "source_key": "opt_31efa027e9c1"
+            },
+            {
+                "text": "Elles sont transformées en briques",
+                "correct": false,
+                "source_key": "opt_a501d4a8b82b"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.545afc755c724d469ecfdade9a137966"
+    },
+    {
+        "number": 14,
+        "category": "artisanat",
+        "question": "Quel artisanat est associé à Torgokaha, dans la région du Poro ?",
+        "explanation": "Torgokaha est cité parmi les lieux de savoir-faire artisanal de la région, notamment pour le travail des fibres et la vannerie.",
+        "options": [
+            {
+                "text": "La fabrication de moteurs",
+                "correct": false,
+                "source_key": "opt_f7cb80028b2e"
+            },
+            {
+                "text": "La vannerie",
+                "correct": true,
+                "source_key": "opt_195ab2e7e9fe"
+            },
+            {
+                "text": "La joaillerie industrielle",
+                "correct": false,
+                "source_key": "opt_70238f3c1d38"
+            },
+            {
+                "text": "La verrerie",
+                "correct": false,
+                "source_key": "opt_8c1950c067f4"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.6228ef39eb4c41f8bc076336a90f2505"
+    },
+    {
+        "number": 15,
+        "category": "agriculture",
+        "question": "Quel fruit est devenu une culture commerciale importante dans le district des Savanes, avec des vergers notamment dans la région du Poro ?",
+        "explanation": "La mangue est une production importante dans les Savanes. Les environs de Korhogo et de Sinématiali participent à cette filière.",
+        "options": [
+            {
+                "text": "La pomme de terre de montagne",
+                "correct": false,
+                "source_key": "opt_7ba89bd6b20e"
+            },
+            {
+                "text": "La canneberge",
+                "correct": false,
+                "source_key": "opt_b52d1e9fe055"
+            },
+            {
+                "text": "La mangue",
+                "correct": true,
+                "source_key": "opt_8a0ff8c40dfb"
+            },
+            {
+                "text": "La myrtille sauvage des régions froides",
+                "correct": false,
+                "source_key": "opt_642d5e3b416f"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.05b3d6c150ef4c6caac27c19c6f72cb2"
+    },
+    {
+        "number": 16,
+        "category": "agriculture",
+        "question": "Quel produit est récolté sur l’anacardier ?",
+        "explanation": "L’anacardier produit la pomme de cajou et la noix qui contient l’amande commercialisée sous le nom de noix de cajou.",
+        "options": [
+            {
+                "text": "La fève de cacao",
+                "correct": false,
+                "source_key": "opt_b8b0a3dc8644"
+            },
+            {
+                "text": "Le grain de café",
+                "correct": false,
+                "source_key": "opt_9c0476976605"
+            },
+            {
+                "text": "La graine de coton",
+                "correct": false,
+                "source_key": "opt_f1a1752cea54"
+            },
+            {
+                "text": "La noix de cajou",
+                "correct": true,
+                "source_key": "opt_174d016525d4"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.7cf920daa9ea4a83a86af37c2e2afa38"
+    },
+    {
+        "number": 17,
+        "category": "geographie",
+        "question": "Dans quelle région administrative se trouve Korhogo ?",
+        "explanation": "Korhogo est le chef-lieu de la région du Poro.",
+        "options": [
+            {
+                "text": "Le Poro",
+                "correct": true,
+                "source_key": "opt_9a70c5503e08"
+            },
+            {
+                "text": "Le Tonkpi",
+                "correct": false,
+                "source_key": "opt_b614413e0a43"
+            },
+            {
+                "text": "Le Sud-Comoé",
+                "correct": false,
+                "source_key": "opt_cf70c4a8a4d1"
+            },
+            {
+                "text": "Le Gôh",
+                "correct": false,
+                "source_key": "opt_22cfc473ce28"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.f66e4a62ae8a4b819ffb23250d0aedcf"
+    },
+    {
+        "number": 18,
+        "category": "musique",
+        "question": "Comment les lames d’un balafon traditionnel sont-elles généralement mises en vibration ?",
+        "explanation": "Le balafon appartient à la famille des percussions.",
+        "options": [
+            {
+                "text": "En soufflant dedans",
+                "correct": false,
+                "source_key": "opt_aeec85b0a480"
+            },
+            {
+                "text": "En les frappant avec des baguettes",
+                "correct": true,
+                "source_key": "opt_22b51a21f7f2"
+            },
+            {
+                "text": "En frottant un archet sur chacune d’elles",
+                "correct": false,
+                "source_key": "opt_be9ed560a671"
+            },
+            {
+                "text": "En faisant passer un courant électrique",
+                "correct": false,
+                "source_key": "opt_e1672dadb476"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.7de01ddc567f45549d9844f49c890a7b"
+    },
+    {
+        "number": 19,
+        "category": "education",
+        "question": "En quelle année l’Unité régionale d’enseignement supérieur de Korhogo est-elle devenue l’Université Peleforo Gon Coulibaly ?",
+        "explanation": "L’URES de Korhogo a été créée en 1996, puis est devenue l’Université Peleforo Gon Coulibaly en 2012.",
+        "options": [
+            {
+                "text": "1996",
+                "correct": false,
+                "source_key": "opt_044f89fc3f2b"
+            },
+            {
+                "text": "2004",
+                "correct": false,
+                "source_key": "opt_3a01200b86ee"
+            },
+            {
+                "text": "2012",
+                "correct": true,
+                "source_key": "opt_b361643eab1c"
+            },
+            {
+                "text": "2020",
+                "correct": false,
+                "source_key": "opt_56a45c29b0e7"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.55211d3ad8944b30be27848e0e3532af"
+    },
+    {
+        "number": 20,
+        "category": "geographie",
+        "question": "Quel phénomène contribue à rendre l’air particulièrement sec dans le nord de la Côte d’Ivoire pendant une partie de la saison sèche ?",
+        "explanation": "L’harmattan est un vent continental sec qui souffle vers le golfe de Guinée pendant une partie de la saison sèche.",
+        "options": [
+            {
+                "text": "La mousson asiatique",
+                "correct": false,
+                "source_key": "opt_c0c7afffdb61"
+            },
+            {
+                "text": "Les cyclones polaires",
+                "correct": false,
+                "source_key": "opt_670b6c971bee"
+            },
+            {
+                "text": "Les chutes de neige",
+                "correct": false,
+                "source_key": "opt_06f410599cde"
+            },
+            {
+                "text": "L’harmattan",
+                "correct": true,
+                "source_key": "opt_fb92abb70554"
+            }
+        ],
+        "points": 15,
+        "source_key": "korhogo.q.bdb87ee1faa44c2eaa0176885a2efe2f"
+    },
+    {
+        "number": 21,
+        "category": "gastronomie",
+        "question": "Quelle association correspond à la description de la sauce zafigué de la région de Korhogo ?",
+        "explanation": "La sauce zafigué est décrite comme une sauce épaisse utilisant ces ingrédients. Les recettes peuvent toutefois varier d’une famille à l’autre.",
+        "options": [
+            {
+                "text": "Feuilles de dah et arachide moulue",
+                "correct": true,
+                "source_key": "opt_96227b03ffd8"
+            },
+            {
+                "text": "Chocolat et lait concentré",
+                "correct": false,
+                "source_key": "opt_2211768ea639"
+            },
+            {
+                "text": "Pomme et farine de blé",
+                "correct": false,
+                "source_key": "opt_5df91c941ac9"
+            },
+            {
+                "text": "Fromage et crème fraîche uniquement",
+                "correct": false,
+                "source_key": "opt_33b982be4dac"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.8cc523d4cf81441fab91682142b926dc"
+    },
+    {
+        "number": 22,
+        "category": "gastronomie",
+        "question": "Quel lien existe entre la production agricole locale et l’alimentation des habitants de Korhogo ?",
+        "explanation": "Des travaux de recherche sur Korhogo soulignent l’importance de l’agriculture urbaine dans l’approvisionnement des ménages en produits frais.",
+        "options": [
+            {
+                "text": "Tous les aliments sont obligatoirement importés par bateau",
+                "correct": false,
+                "source_key": "opt_67ffcf5de87c"
+            },
+            {
+                "text": "Les cultures et le maraîchage contribuent à l’approvisionnement des marchés en produits frais",
+                "correct": true,
+                "source_key": "opt_9ec89d4b9976"
+            },
+            {
+                "text": "L’agriculture locale ne fournit aucun produit alimentaire",
+                "correct": false,
+                "source_key": "opt_1275ac2966a2"
+            },
+            {
+                "text": "Les marchés sont approvisionnés exclusivement en produits surgelés importés",
+                "correct": false,
+                "source_key": "opt_9e3981c2533b"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.a979fdc3f8c84e57b14ffa38faf10b9e"
+    },
+    {
+        "number": 23,
+        "category": "artisanat",
+        "question": "Quel est le rôle du coton dans les deux savoir-faire artisanaux de Waraniéné et de Fakaha ?",
+        "explanation": "Le tissu de coton tissé peut servir de support aux peintures traditionnelles. Le tissage et la peinture restent deux étapes artisanales distinctes.",
+        "options": [
+            {
+                "text": "Il est utilisé uniquement pour fabriquer des objets métalliques",
+                "correct": false,
+                "source_key": "opt_44d914969f11"
+            },
+            {
+                "text": "Il remplace les calebasses du balafon",
+                "correct": false,
+                "source_key": "opt_c29932433bd3"
+            },
+            {
+                "text": "Il peut servir de support textile aux toiles peintes",
+                "correct": true,
+                "source_key": "opt_e222c27f9707"
+            },
+            {
+                "text": "Il sert exclusivement à produire des boissons",
+                "correct": false,
+                "source_key": "opt_0e4d28c63a6b"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.fd24c2189a2847beb9ce1112a2e1d14b"
+    },
+    {
+        "number": 24,
+        "category": "musique",
+        "question": "En quelle année les pratiques et expressions culturelles liées au balafon des communautés sénoufo de Côte d’Ivoire, du Mali et du Burkina Faso ont-elles été inscrites au patrimoine culturel immatériel de l’UNESCO ?",
+        "explanation": "L’inscription de 2012 porte sur les pratiques et expressions liées au balafon des communautés sénoufo des trois pays.",
+        "options": [
+            {
+                "text": "1998",
+                "correct": false,
+                "source_key": "opt_105f006e1e1b"
+            },
+            {
+                "text": "2005",
+                "correct": false,
+                "source_key": "opt_21b72e616b01"
+            },
+            {
+                "text": "2022",
+                "correct": false,
+                "source_key": "opt_1647a5976aa3"
+            },
+            {
+                "text": "2012",
+                "correct": true,
+                "source_key": "opt_66ce89927f8a"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.22a72162b3724336a51c22d433c28821"
+    },
+    {
+        "number": 25,
+        "category": "culture",
+        "question": "Quel est le rôle général du Poro dans la société sénoufo ?",
+        "explanation": "Le Poro est un système traditionnel d’initiation et de transmission des savoirs. Ses pratiques et ses significations doivent être comprises dans leur contexte culturel.",
+        "options": [
+            {
+                "text": "La transmission de connaissances et de valeurs traditionnelles",
+                "correct": true,
+                "source_key": "opt_c1b5563b5ed9"
+            },
+            {
+                "text": "La gestion d’une compagnie aérienne",
+                "correct": false,
+                "source_key": "opt_d6786ff873a1"
+            },
+            {
+                "text": "L’organisation exclusive des marchés agricoles",
+                "correct": false,
+                "source_key": "opt_3ae533f9acf6"
+            },
+            {
+                "text": "La fabrication industrielle de tissus",
+                "correct": false,
+                "source_key": "opt_676c64abe01a"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.92c8ac27098e4ac5860eb86faacaaa07"
+    },
+    {
+        "number": 26,
+        "category": "culture",
+        "question": "Quel nom est associé à la danse dite des « hommes-panthères » dans certaines présentations culturelles de la région de Korhogo ?",
+        "explanation": "Le boloye est une danse associée aux traditions sénoufo et à certains rites d’initiation.",
+        "options": [
+            {
+                "text": "Salsa",
+                "correct": false,
+                "source_key": "opt_7143cf047003"
+            },
+            {
+                "text": "Boloye",
+                "correct": true,
+                "source_key": "opt_b1f8c51248f8"
+            },
+            {
+                "text": "Tango",
+                "correct": false,
+                "source_key": "opt_2242e814d316"
+            },
+            {
+                "text": "Flamenco",
+                "correct": false,
+                "source_key": "opt_741f7762d9b2"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.78d1351f4f704c13a43174ea4032326b"
+    },
+    {
+        "number": 27,
+        "category": "economie",
+        "question": "Quelle combinaison réunit trois filières agricoles importantes du nord ivoirien ?",
+        "explanation": "Ces trois productions contribuent à l’activité agricole et commerciale dans les Savanes et la région du Poro.",
+        "options": [
+            {
+                "text": "Thé, érable et canneberge",
+                "correct": false,
+                "source_key": "opt_c03f6967c434"
+            },
+            {
+                "text": "Houblon, olive et lavande",
+                "correct": false,
+                "source_key": "opt_33007dd2e730"
+            },
+            {
+                "text": "Coton, anacarde et mangue",
+                "correct": true,
+                "source_key": "opt_7208371c6223"
+            },
+            {
+                "text": "Café, pomme et myrtille exclusivement",
+                "correct": false,
+                "source_key": "opt_195ce75fe209"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.5d610e1d82c24aa49cbe42e09d4346b4"
+    },
+    {
+        "number": 28,
+        "category": "geographie",
+        "question": "Quel type de paysage caractérise une grande partie du nord de la Côte d’Ivoire autour de Korhogo ?",
+        "explanation": "La région appartient à une zone de savanes, avec une végétation et un climat différents de ceux des régions forestières du sud ivoirien.",
+        "options": [
+            {
+                "text": "La toundra arctique",
+                "correct": false,
+                "source_key": "opt_4e797ee880db"
+            },
+            {
+                "text": "La forêt boréale",
+                "correct": false,
+                "source_key": "opt_1e43ddba64cd"
+            },
+            {
+                "text": "Le désert polaire",
+                "correct": false,
+                "source_key": "opt_8a805083d8a0"
+            },
+            {
+                "text": "La savane",
+                "correct": true,
+                "source_key": "opt_9aa5707d8cf9"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.a666d136aaad465fb5d889b7ded1fcbb"
+    },
+    {
+        "number": 29,
+        "category": "histoire",
+        "question": "Quel était le nom de naissance de Péléforo Gbon Coulibaly, selon les biographies historiques qui rapportent ce changement de nom ?",
+        "explanation": "Les biographies rapportent qu’il est né sous le nom de Péléforo Gbon Soro et qu’il est ensuite connu sous celui de Péléforo Gbon Coulibaly.",
+        "options": [
+            {
+                "text": "Péléforo Gbon Soro",
+                "correct": true,
+                "source_key": "opt_94911c18b965"
+            },
+            {
+                "text": "Nanguin Soro",
+                "correct": false,
+                "source_key": "opt_7dc0f331bcf5"
+            },
+            {
+                "text": "Babemba Traoré",
+                "correct": false,
+                "source_key": "opt_b59e81d63fea"
+            },
+            {
+                "text": "Samory Coulibaly",
+                "correct": false,
+                "source_key": "opt_efaf629068e1"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.93f728318be44294b31b10ef089aaca5"
+    },
+    {
+        "number": 30,
+        "category": "gastronomie",
+        "question": "Le tchapalo est une boisson traditionnelle fermentée que l’on retrouve dans plusieurs communautés de Côte d’Ivoire.",
+        "explanation": "Le tchapalo est une boisson traditionnelle à base de céréales. Il ne faut pas le présenter comme une spécialité exclusive de Korhogo.",
+        "options": [
+            {
+                "text": "Faux",
+                "correct": false,
+                "source_key": "opt_aa0785d0a537"
+            },
+            {
+                "text": "Vrai",
+                "correct": true,
+                "source_key": "opt_f4fdad48a62b"
+            }
+        ],
+        "points": 20,
+        "source_key": "korhogo.q.78e63c6aa9844a3a824067db7bafa445"
+    },
+    {
+        "number": 31,
+        "category": "gastronomie",
+        "question": "Quelle différence distingue le mieux une sauce arachide d’une sauce zafigué, selon les descriptions culinaires régionales ?",
+        "explanation": "La zafigué est une préparation régionale dont la description mentionne des feuilles locales et de l’arachide moulue. Les recettes ne sont pas nécessairement identiques partout.",
+        "options": [
+            {
+                "text": "La sauce arachide contient toujours du cacao, tandis que la zafigué ne contient aucun végétal",
+                "correct": false,
+                "source_key": "opt_c6271aca621c"
+            },
+            {
+                "text": "Les deux sont obligatoirement des boissons fermentées",
+                "correct": false,
+                "source_key": "opt_2de4695ef313"
+            },
+            {
+                "text": "La sauce arachide est définie par l’arachide, tandis que la zafigué est décrite avec des feuilles de dah et de l’arachide",
+                "correct": true,
+                "source_key": "opt_d8717d522072"
+            },
+            {
+                "text": "La zafigué est un dessert à base de farine de blé",
+                "correct": false,
+                "source_key": "opt_46477eb19dfd"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.1318f29a3d104d2ba71f719b80d42fe4"
+    },
+    {
+        "number": 32,
+        "category": "agriculture",
+        "question": "Pourquoi le séchage de la mangue présente-t-il un intérêt économique pour les producteurs de la région ?",
+        "explanation": "Le séchage constitue une méthode de transformation qui peut réduire les pertes post-récolte et permettre de commercialiser le fruit sous une autre forme.",
+        "options": [
+            {
+                "text": "Il transforme la mangue en coton",
+                "correct": false,
+                "source_key": "opt_1b2392baacc4"
+            },
+            {
+                "text": "Il supprime toute nécessité de récolter les fruits",
+                "correct": false,
+                "source_key": "opt_6c1b9f6ecba1"
+            },
+            {
+                "text": "Il rend la mangue impropre à toute commercialisation",
+                "correct": false,
+                "source_key": "opt_5b6938144bbf"
+            },
+            {
+                "text": "Il permet de transformer une partie de la récolte et de mieux conserver le fruit",
+                "correct": true,
+                "source_key": "opt_afebf5898a20"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.bfc9b95be15c494483623162867fb631"
+    },
+    {
+        "number": 33,
+        "category": "artisanat",
+        "question": "Quel enchaînement décrit correctement une partie de la fabrication traditionnelle des toiles peintes de Korhogo ?",
+        "explanation": "Les toiles peintes combinent un support textile et un travail pictural. Leur réalisation dépend des techniques de chaque artisan.",
+        "options": [
+            {
+                "text": "Préparer le support textile, puis appliquer des motifs peints",
+                "correct": true,
+                "source_key": "opt_2b6f7358fd47"
+            },
+            {
+                "text": "Fondre du métal, puis le couler dans un moule de tissu",
+                "correct": false,
+                "source_key": "opt_0df50bef1986"
+            },
+            {
+                "text": "Tisser des fils de verre, puis les cuire dans un four à porcelaine",
+                "correct": false,
+                "source_key": "opt_7d90252e004b"
+            },
+            {
+                "text": "Récolter des noix de cajou, puis les assembler en mosaïque",
+                "correct": false,
+                "source_key": "opt_405d6d0ec1a9"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.67133409dd42495e9814e883a3f32874"
+    },
+    {
+        "number": 34,
+        "category": "musique",
+        "question": "Quel terme musical décrit le système de cinq notes par octave associé au balafon sénoufo dans certaines descriptions de l’instrument ?",
+        "explanation": "Pentatonique signifie fondé sur cinq notes dans le système musical concerné. Cette description ne signifie pas que toutes les musiques sénoufo utilisent un seul système musical.",
+        "options": [
+            {
+                "text": "Chromatique à douze notes obligatoires",
+                "correct": false,
+                "source_key": "opt_f3505ec11233"
+            },
+            {
+                "text": "Pentatonique",
+                "correct": true,
+                "source_key": "opt_41a6fc7eaf14"
+            },
+            {
+                "text": "Atonal sans aucune hauteur",
+                "correct": false,
+                "source_key": "opt_20fbbfb43f80"
+            },
+            {
+                "text": "Monophonique sans variation possible",
+                "correct": false,
+                "source_key": "opt_e257956d8851"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.d33d0362968945819390ac5f82d2555b"
+    },
+    {
+        "number": 35,
+        "category": "histoire",
+        "question": "Quelle distinction est rapportée dans certaines biographies de Péléforo Gbon Coulibaly ?",
+        "explanation": "Les deux dates correspondent à des étapes différentes de son parcours dans les récits historiques couramment rapportés.",
+        "options": [
+            {
+                "text": "Il a été élu président de la République en 1894",
+                "correct": false,
+                "source_key": "opt_a06083c3a156"
+            },
+            {
+                "text": "Il a fondé l’Université Peleforo Gon Coulibaly en 1899",
+                "correct": false,
+                "source_key": "opt_4a435eeccce0"
+            },
+            {
+                "text": "Son accession à la chefferie est située en 1894 et sa nomination comme chef de canton en 1899",
+                "correct": true,
+                "source_key": "opt_60f18afd2ea0"
+            },
+            {
+                "text": "Il a dirigé la Côte d’Ivoire indépendante en 1960",
+                "correct": false,
+                "source_key": "opt_e142da2838bc"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.9e4b3c22b8b74fb9bac1419cb8dbb0a3"
+    },
+    {
+        "number": 36,
+        "category": "economie",
+        "question": "Quel organisme est associé à l’encadrement des filières coton et anacarde en Côte d’Ivoire ?",
+        "explanation": "Cet organisme intervient dans l’encadrement des filières coton et anacarde. Il ne faut pas le confondre avec une institution municipale propre à Korhogo.",
+        "options": [
+            {
+                "text": "L’Organisation mondiale du tourisme",
+                "correct": false,
+                "source_key": "opt_1a30f8d18826"
+            },
+            {
+                "text": "La Fédération internationale de football",
+                "correct": false,
+                "source_key": "opt_6bcd3ae4e780"
+            },
+            {
+                "text": "L’Union internationale des télécommunications",
+                "correct": false,
+                "source_key": "opt_025be6798701"
+            },
+            {
+                "text": "Le Conseil du Coton et de l’Anacarde",
+                "correct": true,
+                "source_key": "opt_310d7350bddd"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.045252b678bb4449ab9ed8045af94eb1"
+    },
+    {
+        "number": 37,
+        "category": "patrimoine",
+        "question": "Dans quelle partie de la Côte d’Ivoire se situe le parc national de la Comoé ?",
+        "explanation": "Le parc national de la Comoé se trouve au nord-est de la Côte d’Ivoire. Il est connu pour la diversité de ses paysages et de sa végétation.",
+        "options": [
+            {
+                "text": "Au Nord-Est",
+                "correct": true,
+                "source_key": "opt_12f013864c24"
+            },
+            {
+                "text": "Au Sud-Ouest côtier",
+                "correct": false,
+                "source_key": "opt_fb7db9ec3bf0"
+            },
+            {
+                "text": "Dans le centre d’Abidjan",
+                "correct": false,
+                "source_key": "opt_f22ce961da26"
+            },
+            {
+                "text": "Sur la presqu’île de Grand-Bassam",
+                "correct": false,
+                "source_key": "opt_be54b28aaa66"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.96f46a9b102d4061be076507c738047f"
+    },
+    {
+        "number": 38,
+        "category": "patrimoine",
+        "question": "Quel facteur contribue à la diversité de la végétation du parc national de la Comoé ?",
+        "explanation": "Le fleuve contribue à la présence de formations végétales variées dans cette zone de transition écologique.",
+        "options": [
+            {
+                "text": "L’existence de glaciers permanents",
+                "correct": false,
+                "source_key": "opt_d4a7be806538"
+            },
+            {
+                "text": "La présence du fleuve Comoé et la transition entre plusieurs types de milieux naturels",
+                "correct": true,
+                "source_key": "opt_d5a15bc5d8e4"
+            },
+            {
+                "text": "La présence de fjords marins",
+                "correct": false,
+                "source_key": "opt_892f210eaf14"
+            },
+            {
+                "text": "L’absence totale de cours d’eau",
+                "correct": false,
+                "source_key": "opt_ae2e461895ab"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.84ef249907f9435a9f99f27e1b829a1e"
+    },
+    {
+        "number": 39,
+        "category": "artisanat",
+        "question": "Quel village de la région du Poro est particulièrement associé à la fabrication traditionnelle de perles ?",
+        "explanation": "Kapélé est cité parmi les lieux artisanaux du Poro pour le savoir-faire lié à la fabrication de perles.",
+        "options": [
+            {
+                "text": "Waraniéné",
+                "correct": false,
+                "source_key": "opt_7ffa7b2a19f1"
+            },
+            {
+                "text": "Fakaha",
+                "correct": false,
+                "source_key": "opt_982f4142a18a"
+            },
+            {
+                "text": "Kapélé",
+                "correct": true,
+                "source_key": "opt_d17b77f01bf7"
+            },
+            {
+                "text": "Koni",
+                "correct": false,
+                "source_key": "opt_4a64bb63475a"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.afa7d00b23ff4ff180b6351dbd58d900"
+    },
+    {
+        "number": 40,
+        "category": "education",
+        "question": "Quel était le statut de l’établissement d’enseignement supérieur de Korhogo avant de devenir l’Université Peleforo Gon Coulibaly ?",
+        "explanation": "L’établissement a été créé comme URES en 1996 avant de devenir une université de plein exercice en 2012.",
+        "options": [
+            {
+                "text": "Une école navale française",
+                "correct": false,
+                "source_key": "opt_cf76fe4aa020"
+            },
+            {
+                "text": "Un centre de formation aéronautique militaire",
+                "correct": false,
+                "source_key": "opt_ef61870bd30e"
+            },
+            {
+                "text": "Un lycée agricole colonial devenu université sans étape intermédiaire",
+                "correct": false,
+                "source_key": "opt_ef88d81c9869"
+            },
+            {
+                "text": "Une Unité régionale d’enseignement supérieur",
+                "correct": true,
+                "source_key": "opt_5cefc272eb25"
+            }
+        ],
+        "points": 25,
+        "source_key": "korhogo.q.6718747639c74132b14a66dd0378abd4"
+    },
+    {
+        "number": 41,
+        "category": "gastronomie",
+        "question": "Pourquoi l’approvisionnement des marchés de Korhogo par l’agriculture urbaine est-il un sujet d’étude important ?",
+        "explanation": "Des recherches menées sur Korhogo étudient le rôle des exploitants agricoles urbains dans l’approvisionnement des marchés et des ménages en produits frais.",
+        "options": [
+            {
+                "text": "Parce que cette agriculture contribue à fournir des produits frais aux ménages",
+                "correct": true,
+                "source_key": "opt_92df13181934"
+            },
+            {
+                "text": "Parce qu’elle remplace entièrement toutes les autres activités économiques",
+                "correct": false,
+                "source_key": "opt_b6f5cbaf262f"
+            },
+            {
+                "text": "Parce qu’elle concerne exclusivement l’exportation de diamants",
+                "correct": false,
+                "source_key": "opt_41928e78e860"
+            },
+            {
+                "text": "Parce qu’elle interdit la vente de légumes sur les marchés",
+                "correct": false,
+                "source_key": "opt_05d16532d867"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.d2edd5d45e9646d9a6a7285ca300ed64"
+    },
+    {
+        "number": 42,
+        "category": "gastronomie",
+        "question": "Quel est l’intérêt principal de transformer des produits agricoles locaux plutôt que de les vendre uniquement à l’état brut ?",
+        "explanation": "La transformation peut prolonger la conservation, diversifier les produits vendus et augmenter la valeur ajoutée, même si les résultats dépendent des coûts et des débouchés.",
+        "options": [
+            {
+                "text": "Empêcher toute création de valeur ajoutée",
+                "correct": false,
+                "source_key": "opt_602da2dcca9b"
+            },
+            {
+                "text": "Créer des produits conservables ou commercialisables sous d’autres formes",
+                "correct": true,
+                "source_key": "opt_2ed460aa1684"
+            },
+            {
+                "text": "Rendre automatiquement tous les produits non comestibles",
+                "correct": false,
+                "source_key": "opt_d2791c661bd5"
+            },
+            {
+                "text": "Supprimer les besoins en stockage et en transport dans tous les cas",
+                "correct": false,
+                "source_key": "opt_5834b0128a27"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.7b4f80191c74488ead05ab7c845128a9"
+    },
+    {
+        "number": 43,
+        "category": "histoire",
+        "question": "Quelle méthode est la plus rigoureuse pour étudier les récits de fondation de Korhogo ?",
+        "explanation": "Cette méthode permet de distinguer les traditions transmises, les faits documentés et les éléments encore débattus.",
+        "options": [
+            {
+                "text": "Retenir automatiquement la première version entendue",
+                "correct": false,
+                "source_key": "opt_53a2cf3865cc"
+            },
+            {
+                "text": "Écarter toutes les traditions orales sans les examiner",
+                "correct": false,
+                "source_key": "opt_633c9f3b35c3"
+            },
+            {
+                "text": "Comparer les traditions orales, les documents historiques et les recherches disponibles",
+                "correct": true,
+                "source_key": "opt_492e1537b421"
+            },
+            {
+                "text": "Inventer une date lorsqu’aucune source ne donne de certitude",
+                "correct": false,
+                "source_key": "opt_0cdd273d459b"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.41d220a826804c1bb4564f1d98b95211"
+    },
+    {
+        "number": 44,
+        "category": "patrimoine",
+        "question": "Que reconnaît principalement l’inscription UNESCO de 2012 concernant le balafon sénoufo ?",
+        "explanation": "L’inscription porte sur les pratiques et expressions liées au balafon des communautés sénoufo de Côte d’Ivoire, du Mali et du Burkina Faso, et non sur tous les éléments du patrimoine régional.",
+        "options": [
+            {
+                "text": "L’ensemble des plats cuisinés à Korhogo",
+                "correct": false,
+                "source_key": "opt_a701a8f7fd88"
+            },
+            {
+                "text": "Tous les bâtiments universitaires du nord ivoirien",
+                "correct": false,
+                "source_key": "opt_14d3e0f876a2"
+            },
+            {
+                "text": "La totalité des productions agricoles de la région",
+                "correct": false,
+                "source_key": "opt_8a8b598655ec"
+            },
+            {
+                "text": "Les pratiques et expressions culturelles liées au balafon des communautés concernées",
+                "correct": true,
+                "source_key": "opt_ffd3d31d93fc"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.1f2b1649dbce4f5c8914002606848794"
+    },
+    {
+        "number": 45,
+        "category": "education",
+        "question": "Quel événement institutionnel a eu lieu en octobre 2012 à Korhogo ?",
+        "explanation": "Le changement de statut a été officialisé par le décret du 10 octobre 2012.",
+        "options": [
+            {
+                "text": "L’URES de Korhogo est devenue l’Université Peleforo Gon Coulibaly",
+                "correct": true,
+                "source_key": "opt_190029cf6578"
+            },
+            {
+                "text": "La ville est devenue la capitale de la Côte d’Ivoire",
+                "correct": false,
+                "source_key": "opt_ecd439cbee92"
+            },
+            {
+                "text": "Le pays a adopté sa première constitution",
+                "correct": false,
+                "source_key": "opt_e32bc730d1c2"
+            },
+            {
+                "text": "Le parc national de la Comoé a été créé ce mois-là",
+                "correct": false,
+                "source_key": "opt_e6555b79a335"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.0d0216a6917b484f8ef4f36c65a3f1e4"
+    },
+    {
+        "number": 46,
+        "category": "patrimoine",
+        "question": "Quelle combinaison associe correctement trois sites ou savoir-faire de la région du Poro à leurs activités ?",
+        "explanation": "Ces trois lieux sont associés à des savoir-faire artisanaux distincts dans la région du Poro.",
+        "options": [
+            {
+                "text": "Fakaha — pêche maritime ; Waraniéné — verrerie ; Koni — navigation",
+                "correct": false,
+                "source_key": "opt_c020b07c13b5"
+            },
+            {
+                "text": "Fakaha — toiles peintes ; Waraniéné — tissage ; Koni — forge",
+                "correct": true,
+                "source_key": "opt_e061c93b2ed7"
+            },
+            {
+                "text": "Fakaha — fabrication d’avions ; Waraniéné — extraction de pétrole ; Koni — impression numérique",
+                "correct": false,
+                "source_key": "opt_34567c3d0fc2"
+            },
+            {
+                "text": "Fakaha — production de cacao uniquement ; Waraniéné — construction navale ; Koni — fabrication de papier",
+                "correct": false,
+                "source_key": "opt_b3b6f97c8371"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.ba6ca6e0dac041eda331270f6f509f75"
+    },
+    {
+        "number": 47,
+        "category": "musique",
+        "question": "Pourquoi le balafon peut-il être considéré comme un élément du patrimoine culturel vivant, et pas uniquement comme un objet musical ?",
+        "explanation": "Le patrimoine immatériel comprend aussi les pratiques et les connaissances associées à un instrument, à ses usages et à sa transmission.",
+        "options": [
+            {
+                "text": "Parce qu’il ne sert qu’à décorer les musées",
+                "correct": false,
+                "source_key": "opt_fd0f7671a75b"
+            },
+            {
+                "text": "Parce qu’il est obligatoirement fabriqué en usine",
+                "correct": false,
+                "source_key": "opt_989f0fe0781d"
+            },
+            {
+                "text": "Parce qu’il est lié à des pratiques, des cérémonies et des transmissions culturelles",
+                "correct": true,
+                "source_key": "opt_4df2e649644f"
+            },
+            {
+                "text": "Parce qu’il ne produit aucun son",
+                "correct": false,
+                "source_key": "opt_8390b1db0d6d"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.9280c2e89f134ec98beca56ffc8664c2"
+    },
+    {
+        "number": 48,
+        "category": "agriculture",
+        "question": "Quel ensemble de filières est au cœur du projet de pôle agro-industriel basé à Korhogo et couvrant plusieurs régions du nord ivoirien ?",
+        "explanation": "Le projet de pôle agro-industriel du nord vise à structurer et développer plusieurs filières agricoles et agro-pastorales dans les régions concernées.",
+        "options": [
+            {
+                "text": "Café, thé, cacao et hévéa exclusivement",
+                "correct": false,
+                "source_key": "opt_db615d6b8d43"
+            },
+            {
+                "text": "Pétrole, gaz, diamants et uranium exclusivement",
+                "correct": false,
+                "source_key": "opt_fab3d42326fa"
+            },
+            {
+                "text": "Pommes, olives, houblon et canneberge",
+                "correct": false,
+                "source_key": "opt_0b6a6c293a47"
+            },
+            {
+                "text": "Anacarde, mangue, riz, maraîchage, élevage et pêche",
+                "correct": true,
+                "source_key": "opt_572308c8c956"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.ad6e49c6629e4ce38c5118c5d4a2de46"
+    },
+    {
+        "number": 49,
+        "category": "geographie",
+        "question": "Quelle affirmation permet de distinguer correctement Korhogo du parc national de la Comoé ?",
+        "explanation": "Il s’agit de deux réalités géographiques distinctes. Le parc national de la Comoé possède un statut de protection et un patrimoine naturel propres.",
+        "options": [
+            {
+                "text": "Korhogo est une ville, tandis que le parc national de la Comoé est une aire naturelle protégée située au nord-est du pays",
+                "correct": true,
+                "source_key": "opt_cd512ac3c517"
+            },
+            {
+                "text": "Korhogo et le parc national de la Comoé sont deux noms du même quartier",
+                "correct": false,
+                "source_key": "opt_52e6acc57bf8"
+            },
+            {
+                "text": "Korhogo est un parc national sans habitants",
+                "correct": false,
+                "source_key": "opt_131d2511eae8"
+            },
+            {
+                "text": "Le parc national de la Comoé est une université située au centre de Korhogo",
+                "correct": false,
+                "source_key": "opt_9c58e1e19f0b"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.e96aa924b4314077be3e592c7b5c29a2"
+    },
+    {
+        "number": 50,
+        "category": "culture",
+        "question": "Quelle proposition décrit le mieux la diversité du patrimoine et de l’économie de Korhogo et de sa région ?",
+        "explanation": "La région du Poro possède un patrimoine culturel varié et des activités économiques qui comprennent l’agriculture, la transformation, l’artisanat et le commerce.",
+        "options": [
+            {
+                "text": "Ils se limitent exclusivement à l’exploitation pétrolière",
+                "correct": false,
+                "source_key": "opt_aea2267f04b9"
+            },
+            {
+                "text": "Ils associent notamment traditions sénoufo, artisanat, agriculture, gastronomie et développement économique",
+                "correct": true,
+                "source_key": "opt_1f88115445cc"
+            },
+            {
+                "text": "Ils ne comprennent aucune activité artisanale",
+                "correct": false,
+                "source_key": "opt_d2845c98e5ea"
+            },
+            {
+                "text": "Ils reposent uniquement sur le tourisme balnéaire",
+                "correct": false,
+                "source_key": "opt_a1c3a5600130"
+            }
+        ],
+        "points": 30,
+        "source_key": "korhogo.q.9ad3d7b9d9f6408294481a9efeb70465"
+    }
+]

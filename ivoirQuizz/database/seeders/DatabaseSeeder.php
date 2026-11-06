@@ -9,6 +9,6 @@ class DatabaseSeeder extends Seeder
     /** php artisan db:seed --force */
     public function run(): void
     {
-        $this->call([QuickPlayQuestionsSeeder::class, LogosSeeder::class]);
+        $this->call([QuickPlayQuestionsSeeder::class, GameWorldSeeder::class, LogosSeeder::class]);
     }
 }
