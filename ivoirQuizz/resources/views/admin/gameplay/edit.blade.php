@@ -18,6 +18,12 @@
   <x-admin.checkbox name="chrono_pause_on_hint" label="Arrêter le chrono pendant l’indice" :checked="$settings['chrono_pause_on_hint']" />
   <x-admin.input name="chrono_hint_pause_seconds" label="Durée maximale de pause" type="number" min="0" max="30" :value="$settings['chrono_hint_pause_seconds']" required />
  </section>
+ <section class="card space-y-5 p-6">
+  <div><h2 class="font-semibold text-slate-900">Pièces des victoires</h2><p class="text-sm text-slate-500">Lancement rapide gagné à {{ \App\Services\Game\RewardService::WIN_ACCURACY }} % de bonnes réponses ou plus, défi gagné contre un ami. Les étapes de campagne se règlent sur chaque étape.</p></div>
+  <x-admin.input name="quick_win_coins" label="Lancement rapide gagné" type="number" min="0" max="100000" :value="$settings['quick_win_coins']" required />
+  <x-admin.input name="challenge_win_coins" label="Défi gagné" type="number" min="0" max="100000" :value="$settings['challenge_win_coins']" required />
+  <x-admin.input name="win_coins_daily_limit" label="Victoires payées par jour et par joueur" type="number" min="0" max="1000" :value="$settings['win_coins_daily_limit']" required />
+ </section>
  <div class="flex justify-end lg:col-span-2"><button class="btn btn-primary" type="submit">Enregistrer</button></div>
 </form>
 @endsection

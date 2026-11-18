@@ -23,6 +23,9 @@ class GameplaySettingController extends Controller
             'chrono_seconds' => ['required', 'integer', 'between:5,60'],
             'chrono_questions' => ['required', 'integer', 'between:5,30'],
             'chrono_hint_pause_seconds' => ['required', 'integer', 'between:0,30'],
+            'quick_win_coins' => ['required', 'integer', 'between:0,100000'],
+            'challenge_win_coins' => ['required', 'integer', 'between:0,100000'],
+            'win_coins_daily_limit' => ['required', 'integer', 'between:0,1000'],
         ]);
         $values = $validated + [
             'hint_enabled' => $request->boolean('hint_enabled'),

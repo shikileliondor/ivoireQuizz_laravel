@@ -4,6 +4,7 @@ namespace App\Services\Game;
 
 use App\Enums\GameConstants;
 use App\Exceptions\Game\RewardException;
+use App\Models\GameplaySetting;
 use App\Models\RewardTransaction;
 use App\Models\User;
 use App\Services\User\PlayerLevelService;
@@ -26,6 +27,40 @@ class RewardService
     public function addCoins(User $user, int $amount, ?string $sourceType = null, ?int $sourceId = null, ?string $description = null): void
     {
         $this->apply($user, GameConstants::REWARD_COIN, $amount, 'coins', $sourceType, $sourceId, $description);
+    }
+
+    /** Taux de bonnes réponses d'une partie gagnée hors campagne, comme le seuil des étapes. */
+    public const WIN_ACCURACY = 70;
+
+    /** Une partie plus courte ne rapporte pas de pièces : sinon, une question réussie suffirait. */
+    public const WIN_MIN_QUESTIONS = 5;
+
+    /** Sources des pièces de victoire hors campagne, comptées dans la limite du jour. */
+    public const WIN_COIN_SOURCES = ['quick_game', 'friend_challenge'];
+
+    /**
+     * Pièces d'une victoire en lancement rapide ou en défi, dans la limite quotidienne réglée dans l'admin :
+     * le résultat est envoyé par l'app, la limite évite qu'une partie rejouée en boucle vide l'économie.
+     *
+     * @return int pièces réellement données
+     */
+    public function addWinCoins(User $user, string $setting, string $sourceType, int $sourceId): int
+    {
+        $amount = (int) GameplaySetting::valueOf($setting);
+        $wonToday = RewardTransaction::query()
+            ->where('user_id', $user->id)
+            ->where('type', GameConstants::REWARD_COIN)
+            ->whereIn('source_type', self::WIN_COIN_SOURCES)
+            ->where('created_at', '>=', now()->startOfDay())
+            ->count();
+
+        if ($amount <= 0 || $wonToday >= (int) GameplaySetting::valueOf('win_coins_daily_limit')) {
+            return 0;
+        }
+
+        $this->addCoins($user, $amount, $sourceType, $sourceId, 'Win coins');
+
+        return $amount;
     }
 
     public function addGems(User $user, int $amount, ?string $sourceType = null, ?int $sourceId = null, ?string $description = null): void

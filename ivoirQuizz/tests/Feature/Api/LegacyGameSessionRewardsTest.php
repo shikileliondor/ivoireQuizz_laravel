@@ -4,6 +4,7 @@ namespace Tests\Feature\Api;
 
 use App\Models\Answer;
 use App\Models\Category;
+use App\Models\GameplaySetting;
 use App\Models\Question;
 use App\Models\User;
 use Laravel\Sanctum\Sanctum;
@@ -40,6 +41,33 @@ class LegacyGameSessionRewardsTest extends TestCase
             'source_type' => 'game_session',
             'source_id' => $sessionId,
         ]);
+    }
+
+    public function test_a_won_quick_game_pays_coins_up_to_the_daily_limit(): void
+    {
+        $category = Category::query()->create(['name' => 'Histoire', 'slug' => 'histoire']);
+        $questions = collect(range(1, 5))->map(fn (int $i): array => $this->question($category, 10 + $i, 1));
+        $user = User::factory()->create(['coins' => 0]);
+        Sanctum::actingAs($user);
+        GameplaySetting::query()->create(['key' => 'win_coins_daily_limit', 'value' => '2']);
+
+        // 4 bonnes réponses sur 5 : 80 %, partie gagnée.
+        $play = fn (int $correct) => $this->postJson('/api/sessions', [
+            'mode' => 'category',
+            'category_id' => $category->id,
+            'duration_seconds' => 30,
+            'answers' => $questions->map(fn (array $q, int $i): array => [
+                'question_id' => $q[0]->id,
+                'selected_option_id' => $i < $correct ? $q[1]->id : $q[2]->id,
+                'response_time_seconds' => 5,
+            ])->all(),
+        ])->assertCreated();
+
+        $play(4)->assertJsonPath('data.coins_earned', 20)->assertJsonPath('data.rewards.coins', 20);
+        $play(3)->assertJsonPath('data.coins_earned', 0);
+        $play(5)->assertJsonPath('data.coins_earned', 20);
+        $play(5)->assertJsonPath('data.coins_earned', 0);
+        $this->assertSame(40, (int) $user->fresh()->coins);
     }
 
     /** @return array{Question, Answer, Answer} */

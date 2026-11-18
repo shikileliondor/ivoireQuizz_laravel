@@ -67,7 +67,12 @@ class GameSessionController extends Controller
                 }
             }
 
+            $accuracy = round($correct / max(1, count($input['answers'])) * 100, 2);
+            $won = count($input['answers']) >= RewardService::WIN_MIN_QUESTIONS && $accuracy >= RewardService::WIN_ACCURACY;
+            $coins = $won ? $rewards->addWinCoins($user, 'quick_win_coins', 'quick_game', $session->id) : 0;
+
             $session->update([
+                'coins_earned' => $coins,
                 'score' => $score,
                 'points_earned' => $score,
                 'bonus_score' => 0,
@@ -75,7 +80,7 @@ class GameSessionController extends Controller
                 'xp_earned' => $xp,
                 'correct_answers' => $correct,
                 'wrong_answers' => count($input['answers']) - $correct,
-                'accuracy' => round($correct / max(1, count($input['answers'])) * 100, 2),
+                'accuracy' => $accuracy,
             ]);
             if ($score > 0) {
                 $rewards->addPoints($user, $score, 'game_session', $session->id, 'Game score');

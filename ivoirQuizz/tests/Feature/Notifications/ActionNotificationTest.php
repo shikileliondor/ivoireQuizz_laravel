@@ -74,9 +74,13 @@ class ActionNotificationTest extends TestCase
         $this->actingAs($awa, 'sanctum')->postJson("/api/challenges/{$challenge['code']}/submit", ['answers' => $answers(true)])->assertOk();
         $this->assertNull($this->messageFor('awa'), 'pas de résultat tant que Koffi n’a pas joué');
 
+        $awaCoins = (int) $awa->fresh()->coins;
         $this->actingAs($koffi, 'sanctum')->postJson("/api/challenges/{$challenge['code']}/submit", ['answers' => $answers(false)])
             ->assertOk()
-            ->assertJsonPath('data.status', 'completed');
+            ->assertJsonPath('data.status', 'completed')
+            ->assertJsonPath('data.coins_earned', 0);
+        // Awa a gagné le défi : ses pièces arrivent même si elle a fini la première.
+        $this->assertSame($awaCoins + 50, (int) $awa->fresh()->coins);
 
         $this->assertSame(
             ['title' => 'Victoire ! 🏆', 'body' => 'Koko a joué ton défi : tu gagnes 100 à 0.'],
