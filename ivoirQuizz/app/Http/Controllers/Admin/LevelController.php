@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\LevelRequest;
 use App\Models\City;
 use App\Models\Level;
 use App\Services\Game\GameCacheService;
+use App\Services\Questions\CampaignImporter;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -52,7 +53,7 @@ class LevelController extends Controller
                 'questions_count' => 10,
                 'passing_score' => 70,
                 'xp_reward' => 50,
-                'coins_reward' => 0,
+                'coins_reward' => CampaignImporter::COINS_BY_LEVEL[0],
                 'gems_reward' => 0,
                 'is_active' => true,
             ]),

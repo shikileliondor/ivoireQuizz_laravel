@@ -16,6 +16,9 @@ class CampaignImporter
 {
     private const POINTS_BY_LEVEL = [10, 15, 20, 25, 30];
 
+    /** Pièces gagnées à chaque étape réussie : la première paie un indice, le boss beaucoup plus. */
+    public const COINS_BY_LEVEL = [30, 40, 50, 60, 100];
+
     private const DIFFICULTIES_BY_LEVEL = ['easy', 'medium', 'medium', 'hard', 'expert'];
 
     private const LEVELS = [
@@ -214,7 +217,7 @@ class CampaignImporter
                     'questions_count' => 10,
                     'passing_score' => 70,
                     'xp_reward' => 50,
-                    'coins_reward' => 0,
+                    'coins_reward' => self::COINS_BY_LEVEL[$index],
                     'gems_reward' => 0,
                     'is_boss' => $definition['is_boss'],
                     'is_active' => true,

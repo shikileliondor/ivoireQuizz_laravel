@@ -30,7 +30,7 @@ class CampaignUnlockChainTest extends TestCase
     public function test_finishing_yopougon_unlocks_korhogo_then_finishing_korhogo_unlocks_aboisso(): void
     {
         GameWorld::build();
-        Sanctum::actingAs(User::factory()->create());
+        Sanctum::actingAs($player = User::factory()->create(['coins' => 0]));
 
         $map = $this->map();
         $this->assertFalse($this->city($map, 'poro', 'korhogo')['is_unlocked']);
@@ -38,6 +38,8 @@ class CampaignUnlockChainTest extends TestCase
         $this->postJson("/api/v1/levels/{$korhogoFirst->id}/start")->assertStatus(422);
 
         $this->playCity('yopougon');
+        // 30 + 40 + 50 + 60 + 100 pièces pour les cinq étapes gagnées.
+        $this->assertSame(280, $player->fresh()->coins);
 
         $map = $this->map();
         $abidjan = $this->region($map, 'abidjan');
