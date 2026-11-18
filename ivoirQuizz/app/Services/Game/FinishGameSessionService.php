@@ -41,7 +41,8 @@ class FinishGameSessionService
             $accuracy = $session->total_questions > 0 ? round($correct / $session->total_questions * 100, 2) : 0;
             $passed = $accuracy >= $session->level->passing_score;
             $xp = $passed ? (int) $session->level->xp_reward + (int) $answers->sum('xp_earned') : 0;
-            $coins = $passed ? (int) $session->level->coins_reward : 0;
+            // Une partie perdue rapporte quand même ses bonnes réponses ; la récompense de l'étape exige la victoire.
+            $coins = $this->rewards->gameCoins($correct, (int) $session->total_questions, $passed ? (int) $session->level->coins_reward : 0);
             $gems = $passed ? (int) $session->level->gems_reward : 0;
             $status = $passed ? GameConstants::STATUS_COMPLETED : GameConstants::STATUS_FAILED;
 
@@ -50,12 +51,12 @@ class FinishGameSessionService
             $user = $session->user;
             $source = 'game_session';
             $this->rewards->addPoints($user, (int) $session->score, $source, $session->id, 'Game score');
+            if ($coins) {
+                $this->rewards->addCoins($user, $coins, $source, $session->id, 'Game coins');
+            }
             if ($passed) {
                 if ($xp) {
                     $this->rewards->addXp($user, $xp, $source, $session->id, 'Game XP');
-                }
-                if ($coins) {
-                    $this->rewards->addCoins($user, $coins, $source, $session->id, 'Game coins');
                 }
                 if ($gems) {
                     $this->rewards->addGems($user, $gems, $source, $session->id, 'Game gems');
@@ -77,7 +78,10 @@ class FinishGameSessionService
             } else {
                 $this->lives->loseLife($user);
             }
-            $this->streaks->updateAfterGame($user);
+            $streakCoins = $this->rewards->addStreakCoins($user, (int) $this->streaks->updateAfterGame($user)->current_streak);
+            if ($streakCoins > 0) {
+                $session->update(['coins_earned' => $coins + $streakCoins]);
+            }
             $user->increment('games_played');
             if ($passed) {
                 $user->increment('games_won');

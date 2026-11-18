@@ -4,6 +4,7 @@ namespace Tests\Feature\Api\V1;
 
 use App\Models\Answer;
 use App\Models\City;
+use App\Models\GameplaySetting;
 use App\Models\Level;
 use App\Models\Question;
 use App\Models\Region;
@@ -30,6 +31,10 @@ class CampaignUnlockChainTest extends TestCase
     public function test_finishing_yopougon_unlocks_korhogo_then_finishing_korhogo_unlocks_aboisso(): void
     {
         GameWorld::build();
+        // Seules les récompenses des étapes comptent ici ; les autres bonus ont leurs propres tests.
+        foreach (['coins_per_correct', 'perfect_game_coins', 'streak_coins_per_day', 'level_up_coins'] as $key) {
+            GameplaySetting::query()->create(['key' => $key, 'value' => '0']);
+        }
         Sanctum::actingAs($player = User::factory()->create(['coins' => 0]));
 
         $map = $this->map();

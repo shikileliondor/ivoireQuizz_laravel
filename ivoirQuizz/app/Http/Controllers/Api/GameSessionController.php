@@ -69,7 +69,12 @@ class GameSessionController extends Controller
 
             $accuracy = round($correct / max(1, count($input['answers'])) * 100, 2);
             $won = count($input['answers']) >= RewardService::WIN_MIN_QUESTIONS && $accuracy >= RewardService::WIN_ACCURACY;
-            $coins = $won ? $rewards->addWinCoins($user, 'quick_win_coins', 'quick_game', $session->id) : 0;
+            $total = count($input['answers']);
+            $winBonus = $won ? (int) GameplaySetting::valueOf('quick_win_coins') : 0;
+            $coins = $rewards->addCappedGameCoins($user, $rewards->gameCoins($correct, $total, $winBonus), 'quick_game', $session->id);
+            if ($input['mode'] === 'daily') {
+                $coins += $rewards->addDailyCoins($user, 'daily_quiz_coins', 'daily_quiz', $session->id);
+            }
 
             $session->update([
                 'coins_earned' => $coins,
@@ -89,7 +94,10 @@ class GameSessionController extends Controller
                 $rewards->addXp($user, $xp, 'game_session', $session->id, 'Game XP');
             }
             $user->increment('games_played');
-            $streaks->updateAfterGame($user);
+            $streakCoins = $rewards->addStreakCoins($user, (int) $streaks->updateAfterGame($user)->current_streak);
+            if ($streakCoins > 0) {
+                $session->update(['coins_earned' => $coins + $streakCoins]);
+            }
 
             return $session->fresh();
         });

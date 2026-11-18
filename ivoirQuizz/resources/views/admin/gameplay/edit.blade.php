@@ -19,10 +19,19 @@
   <x-admin.input name="chrono_hint_pause_seconds" label="Durée maximale de pause" type="number" min="0" max="30" :value="$settings['chrono_hint_pause_seconds']" required />
  </section>
  <section class="card space-y-5 p-6">
-  <div><h2 class="font-semibold text-slate-900">Pièces des victoires</h2><p class="text-sm text-slate-500">Lancement rapide gagné à {{ \App\Services\Game\RewardService::WIN_ACCURACY }} % de bonnes réponses ou plus, défi gagné contre un ami. Les étapes de campagne se règlent sur chaque étape.</p></div>
+  <div><h2 class="font-semibold text-slate-900">Pièces gagnées en jouant</h2><p class="text-sm text-slate-500">Dans tous les modes. Victoire en lancement rapide : {{ \App\Services\Game\RewardService::WIN_ACCURACY }} % de bonnes réponses ou plus. Sans-faute et victoire : {{ \App\Services\Game\RewardService::WIN_MIN_QUESTIONS }} questions minimum. La récompense d'une étape de campagne se règle sur chaque étape.</p></div>
+  <x-admin.input name="coins_per_correct" label="Par bonne réponse" type="number" min="0" max="1000" :value="$settings['coins_per_correct']" required />
+  <x-admin.input name="perfect_game_coins" label="Bonus sans-faute" type="number" min="0" max="100000" :value="$settings['perfect_game_coins']" required />
   <x-admin.input name="quick_win_coins" label="Lancement rapide gagné" type="number" min="0" max="100000" :value="$settings['quick_win_coins']" required />
   <x-admin.input name="challenge_win_coins" label="Défi gagné" type="number" min="0" max="100000" :value="$settings['challenge_win_coins']" required />
-  <x-admin.input name="win_coins_daily_limit" label="Victoires payées par jour et par joueur" type="number" min="0" max="1000" :value="$settings['win_coins_daily_limit']" required />
+  <x-admin.input name="win_coins_daily_limit" label="Parties payées par jour et par joueur (lancement rapide et défis)" type="number" min="0" max="1000" :value="$settings['win_coins_daily_limit']" required />
+ </section>
+ <section class="card space-y-5 p-6">
+  <div><h2 class="font-semibold text-slate-900">Bonus réguliers</h2><p class="text-sm text-slate-500">Versés une seule fois : par jour pour le quiz du jour et la série, à chaque niveau gagné pour la montée de niveau.</p></div>
+  <x-admin.input name="daily_quiz_coins" label="Quiz du jour terminé" type="number" min="0" max="100000" :value="$settings['daily_quiz_coins']" required />
+  <x-admin.input name="streak_coins_per_day" label="Première partie du jour, par jour de série" type="number" min="0" max="100000" :value="$settings['streak_coins_per_day']" required />
+  <x-admin.input name="streak_coins_max" label="Plafond du bonus de série" type="number" min="0" max="100000" :value="$settings['streak_coins_max']" required />
+  <x-admin.input name="level_up_coins" label="Montée de niveau du joueur" type="number" min="0" max="100000" :value="$settings['level_up_coins']" required />
  </section>
  <div class="flex justify-end lg:col-span-2"><button class="btn btn-primary" type="submit">Enregistrer</button></div>
 </form>

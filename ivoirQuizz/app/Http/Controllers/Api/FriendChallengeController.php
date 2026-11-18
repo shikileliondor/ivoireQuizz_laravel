@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Friendship;
+use App\Models\GameplaySetting;
 use App\Models\Question;
 use App\Models\User;
 use App\Services\Game\RewardService;
@@ -153,15 +154,16 @@ class FriendChallengeController extends Controller
             }
             DB::table('friend_challenges')->where('id', $challenge->id)->update($updates);
             $updated = DB::table('friend_challenges')->where('id', $challenge->id)->first();
-            $coins = 0;
+            // Pièces de sa partie (bonnes réponses, sans-faute), dès qu'on a joué.
+            $coins = $rewards->addCappedGameCoins($request->user(), $rewards->gameCoins($correct, count($data['answers']), 0), 'friend_challenge', (int) $updated->id);
             if ($updated->status === 'completed') {
                 DB::afterCommit(fn () => $this->notifyResult($updated, $request->user()));
-                // Le gagnant reçoit ses pièces, qu'il ait fini en premier ou non ; rien en cas d'égalité.
+                // Le gagnant reçoit le bonus de victoire, qu'il ait fini en premier ou non ; rien en cas d'égalité.
                 $winnerId = (int) $updated->challenger_score === (int) $updated->opponent_score ? null
                     : ((int) $updated->challenger_score > (int) $updated->opponent_score ? (int) $updated->challenger_id : (int) $updated->opponent_id);
                 $winner = $winnerId !== null ? User::query()->find($winnerId) : null;
-                $given = $winner ? $rewards->addWinCoins($winner, 'challenge_win_coins', 'friend_challenge', (int) $updated->id) : 0;
-                $coins = $winnerId === $userId ? $given : 0;
+                $bonus = $winner ? $rewards->addCappedGameCoins($winner, (int) GameplaySetting::valueOf('challenge_win_coins'), 'friend_challenge', (int) $updated->id) : 0;
+                $coins += $winnerId === $userId ? $bonus : 0;
             }
 
             return response()->json(['success' => true, 'data' => ['code' => $updated->code, 'status' => $updated->status, 'your_score' => $score, 'your_correct' => $correct, 'coins_earned' => $coins, 'challenger_score' => $updated->challenger_score, 'opponent_score' => $updated->opponent_score, 'winner_id' => $updated->status === 'completed' ? ((int) $updated->challenger_score === (int) $updated->opponent_score ? null : ((int) $updated->challenger_score > (int) $updated->opponent_score ? (int) $updated->challenger_id : (int) $updated->opponent_id)) : null]]);
